@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.Mapper.UserRoleMapper">
+    <resultMap id="BaseResultMap" type="com.life.POJO.UserRole">
+        <!--@mbg.generated-->
+        <!--@Table recruiter.user_role-->
+        <id column="role" jdbcType="VARCHAR" property="role"/>
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="number" jdbcType="VARCHAR" property="number"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        `role`, ID, `number`
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from recruiter.user_role
+        where `role` = #{role,jdbcType=VARCHAR}
+          and ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="map">
+        <!--@mbg.generated-->
+        delete
+        from recruiter.user_role
+        where `role` = #{role,jdbcType=VARCHAR}
+          and ID = #{id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.life.POJO.UserRole">
+        <!--@mbg.generated-->
+        insert into recruiter.user_role (`role`, ID, `number`)
+        values (#{role,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.life.POJO.UserRole">
+        <!--@mbg.generated-->
+        insert into recruiter.user_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="role != null">
+                `role`,
+            </if>
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="number != null">
+                `number`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="role != null">
+                #{role,jdbcType=VARCHAR},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="number != null">
+                #{number,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.life.POJO.UserRole">
+        <!--@mbg.generated-->
+        update recruiter.user_role
+        <set>
+            <if test="number != null">
+                `number` = #{number,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where `role` = #{role,jdbcType=VARCHAR}
+          and ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.life.POJO.UserRole">
+        <!--@mbg.generated-->
+        update recruiter.user_role
+        set `number` = #{number,jdbcType=VARCHAR}
+        where `role` = #{role,jdbcType=VARCHAR}
+          and ID = #{id,jdbcType=VARCHAR}
+    </update>
+</mapper>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.Mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.life.POJO.User">
+        <!--@mbg.generated-->
+        <!--@Table recruiter.user-->
+        <id column="ID" jdbcType="INTEGER" property="id"/>
+        <id column="number" jdbcType="VARCHAR" property="number"/>
+        <result column="Password" jdbcType="CHAR" property="password"/>
+        <result column="Role" jdbcType="VARCHAR" property="role"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="create_time" jdbcType="CHAR" property="createTime"/>
+        <result column="Iphone" jdbcType="VARCHAR" property="iphone"/>
+        <result column="NickName" jdbcType="VARCHAR" property="nickname"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, `number`, `Password`, `Role`, email, `name`, create_time, Iphone, NickName, account
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from recruiter.user
+        where ID = #{id,jdbcType=INTEGER}
+          and `number` = #{number,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="map">
+        <!--@mbg.generated-->
+        delete
+        from recruiter.user
+        where ID = #{id,jdbcType=INTEGER}
+          and `number` = #{number,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.life.POJO.User" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into recruiter.user (`number`, `Password`, `Role`,
+                                    email, `name`, create_time,
+                                    Iphone, NickName, account)
+        values (#{number,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, #{role,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=CHAR},
+                #{iphone,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.life.POJO.User"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into recruiter.user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="number != null">
+                `number`,
+            </if>
+            <if test="password != null">
+                `Password`,
+            </if>
+            <if test="role != null">
+                `Role`,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="iphone != null">
+                Iphone,
+            </if>
+            <if test="nickname != null">
+                NickName,
+            </if>
+            <if test="account != null">
+                account,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="number != null">
+                #{number,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=CHAR},
+            </if>
+            <if test="role != null">
+                #{role,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=CHAR},
+            </if>
+            <if test="iphone != null">
+                #{iphone,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="account != null">
+                #{account,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.life.POJO.User">
+        <!--@mbg.generated-->
+        update recruiter.user
+        <set>
+            <if test="password != null">
+                `Password` = #{password,jdbcType=CHAR},
+            </if>
+            <if test="role != null">
+                `Role` = #{role,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=CHAR},
+            </if>
+            <if test="iphone != null">
+                Iphone = #{iphone,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                NickName = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="account != null">
+                account = #{account,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=INTEGER}
+          and `number` = #{number,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.life.POJO.User">
+        <!--@mbg.generated-->
+        update recruiter.user
+        set `Password`  = #{password,jdbcType=CHAR},
+            `Role`      = #{role,jdbcType=VARCHAR},
+            email       = #{email,jdbcType=VARCHAR},
+            `name`      = #{name,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=CHAR},
+            Iphone      = #{iphone,jdbcType=VARCHAR},
+            NickName    = #{nickname,jdbcType=VARCHAR},
+            account     = #{account,jdbcType=VARCHAR}
+        where ID = #{id,jdbcType=INTEGER}
+          and `number` = #{number,jdbcType=VARCHAR}
+    </update>
+
+    <select id="queryUser" resultMap="BaseResultMap">
+        select * from recruiter.user;
+    </select>
+</mapper>

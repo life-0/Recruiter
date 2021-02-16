@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.Mapper.test.AuthorityMapper">
+    <insert id="addAuthority">
+        insert into test_recruiter.authority(Name, token)
+        VALUES (#{param1}, #{param2});
+    </insert>
+
+    <delete id="delAuthority">
+        delete
+        from test_recruiter.authority
+        where Name = #{name};
+    </delete>
+
+    <update id="updAuthority">
+        update test_recruiter.authority
+        set token=#{token}
+        where Name = #{name};
+    </update>
+
+    <select id="queryAuthority" resultType="authority">
+        select token
+        from test_recruiter.authority
+        where Name = #{name};
+    </select>
+
+    <select id="AuthorityCount" resultType="java.lang.Integer">
+        select count(*)
+        from test_recruiter.authority;
+    </select>
+
+    <select id="queryAll" resultType="authority" >
+        select * from test_recruiter.authority;
+    </select>
+</mapper>

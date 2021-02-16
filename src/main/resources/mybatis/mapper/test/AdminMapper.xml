@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.Mapper.test.AdminMapper">
+    <insert id="AddAdmin" parameterType="admin">
+        insert into test_recruiter.admin(id,Account,Password,Name,email,Number,Role)
+        values (#{ID},#{Account},#{Password},#{Name},#{email},#{Number},#{Role})
+    </insert>
+    <delete id="DelAdmin" parameterType="int">
+        delete from test_recruiter.admin where id=#{ID}
+    </delete>
+
+
+    <update id="UpdAdmin" parameterType="admin">
+        update test_recruiter.admin <set>
+        <if test="Account!=null">
+            Account=#{Account},
+        </if>
+        <if test="Password!=null">
+            Password=#{Password},
+        </if>
+        <if test="name!=null">
+            name=#{name},
+        </if>
+        <if test="email!=null">
+            email=#{email},
+        </if>
+        <if test="Number!=null">
+            number=#{Number},
+        </if>
+        <if test="Role!=null">
+            Role=#{Role}
+        </if>
+    </set>
+        where id=#{ID}
+    </update>
+
+    <resultMap id="admins" type="admin">
+        <result column="id" property="ID"/>
+        <result column="account" property="Account"/>
+        <result column="password" property="Password"/>
+        <result column="name" property="Name"/>
+        <result column="email" property="Email"/>
+        <result column="number" property="Number"/>
+        <result column="role" property="Role"/>
+    </resultMap>
+    <select id="AdminList" resultMap="admins">
+        select * from test_recruiter.admin
+    </select>
+    <select id="getAdmin" parameterType="int" resultMap="admins">
+        select * from test_recruiter.admin where id=#{ID}
+    </select>
+</mapper>
