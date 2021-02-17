@@ -41,8 +41,29 @@ public class test_authority {
     public void insertAuthority() {
         NumberUtil numberUtil = new NumberUtil ();
         Authorities authorities = new Authorities (numberUtil.getRandomNumber (),
-                "watch", "监视","monitor");
+                "watch", "监视", "monitor");
+        Authorities selectiveAuth = new Authorities (
+                numberUtil.getRandomNumber (), "deal", "处理", null);
         authorityService.insert (authorities);
+        authorityService.insertSelective (selectiveAuth);
     }
 
+    @Test
+    public void delAuthority() {
+        authorityService.deleteByPrimaryKey ("dd591cb8a2b84adcbadc765f5315ad7a");
+    }
+
+    @Test
+    public void insertSelectiveAuthority() {
+        NumberUtil numberUtil = new NumberUtil ();
+        Authorities selectiveAuth = new Authorities (
+                numberUtil.getRandomNumber (), "deal", null, "deal");
+        authorityService.insertSelective (selectiveAuth);
+    }
+
+    @Test
+    public void selectByPrimaryKey() {
+        Authorities authorities = authorityService.selectByPrimaryKey ("aa54a6e69aca449c9bbbee24be69d91e");
+        System.out.println (authorities);
+    }
 }
