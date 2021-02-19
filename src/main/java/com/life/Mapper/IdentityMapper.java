@@ -3,6 +3,8 @@ package com.life.Mapper;
 import com.life.POJO.Identity;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface IdentityMapper {
     int deleteByPrimaryKey(String number);
@@ -16,4 +18,6 @@ public interface IdentityMapper {
     int updateByPrimaryKeySelective(Identity record);
 
     int updateByPrimaryKey(Identity record);
+
+    List<Identity> selectByName(String name);
 }
