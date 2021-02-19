@@ -89,4 +89,11 @@
         where token = #{token,jdbcType=VARCHAR}
           and ID = #{id,jdbcType=VARCHAR}
     </update>
+
+    <select id="selectByName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from recruiter.role_authority
+        where Name like concat('%', #{name,jdbcType=VARCHAR}, '%')
+    </select>
 </mapper>

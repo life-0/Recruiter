@@ -26,5 +26,5 @@ public class User {
 
     private String nickname;
 
-    private String account;
+    private String permission;
 }

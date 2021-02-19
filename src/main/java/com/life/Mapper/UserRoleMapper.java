@@ -1,8 +1,12 @@
 package com.life.Mapper;
 
+import com.life.POJO.User;
 import com.life.POJO.UserRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import javax.jws.soap.SOAPBinding;
+import java.util.List;
 
 @Mapper
 public interface UserRoleMapper {
@@ -17,4 +21,6 @@ public interface UserRoleMapper {
     int updateByPrimaryKeySelective(UserRole record);
 
     int updateByPrimaryKey(UserRole record);
+
+    List<User> selectByName(String name);
 }

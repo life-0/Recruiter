@@ -5,6 +5,9 @@ import javax.annotation.Resource;
 import com.life.Mapper.RoleAuthorityMapper;
 import com.life.POJO.RoleAuthority;
 import com.life.Service.RoleAuthorityService;
+
+import java.util.List;
+
 @Service
 public class RoleAuthorityServiceImpl implements RoleAuthorityService{
 
@@ -39,6 +42,11 @@ public class RoleAuthorityServiceImpl implements RoleAuthorityService{
     @Override
     public int updateByPrimaryKey(RoleAuthority record) {
         return roleAuthorityMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<RoleAuthority> selectByName(String name) {
+        return roleAuthorityMapper.selectByName (name);
     }
 
 }

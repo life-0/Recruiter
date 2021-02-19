@@ -3,21 +3,23 @@ package com.life.Service;
 import com.life.POJO.User;
 import org.apache.ibatis.annotations.Param;
 
-public interface UserService{
+import java.util.List;
 
-
-    int deleteByPrimaryKey(Integer id,String number);
+public interface UserService {
+    int deleteByPrimaryKey(@Param("id") Integer id, @Param("number") String number);
 
     int insert(User record);
 
     int insertSelective(User record);
 
-    User queryUser(@Param("id") int id);
+    User queryUserByID(@Param("id") int id);
 
-    User selectByPrimaryKey(Integer id,String number);
+    User selectByPrimaryKey(@Param("id") Integer id, @Param("number") String number);
 
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<User> selectByName(String name);
 
 }

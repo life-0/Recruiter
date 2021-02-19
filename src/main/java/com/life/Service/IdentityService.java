@@ -1,8 +1,10 @@
 package com.life.Service;
 
 import com.life.POJO.Identity;
-public interface IdentityService{
 
+import java.util.List;
+
+public interface IdentityService{
 
     int deleteByPrimaryKey(String number);
 
@@ -15,5 +17,7 @@ public interface IdentityService{
     int updateByPrimaryKeySelective(Identity record);
 
     int updateByPrimaryKey(Identity record);
+
+    List<Identity> selectByName(String name);
 
 }

@@ -4,6 +4,8 @@ import com.life.POJO.RoleAuthority;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 @Mapper
 public interface RoleAuthorityMapper {
     int deleteByPrimaryKey(@Param("token") String token, @Param("id") String id);
@@ -17,4 +19,6 @@ public interface RoleAuthorityMapper {
     int updateByPrimaryKeySelective(RoleAuthority record);
 
     int updateByPrimaryKey(RoleAuthority record);
+
+    List<RoleAuthority> selectByName(String name);
 }

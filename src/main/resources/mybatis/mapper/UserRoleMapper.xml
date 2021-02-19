@@ -76,4 +76,11 @@
         where `role` = #{role,jdbcType=VARCHAR}
           and ID = #{id,jdbcType=VARCHAR}
     </update>
+
+    <select id="selectByName" resultType="com.life.POJO.User">
+        select
+        <include refid="Base_Column_List"/>
+        from recruiter.user
+        where name like concat('%', #{name,jdbcType=VARCHAR}, '%')
+    </select>
 </mapper>

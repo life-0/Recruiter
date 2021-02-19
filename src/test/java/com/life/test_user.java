@@ -30,7 +30,7 @@ public class test_user {
     }
     @Test
     public void query_user(){
-        User user = userService.queryUser (0);
+        User user = userService.queryUserByID (0);
         System.out.println (user);
 
     }

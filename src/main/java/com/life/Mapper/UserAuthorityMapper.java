@@ -1,8 +1,11 @@
 package com.life.Mapper;
 
+import com.life.POJO.RoleAuthority;
 import com.life.POJO.UserAuthority;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface UserAuthorityMapper {
@@ -17,4 +20,5 @@ public interface UserAuthorityMapper {
     int updateByPrimaryKeySelective(UserAuthority record);
 
     int updateByPrimaryKey(UserAuthority record);
+
 }

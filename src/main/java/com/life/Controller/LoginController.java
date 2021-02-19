@@ -37,7 +37,6 @@ public class LoginController {
 
         try {
             subject.login (token);  //执行登录方法,如果没有异常就ok
-
             String rememberMe = request.getParameter ("RememberMe");    //获得参数
             session.setAttribute ("loginSession",ID);
 //            System.out.println ("rememberMe=>"+rememberMe);  //记住我被勾选则是on 否则null

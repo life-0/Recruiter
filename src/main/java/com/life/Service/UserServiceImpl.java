@@ -8,6 +8,8 @@ import com.life.POJO.User;
 import com.life.Mapper.UserMapper;
 import com.life.Service.UserService;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -30,8 +32,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User queryUser(int id) {
-        return userMapper.queryUser (id);
+    public User queryUserByID(int id) {
+        return userMapper.queryUserByID (id);
     }
 
     @Override
@@ -47,6 +49,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public int updateByPrimaryKey(User record) {
         return userMapper.updateByPrimaryKey (record);
+    }
+
+    @Override
+    public List<User> selectByName(String name) {
+        return userMapper.selectByName (name);
     }
 
 }

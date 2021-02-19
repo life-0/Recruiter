@@ -1,8 +1,10 @@
 package com.life.Config;
 
 
+import com.life.POJO.User;
 import com.life.POJO.test.Admin;
 import com.life.Service.RoleService.AdminServiceImpl;
+import com.life.Service.UserServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -25,7 +27,7 @@ import java.util.List;
 
 public class UserRealm extends AuthorizingRealm {
     @Autowired
-    private AdminServiceImpl service;
+    private UserServiceImpl service;
 
     //授权
     @Override
@@ -50,8 +52,9 @@ public class UserRealm extends AuthorizingRealm {
         System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
-        Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));
-
+        //Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));
+        User user = service.queryUserByID (Integer.parseInt (userToken.getUsername ()));
+        System.out.println (user.toString ());
         if (user == null) {
             return null;
         }
