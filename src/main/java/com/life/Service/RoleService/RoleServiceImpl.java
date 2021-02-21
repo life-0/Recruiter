@@ -1,7 +1,7 @@
 package com.life.Service.RoleService;
 
 import com.life.Mapper.test.RoleMapper;
-import com.life.POJO.test.Role;
+import com.life.POJO.test.RoleList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +18,13 @@ import java.util.List;
 public class RoleServiceImpl implements RoleService{
     @Autowired
     private RoleMapper roleMapper;
+
     @Override
-    public int queryCount_Role() {
-        return 0;
+    public int queryCount_Role(int id) {
+        return roleMapper.queryCount_Role (id);
     }
+
+
 
     @Override
     public void addRole() {
@@ -39,7 +42,8 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public List<Role> queryRole() {
-        return null;
+    public List<RoleList> queryRoleAll() {
+        return roleMapper.getAllRole ();
     }
+
 }

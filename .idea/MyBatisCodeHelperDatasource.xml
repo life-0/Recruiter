@@ -61,6 +61,15 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="recruiter:resources">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="Resources" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="recruiter:role_authority">
               <value>
                 <TableGenerateConfig>

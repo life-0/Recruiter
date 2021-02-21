@@ -156,7 +156,8 @@
     <select id="queryUserByID" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from recruiter.user;
+        from recruiter.user
+        where ID = #{id};
     </select>
 
     <select id="selectByName" resultMap="BaseResultMap">

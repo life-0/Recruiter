@@ -39,7 +39,8 @@ public class UserRealm extends AuthorizingRealm {
 
         //得到当前登录用户对象
         Subject subject = SecurityUtils.getSubject ();
-        Admin principal = (Admin) subject.getPrincipal ();//拿到user对象
+//        Admin principal = (Admin) subject.getPrincipal ();//拿到user对象
+        User principal=(User) subject.getPrincipal ();  //获得当前登录对象
         System.out.println ("Role:" + principal.getRole ());
         List<String> list = Arrays.asList (principal.getRole ().split (";"));//将权限令牌转换为集合参数
         info.addStringPermissions (list);

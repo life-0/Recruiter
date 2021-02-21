@@ -1,7 +1,12 @@
 package com.life;
 
+import com.life.POJO.test.RoleList;
+import com.life.Service.RoleService.RoleServiceImpl;
 import com.life.Utils.NumberUtil;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /*
  *@Author life-0
@@ -11,6 +16,8 @@ import org.junit.jupiter.api.Test;
  TODO           
 */
 public class test_Role {
+    @Resource
+    private RoleServiceImpl roleService;
     @Test
     public void queryCount_Role(){
         NumberUtil numberUtil = new NumberUtil ();
@@ -20,4 +27,11 @@ public class test_Role {
             i++;
         }
     }
+
+    @Test
+    public void test_boolean(){
+        List<RoleList> roleLists = roleService.queryRoleAll ();
+        System.out.println (roleLists);
+    }
+
 }
