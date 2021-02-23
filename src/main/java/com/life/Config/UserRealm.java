@@ -1,8 +1,10 @@
 package com.life.Config;
 
 
+import com.life.POJO.Resources;
 import com.life.POJO.User;
 import com.life.POJO.test.Admin;
+import com.life.Service.ResourcesServiceImpl;
 import com.life.Service.RoleService.AdminServiceImpl;
 import com.life.Service.UserServiceImpl;
 import org.apache.shiro.SecurityUtils;
@@ -28,6 +30,8 @@ import java.util.List;
 public class UserRealm extends AuthorizingRealm {
     @Autowired
     private UserServiceImpl service;
+    @Autowired
+    private ResourcesServiceImpl resourcesService;
 
     //授权
     @Override
@@ -41,9 +45,13 @@ public class UserRealm extends AuthorizingRealm {
         Subject subject = SecurityUtils.getSubject ();
 //        Admin principal = (Admin) subject.getPrincipal ();//拿到user对象
         User principal=(User) subject.getPrincipal ();  //获得当前登录对象
-        System.out.println ("Role:" + principal.getRole ());
-        List<String> list = Arrays.asList (principal.getRole ().split (";"));//将权限令牌转换为集合参数
-        info.addStringPermissions (list);
+        Resources resources = resourcesService.selectByID (principal.getId ());//查询资源表是否有权限
+
+//        System.out.println ("Role:" + principal.getRole ());
+//        List<String> list = Arrays.asList (principal.getRole ().split (";"));//将权限令牌转换为集合参数
+//        info.addStringPermissions (list);
+        System.out.println (resources.getPurview ());
+        info.addStringPermissions (resources.getPurview ());
         return info;
     }
 

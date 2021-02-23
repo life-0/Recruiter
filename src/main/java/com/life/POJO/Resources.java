@@ -4,17 +4,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Resources {
     private String number;
 
-    private String student;
+    private boolean student;
 
-    private String teacher;
+    private boolean teacher;
 
-    private String company;
+    private boolean company;
 
     private Integer id;
+
+    public List<String> getPurview() {
+        List<String> list = new ArrayList<> ();
+        list.add ("stu:" + student);
+        list.add ("tea:" + teacher);
+        list.add ("com:" + company);
+        return list;
+    }
+
 }

@@ -5,9 +5,9 @@
         <!--@mbg.generated-->
         <!--@Table recruiter.resources-->
         <id column="number" jdbcType="VARCHAR" property="number"/>
-        <result column="student" jdbcType="VARCHAR" property="student"/>
-        <result column="teacher" jdbcType="VARCHAR" property="teacher"/>
-        <result column="company" jdbcType="VARCHAR" property="company"/>
+        <result column="student" jdbcType="TINYINT" property="student"/>
+        <result column="teacher" jdbcType="TINYINT" property="teacher"/>
+        <result column="company" jdbcType="TINYINT" property="company"/>
         <result column="ID" jdbcType="INTEGER" property="id"/>
     </resultMap>
     <sql id="Base_Column_List">
@@ -31,8 +31,8 @@
         <!--@mbg.generated-->
         insert into recruiter.resources (`number`, student, teacher,
                                          company, ID)
-        values (#{number,jdbcType=VARCHAR}, #{student,jdbcType=VARCHAR}, #{teacher,jdbcType=VARCHAR},
-                #{company,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER})
+        values (#{number,jdbcType=VARCHAR}, #{student,jdbcType=TINYINT}, #{teacher,jdbcType=TINYINT},
+                #{company,jdbcType=TINYINT}, #{id,jdbcType=INTEGER})
     </insert>
     <insert id="insertSelective" parameterType="com.life.POJO.Resources">
         <!--@mbg.generated-->
@@ -59,13 +59,13 @@
                 #{number,jdbcType=VARCHAR},
             </if>
             <if test="student != null">
-                #{student,jdbcType=VARCHAR},
+                #{student,jdbcType=TINYINT},
             </if>
             <if test="teacher != null">
-                #{teacher,jdbcType=VARCHAR},
+                #{teacher,jdbcType=TINYINT},
             </if>
             <if test="company != null">
-                #{company,jdbcType=VARCHAR},
+                #{company,jdbcType=TINYINT},
             </if>
             <if test="id != null">
                 #{id,jdbcType=INTEGER},
@@ -77,13 +77,13 @@
         update recruiter.resources
         <set>
             <if test="student != null">
-                student = #{student,jdbcType=VARCHAR},
+                student = #{student,jdbcType=TINYINT},
             </if>
             <if test="teacher != null">
-                teacher = #{teacher,jdbcType=VARCHAR},
+                teacher = #{teacher,jdbcType=TINYINT},
             </if>
             <if test="company != null">
-                company = #{company,jdbcType=VARCHAR},
+                company = #{company,jdbcType=TINYINT},
             </if>
             <if test="id != null">
                 ID = #{id,jdbcType=INTEGER},
@@ -94,9 +94,9 @@
     <update id="updateByPrimaryKey" parameterType="com.life.POJO.Resources">
         <!--@mbg.generated-->
         update recruiter.resources
-        set student = #{student,jdbcType=VARCHAR},
-            teacher = #{teacher,jdbcType=VARCHAR},
-            company = #{company,jdbcType=VARCHAR},
+        set student = #{student},
+            teacher = #{teacher},
+            company = #{company},
             ID      = #{id,jdbcType=INTEGER}
         where `number` = #{number,jdbcType=VARCHAR}
     </update>

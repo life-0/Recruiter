@@ -1,7 +1,10 @@
 package com.life.Controller;
 
+import com.life.POJO.User;
 import com.life.POJO.test.Student;
 import com.life.Service.RoleService.StudentService;
+import com.life.Service.RoleService.StudentServiceImpl;
+import com.life.Service.UserServiceImpl;
 import com.life.Utils.NumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,12 +24,15 @@ import java.util.List;
 @RequestMapping("/student")
 public class StudentController {
     @Autowired
-    StudentService service;
+    UserServiceImpl userService;
+    @Autowired
+    StudentServiceImpl service;
 
     @RequestMapping({"/tables", "tables.html"})
-    public String StudentTables(Model model) {
-        List<Student> students = service.studentList ();
-        model.addAttribute ("students", students);
+    public String StudentTable(Model model) {
+//        List<Student> students = service.studentList ();
+        List<User> users = userService.showAll ();
+        model.addAttribute ("users", users);
         return "/employee/tables";
     }
 

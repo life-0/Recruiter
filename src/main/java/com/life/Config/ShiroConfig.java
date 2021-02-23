@@ -39,8 +39,10 @@ public class ShiroConfig {
         //拦截
         LinkedHashMap<String,String> filterMap = new LinkedHashMap<> ();
         //以下是controller定义的拦截路径, 因为页面访问的是controller的路径这边就写同样的路径即可
-        filterMap.put ("/student/*","perms[user:table]");   //user:stu 设置相当于权限令牌
-        filterMap.put ("/charts","perms[user:company]");
+//        filterMap.put ("/student/*","perms[user:table]");   //user:stu 设置相当于权限令牌
+//        filterMap.put ("/charts","perms[user:company]");
+        filterMap.put ("/student/*","perms[stu:true]");
+        filterMap.put ("/charts","perms[com:true]");
 
         //设置登出
         filterMap.put ("/logout","logout");

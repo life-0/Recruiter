@@ -22,4 +22,6 @@ public interface UserService {
 
     List<User> selectByName(String name);
 
+    List<User> showAll();
+
 }
