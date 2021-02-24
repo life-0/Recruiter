@@ -167,9 +167,9 @@
         where name like concat('%', #{name,jdbcType=VARCHAR}, '%')
     </select>
 
-    <delete id="showAll">
+    <select id="showAll" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from recruiter.user
-    </delete>
+    </select>
 </mapper>

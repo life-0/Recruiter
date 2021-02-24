@@ -281,20 +281,20 @@
                                 </tr>
                                 </thead>
                                 <tbody class="recording">
-                                <tr th:each="student:${students}">
+                                <tr th:each="user:${users}">
                                     <td class="checkbox-inline">
-                                        <input type="checkbox" th:value="${student.getID()}">
+                                        <input type="checkbox" th:value="${user.getId()}" />
                                     </td>
-                                    <td th:text="${student.getID()}"></td>
-                                    <td th:text="${student.getName()}"></td>
-                                    <td th:text="${student.getSex()}"></td>
-                                    <td th:text="${student.getEmail()}"></td>
-                                    <td th:text="${student.getAccount()}"></td>
+                                    <td th:text="${user.getId()}"></td>
+                                    <td th:text="${user.getName()}"></td>
+                                    <td th:text="${user.getIphone()}"></td>
+                                    <td th:text="${user.getEmail()}"></td>
+                                    <td th:text="${user.getPermission()}"></td>
                                     <td>
                                         <a class="btn btn-sm btn-primary"
-                                           th:href="@{/student/ToUpdate/} + ${student.getID()}">编辑</a>
+                                           th:href="@{/student/ToUpdate/} + ${user.getId()}">编辑</a>
                                         <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
-                                           th:value="${student.getID()}">
+                                           th:value="${user.getId()}">
                                             删除</a>
                                     </td>
                                 </tr>

@@ -11,17 +11,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Resources {
-    private String number;
+    private String number;  //唯一标识值
 
-    private boolean student;
+    private boolean student;    //学生表信息权限
 
-    private boolean teacher;
+    private boolean teacher;    //教师表信息权限
 
-    private boolean company;
+    private boolean company;    //身份表信息权限
 
-    private Integer id;
+    private Integer id;         //用户ID
 
-    public List<String> getPurview() {
+    public List<String> getPurview() {  //权限集合
         List<String> list = new ArrayList<> ();
         list.add ("stu:" + student);
         list.add ("tea:" + teacher);

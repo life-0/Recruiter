@@ -30,7 +30,7 @@
     <!-- Sidebar 侧边栏-->
     <!--侧边栏组件插入 ~{}-->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"
-        th:insert="~{commons/commons::sidebar}"/>
+        th:insert="~{commons/commons::sidebar}"></ul>
 
 
     <!-- Content Wrapper -->
@@ -268,31 +268,25 @@
                                 <form th:action="@{/student/Add}" th:method="post">
                                     <div class="form-group">
                                         <label>ID</label>
-                                        <input type="text" name="ID" class="form-control">
+                                        <input type="text" name="id" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Permission</label>
+                                        <input type="text" name="permission" class="form-control" placeholder="海绵宝宝">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        <input type="text" name="role" class="form-control" placeholder="海绵宝宝">
                                     </div>
                                     <div class="form-group">
                                         <label>Name</label>
                                         <input type="text" name="Name" class="form-control" placeholder="海绵宝宝">
                                     </div>
+
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input type="email" name="Email" class="form-control"
                                                placeholder="1176244270@qq.com">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Sex</label><br>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="sex" value="男">
-                                            <label class="form-check-label">男</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="sex" value="女">
-                                            <label class="form-check-label">女</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Account</label>
-                                        <input type="text" name="Account" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>

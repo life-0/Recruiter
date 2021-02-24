@@ -29,7 +29,7 @@ public class StudentController {
     StudentServiceImpl service;
 
     @RequestMapping({"/tables", "tables.html"})
-    public String StudentTable(Model model) {
+    public String UserTable(Model model) {
 //        List<Student> students = service.studentList ();
         List<User> users = userService.showAll ();
         model.addAttribute ("users", users);
@@ -42,17 +42,17 @@ public class StudentController {
     }
 
     @RequestMapping({"/Add"})
-    public String AddStudent(@RequestParam(name = "ID") String ID,
-                             @RequestParam(name = "Name") String Name,
-                             @RequestParam(name = "Email") String Email,
-                             @RequestParam(name = "sex") char sex,
-                             @RequestParam(name = "Account") String Account,
-                             @RequestParam(name = "password") String password,
-                             Model model) {
+    public String AddUser(@RequestParam(name = "ID") String id,
+                          @RequestParam(name = "Name") String Name,
+                          @RequestParam(name = "Email") String Email,
+                          @RequestParam(name = "Permission") String permission,
+                          @RequestParam(name = "Role") String role,
+                          @RequestParam(name = "password") String password,
+                          Model model) {
 
-        Student student = new Student (ID, sex, Name, Email, "", "",
-                password, Account, new NumberUtil ().getRandomNumber (), "");
-        int i = service.AddStudent (student);
+        User user = new User (Integer.parseInt (id), new NumberUtil ().getRandomNumber (), permission, role, Name, Email, "", "",
+                password, "");
+        int i = userService.insert (user);
         if (i == 1) {
             model.addAttribute ("message", "数据添加成功");
         } else {
@@ -72,15 +72,16 @@ public class StudentController {
     }
 
     @RequestMapping("/ToUpdate/{ID}")
-    public String ToUpdate(@PathVariable("ID") String ID, Model model) {
-        Student student = service.getStudent (ID);
-        model.addAttribute ("student", student);
+    public String ToUpdate(@PathVariable("ID") int ID, Model model) {
+        User user = userService.queryUserByID (ID);
+        model.addAttribute ("user", user);
         return "/employee/Update";
     }
 
     @PostMapping("/Update")
-    public String UpdateStudent(Student student) {
-        int i = service.UpdStudent (student);
+    public String UpdateStudent(User user) {
+
+        int i = userService.updateByPrimaryKeySelective (user);
         return "redirect:/student/tables";
     }
 }

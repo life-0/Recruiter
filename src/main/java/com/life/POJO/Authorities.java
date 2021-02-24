@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Authorities {
-    private String number;
+    private String number;  //唯一标识
 
-    private String competence;
+    private String competence;//权限
 
-    private String name;
+    private String name;    //权限名
 
-    private String token;
+    private String token;   //令牌
 }

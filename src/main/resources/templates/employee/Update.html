@@ -29,7 +29,7 @@
     <!-- Sidebar 侧边栏-->
     <!--侧边栏组件插入 ~{}-->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"
-        th:insert="~{commons/commons::sidebar}"/>
+        th:insert="~{commons/commons::sidebar}"></ul>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -239,35 +239,45 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <form th:action="@{/student/Update}" th:method="post">
                                     <div class="form-group">
-                                        <input type="hidden"  name="Number" class="form-control" th:value="${student.getNumber()}">
-                                        <input type="hidden"  name="Icon" class="form-control" th:value="${student.getIcon()}">
-                                        <input type="hidden"  name="NickName" class="form-control" th:value="${student.getNickName()}">
-                                        <input type="hidden"  name="Account" class="form-control" th:value="${student.getAccount()}">
-                                        <input type="hidden"  name="Password" class="form-control" th:value="${student.getPassword()}">
+                                        <input type="hidden"  name="Number" class="form-control" th:value="${user.getNumber()}">
+                                        <input type="hidden"  name="CreateTime" class="form-control" th:value="${user.getCreateTime()}">
+                                        <input type="hidden"  name="Password" class="form-control" th:value="${user.getPassword()}">
                                     </div>
                                     <div class="form-group">
                                         <label>学号</label>
-                                        <input type="test" readonly="readonly"  name="ID" class="form-control" th:value="${student.getID()}">
+                                        <input type="test" readonly="readonly"  name="ID" class="form-control" th:value="${user.getId()}">
                                     </div>
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text"  name="Name" class="form-control" th:value="${student.getName()}">
+                                        <input type="text"  name="Name" class="form-control" th:value="${user.getName()}">
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" name="Email" class="form-control" th:value="${student.getEmail()}">
+                                        <input type="email" name="Email" class="form-control" th:value="${user.getEmail()}">
                                     </div>
                                     <div class="form-group">
-                                        <label>性别</label><br>
-                                        <div class="form-check form-check-inline">
-                                            <input th:checked="${student.getSex()} == 男 " class="form-check-input" type="radio" name="Sex" value='男'>
-                                            <label class="form-check-label">男</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input th:checked="${student.getSex()} == 女 " class="form-check-input" type="radio" name="Sex" value='女'>
-                                            <label class="form-check-label">女</label>
-                                        </div>
+                                        <label>Role</label>
+                                        <input type="text"  name="role" class="form-control" th:value="${user.getRole()}">
                                     </div>
+                                    <div class="form-group">
+                                        <label>NickName</label>
+                                        <input type="text"  name="nickname" class="form-control" th:value="${user.getNickname()}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Iphone</label>
+                                        <input type="text"  name="iphone" class="form-control" th:value="${user.getIphone()}">
+                                    </div>
+<!--                                    <div class="form-group">-->
+<!--                                        <label>性别</label><br>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                            <input th:checked="${user.getSex()} == 男 " class="form-check-input" type="radio" name="Sex" value='男'>-->
+<!--                                            <label class="form-check-label">男</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check form-check-inline">-->
+<!--                                            <input th:checked="${user.getSex()} == 女 " class="form-check-input" type="radio" name="Sex" value='女'>-->
+<!--                                            <label class="form-check-label">女</label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     <button type="submit" class="btn btn-primary">修改</button>
                                 </form>
                             </table>

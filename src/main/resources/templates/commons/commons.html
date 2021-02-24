@@ -299,21 +299,21 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a shiro:hasPermission="user:all" class="nav-link" th:href="@{/charts}">
+        <a shiro:hasPermission="chart:true" class="nav-link" th:href="@{/charts}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a shiro:hasPermission="user:table" class="nav-link" th:href="@{/student/tables}">
+        <a shiro:hasPermission="stu:true" class="nav-link" th:href="@{/student/tables}">
             <i class="fas fa-fw fa-table"></i>
-            <span>员工管理</span>
+            <span>用户管理</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a shiro:hasPermission="user:company" class="nav-link" th:href="@{/company/tables}">
+        <a shiro:hasPermission="com:com" class="nav-link" th:href="@{/company/tables}">
             <i class="fas fa-fw fa-table"></i>
             <span>公司管理</span>
         </a>
@@ -334,7 +334,7 @@
 <footer class="sticky-footer bg-white" th:fragment="Footer">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; Your Website 2021</span>
         </div>
     </div>
 </footer>

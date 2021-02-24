@@ -8,23 +8,25 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    private Integer id; //
+    private Integer id;     //账号
 
-    private String number;
+    private String number;  //唯一标识号
 
-    private String password;
+    private String permission;//临时权限
 
-    private String role;
+    private String role;    //角色
 
-    private String email;
+    private String password;//密码
 
-    private String name;
+    private String email;   //邮箱
 
-    private String createTime;
+    private String name;    //真实名字
 
-    private String iphone;
+    private String createTime;//创建时间
 
-    private String nickname;
+    private String iphone;  //电话
 
-    private String permission;
+    private String nickname;//昵称
+
+
 }

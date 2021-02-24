@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Identity {
-    private String number;
+    private String number;  //唯一标识
 
-    private String name;
+    private String name;    //角色名
 
-    private String account;
+    private String account; //账号
 
-    private String id;
+    private String id;      //角色标识值
 }
