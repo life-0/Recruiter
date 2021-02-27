@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
+
 /*
  *@Author: life-0
  *@ClassName: test_user
@@ -23,9 +25,9 @@ public class test_user {
     @Test
     public void add_user() {
         NumberUtil number = new NumberUtil ();
-        User user_1 = new User (1, number.getRandomNumber (), "123",
-                "学生", "123456@qq.com", "张三", "2019-10-12",
-                "18376840955", "阿哈哈哈哈哈", "011054");
+        User user_1 = new User (1, number.getRandomNumber (), " ",
+                "学生", "123", "123456@qq.com张三", "张三",
+                new Date (), "18376840955", "阿哈哈哈哈哈");
         System.out.println (userService.insert (user_1));
     }
     @Test

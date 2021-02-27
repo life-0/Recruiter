@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,7 +24,7 @@ public class User {
 
     private String name;    //真实名字
 
-    private String createTime;//创建时间
+    private Date createTime;//创建时间
 
     private String iphone;  //电话
 

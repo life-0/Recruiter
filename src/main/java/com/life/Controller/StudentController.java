@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 /*
@@ -42,16 +44,18 @@ public class StudentController {
     }
 
     @RequestMapping({"/Add"})
-    public String AddUser(@RequestParam(name = "ID") String id,
-                          @RequestParam(name = "Name") String Name,
-                          @RequestParam(name = "Email") String Email,
-                          @RequestParam(name = "Permission") String permission,
-                          @RequestParam(name = "Role") String role,
-                          @RequestParam(name = "password") String password,
-                          Model model) {
+    public String AddUser(
+            @RequestParam(name = "Name") String Name,
+            @RequestParam(name = "Email") String Email,
+            @RequestParam(name = "Permission") String permission,
+            @RequestParam(name = "Role") String role,
+            @RequestParam(name = "Password") String password,
+            Model model) {
 
-        User user = new User (Integer.parseInt (id), new NumberUtil ().getRandomNumber (), permission, role, Name, Email, "", "",
-                password, "");
+        User user = new User (null, new NumberUtil ().getRandomNumber (),
+                permission, role, password, Email, Name, new Date (),
+                "", "");
+        System.out.println (user.toString ());
         int i = userService.insert (user);
         if (i == 1) {
             model.addAttribute ("message", "数据添加成功");

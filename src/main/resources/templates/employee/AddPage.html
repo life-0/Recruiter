@@ -267,31 +267,63 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <form th:action="@{/student/Add}" th:method="post">
                                     <div class="form-group">
-                                        <label>ID</label>
-                                        <input type="text" name="id" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Permission</label>
-                                        <input type="text" name="permission" class="form-control" placeholder="海绵宝宝">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <input type="text" name="role" class="form-control" placeholder="海绵宝宝">
-                                    </div>
-                                    <div class="form-group">
                                         <label>Name</label>
                                         <input type="text" name="Name" class="form-control" placeholder="海绵宝宝">
                                     </div>
-
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="text" name="Password" class="form-control">
+                                    </div>
                                     <div class="form-group">
                                         <label>Email</label>
                                         <input type="email" name="Email" class="form-control"
                                                placeholder="1176244270@qq.com">
                                     </div>
                                     <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="text" name="password" class="form-control">
+                                        <label>Permission</label>
+                                        <input type="text" name="Permission" class="form-control" placeholder="null">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Role: </label>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input"
+                                                       type="radio" name="Role" checked="checked" value='学生'>
+                                                学生
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input"
+                                                       type="radio" name="Role" value='讲师'>
+                                                讲师
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input"
+                                                       type="radio" name="Role" value='外聘教师'>
+                                                外聘教师
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input"
+                                                       type="radio" name="Role" value='临时职员'>
+                                                临时职员
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+
+                                            <label class="form-check-label">
+                                                <input class="form-check-input"
+                                                       type="radio" name="Role" value='教授'>
+                                                教授
+                                            </label>
+                                        </div>
+                                        <!--<input type="text" name="role" class="form-control" placeholder="学生">-->
+                                    </div>
+
                                     <button type="submit" class="btn btn-primary">添加</button>
                                 </form>
                             </table>
