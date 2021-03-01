@@ -50,11 +50,12 @@ public class StudentController {
             @RequestParam(name = "Permission") String permission,
             @RequestParam(name = "Role") String role,
             @RequestParam(name = "Password") String password,
+            @RequestParam(name = "Iphone") String iphone,
             Model model) {
 
         User user = new User (null, new NumberUtil ().getRandomNumber (),
                 permission, role, password, Email, Name, new Date (),
-                "", "");
+                iphone, "");
         System.out.println (user.toString ());
         int i = userService.insert (user);
         if (i == 1) {

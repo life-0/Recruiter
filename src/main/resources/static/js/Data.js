@@ -1,6 +1,6 @@
 (function ($) {
 
-    $(".BatchProcess").click(function () {
+    $(".BatchProcess").click(function () {  //批删除
         let arr = $("input:checkbox:checked").map(function () {
             return $(this).val();
         }).get().join(",");
@@ -8,9 +8,8 @@
         data(arr);
     });
 
-    $('.SingleDel').click(function () {
-
-        data($('.SingleDel').attr('value'));
+    $('.SingleDel').click(function () { //单个删除
+        data($(this).attr('value'));
     });
 
     function data(arr) {
