@@ -16,7 +16,7 @@ public class User {
 
     private String permission;//临时权限
 
-    private String role;    //角色
+    private String role_ID;    //角色
 
     private String password;//密码
 

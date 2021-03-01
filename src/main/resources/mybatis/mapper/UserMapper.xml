@@ -7,7 +7,7 @@
         <id column="ID" jdbcType="INTEGER" property="id"/>
         <id column="number" jdbcType="VARCHAR" property="number"/>
         <result column="Password" jdbcType="CHAR" property="password"/>
-        <result column="Role" jdbcType="VARCHAR" property="role"/>
+        <result column="Role_ID" jdbcType="VARCHAR" property="role_ID"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="create_time" jdbcType="CHAR" property="createTime"/>
@@ -17,7 +17,7 @@
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
-        ID, `number`, `Password`, `Role`, email, `name`, create_time, Iphone, NickName, permission
+        ID, `number`, `Password`, `role_ID`, email, `name`, create_time, Iphone, NickName, permission
     </sql>
     <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
         <!--@mbg.generated-->
@@ -36,10 +36,10 @@
     </delete>
     <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.life.POJO.User" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into recruiter.user (`number`, `Password`, `Role`,
+        insert into recruiter.user (`number`, `Password`, `role_ID`,
                                     email, `name`, create_time,
                                     Iphone, NickName, permission)
-        values (#{number,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, #{role,jdbcType=VARCHAR},
+        values (#{number,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, #{role_ID,jdbcType=VARCHAR},
                 #{email,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createTime,jdbcType=CHAR},
                 #{iphone,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, #{permission,jdbcType=VARCHAR})
     </insert>
@@ -54,8 +54,8 @@
             <if test="password != null">
                 `Password`,
             </if>
-            <if test="role != null">
-                `Role`,
+            <if test="role_ID != null">
+                `role_ID`,
             </if>
             <if test="email != null">
                 email,
@@ -83,8 +83,8 @@
             <if test="password != null">
                 #{password,jdbcType=CHAR},
             </if>
-            <if test="role != null">
-                #{role,jdbcType=VARCHAR},
+            <if test="role_ID != null">
+                #{role_ID,jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 #{email,jdbcType=VARCHAR},
@@ -113,8 +113,8 @@
             <if test="password != null">
                 `Password` = #{password,jdbcType=CHAR},
             </if>
-            <if test="role != null">
-                `Role` = #{role,jdbcType=VARCHAR},
+            <if test="role_ID != null">
+                `role_ID` = #{role_ID,jdbcType=VARCHAR},
             </if>
             <if test="email != null">
                 email = #{email,jdbcType=VARCHAR},
@@ -142,7 +142,7 @@
         <!--@mbg.generated-->
         update recruiter.user
         set `Password`  = #{password,jdbcType=CHAR},
-            `Role`      = #{role,jdbcType=VARCHAR},
+            `role_ID`      = #{role_ID,jdbcType=VARCHAR},
             email       = #{email,jdbcType=VARCHAR},
             `name`      = #{name,jdbcType=VARCHAR},
             create_time = #{createTime,jdbcType=CHAR},
