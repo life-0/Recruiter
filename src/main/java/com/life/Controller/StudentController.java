@@ -1,9 +1,11 @@
 package com.life.Controller;
 
 import com.life.POJO.User;
+import com.life.POJO.UserRole;
 import com.life.POJO.test.Student;
 import com.life.Service.RoleService.StudentService;
 import com.life.Service.RoleService.StudentServiceImpl;
+import com.life.Service.UserRoleServiceImpl;
 import com.life.Service.UserServiceImpl;
 import com.life.Utils.NumberUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +32,9 @@ public class StudentController {
     UserServiceImpl userService;
     @Autowired
     StudentServiceImpl service;
+    @Resource
+    UserRoleServiceImpl userRoleService;
+
 
     @RequestMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
@@ -52,12 +58,17 @@ public class StudentController {
             @RequestParam(name = "Password") String password,
             @RequestParam(name = "Iphone") String iphone,
             Model model) {
-
-        User user = new User (null, new NumberUtil ().getRandomNumber (),
-                permission, role, password, Email, Name, new Date (),
+        String number = new NumberUtil ().getRandomNumber ();
+        User user = new User (null, number,
+                permission, null, password, Email, Name, new Date (),
                 iphone, "");
-        System.out.println (user.toString ());
+
         int i = userService.insert (user);
+        User userID = userService.selectByPrimaryKey (null, number);
+        UserRole userRole = new UserRole (userID.getId (), role, new NumberUtil ().getRandomNumber ());
+        userRoleService.insert (userRole);
+        System.out.println (user.toString ());
+
         if (i == 1) {
             model.addAttribute ("message", "数据添加成功");
         } else {

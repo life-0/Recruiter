@@ -25,7 +25,7 @@
         <include refid="Base_Column_List"/>
         from recruiter.user
         where ID = #{id,jdbcType=INTEGER}
-          and `number` = #{number,jdbcType=VARCHAR}
+          or `number` = #{number,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="map">
         <!--@mbg.generated-->
