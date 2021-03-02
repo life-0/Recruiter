@@ -111,6 +111,11 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="" />
                   <option name="javaModelName" value="UserRole" />
+                  <option name="methodNameList">
+                    <list>
+                      <option value="selectAllByUserId" />
+                    </list>
+                  </option>
                   <option name="moduleName" value="Recruiter" />
                   <option name="sequenceColumn" value="" />
                   <option name="sequenceId" value="" />
