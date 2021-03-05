@@ -38,7 +38,6 @@ public class StudentController {
 
     @RequestMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
-//        List<Student> students = service.studentList ();
         List<User> users = userService.showAll ();
         model.addAttribute ("users", users);
         return "/employee/tables";
@@ -58,16 +57,17 @@ public class StudentController {
             @RequestParam(name = "Password") String password,
             @RequestParam(name = "Iphone") String iphone,
             Model model) {
-        String number = new NumberUtil ().getRandomNumber ();
+        String number = new NumberUtil ().getRandomNumber ();   //临时参数 二次使用
         User user = new User (null, number,
                 permission, null, password, Email, Name, new Date (),
                 iphone, "");
-
         int i = userService.insert (user);
-        User userID = userService.selectByPrimaryKey (null, number);
+        User userID = userService.selectByPrimaryKey (null, number);    //使用上参数获得id
+        userID.setRole_ID (userID.getId ().toString ());
+        userService.updateByPrimaryKey (userID);
+        System.out.println (userID.toString ());
         UserRole userRole = new UserRole (userID.getId (), role, new NumberUtil ().getRandomNumber ());
-        userRoleService.insert (userRole);
-        System.out.println (user.toString ());
+        userRoleService.insert (userRole);//添加进User_Role表
 
         if (i == 1) {
             model.addAttribute ("message", "数据添加成功");
