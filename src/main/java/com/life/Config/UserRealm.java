@@ -36,7 +36,7 @@ public class UserRealm extends AuthorizingRealm {
     //授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        System.out.println ("执行了=>授权doGetAuthorizationInfo 授权");
+//        System.out.println ("执行了=>授权doGetAuthorizationInfo 授权");
 
         //给予用户权限
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo ();
@@ -50,7 +50,7 @@ public class UserRealm extends AuthorizingRealm {
 //        System.out.println ("Role:" + principal.getRole ());
 //        List<String> list = Arrays.asList (principal.getRole ().split (";"));//将权限令牌转换为集合参数
 //        info.addStringPermissions (list);
-        System.out.println (resources.getPurview ());
+//        System.out.println (resources.getPurview ());//打印授权列表
         info.addStringPermissions (resources.getPurview ());
         return info;
     }
@@ -58,7 +58,7 @@ public class UserRealm extends AuthorizingRealm {
     //认证
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
+//        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
         //Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));

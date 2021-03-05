@@ -7,6 +7,8 @@ public interface UserRoleService{
 
     int deleteByPrimaryKey(String number);
 
+    int deleteByUser_ID(Integer UserID);
+
     int insert(UserRole record);
 
     int insertSelective(UserRole record);

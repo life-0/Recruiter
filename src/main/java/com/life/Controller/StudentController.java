@@ -2,8 +2,6 @@ package com.life.Controller;
 
 import com.life.POJO.User;
 import com.life.POJO.UserRole;
-import com.life.POJO.test.Student;
-import com.life.Service.RoleService.StudentService;
 import com.life.Service.RoleService.StudentServiceImpl;
 import com.life.Service.UserRoleServiceImpl;
 import com.life.Service.UserServiceImpl;
@@ -14,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +33,7 @@ public class StudentController {
     UserRoleServiceImpl userRoleService;
 
 
-    @RequestMapping({"/tables", "tables.html"})
+    @GetMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
         List<User> users = userService.showAll ();
         model.addAttribute ("users", users);
@@ -63,9 +60,9 @@ public class StudentController {
                 iphone, "");
         int i = userService.insert (user);
         User userID = userService.selectByPrimaryKey (null, number);    //使用上参数获得id
-        userID.setRole_ID (userID.getId ().toString ());
+        userID.setRole_ID (role);
         userService.updateByPrimaryKey (userID);
-        System.out.println (userID.toString ());
+//        System.out.println (userID.toString ());
         UserRole userRole = new UserRole (userID.getId (), role, new NumberUtil ().getRandomNumber ());
         userRoleService.insert (userRole);//添加进User_Role表
 
@@ -79,25 +76,33 @@ public class StudentController {
 
     @RequestMapping("/DeleteStu")
     @ResponseBody
-    public String DeleteStudent(@RequestParam List<String> data) {
-        for (String s : data) {
+    public String DeleteStudent(@RequestParam List<Integer> data) {
+        int result_y = 0;
+        int result_x = 0;
+        for (Integer s : data) {
             System.out.println (s);
+            result_y = userRoleService.deleteByUser_ID (s);
+            result_x = userService.deleteByPrimaryKey (s, null);
         }
-
-        return "redirect:/student/tables";
+        if (result_x == 1 && result_y == 1)
+            return "ok";
+        else {
+            return "error";
+        }
     }
 
     @RequestMapping("/ToUpdate/{ID}")
     public String ToUpdate(@PathVariable("ID") int ID, Model model) {
         User user = userService.queryUserByID (ID);
         model.addAttribute ("user", user);
-        return "/employee/Update";
+        return "redirect:/employee/Update";
     }
 
     @PostMapping("/Update")
-    public String UpdateStudent(User user) {
-
+    public String UpdateStudent(User user, Model model) {
+        System.out.println (user.toString ());
         int i = userService.updateByPrimaryKeySelective (user);
+        System.out.println ("i=> " + i);
         return "redirect:/student/tables";
     }
 }

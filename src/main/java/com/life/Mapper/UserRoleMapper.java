@@ -1,13 +1,17 @@
 package com.life.Mapper;
 
 import com.life.POJO.UserRole;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserRoleMapper {
     int deleteByPrimaryKey(String number);
+
+    int deleteByUser_ID(Integer UserID);
 
     int insert(UserRole record);
 

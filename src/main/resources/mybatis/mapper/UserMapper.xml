@@ -32,7 +32,7 @@
         delete
         from recruiter.user
         where ID = #{id,jdbcType=INTEGER}
-          and `number` = #{number,jdbcType=VARCHAR}
+          or `number` = #{number,jdbcType=VARCHAR}
     </delete>
     <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.life.POJO.User" useGeneratedKeys="true">
         <!--@mbg.generated-->
@@ -136,7 +136,7 @@
             </if>
         </set>
         where ID = #{id,jdbcType=INTEGER}
-          and `number` = #{number,jdbcType=VARCHAR}
+          or `number` = #{number,jdbcType=VARCHAR}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.life.POJO.User">
         <!--@mbg.generated-->
