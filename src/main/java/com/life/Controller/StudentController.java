@@ -76,7 +76,7 @@ public class StudentController {
 
     @RequestMapping("/DeleteStu")
     @ResponseBody
-    public String DeleteStudent(@RequestParam List<Integer> data) {
+    public String DeleteStudent( @RequestParam List<Integer> data) {
 //        int result_y = 0;
 //        int result_x = 0;
 //        for (Integer s : data) {
