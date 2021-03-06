@@ -16,6 +16,11 @@ public class IndexController {
     public String index(){
         return "index";
     }*/
+    @RequestMapping("/interface")
+    public String Interface(){
+        return "interface/ajax_test";
+    }
+
     @RequestMapping({"/404", "404.html"})
     public String test404() {
         return "error/404";

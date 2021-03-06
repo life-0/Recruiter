@@ -77,18 +77,20 @@ public class StudentController {
     @RequestMapping("/DeleteStu")
     @ResponseBody
     public String DeleteStudent(@RequestParam List<Integer> data) {
-        int result_y = 0;
-        int result_x = 0;
-        for (Integer s : data) {
-            System.out.println (s);
-            result_y = userRoleService.deleteByUser_ID (s);
-            result_x = userService.deleteByPrimaryKey (s, null);
-        }
-        if (result_x == 1 && result_y == 1)
-            return "ok";
-        else {
-            return "error";
-        }
+//        int result_y = 0;
+//        int result_x = 0;
+//        for (Integer s : data) {
+//            System.out.println (s);
+//            result_y = userRoleService.deleteByUser_ID (s);
+//            result_x = userService.deleteByPrimaryKey (s, null);
+//        }
+//        if (result_x == 1 && result_y == 1)
+//            return "ok";
+//        else {
+//            return "error";
+//        }
+        System.out.println (data.toString ());
+        return "ok";
     }
 
     @RequestMapping("/ToUpdate/{ID}")

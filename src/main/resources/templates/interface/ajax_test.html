@@ -1,8 +1,10 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Ajax</title>
-    <script src="static/vendor/jquery/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="/static/vendor/jquery/jquery.js"></script>-->
+    <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
     <style>
         body {
             font-family: 华文楷体;
@@ -42,56 +44,15 @@
     </style>
 </head>
 <body>
-
-<div id="outter" class="outter">
-    <h2 class="center">Ajax测试</h2>
-    <label style="margin-left: 70%; font-family: 华文行楷">made by jayce</label>
-    <div class="row"><label class="contentList">站点:</label><input id="urlR" title="Input RequestUrl"
-                                                                  value="http://localhost:9090"/>
-    </div>
-    <div class="row"><label class="contentList">接口:</label><input id="urlS" title="Input RequestUrl"
-                                                                  value="/showStatus"/></div>
-
-    <div class="row">
-        <label class="contentList">Type:</label>
-        <select id="type" title="Select RequestType">
-            <option value="get">get</option>
-            <option value="post">post</option>
-        </select>
-    </div>
-
-    <div class="row"><label class="contentList">Data:</label><input id="data" title="Input Data" value="{modulesId:1}">
-    </div>
-
-    <div class="row">
-        <label class="contentList">DataType:</label>
-        <select id="datatype" title="Select DataType">
-            <option value="json">json</option>
-            <option value="jsonp">jsonp</option>
-            <option value="text">text</option>
-        </select>
-    </div>
-
-    <div class="row"><label class="contentList">successAlert:</label><input id="successalert" title="Input successAlert"
-                                                                            value="succcess"/></div>
-
-    <div class="row"><label class="contentList">errorAlert:</label><input id="erroralert" title="Input errorAlert"
-                                                                          value="error"/></div>
-
-    <div style="margin-top:10px"><input type="button"
-                                        style=" margin-left:10%; background: lightskyblue; font-size: 20px;color: white"
-                                        value="连接测试" id="bt"/></div>
-</div>
 <script>
-    $("#bt").click(
-        function () {
+    $(".test_bt").click(function () {
             var url = document.getElementById("urlR").value + document.getElementById("urlS").value;
             var type = document.getElementById("type").value;
             var data = document.getElementById("data").value;
             var datatype = document.getElementById("datatype").value;
             var successalert = document.getElementById("successalert").value;
             var erroralert = document.getElementById("erroralert").value;
-
+            console.log(url,type,data)
             ajax(url, type, data, datatype, successalert, erroralert);
 
         }
@@ -100,7 +61,7 @@
     function ajax(url, type, data, dataType, successAlert, errorAlert) {
 
         alert(url + "--" + type + "--" + data + "--" + dataType + "--" + successAlert + "--" + errorAlert);
-        var result = eval('(' + data + ')');//Javascript
+        const result = eval('(' + data + ')');//Javascript
         $.ajax({
             url: url,//此处换成你的服务端地址
             type: type,
@@ -118,5 +79,61 @@
         });
     }
 </script>
+
+<div id="outter" class="outter">
+    <h2 class="center">Ajax测试</h2>
+    <label style="margin-left: 70%; font-family: 华文行楷">made by jayce</label>
+    <div class="row">
+        <label class="contentList">站点:</label>
+        <input id="urlR" title="Input RequestUrl"
+               value="http://localhost:9090"/>
+    </div>
+    <div class="row">
+        <label class="contentList">接口:</label>
+        <input id="urlS" title="Input RequestUrl"
+               value="/student/DeleteStu"/>
+    </div>
+
+    <div class="row">
+        <label class="contentList">Type:</label>
+        <select id="type" title="Select RequestType">
+            <option value="post">post</option>
+            <option value="get">get</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label class="contentList">Data:</label>
+        <input id="data" title="Input Data" value="{modulesId:1}">
+    </div>
+
+    <div class="row">
+        <label class="contentList">DataType:</label>
+        <select id="datatype" title="Select DataType">
+            <option value="json">json</option>
+            <option value="jsonp">jsonp</option>
+            <option value="text">text</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label class="contentList">successAlert:</label>
+        <input id="successalert" title="Input successAlert"
+               value="succcess"/>
+    </div>
+
+    <div class="row">
+        <label class="contentList">errorAlert:</label>
+        <input id="erroralert" title="Input errorAlert"
+               value="error"/>
+    </div>
+
+    <div style="margin-top:10px">
+        <input type="button"
+               style=" margin-left:10%; background: lightskyblue; font-size: 20px;color: white"
+               value="连接测试" class="test_bt"/>
+    </div>
+</div>
+
 </body>
 </html>
