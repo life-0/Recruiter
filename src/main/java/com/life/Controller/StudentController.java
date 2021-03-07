@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -76,21 +77,19 @@ public class StudentController {
 
     @RequestMapping("/DeleteStu")
     @ResponseBody
-    public String DeleteStudent( @RequestParam List<Integer> data) {
-//        int result_y = 0;
-//        int result_x = 0;
-//        for (Integer s : data) {
-//            System.out.println (s);
-//            result_y = userRoleService.deleteByUser_ID (s);
-//            result_x = userService.deleteByPrimaryKey (s, null);
-//        }
-//        if (result_x == 1 && result_y == 1)
-//            return "ok";
-//        else {
-//            return "error";
-//        }
-        System.out.println (data.toString ());
-        return "ok";
+    public String DeleteStudent(@RequestParam ArrayList<Integer> data) {
+        int result_y = 0;
+        int result_x = 0;
+        for (Integer s : data) {
+            System.out.println (s);
+            result_y = userRoleService.deleteByUser_ID (s);
+            result_x = userService.deleteByPrimaryKey (s, null);
+        }
+        if (result_x == 1 && result_y == 1) //简单判断程序是否执行成功
+            return "ok";
+        else {
+            return "error";
+        }
     }
 
     @RequestMapping("/ToUpdate/{ID}")
