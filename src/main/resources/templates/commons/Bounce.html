@@ -119,22 +119,11 @@
         $(document).ready(function () {
             $(".tip").on('click', function () {
                 const box = $('.box');
-                let height = parseInt(box.css("height"));
-                if (height === 60) {
-
-                    // box.slideUp(300)
-                    box.slideDown(300)
-                    box.css("height", "0px");
-                    height = parseInt(box.css("height"));
-
-                    // box.show("slow")
-                } else if (height === 0) {
-                    box.css("height", "60px");
-                    box.slideDown(300)
-                    box.css("display", "none")
-
-
-                }
+                $(".tip").on('click', function () {
+                    let box = $('.box');
+                    box.slideToggle(500)    //弹出弹入相互转换
+                    box.css("display", "block") //显示而已
+                });
             });
 
         });
