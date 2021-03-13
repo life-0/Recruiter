@@ -92,8 +92,8 @@ public class StudentController {
         }
     }
 
-    @RequestMapping("/ToUpdate/{ID}")
-    public String ToUpdate(@PathVariable("ID") int ID, Model model) {
+    @RequestMapping("/ToUpdate")
+    public String ToUpdate(int ID, Model model) {
         User user = userService.queryUserByID (ID);
         model.addAttribute ("user", user);
         return "redirect:/employee/Update";

@@ -292,8 +292,8 @@
                                     <td th:text="${user.getEmail()}"></td>
                                     <td th:text="${user.getPermission()}"></td>
                                     <td>
-                                        <a class="btn btn-sm btn-primary"
-                                           th:href="@{/student/ToUpdate/} + ${user.getId()}">编辑</a>
+                                        <a class="btn btn-sm btn-primary SingleModify"
+                                           th:value="${user.getId()}">编辑</a>
                                         <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
                                            th:value="${user.getId()}">
                                             删除</a>
