@@ -77,7 +77,7 @@ public class StudentController {
 
     @RequestMapping("/DeleteStu")
     @ResponseBody
-    public String DeleteStudent(@RequestParam ArrayList<Integer> data) {
+    public String DeleteStudent(@RequestParam  ArrayList<Integer> data) {
         int result_y = 0;
         int result_x = 0;
         for (Integer s : data) {
@@ -93,7 +93,7 @@ public class StudentController {
     }
 
     @RequestMapping("/ToUpdate")
-    public String ToUpdate(int ID, Model model) {
+    public String ToUpdate(@RequestParam int ID, Model model) {
         User user = userService.queryUserByID (ID);
         model.addAttribute ("user", user);
         return "redirect:/employee/Update";

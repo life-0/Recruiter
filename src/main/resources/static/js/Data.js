@@ -12,12 +12,11 @@
             data($(this).attr('value'));
         });
         $(".SingleModify").on('click', function () {
-            console.log( $(this).val());
-            $.http.post("http://localhost:9090/student/ToUpdate",$(this))
+            $.post("/student/ToUpdate", {ID: $(this).attr('value')});
         })
 
         function paramsJump(Params, URL, Type, targetUrl) {
-            $.http.post({
+            $.ajax({
                 type: Type, //提交方式
                 // dataType: "json",    //指定返回的数据类型
                 url: URL,//路径
