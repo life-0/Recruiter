@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /*
  *@Author life-0
@@ -77,7 +78,7 @@ public class StudentController {
 
     @RequestMapping("/DeleteStu")
     @ResponseBody
-    public String DeleteStudent(@RequestParam  ArrayList<Integer> data) {
+    public String DeleteStudent(@RequestParam ArrayList<Integer> data) {
         int result_y = 0;
         int result_x = 0;
         for (Integer s : data) {
@@ -92,14 +93,15 @@ public class StudentController {
         }
     }
 
-    @RequestMapping("/ToUpdate")
-    public String ToUpdate(@RequestParam int ID, Model model) {
+    @RequestMapping("/ToUpdate/{ID}")
+    public String ToUpdate(@PathVariable(name = "ID") int ID, Model model) {
+        System.out.println (ID);
         User user = userService.queryUserByID (ID);
         model.addAttribute ("user", user);
-        return "redirect:/employee/Update";
+        return "/employee/Update";
     }
 
-    @PostMapping("/Update")
+    @RequestMapping("/Update")
     public String UpdateStudent(User user, Model model) {
         System.out.println (user.toString ());
         int i = userService.updateByPrimaryKeySelective (user);

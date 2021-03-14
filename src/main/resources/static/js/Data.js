@@ -12,7 +12,9 @@
             data($(this).attr('value'));
         });
         $(".SingleModify").on('click', function () {
-            $.post("/student/ToUpdate", {ID: $(this).attr('value')});
+            // $.post("/student/ToUpdate", {ID: $(this).attr('value')})
+            window.location.href="/student/ToUpdate/"+$(this).attr('value');
+
         })
 
         function paramsJump(Params, URL, Type, targetUrl) {
@@ -50,7 +52,7 @@
                 async: false,
                 success: function (result) {//返回数据根据结果进行相应的处理
                     if (result === 'ok') {
-                        window.location.href = "http://localhost:9090/student/tables"
+                        window.location.href = "/student/tables"
                     } else {
                         window.alert(result);
                     }
