@@ -11,33 +11,11 @@
         $('.SingleDel').click(function () { //单个删除
             data($(this).attr('value'));
         });
-        $(".SingleModify").on('click', function () {
+        $(".SingleModify").on('click', function () {    //单个编辑 传参
             // $.post("/student/ToUpdate", {ID: $(this).attr('value')})
             window.location.href="/student/ToUpdate/"+$(this).attr('value');
 
-        })
-
-        function paramsJump(Params, URL, Type, targetUrl) {
-            $.ajax({
-                type: Type, //提交方式
-                // dataType: "json",    //指定返回的数据类型
-                url: URL,//路径
-                data: {
-                    "data": Params
-                },//数据
-                async: false,
-                success: function (result) {//返回数据根据结果进行相应的处理
-                    if (result === 'ok') {
-                        window.location.href = targetUrl
-                    } else {
-                        window.alert(result);
-                    }
-                },
-                error: function (result) {
-                    window.alert("数据无法找到" + result);
-                }
-            });
-        }
+        });
 
         //链接参考:https://blog.csdn.net/life_2/article/details/114487222?spm=1001.2014.3001.5501
         //        https://www.cnblogs.com/Marydon20170307/p/12612921.html
