@@ -20,6 +20,9 @@
     <link th:href="@{/css/admin-2.min.css}" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link th:href="@{/vendor/datatables/dataTables.bootstrap4.min.css}" rel="stylesheet">
+    <!-- Custom styles for Component template-->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/Plugin.css}" />
+
 
 </head>
 
@@ -300,6 +303,8 @@
                                     </td>
                                 </tr>
                                 </tbody>
+                                <!--小提示组件-->
+                                <ul th:replace="~{/commons/commons::BoxTips}"></ul>
                             </table>
                         </div>
                     </div>
@@ -312,13 +317,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2021</span>
-                </div>
-            </div>
-        </footer>
+        <ul th:replace="~{/commons/commons::Footer}"></ul>
         <!-- End of Footer -->
 
     </div>
@@ -371,6 +370,8 @@
 
 <!-- Page level custom scripts -->
 <script th:src="@{/js/demo/datatables-demo.js}"></script>
+<!-- Component scripts for table Operating response-->
+<script th:src="@{/js/Component.js}"></script>
 
 </body>
 

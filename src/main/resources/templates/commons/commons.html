@@ -204,7 +204,8 @@
 <!-- End of Topbar -->
 
 <!-- Sidebar 侧边栏 -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-toggled toggled" th:fragment="sidebar" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-toggled toggled" th:fragment="sidebar"
+    id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" th:href="@{index.html}">
@@ -324,11 +325,31 @@
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0 " id="sidebarToggle" ></button>
+        <button class="rounded-circle border-0 " id="sidebarToggle"></button>
     </div>
 
 </ul>
 <!-- End of Sidebar -->
+
+
+<!-- BoxTips 操作结果提示-->
+<div class="container-fluid" th:fragment="BoxTips">
+    <div>
+        <button type="button" class="tip">---测试---</button>
+    </div>
+
+    <div class="BoxTips ">
+        <div class="TipTitle sans-serif">
+            标题2332<span class="close Xtip"><img th:src="@{static/img/Xtip.jpg}" style="width: 50%"
+                                                alt="关掉提示"></span>
+        </div>
+        <div class="Content Segoe UI Emoji">
+            English, something 第一个时间 11
+        </div>
+    </div>
+</div>
+<!-- End of BoxTips -->
+
 
 <!-- Footer 底部-->
 <footer class="sticky-footer bg-white" th:fragment="Footer">
@@ -339,10 +360,6 @@
     </div>
 </footer>
 <!-- End of Footer -->
-
-<!-- BoxTip 操作结果提示-->
-
-<!-- End of BoxTip -->
 
 <!-- Bootstrap core JavaScript-->
 <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
@@ -360,5 +377,7 @@
 
 <!-- Page level custom scripts -->
 <script th:src="@{/js/demo/datatables-demo.js}"></script>
+<!-- Component scripts for table Operating response-->
+<script src="js/Component.js"></script>
 
 </html>

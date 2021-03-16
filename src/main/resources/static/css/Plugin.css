@@ -22,11 +22,11 @@ html, body {
     padding: 0;
     text-align: center;
     position: absolute;
-    left: 89%;
+    left: 85%;
     right: 0;
     bottom: 0;
     display: block; /*none*/
-    z-index: auto;
+    z-index: 4;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid #e3e6f0 !important; /*!important 表示应用最高优先级 可直接覆盖掉父级的规则集 */
