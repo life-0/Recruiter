@@ -333,21 +333,25 @@
 
 
 <!-- BoxTips 操作结果提示-->
-<div class="container-fluid" th:fragment="BoxTips">
-    <div>
-        <button type="button" class="tip">---测试---</button>
-    </div>
-
-    <div class="BoxTips ">
-        <div class="TipTitle sans-serif">
-            标题2332<span class="close Xtip"><img th:src="@{static/img/Xtip.jpg}" style="width: 50%"
-                                                alt="关掉提示"></span>
+<ul th:fragment="BoxTips">
+    <div class="container-fluid">
+        <div>
+            <button type="button" class="tip">---测试---</button>
         </div>
-        <div class="Content Segoe UI Emoji">
-            English, something 第一个时间 11
+        <div class="BoxTips ">
+            <div class="TipTitle sans-serif">
+                标题2332
+                <span class="close Xtip">
+            <img th:src="@{../static/img/Xtip.jpg}" style="width: 50%"
+                 alt="关掉提示">
+            </span>
+            </div>
+            <div class="Content Segoe UI Emoji">
+                English, something 第一个时间 11
+            </div>
         </div>
     </div>
-</div>
+</ul>
 <!-- End of BoxTips -->
 
 
@@ -378,6 +382,6 @@
 <!-- Page level custom scripts -->
 <script th:src="@{/js/demo/datatables-demo.js}"></script>
 <!-- Component scripts for table Operating response-->
-<script src="js/Component.js"></script>
+<script th:src="@{../static/js/Component.js}"></script>
 
 </html>

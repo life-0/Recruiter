@@ -39,7 +39,7 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
         registry.addInterceptor (new LoginHandleInterceptor ())
                 .addPathPatterns ("/**")
                 .excludePathPatterns ("/login.html", "/login", "/index.html", "/user/login",
-                        "/css/**", "/img/**", "/js/**", "/scss/**", "/vendor/**")
+                        "/css/**", "/img/**", "/static/js/**", "/scss/**", "/vendor/**")
                 .excludePathPatterns ( "/docs.html","/swagger-resources/**",
                         "/webjars/**", "/v2/**", "/docs.html/**")
                 .excludePathPatterns ("/swagger-ui.html")
