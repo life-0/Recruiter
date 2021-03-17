@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <!--    <meta name="description" content="">-->
+    <!--    <meta name="author" content="">-->
 
     <title>Login</title>
 
     <!-- Custom fonts for this template-->
-    <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+    <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link th:href="@{/css/admin-2.min.css}" rel="stylesheet">
-    <script th:src="@{/vendor/jquery/jquery.js}"></script>
+    <link href="/css/admin-2.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -45,7 +44,7 @@
                                 <div class="text-center">
                                     <!--如果msg不为空,则不显示消息-->
                                     <p class="h4 text-gray-900 mb-4" style="color: red" th:text="${msg}"
-                                       th:if="${not #strings.isEmpty(msg) }" ></p>
+                                       th:if="${not #strings.isEmpty(msg) }"></p>
                                 </div>
                                 <form class="user" th:action="@{/user/login}" method="post">
                                     <div class="form-group">
@@ -59,12 +58,14 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" name="RememberMe" class="custom-control-input" id="customCheck">
+                                            <input type="checkbox" name="RememberMe" class="custom-control-input"
+                                                   id="customCheck">
                                             <label class="custom-control-label" for="customCheck"
                                                    th:text="#{login.remember}">Remember Me</label>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-user btn-block" th:text="#{login.register}">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block"
+                                            th:text="#{login.register}">
                                         Login
                                     </button>
                                     <hr>
@@ -105,15 +106,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script th:src="@{/vendor/jquery/jquery.js}"></script>
-<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script src="/static/vendor/jquery/jquery.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script th:src="@{js/sb-admin-2.min.js}"></script>
-
+<script src="static/js/sb-admin-2.min.js"></script>
 </body>
 
 </html>
