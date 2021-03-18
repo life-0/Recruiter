@@ -6,10 +6,10 @@
     /*background: #fdfdfd;*/
     padding: 0;
     text-align: center;
-    position: absolute;
-    left: 88.3%;
+    position: fixed;
+    left: 85.4%;
     right: 0;
-    bottom: 0;
+    bottom: 0.27rem;
     display: block; /*none*/
     z-index: 4 !important;
     background-color: #fff;

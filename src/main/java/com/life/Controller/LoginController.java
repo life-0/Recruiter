@@ -22,10 +22,11 @@ import javax.servlet.http.HttpSession;
 */
 @Controller
 public class LoginController {
-    @RequestMapping("ToLogin")
+    @RequestMapping("/ToLogin")
     public String toLogin(){
         return "login";
     }
+
     @RequestMapping("/user/login")
     public String login(@RequestParam("ID") String ID,
                         @RequestParam("password") String password,

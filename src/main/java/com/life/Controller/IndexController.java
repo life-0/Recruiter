@@ -51,7 +51,7 @@ public class IndexController {
         return "forgot-password";
     }
 
-    @RequestMapping({"/login", "login.html"})
+    @RequestMapping({"/","/login", "login.html"})
     public String login() {
         return "login";
     }
