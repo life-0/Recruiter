@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 */
 @Controller
 public class IndexController {
-    /*@RequestMapping({"/","index.html"})
+    @RequestMapping({"/","index.html"})
     public String index(){
         return "index";
-    }*/
+    }
     @RequestMapping("/interface")
     public String Interface(){
         return "interface/ajax_test";
@@ -51,7 +51,7 @@ public class IndexController {
         return "forgot-password";
     }
 
-    @RequestMapping({"/","/login", "login.html"})
+    @RequestMapping({"/login", "login.html"})
     public String login() {
         return "login";
     }

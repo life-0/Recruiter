@@ -2,6 +2,7 @@ package com.life;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -9,6 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan("com.life.Mapper")
 @EnableScheduling
 @EnableSwagger2 //开启swagger
+@ServletComponentScan
 public class SpringbootWebApplication {
 
     public static void main(String[] args) {

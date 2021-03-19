@@ -43,6 +43,7 @@ public class ShiroConfig {
 //        filterMap.put ("/charts","perms[user:company]");
         filterMap.put ("/student/*","perms[stu:true]");
         filterMap.put ("/charts","perms[com:true]");
+        filterMap.put ("login.html","anon");
 
         //设置登出
         filterMap.put ("/logout","logout");
