@@ -19,40 +19,29 @@ import javax.servlet.http.HttpSession;
 */
 public class LoginHandleInterceptor implements HandlerInterceptor {
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-//        //过滤路径中带 ;jsessionid=003EC21DCDFA5169409DB58EE39C0896 的问题
-//        String requestURI = request.getRequestURI ();
-//        HttpSession session = request.getSession ();
-//        if (requestURI.contains (";jsessionid=")) {
-//            //替换掉路径上的内容, ;jsessionid=003EC21DCDFA5169409DB58EE39C0896
-//            requestURI = requestURI.replace (";jsessionid=" + session.getId (), "");
-//            //重定向一下
-//            request.getRequestDispatcher (requestURI).forward (request, response);
-//            return true;
-//
-//
-//        }else {
-//            return true;
-//        }
-
-            //登陆成功后,应该会有自己的session
-            Object loginSession = request.getSession ().getAttribute ("loginSession");
-            if (loginSession == null) {
-                request.setAttribute ("msg", "无权限,请先登录");
-                request.getRequestDispatcher ("/login.html").forward (request, response);
-                return false;
-            } else {
-                return true;
-            }
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
+                             Object handler) throws Exception {
+        //登陆成功后,应该会有自己的session
+        Object loginSession = request.getSession ().getAttribute ("loginSession");
+        if (loginSession == null) {
+            request.setAttribute ("msg", "无权限,请先登录");
+            request.getRequestDispatcher ("/login.html").forward (request, response);
+            return false;
+        } else {
+            return true;
+        }
     }
 
+    //
     @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest request, HttpServletResponse response,
+                           Object handler, ModelAndView modelAndView) throws Exception {
 
     }
 
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
+                                Object handler, Exception ex) throws Exception {
 
     }
 }

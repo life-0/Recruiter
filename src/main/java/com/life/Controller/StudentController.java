@@ -12,10 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /*
  *@Author life-0
@@ -101,10 +102,19 @@ public class StudentController {
     }
 
     @RequestMapping("/Update")
-    public String UpdateStudent(User user, Model model) {
+    public String UpdateStudent(User user, HttpServletResponse response) {
         System.out.println (user.toString ());
         int i = userService.updateByPrimaryKeySelective (user);
         System.out.println ("i=> " + i);
+        Cookie cookie;//设置返回消息
+        if(i==1){
+            cookie = new Cookie ("content", "修改成功");
+        }else {
+            cookie = new Cookie ("content", "修改失败");
+        }
+        cookie.setPath ("/student/tables");
+        cookie.setMaxAge (60);  //设置cookie存活时间
+        response.addCookie (cookie);
         return "redirect:/student/tables";
     }
 }

@@ -41,7 +41,27 @@
             });
         }
 
-
+        function DataTransport(data,type,targetUrl,redirectUrl) {
+            $.ajax({
+                type:type, //提交方式
+                // dataType: "json",    //指定返回的数据类型
+                url: targetUrl,//路径
+                data: {
+                    "data": data
+                },//数据，这里使用的是Json格式进行传输
+                async: false,
+                success: function (result) {//返回数据根据结果进行相应的处理
+                    if (result === 'ok') {
+                        window.location.href =redirectUrl
+                    } else {
+                        window.alert(result);
+                    }
+                },
+                error: function (result) {
+                    window.alert("传输失败,请重试..." + result);
+                }
+            });
+        }
     }
 
 )(jQuery);

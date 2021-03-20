@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <!--公共组件,实现代码复用-->
 
@@ -346,8 +347,7 @@
                  alt="关掉提示">
             </span>
             </div>
-            <div class="Content Segoe UI Emoji">
-                English, something 第一个时间 11
+            <div class="Content Segoe UI Emoji" th:text="${content}">
             </div>
         </div>
     </div>
