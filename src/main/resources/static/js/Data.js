@@ -15,6 +15,7 @@
             // $.post("/student/ToUpdate", {ID: $(this).attr('value')})
             window.location.href="/student/ToUpdate/"+$(this).attr('value');
 
+
         });
 
         //链接参考:https://blog.csdn.net/life_2/article/details/114487222?spm=1001.2014.3001.5501

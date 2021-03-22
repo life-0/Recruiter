@@ -105,7 +105,13 @@ public class StudentController {
     public String UpdateStudent(User user, HttpServletResponse response) {
         System.out.println (user.toString ());
         int i = userService.updateByPrimaryKeySelective (user);
-        System.out.println ("i=> " + i);
+        int j=0;
+        List<UserRole> userRoles = userRoleService.selectAllByUserId (user.getId ());
+        for (UserRole userRole : userRoles) {
+            userRole.setIdentityId (user.getRole_ID ());
+            j = userRoleService.updateByPrimaryKey (userRole);
+        }
+        System.out.println ("i=> " + i+"\n"+"j=>"+j);
         Cookie cookie;//设置返回消息
         if(i==1){
             cookie = new Cookie ("content", "修改成功");
