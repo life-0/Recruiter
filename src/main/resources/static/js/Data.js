@@ -34,7 +34,7 @@
                     BoxTips.slideToggle(500);
                     BoxTips.css("display", "block");
                     BoxTips.children('.Content').text='修改成功';
-                    alert(data)
+                    console.log(data)
                 },
                 error: function (e) {
                     alert("错误！！");

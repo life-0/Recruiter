@@ -264,7 +264,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <form class="form-data" enctype="multipart/form-data" th:method="post">
+                                <form class="form-data" >
                                     <!--th:action="@{/student/Update}"-->
                                     <div class="form-group">
                                         <label>学号</label>
@@ -273,12 +273,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" name="Name" class="form-control"
+                                        <input type="text" name="name" class="form-control"
                                                th:value="${user.getName()}">
                                     </div>
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" name="Email" class="form-control"
+                                        <input type="email" name="email" class="form-control"
                                                th:value="${user.getEmail()}">
                                     </div>
                                     <div class="form-group">
@@ -286,14 +286,14 @@
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
                                                 <input class="form-check-input" th:checked="${user.getRole_ID()}==1"
-                                                       type="radio" name="Role_ID" value='1'>
+                                                       type="radio" name="role_ID" value='1'>
                                                 学生
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
                                                 <input class="form-check-input"
-                                                       type="radio" name="Role_ID" th:checked="${user.getRole_ID()}==2"
+                                                       type="radio" name="role_ID" th:checked="${user.getRole_ID()}==2"
                                                        value='2'>
                                                 讲师
                                             </label>
@@ -301,7 +301,7 @@
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
                                                 <input class="form-check-input"
-                                                       type="radio" name="Role_ID" th:checked="${user.getRole_ID()}==6"
+                                                       type="radio" name="role_ID" th:checked="${user.getRole_ID()}==6"
                                                        value='6'>
                                                 外聘教师
                                             </label>
@@ -309,7 +309,7 @@
                                         <div class="form-check form-check-inline">
                                             <label class="form-check-label">
                                                 <input class="form-check-input"
-                                                       type="radio" name="Role_ID" th:checked="${user.getRole_ID()}==7"
+                                                       type="radio" name="role_ID" th:checked="${user.getRole_ID()}==7"
                                                        value='7'>
                                                 临时职员
                                             </label>
@@ -318,7 +318,7 @@
 
                                             <label class="form-check-label">
                                                 <input class="form-check-input"
-                                                       type="radio" name="Role_ID" th:checked="${user.getRole_ID()}==8"
+                                                       type="radio" name="role_ID" th:checked="${user.getRole_ID()}==8"
                                                        value='8'>
                                                 教授
                                             </label>
@@ -327,7 +327,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>NickName</label>
-                                        <input type="text" name="Nickname" class="form-control"
+                                        <input type="text" name="nickname" class="form-control"
                                                th:value="${user.getNickname()}">
                                     </div>
                                     <div class="form-group">

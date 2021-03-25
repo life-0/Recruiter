@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Date;
@@ -103,7 +104,7 @@ public class StudentController {
 
     @RequestMapping("/Update")
     @ResponseBody
-    public String UpdateStudent(@RequestBody User user, HttpServletResponse response) {
+    public String UpdateStudent(@RequestBody User user) {
         System.out.println (user.toString ());
         int i = userService.updateByPrimaryKeySelective (user);
         int j=0;
