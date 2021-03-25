@@ -4,12 +4,11 @@
         BoxTips.slideToggle(500)
         BoxTips.css("display", "block")
     });
-    // BoxTips.on('click', function () {
-    //     window.alert(getCookie("content"))
-    // });
+
     $('.testCookie').on('click', function () {
       $('.Content').text(getCookie("content"))
-        
+        //$.cookie('the_cookie', '', { expires: -1 }); // 删除 cookie
+
     })
 
     //获得cookie值

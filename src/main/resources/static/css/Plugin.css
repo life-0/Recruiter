@@ -10,7 +10,7 @@
     left: 85.4%;
     right: 0;
     bottom: 0.27rem;
-    display: block; /*none*/
+    display: none; /*none*/
     z-index: 4 !important;
     background-color: #fff;
     background-clip: border-box;
@@ -19,9 +19,13 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    box-shadow:0 3px 15px 3px #9ca0b1;
-
 }
+
+.BoxTips:hover {
+    margin-top: -8px;
+    box-shadow: 0 3px 15px 3px #9ca0b1;
+}
+
 .BoxTips .TipTitle {
     margin: auto;
     /*width: 97.3%;*/

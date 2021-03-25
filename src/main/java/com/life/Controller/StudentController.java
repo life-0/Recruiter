@@ -102,7 +102,8 @@ public class StudentController {
     }
 
     @RequestMapping("/Update")
-    public String UpdateStudent(User user, HttpServletResponse response) {
+    @ResponseBody
+    public String UpdateStudent(@RequestBody User user, HttpServletResponse response) {
         System.out.println (user.toString ());
         int i = userService.updateByPrimaryKeySelective (user);
         int j=0;
@@ -112,15 +113,15 @@ public class StudentController {
             j = userRoleService.updateByPrimaryKey (userRole);
         }
         System.out.println ("i=> " + i+"\n"+"j=>"+j);
-        Cookie cookie;//设置返回消息
-        if(i==1){
-            cookie = new Cookie ("content", "修改成功");
-        }else {
-            cookie = new Cookie ("content", "修改失败");
-        }
-        cookie.setPath ("/student/tables");
-        cookie.setMaxAge (60);  //设置cookie存活时间
-        response.addCookie (cookie);
-        return "redirect:/student/tables";
+//        Cookie cookie;//设置返回消息
+//        if(i==1){
+//            cookie = new Cookie ("content", "修改成功");
+//        }else {
+//            cookie = new Cookie ("content", "修改失败");
+//        }
+//        cookie.setPath ("/student/tables");
+//        cookie.setMaxAge (30);  //设置cookie存活时间
+//        response.addCookie (cookie);
+        return "ok";
     }
 }

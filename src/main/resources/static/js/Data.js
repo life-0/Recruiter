@@ -11,12 +11,45 @@
         $('.SingleDel').click(function () { //单个删除
             data($(this).attr('value'));
         });
+
         $(".SingleModify").on('click', function () {    //单个编辑 传参
             // $.post("/student/ToUpdate", {ID: $(this).attr('value')})
-            window.location.href="/student/ToUpdate/"+$(this).attr('value');
+            window.location.href = "/student/ToUpdate/" + $(this).attr('value');
+        });
 
+        $(".submitData").on('click', function () {
+            let formObject = {};
+            let formArray = $(".form-data").serializeArray();
+            $.each(formArray, function (i, item) {
+                formObject[item.name] = item.value;
+            });
+            $.ajax({
+                url: "/student/Update",
+                type: "post",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(formObject),
+                success: function (data) {
+                    window.location.href = '/student/tables'
+                    let BoxTips = $('.BoxTips');
+                    BoxTips.slideToggle(500);
+                    BoxTips.css("display", "block");
+                    BoxTips.children('.Content').text='修改成功';
+                    alert(data)
+                },
+                error: function (e) {
+                    alert("错误！！");
+                }
+            });
+            // DataTransport(
+            //     // $('.form-data').serialize(),
+            //     JSON.stringify(formObject),
+            //     'POST',
+            //     '/student/Update',
+            //     '/student/tables'
+            // )
 
         });
+
 
         //链接参考:https://blog.csdn.net/life_2/article/details/114487222?spm=1001.2014.3001.5501
         //        https://www.cnblogs.com/Marydon20170307/p/12612921.html
@@ -29,6 +62,7 @@
                     "data": arr
                 },//数据，这里使用的是Json格式进行传输
                 async: false,
+
                 success: function (result) {//返回数据根据结果进行相应的处理
                     if (result === 'ok') {
                         window.location.href = "/student/tables"
@@ -42,18 +76,21 @@
             });
         }
 
-        function DataTransport(data,type,targetUrl,redirectUrl) {
+        function DataTransport(data, type, targetUrl, redirectUrl) {
             $.ajax({
-                type:type, //提交方式
+                type: type, //提交方式
                 // dataType: "json",    //指定返回的数据类型
                 url: targetUrl,//路径
                 data: {
                     "data": data
                 },//数据，这里使用的是Json格式进行传输
+                contentType: "application/json; charset=utf-8",
                 async: false,
+                cache: false,
+                processData: false,
                 success: function (result) {//返回数据根据结果进行相应的处理
                     if (result === 'ok') {
-                        window.location.href =redirectUrl
+                        window.location.href = redirectUrl
                     } else {
                         window.alert(result);
                     }
