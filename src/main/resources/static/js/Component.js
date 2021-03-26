@@ -1,4 +1,5 @@
 (function ($) {
+    document.write("<script language=javascript src='/static/js/Data.js'><\/script>");
     let BoxTips = $('.BoxTips');
     $(".tip,.close").on('click', function () {
         BoxTips.slideToggle(500)

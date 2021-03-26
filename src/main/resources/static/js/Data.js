@@ -29,12 +29,12 @@
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(formObject),
                 success: function (data) {
-                    window.location.href = '/student/tables'
-                    let BoxTips = $('.BoxTips');
-                    BoxTips.slideToggle(500);
-                    BoxTips.css("display", "block");
-                    BoxTips.children('.Content').text='修改成功';
-                    console.log(data)
+                    if (data === "ok") {
+                        window.location.href = '/student/tables'
+                        $('.Content').text('修改成功!');
+                        $('.tip').trigger("click");
+                        console.log(data)
+                    }
                 },
                 error: function (e) {
                     alert("错误！！");
