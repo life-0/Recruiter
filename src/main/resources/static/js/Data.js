@@ -30,10 +30,13 @@
                 data: JSON.stringify(formObject),
                 success: function (data) {
                     if (data === "ok") {
-                        window.location.href = '/student/tables'
-                        $('.Content').text('修改成功!');
-                        $('.tip').trigger("click");
-                        console.log(data)
+                        let frame =window.open("/student/tables","_self");
+                        // frame.postMessage("a message","/student/tables")
+                        // 等该窗口装载完成时，向该窗口发送消息
+                        // frame.onload = function () {
+                        //     // 向/student/tables页面发送消息
+                        //     frame.postMessage("a message","*")
+                        // }
                     }
                 },
                 error: function (e) {
@@ -47,7 +50,6 @@
             //     '/student/Update',
             //     '/student/tables'
             // )
-
         });
 
 
