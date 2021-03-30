@@ -1,20 +1,24 @@
 (function ($) {
-    $(document).ready(function (){
-        let Content= getCookie("content")
+    $(document).ready(function () {
+        let Content = getCookie("content")
         console.log(Content)
-        if (Content!==null){
-            let content=$('.Content');
+        if (Content !== "") {
+            let content = $('.Content');
             content.text(Content); //将content的cookie值写入小提示的文本框中
-            let tip= $('.tip');
+            let tip = $('.tip');
             tip.triggerHandler('click');//主动触发 click按钮
-            let isFocus= $('.BoxTips').is(":focus");//判断小提示是否获取焦点
-            if (!isFocus){
-                tip.delay(3000).triggerHandler('click')
-            }
-            $.cookie('content',null); // 删除 cookie
-            content.text("")
+            // let Tips=$('.Tips')
+            // Tips.mouseout
+            $('.Tips').mouseout(function () {
+                console.log("111")
+                let timeout = setTimeout(function () {
+                    tip.triggerHandler('click')
+                    clearInterval(timeout)
+                }, 2000)
+            })
         }
     })
+
     $(".tip,.close").click(function () {
         let BoxTips = $('.BoxTips');
         BoxTips.slideToggle(500)
@@ -22,7 +26,7 @@
     });
 
     $('.testCookie').on('click', function () {
-      $('.Content').text(getCookie("content"))
+        $('.Content').text(getCookie("content"))
         //$.cookie('the_cookie', '', { expires: -1 }); // 删除 cookie
 
     })
