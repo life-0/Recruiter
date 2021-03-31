@@ -121,7 +121,7 @@ public class StudentController {
             cookie = new Cookie ("content", "修改失败");
         }
         cookie.setPath ("/student/tables");
-        cookie.setMaxAge (30);  //设置cookie存活时间
+        cookie.setMaxAge (10);  //设置cookie存活时间
         response.addCookie (cookie);
         return "ok";
     }

@@ -7,15 +7,23 @@
             content.text(Content); //将content的cookie值写入小提示的文本框中
             let tip = $('.tip');
             tip.triggerHandler('click');//主动触发 click按钮
-            // let Tips=$('.Tips')
-            // Tips.mouseout
-            $('.Tips').mouseout(function () {
-                console.log("111")
-                let timeout = setTimeout(function () {
+            //以下是判断
+            let isFocus = false //判断鼠标是否还在标签上
+            let Tips=$('.Tips') //锁定某个标签
+            Tips.mouseover(function () {
+                isFocus = true
+            })
+            Tips.mouseleave(function (){
+                isFocus = false
+            })
+            //不断循环判断鼠标是否还在标签上,只要不在,清空循环体
+            let timeout = setInterval(function () {
+                if (!isFocus) {
                     tip.triggerHandler('click')
                     clearInterval(timeout)
-                }, 2000)
-            })
+                }
+            }, 3000)
+            // })
         }
     })
 
