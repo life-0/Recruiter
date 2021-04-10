@@ -96,4 +96,8 @@
         from recruiter.identity
         where name like concat('%',#{name,jdbcType=VARCHAR},'%');
     </select>
+
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from recruiter.identity;
+    </select>
 </mapper>

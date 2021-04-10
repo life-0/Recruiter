@@ -20,4 +20,6 @@ public interface IdentityService{
 
     List<Identity> selectByName(String name);
 
+    List<Identity> queryAll();
+
 }

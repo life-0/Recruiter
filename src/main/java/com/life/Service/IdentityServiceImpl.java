@@ -51,4 +51,9 @@ public class IdentityServiceImpl implements IdentityService {
         return identityMapper.selectByName (name);
     }
 
+    @Override
+    public List<Identity> queryAll() {
+        return identityMapper.queryAll ();
+    }
+
 }

@@ -20,4 +20,6 @@ public interface IdentityMapper {
     int updateByPrimaryKey(Identity record);
 
     List<Identity> selectByName(String name);
+
+    List<Identity> queryAll();
 }

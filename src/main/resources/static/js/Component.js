@@ -5,11 +5,11 @@
         if (Content !== "") {
             let content = $('.Content');
             content.text(Content); //将content的cookie值写入小提示的文本框中
-            let tip = $('.tip');
+            let tip = $('.close');
             tip.triggerHandler('click');//主动触发 click按钮
             //以下是判断
             let isFocus = false //判断鼠标是否还在标签上
-            let Tips=$('.Tips') //锁定某个标签
+            let Tips=$('.BoxTips') //锁定某个标签
             Tips.mouseover(function () {
                 isFocus = true
             })
@@ -27,7 +27,7 @@
         }
     })
 
-    $(".tip,.close").click(function () {
+    $(".close").click(function () {
         let BoxTips = $('.BoxTips');
         BoxTips.slideToggle(500)
         BoxTips.css("display", "block")

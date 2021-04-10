@@ -1,7 +1,13 @@
 package com.life.Controller;
 
+import com.life.POJO.Identity;
+import com.life.Service.IdentityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /*
  *@Author life-0
@@ -12,8 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 */
 @Controller
 public class IndexController {
+    @Resource
+    IdentityService identityService;
     @RequestMapping({"/","index.html"})
-    public String index(){
+    public String index(HttpServletResponse response){
+        List<Identity> identities = identityService.queryAll ();
+
         return "index";
     }
     @RequestMapping("/interface")

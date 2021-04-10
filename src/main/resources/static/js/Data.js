@@ -19,7 +19,7 @@
 
         $(".submitData").on('click', function () {
             let formObject = {};
-            let formArray = $(".form-data").serializeArray();
+            let formArray = $(".form-data").serializeArray();   //将参数序列化
             $.each(formArray, function (i, item) {
                 formObject[item.name] = item.value;
             });
@@ -43,13 +43,6 @@
                     alert("错误！！");
                 }
             });
-            // DataTransport(
-            //     // $('.form-data').serialize(),
-            //     JSON.stringify(formObject),
-            //     'POST',
-            //     '/student/Update',
-            //     '/student/tables'
-            // )
         });
 
 
