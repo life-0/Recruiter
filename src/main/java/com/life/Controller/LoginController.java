@@ -1,5 +1,7 @@
 package com.life.Controller;
 
+import com.life.POJO.Identity;
+import com.life.Service.IdentityService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -10,8 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /*
  *@Author life-0
@@ -22,29 +28,42 @@ import javax.servlet.http.HttpSession;
 */
 @Controller
 public class LoginController {
+    @Resource
+    IdentityService identityService;
+
     @RequestMapping("/ToLogin")
-    public String toLogin(){
+    public String toLogin() {
         return "login";
     }
 
     @RequestMapping("/user/login")
     public String login(@RequestParam("ID") String ID,
                         @RequestParam("password") String password,
-                        Model model, HttpSession session, HttpServletRequest request) {
-        System.out.println ("ID: "+ID);
-        System.out.println ("password: "+ password);
+                        Model model, HttpSession session, HttpServletRequest request,
+                        HttpServletResponse response) {
+        System.out.println ("ID: " + ID);
+        System.out.println ("password: " + password);
 
         //获取当前用户
         Subject subject = SecurityUtils.getSubject ();
         //封装用户登录数据
         UsernamePasswordToken token = new UsernamePasswordToken (ID, password);
 
+        //提前将共享的数据传到浏览器中 身份信息
+        List<Identity> identities = identityService.queryAll ();
+        for (Identity identity : identities) {
+            Cookie cookie = new Cookie (identity.getId (), identity.getName ());
+            cookie.setPath ("/");
+            response.addCookie (cookie);
+        }
+
+
         try {
             subject.login (token);  //执行登录方法,如果没有异常就ok
             String rememberMe = request.getParameter ("RememberMe");    //获得参数
-            session.setAttribute ("loginSession",ID);
+            session.setAttribute ("loginSession", ID);
 //            System.out.println ("rememberMe=>"+rememberMe);  //记住我被勾选则是on 否则null
-            if (rememberMe!=null) {
+            if (rememberMe != null) {
                 token.setRememberMe (true);
             }
             return "index";
@@ -59,10 +78,10 @@ public class LoginController {
     }
 
     @RequestMapping("/user/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.removeAttribute ("loginSession");
         session.invalidate ();
-        System.out.println ("loginSession:"+session.getAttribute ("loginSession"));
+        System.out.println ("loginSession:" + session.getAttribute ("loginSession"));
         return "redirect:/user/login";
     }
 }

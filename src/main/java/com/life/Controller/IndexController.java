@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
@@ -18,16 +19,13 @@ import java.util.List;
 */
 @Controller
 public class IndexController {
-    @Resource
-    IdentityService identityService;
-    @RequestMapping({"/","index.html"})
-    public String index(HttpServletResponse response){
-        List<Identity> identities = identityService.queryAll ();
-
+    @RequestMapping({"/", "index.html"})
+    public String index(HttpServletResponse response) {
         return "index";
     }
+
     @RequestMapping("/interface")
-    public String Interface(){
+    public String Interface() {
         return "interface/ajax_test";
     }
 

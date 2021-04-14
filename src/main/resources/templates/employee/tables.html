@@ -287,13 +287,15 @@
                                 <tbody class="recording">
                                 <tr th:each="user:${users}">
                                     <td class="checkbox-inline">
-                                        <input type="checkbox" th:value="${user.getId()}"/>
+                                        <label>
+                                            <input type="checkbox" th:value="${user.getId()}"/>
+                                        </label>
                                     </td>
                                     <td th:text="${user.getId()}"></td>
                                     <td th:text="${user.getName()}"></td>
                                     <td th:text="${user.getIphone()}"></td>
                                     <td th:text="${user.getEmail()}"></td>
-                                    <td th:text="${user.getRole_ID()}"></td>
+                                    <td class="data_conversion" th:value="${user.getRole_ID()}"></td>
                                     <td>
                                         <a class="btn btn-sm btn-primary SingleModify"
                                            th:value="${user.getId()}">编辑</a>

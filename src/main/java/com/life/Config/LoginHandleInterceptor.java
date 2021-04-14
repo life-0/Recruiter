@@ -1,10 +1,8 @@
 package com.life.Config;
 
-import org.omg.PortableInterceptor.Interceptor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

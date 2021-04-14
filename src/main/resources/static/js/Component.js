@@ -1,7 +1,7 @@
 (function ($) {
     $(document).ready(function () {
         let Content = getCookie("content")
-        console.log(Content)
+        // console.log(Content)
         if (Content !== "") {
             let content = $('.Content');
             content.text(Content); //将content的cookie值写入小提示的文本框中
@@ -9,11 +9,11 @@
             tip.triggerHandler('click');//主动触发 click按钮
             //以下是判断
             let isFocus = false //判断鼠标是否还在标签上
-            let Tips=$('.BoxTips') //锁定某个标签
+            let Tips = $('.BoxTips') //锁定某个标签
             Tips.mouseover(function () {
                 isFocus = true
             })
-            Tips.mouseleave(function (){
+            Tips.mouseleave(function () {
                 isFocus = false
             })
             //不断循环判断鼠标是否还在标签上,只要不在,清空循环体
@@ -25,6 +25,13 @@
             }, 3000)
             // })
         }
+
+        //数据转换user.getRole_ID()
+        // let data_conversion = $('.data_conversion');
+        $('.data_conversion').each(function (key,value) {
+            $(this).text(getCookie($(this).attr('value')));
+
+        })
     })
 
     $(".close").click(function () {

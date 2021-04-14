@@ -54,7 +54,7 @@ public class ShiroConfig {
         bean.setUnauthorizedUrl ("/404");
         //设置登录的请求
         bean.setLoginUrl ("/ToLogin");
-//        bean.setSuccessUrl ("/index");
+
         return bean;
     }
     //DefaultWebSecurityManager     第二步

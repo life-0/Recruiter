@@ -44,7 +44,7 @@ public class UserRealm extends AuthorizingRealm {
         //得到当前登录用户对象
         Subject subject = SecurityUtils.getSubject ();
 //        Admin principal = (Admin) subject.getPrincipal ();//拿到user对象
-        User principal=(User) subject.getPrincipal ();  //获得当前登录对象
+        User principal = (User) subject.getPrincipal ();  //获得当前登录对象
         Resources resources = resourcesService.selectByID (principal.getId ());//查询资源表是否有权限
 
 //        System.out.println ("Role:" + principal.getRole ());
