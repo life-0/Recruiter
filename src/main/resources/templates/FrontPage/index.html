@@ -18,13 +18,115 @@
     <script src="static/js/jquery.easing.min.js"></script>
     <script src="static/js/bootstrap.js"></script>
     <script src="static/js/animation.js"></script>
+    <style>
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
 
+        article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #858796;
+            text-align: left;
+            background-color: rgba(230, 241, 241, 0.93);
+        }
+
+        .header-navbar { /* 导航栏修改*/
+            font-size: 14px;
+            letter-spacing: 1px;
+            min-height: 70px;
+            background: black;
+        }
+
+        .logo-icon { /* 图标固定大小 */
+            height: 51px;
+            width: 180px;
+            transform: translate(0px, -10px);
+        }
+
+        .navbar-font {
+            transform: translate(0px, 7px); /* 以2D的形式进行位移 */
+        }
+
+        .carousel-range { /*设置默认内边距为0*/
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .notice { /*宣发栏*/
+            position: relative;
+            background: #FFFFFF;
+        }
+
+        .notice-nav {
+            box-sizing: border-box;
+            height: 80px;
+            line-height: 55px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notice-ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notice-li-content {
+            padding: 15px;
+            height: 90px;
+            border-top: 1px solid #eee;
+        }
+
+        .li-content-p {
+            width: 60%;
+            float: left;
+            font-size: 16px;
+            margin-right: 6px;
+            padding: 5px;
+        }
+
+        .li-content-link {
+            float: right;
+            width: 38%;
+            margin-top: 17px;
+            line-height: 30px;
+            color: #24b2e3;
+            text-align: center;
+            height: 30px;
+            font-size: 14px;
+            border: 1px solid #24b2e3;
+            border-radius: 100px;
+        }
+
+        .content-title-color {
+            color: #333;
+            font-size: 16px;
+        }
+
+        .content-des-color {
+            color: #666;
+            font-size: 13px;
+        }
+
+    </style>
 
 </head>
-<body>
+<body style='overflow-x:hidden'>
 <!--头部-->
-<div class="navbar navbar-inverse navbar-fixed-top " id="menu">
-    <div class="container">
+<div class="navbar navbar-inverse navbar-fixed-top header-navbar " id="menu">
+    <div class="container ">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -35,8 +137,8 @@
                 <img class="logo-icon" src="assets/img/logo180-50.png" alt="标题"/>
             </a>
         </div>
-        <div class="navbar-collapse collapse ">
-            <ul class="nav navbar-nav navbar-right">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right navbar-font">
                 <li><a href="#home">主页</a></li>
                 <li><a href="#features-sec">介绍</a></li>
                 <li><a href="#faculty-sec">工作</a></li>
@@ -49,33 +151,47 @@
 <!--head end-->
 
 <!--轮播图-->
-<div class="col-lg-12  col-md-12 col-sm-12">
-    <div class="flexslider " align="center">
+<div class="col-lg-12 col-md-12 col-sm-12 carousel-range ">
+    <hr/>
+    <hr/>
+    <div class="flexslider " style="border: none">
         <ul class="slides">
             <li>
-                <div>
-                    你先要的文字
-                </div>
+                <!--                <div>-->
+                <!--                    你先要的文字-->
+                <!--                </div>-->
                 <a href="#">
-                    <img src="static/img/banner_1.jpg" alt="..">
+                    <img class="img-range" src="static/img/banner_1.jpg" alt="..">
                 </a>
             </li>
             <li>
-                <img src="static/img/banner_2.jpg" alt="..">
+                <img class="img-range" src="static/img/banner_2.jpg" alt="..">
             </li>
             <li>
-                <img src="static/img/banner_3.jpg" alt="..">
+                <img class="img-range" src="static/img/banner_3.jpeg" alt="..">
+            </li>
+            <li>
+                <img class="img-range" src="static/img/banner_4.jpg" alt="..">
+            </li>
+            <li>
+                <img class="img-range" src="static/img/banner_5.jpg" alt="..">
+            </li>
+            <li>
+                <img class="img-range" src="static/img/banner_6.jpg" alt="..">
+            </li>
+            <li>
+                <img class="img-range" src="static/img/banner_7.jpg" alt="..">
             </li>
         </ul>
     </div>
 </div>
 <!--轮播图 end-->
 
-<!--链接展示-->
+<!--链接展示 link-->
 <div class="container">
     <div class="row  text-center">
         <div class="col-lg-12  col-md-12 col-sm-12">
-            <h2 data-scroll-reveal="enter from the bottom after 0.8s">
+            <h2 data-scroll-reveal="enter from the bottom after 0.4s">
                 <i class="fa fa-circle-o-notch"></i>
                 WELCOME TO THE EDU-CENTER
                 <i class="fa fa-circle-o-notch"></i>
@@ -85,93 +201,170 @@
         </div>
     </div>
 </div>
-<!--HOME SECTION TAG LINE END-->
-<!--模块展示-->
-<div id="features-sec" class="container set-pad">
-    <div class="row">
+
+<!--模块展示 notice-->
+<div id="features-sec" class="container ">
+    <div class="row" >
         <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
-            <div class="about-div">
-                <i class="fa fa-paper-plane-o fa-4x icon-round-border"></i>
-                <h4>示例一</h4>
-                <img class="img-responsive" src="static/img/conter.jpg" alt="123">
-                <a href="#" class="btn btn-info btn-set">ASK THE EXPERT</a>
+            <div class="notice">
+                <div class="clearfix">
+                    <div class="notice-nav">
+                        <img src="static/img/content/notice_img_1.png" alt="">
+                        <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
+                        <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
+                                    text-align: center; letter-spacing: 0;" target="_blank">
+                            <span>
+                                更多</span>
+                            <i>&gt;</i>
+                        </a>
+                    </div>
+                    <ul class="notice-ul">
+                        <li class="notice-li-content">
+                            <div class="li-content-p">
+                                <a href="#" target="_blank">
+                                    <p title="苏州分行培训生" class="content-title-color">
+                                        苏州分行培训生
+                                    </p>
+                                </a>
+                                <a href="#" target="_blank">
+                                    <p class="content-des-color">
+                                        宁波银行苏州分行</p>
+                                </a>
+                            </div>
+                            <div class="li-content-link">
+                                <a href="#" target="_blank">
+                                    立即申请
+                                </a>
+                            </div>
+                        </li>
+                        <li class="notice-li-content">
+                            <div class="li-content-p">
+                                <a href="#" target="_blank">
+                                    <p title="苏州分行培训生" class="content-title-color">
+                                        苏州分行培训生
+                                    </p>
+                                </a>
+                                <a href="#" target="_blank">
+                                    <p class="content-des-color">
+                                        宁波银行苏州分行</p>
+                                </a>
+                            </div>
+                            <div class="li-content-link">
+                                <a href="#" target="_blank">
+                                    立即申请
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
-            <div class="about-div">
-                <i class="fa fa-bolt fa-4x icon-round-border"></i>
-                <h3>SYSTEMATIC APPROACH</h3>
-                <hr/>
-                <hr/>
-                <p>
-                    举例二System 123
-                </p>
-                <img class="img-responsive" src="static/img/conter_1.jpg" alt="123">
-                <a href="#" class="btn btn-info ">ASK THE EXPERT</a>
+            <div class="col-lg-pull-4  col-md-pull-4 col-sm-pull-4 "  data-scroll-reveal="enter from the bottom after 0.4s">
+                <div class="notice">
+                    <div class="clearfix">
+                        <div class="notice-nav">
+                            <img src="static/img/content/notice_img_1.png" alt="">
+                            <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
+                            <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
+                                    text-align: center; letter-spacing: 0;" target="_blank">
+                            <span>
+                                更多</span>
+                                <i>&gt;</i>
+                            </a>
+                        </div>
+                        <ul class="notice-ul">
+                            <li class="notice-li-content">
+                                <div class="li-content-p">
+                                    <a href="#" target="_blank">
+                                        <p title="苏州分行培训生" class="content-title-color">
+                                            苏州分行培训生
+                                        </p>
+                                    </a>
+                                    <a href="#" target="_blank">
+                                        <p class="content-des-color">
+                                            宁波银行苏州分行</p>
+                                    </a>
+                                </div>
+                                <div class="li-content-link">
+                                    <a href="#" target="_blank">
+                                        立即申请
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="notice-li-content">
+                                <div class="li-content-p">
+                                    <a href="#" target="_blank">
+                                        <p title="苏州分行培训生" class="content-title-color">
+                                            苏州分行培训生
+                                        </p>
+                                    </a>
+                                    <a href="#" target="_blank">
+                                        <p class="content-des-color">
+                                            宁波银行苏州分行</p>
+                                    </a>
+                                </div>
+                                <div class="li-content-link">
+                                    <a href="#" target="_blank">
+                                        立即申请
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
-            <div class="about-div">
-                <i class="fa fa-magic fa-4x icon-round-border"></i>
-                <h3>ONE TO ONE STUDY</h3>
-                <hr/>
-                <hr/>
-                <p>
-                    举例三 EndSystem 456
-                </p>
-                <img class="img-responsive" src="static/img/conter_1.jpg" alt="123">
-                <a href="#" class="btn btn-info ">ASK THE EXPERT</a>
+            <!--<div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+                <div class="about-div">
+                    <i class="fa fa-bolt fa-4x icon-round-border"></i>
+                    <h3>SYSTEMATIC APPROACH</h3>
+                    <p>
+                        举例二System 123
+                    </p>
+                    <img class="img-responsive" src="static/img/conter_1.jpg" alt="123">
+                    <a href="#" class="btn btn-info ">ASK THE EXPERT</a>
+                </div>
             </div>
+            <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
+                <div class="about-div">
+                    <i class="fa fa-magic fa-4x icon-round-border"></i>
+                    <h3>ONE TO ONE STUDY</h3>
+                    <p>
+                        举例三 EndSystem 456
+                    </p>
+                    <img class="img-responsive" src="static/img/conter_1.jpg" alt="123">
+                    <a href="#" class="btn btn-info ">ASK THE EXPERT</a>
+                </div>
+            </div>-->
         </div>
     </div>
-</div>
-<!--模块展示 end-->
-<!--职位展示-->
-<div class="row">
-    <div class="" style=" position: relative;height: 38px;line-height: 38px;color: #379502;padding-left: 30px;">
-        <em style="position: absolute;
+    <!--模块展示 notice end-->
+
+    <!--职位展示-->
+    <div class="row">
+        <div class="" style=" position: relative;height: 38px;line-height: 38px;color: #379502;padding-left: 30px;">
+            <em style="position: absolute;
         width: 100%;
         height: 2px;
         left: 0;
         top: 50%;
         margin-top: -1px;
         background-color: #f86108;">
-        </em>
-        <strong class="" style="position: relative;
+            </em>
+            <strong class="" style="position: relative;
                 display: inline-block;
                 padding: 0 20px;
                 background-color:#FFFFFF">
-            职位展示
-        </strong>
-    </div>
-    <div class="row container" style="
+                职位展示
+            </strong>
+        </div>
+        <div class="row container" style="
                              width: 100%;
                              text-align: center;
                              display: inline-block;
 
                              border:1px solid #777">
-        <div class="box" style="float: initial;
-                            width: 292px;
-                            height: 68px;
-                            margin: 10px 0 0 10px;
-                            padding: 10px;
-                            border: 1px solid #E8E8E8;">
-            <p>shduaihdisauhd</p>
-            <p>有时间上帝啊u和到四点i</p>
-        </div>
-        <div class="" style="">
-            <div class="box" style="float:left;
-                            position: center;
-                            width: 292px;
-                            height: 68px;
-                            margin: 10px 0 0 10px;
-                            padding: 10px;
-                            border: 1px solid #E8E8E8;">
-                <p>sdasdasdwqew</p>
-                <p>有时间上帝啊u和到四点i</p>
-            </div>
-            <div class="box" style="float:left;
-                            position: center;
+            <div class="box" style="float: initial;
                             width: 292px;
                             height: 68px;
                             margin: 10px 0 0 10px;
@@ -180,7 +373,28 @@
                 <p>shduaihdisauhd</p>
                 <p>有时间上帝啊u和到四点i</p>
             </div>
-            <div class="box" style="float:left;
+            <div class="" style="">
+                <div class="box" style="float:left;
+                            position: center;
+                            width: 292px;
+                            height: 68px;
+                            margin: 10px 0 0 10px;
+                            padding: 10px;
+                            border: 1px solid #E8E8E8;">
+                    <p>sdasdasdwqew</p>
+                    <p>有时间上帝啊u和到四点i</p>
+                </div>
+                <div class="box" style="float:left;
+                            position: center;
+                            width: 292px;
+                            height: 68px;
+                            margin: 10px 0 0 10px;
+                            padding: 10px;
+                            border: 1px solid #E8E8E8;">
+                    <p>shduaihdisauhd</p>
+                    <p>有时间上帝啊u和到四点i</p>
+                </div>
+                <div class="box" style="float:left;
                             position: center;
                             width: 292px;
                             height: 68px;
@@ -188,23 +402,96 @@
                             padding: 10px;
                             border: 1px solid #E8E8E8;
                             background: #36dcdc;">
-                <p>sdasdasdwqew</p>
-                <p>有时间上帝啊u和到四点i</p>
+                    <p>sdasdasdwqew</p>
+                    <p>有时间上帝啊u和到四点i</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--职位展示 end-->
-<!--foot-->
-<div>
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2021</span>
+    <!--职位展示 end-->
+
+    <!--公司模块-->
+    <div>
+        <div class="" style=" position: relative;height: 38px;line-height: 38px;color: #379502;padding-left: 30px;">
+            <em style="position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: 50%;
+        margin-top: -1px;
+        background-color: #f86108;">
+            </em>
+            <strong class="" style="position: relative;
+                display: inline-block;
+                padding: 0 20px;
+                background-color:#FFFFFF">
+                企业展示
+            </strong>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 dvideLine">
+                <!--            <img src="static/img/content/content_architecture.jpg " alt=" ">-->
+                <span>土建</span>
+            </div>
+            <div class="row">
+                <div class="col-md-4 toppad">
+                    <img src="static/img/content/content_bank.jpg" style="width: 361px;
+            height: 540px;" class="img-responsive div_photo_size" alt=" ">
+                </div>
+
+                <div class="col-md-8 toppad">
+                    <div class="row">
+                        <div class="col-md-4  thumbnail ">
+                            <img src="static/img/content/bank_1.jpg" class="img-responsive div_photo_size" alt=" ">
+                            <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p>
+                            <p style="color:red; size:4px">&yen; 688</p>
+                        </div>
+
+                        <div class="col-md-4  thumbnail ">
+                            <img src="static/img/content/bank_2.jpg" class="img-responsive div_photo_size" alt=" ">
+                            <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p>
+                            <p style="color:red; size:4px">&yen; 688</p>
+                        </div>
+
+                        <div class="col-md-4  thumbnail ">
+                            <img src="static/img/content/bank_3.jpg" class="img-responsive div_photo_size" alt=" ">
+                            <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p>
+                            <p style="color:red; size:4px">&yen; 688</p>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-4 thumbnail ">
+                            <img src="static/img/content/bank_4.jpg" class="img-responsive div_photo_size" alt=" ">
+                            <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p>
+                            <p style="color:red; size:4px">&yen; 688</p>
+                        </div>
+                        <div class="col-md-4 thumbnail ">
+                            <img src="static/img/content/bank_5.jpg" class="img-responsive div_photo_size" alt=" ">
+                            <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p>
+                            <p style="color:red; size:4px">&yen; 688</p>
+                        </div>
+                        <div class="col-md-4 thumbnail ">
+                            <img src="static/img/content/bank_6.jpg" class="img-responsive div_photo_size " alt=" ">
+                            <p>上海直飞三亚5天4晚自由行(春节预售+亲子/蜜月/休闲游首选+豪华酒店任选+接送机)</p>
+                            <p style="color:red; size:4px">&yen; 688</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
-</div>
-<!--foot end-->
+    </div>
+    <!--公司模块 end-->
+
+    <!--foot-->
+    <div>
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--foot end-->
 </body>
 </html>
