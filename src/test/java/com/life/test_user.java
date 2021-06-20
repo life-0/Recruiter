@@ -31,8 +31,8 @@ public class test_user {
         System.out.println (userService.insert (user_1));
     }
     @Test
-    public void query_user(){
-        User user = userService.queryUserByID (0);
+    public void query_user() {
+        User user = userService.queryUserByID (2);
         System.out.println (user);
 
     }

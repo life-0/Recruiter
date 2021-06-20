@@ -38,6 +38,7 @@
         let BoxTips = $('.BoxTips');
         BoxTips.slideToggle(500)
         BoxTips.css("display", "block")
+
     });
 
     $('.testCookie').on('click', function () {
