@@ -1,74 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-  <title>文章</title>
+  <title>公司页面</title>
 
   <!-- Bootstrap -->
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/flexslider.css" rel="stylesheet">
   <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
   <script src="static/js/JQuery-3.4.1.min.js"></script>
   <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
   <script src="static/js/bootstrap.min.js"></script>
+  <!-- 加载flexSlide插件,是图片转换的更加平滑-->
+  <script src="static/js/jquery.flexslider.js"></script>
+  <!--  Scrolling Reveal Script -->
+  <script src="static/js/scrollReveal.js"></script>
+  <!--  Scroll Scripts -->
+  <script src="static/js/jquery.easing.min.js"></script>
+  <script src="static/js/bootstrap.js"></script>
+  <script src="static/js/animation.js"></script>
   <style>
-    .logo {
-      width: 280px;
-      height: 80px;
-      padding-top: 15px;
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
 
-    .search-input {
-      float: left;
-      border-radius: 0.5px;
-      border: solid 4px #ffb36d;
-      width: 360px;
-      height: 46px;
-      margin-top: 25px;
+    article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+      display: block;
     }
 
-    .search-btn {
-      font-size: 20px;
-      float: left;
-      border-radius: 0.5px;
-      border: solid 4px #ffb36d;
-      width: 80px;
-      height: 46px;
-      text-align: center;
-      line-height: 40px;
-      margin-top: 25px;
-      background: #ffb36d;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #858796;
+      text-align: left;
+      background-color: rgba(230, 241, 241, 0.93);
     }
 
-    .hotel_tel {
-      margin-top: 10px;
-      float: right;
+    .header-navbar { /* 导航栏修改*/
+      font-size: 14px;
+      letter-spacing: 1px;
+      min-height: 70px;
+      background: #180303;
     }
 
-    .dvideLine {
-      padding: 5px;
-      border-bottom: #0fd6cc solid 4.3px;
-      font-size: 21px;
+    .logo-icon { /* 图标固定大小 */
+      height: 51px;
+      width: 180px;
+      transform: translate(0px, -10px);
     }
 
-    .toppad {
-      margin-top: 10px;
-    }
-
-    .company {
-      background: #ebc72f;
-      text-align: center;
-      font-size: 13px;
-      height: 40px;
-      line-height: 40px;
-
-    }
-
-    /*设置导航栏文字居中*/
-    .location {
-      text-align: center;
+    .navbar-font {
+      transform: translate(0px, 7px); /* 以2D的形式进行位移 */
     }
 
     .navbar-nav {
@@ -80,193 +74,61 @@
       color: #050505;
     }
 
-    .div-border {
-      color: #fff;
-      display: table;
-      text-align: center;
-
-    }
-
-    .body-border {
-      border-left: none;
-      border-right: 1px solid #ccc;
-    }
-
-    .div-border li {
-      list-style: none;
-      text-align: center;
-      width: 200px;
-      height: 67px;
-      line-height: 30px;
-      /*border-bottom: 1px solid #000000;*/
-      text-decoration: underline #000000;
-      margin: 5px;
-
-    }
-
-    p {
-      border-color: #0f0f0f;
-      display: table-cell;
-      vertical-align: middle;
-    }
-
   </style>
 </head>
 <body>
-<!--1.页眉-->
-<header>
-  <div class="container-fluid" style="border-bottom: 1px solid #ccc;">
-    <div class="row ">
-      <img src="img/top_banner.jpg" class="img-responsive" alt=" ">
+<!--头部-->
+<div class="navbar navbar-inverse  header-navbar " id="menu">
+  <div class="container ">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img class="logo-icon" src="assets/img/logo180-50.png" alt="标题"/>
+      </a>
     </div>
-    <div class="row col-md-12">
-      <div class="col-md-4">
-        <img src="img/logo.png" class="img-responsive logo" alt=" ">
-      </div>
-
-      <div class="col-md-4">
-        <form action="http://www.baidu.com/s" method="GET" target="_blank">
-          <input type="text" name="wd" class="search-input search" placeholder="只会转到百度搜索"/>
-          <input type="submit" class="search-btn" value="搜索">
-        </form>
-      </div>
-
-      <div class="col-md-4">
-        <div align="center">
-          <img class="img-circle" style="width: 88px;height: 88px;" src="img/cat_log.jpg" alt="头像"/>
-        </div>
-        <!--<img src="img/hotel_tel.png" class="img-responsive hotel_tel" alt=" ">-->
-      </div>
-    </div>
-    <!--导航条-->
-    <div class="row col-md-12 location">
-      <nav class="navbar  navbar-transparent">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <!--定义了一个汉堡按钮-->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <!--按钮中显示的三条线样式-->
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse location" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav" style="clear:both;">
-              <li class="active"><a href="/tourist/Home.html" class="">首页</a></li>
-              <li><a href="/tourist/Register.html" class="">注册</a></li>
-              <li><a href="/tourist/Login.html" class="">登录</a></li>
-              <li><a href="/tourist/baidu.html" class="">百度一下</a></li>
-              <li><a href="/tourist/CountDown.html" class="">倒计时</a></li>
-              <li><a href="/tourist/article.html" class="">文章</a></li>
-              <li><a href="/tourist/image.html" class="">图片</a></li>
-            </ul>
-
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-    </div>
-  </div>
-</header>
-<!--2.主体-->
-<div class="col-md-1"></div>
-<div class="col-sm-8 left-container body-border">
-  <div align="center">
-    <h1>旅游散文记录：一个人的旅行</h1>
-    <p><b>旅游散文</b><font color='pink'>|12月20日 12:17</font></p>
-    <br/>
-    <br/>
-    <p><font color='pink'>阅读</font><font color='red' size='4'>141</font></p>
-    <br/>
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;小时候，总常常幻想着自己可以长大，可以独自一人去领略更多优美的风光。
-      我们这一生，会有太多太多的梦想，要么就是用尽全力去实现他，要么就是永远沉积在自己的心中。
-      我喜欢旅行，向往美丽的山、美丽的水，一见到大海和草原我就会心旷神怡，深陷其中。
-      我期盼可以带着自己最爱的人去遨游世界，让他给自己拍上几张美美的照片。<br/>
-    </p>
-    <img src="img/view1.jpg">
-    <br/><br/>
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;我想要开车或者走路去穿过每一个平淡的日子，只需要喜欢的人陪在身边，
-      不谈什么理想目标，心中只有诗和远方。
-      生活其实可以如此的平淡如此的美好，只需要有个人来陪着你一起记录。
-      所以这就是最真实的。可能是缘分吧，我这一生注定过着漂泊的日子。
-      幼年时期，因为各个方面的原因，我开始了我每天辛苦漂泊的日子，早就厌倦了这种生活。
-    </p>
-    <img src="img/view2.jpg">
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;我以为长大后我会找一份稳定的工作，在一个安静的环境里喝着一口清茶，
-      读上三两本书，认真的过完这一生。知道我真的成长了起来，才发现这样的生活已经按捺不住我内心的浮躁，
-      所以我就决定，这就是我再一次踏上征程的时候了。于是，我就背上自己的小包，装着我的期待，
-      一个人懵懵懂懂的踏上征途，去看看这人人口中精彩的世界，看看远方的太阳是不是更加的明媚。
-    </p>
-    <img src="img/view3.jpg">
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;经历过无数个日日夜夜，白云日落沧海桑田，这两年多的行程中，
-      我从出生的小草地走到了花海中， 从山涧穿越到了沙漠，从大海游荡到平川。
-      这一路下来，仿佛自己的心已经变年轻了十岁，但是容颜却逝去。我不敢确定我还会走多远的路，还有走多久。
-      我很喜欢的一个诗人冰岛就写过这样的诗：那时我们有梦,关于文学，关于爱情,关于穿越世界的旅行。
-    </p>
-    <img src="img/view4.jpg">
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;其实对我来说我对于这样旅行的意义并不在于什么爱情或者那么文艺。
-      但是这给了我很大的关于笔尖上的灵感，也更加离不开了爱情的滋润。
-      一个人或许听起来很孤单，但是却勉强算是圆梦了。却又好像不那么全面，因为这当中没有了我年少时候的期待，
-      更加的是一种心灵上的慰藉，因为放不下一个人，所以选择旅行；因为想释放自己的压力，所以才这样选择。
-    </p>
-    <img src="img/view5.jpg">
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;我心中最圣洁的那一座殿堂，也是我最向往的地方——云南。
-      因为这里古朴、纯真且神秘，满载着许多我童年时期的梦想。
-      因为那里有梦境天堂一般的大理、有最原始的热带雨林、还有香格里拉这样的地方，浪漫的丽江古镇。
-      为什么诗人大多吟唱江南，那里是梦中才会有的世界，是如烟如雾的通话天堂，能够揭开我心中的面纱。
-      我想，在有生之年，一定要带上自己最爱的人来一次这里，拥有一段共同的美好回忆，多么美妙不可言喻。
-    </p>
-    <img src="img/view6.jpg">
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;所以我暗自想这个地方我一定要和对象去，所以我选择了奔赴祖国的南方，去看看大海。
-      我喜欢小渔村、喜欢日出打鱼的生活，晚上看看大海正上方的星空，数着无数散落的星星，听听海的声音。
-      可能喜欢上蓝色就是那一瞬间的事情，因为他优雅平淡，让我心里面感到格外的安心。
-    </p>
-
-    <img src="img/view7.jpg">
-    <p>
-      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;当我真的站在大海面前的那一刻，我全身心都舒缓了起来，剩下的只有尽情的享受。
-      这是一个霓虹灯到处泛滥的城市，街上的人群熙熙攘攘，在所有的压力无法释放的时候，就去到海的怀抱里。
-      这种感觉希望我不在陌生，一个人的旅行其实也很美好，是一种孤寂的美。
-      我希望在秋冬这个浪漫的季节，我能够带上男友，下一站的目的地就是我最向往的。
-    </p>
-    <img src="img/view8.jpg">
-
-  </div>
-</div>
-
-<div class="col-md-offset-3 right-container">
-  <div class="item">
-    <h3>作者最新文章</h3>
-    <div class="div-border">
-      <ul>
-        <li><a>刚从老挝回来，告诉你一个真实的老挝，原来竟是这样的</a></li>
-        <li><a>四川省的农村盛大婚宴，超过20道菜，场面令人羡慕</a></li>
-        <li><a>我国最赚钱的山：7天收入5个亿，给个金山银山都不换</a></li>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right navbar-font">
+        <li><a href="#home">主页</a></li>
+        <li><a href="#features-sec">介绍</a></li>
+        <li><a href="#faculty-sec">工作</a></li>
+        <li><a href="#course-sec">课程</a></li>
+        <li><a href="#contact-sec">联系我们</a></li>
       </ul>
     </div>
   </div>
 </div>
+<!--head end-->
+
+<!--firm card-->
+<div class="row " style="margin: 0 auto;">
+  <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 ">
+    <div class="center-block">
+      <img src="static/img/content/bank_2.jpg" alt="..">
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>
+<!--firm card end-->
 
 <!--3.页脚-->
 <div class="container-fluid">
-  <div class="row">
-    <img src="img/footer_service.png" class="img-responsive" alt="">
+  <!--foot-->
+  <div>
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Your Website 2021</span>
+        </div>
+      </div>
+    </footer>
   </div>
-  <div class="row company">
-    2020-2021-1学期web应用开发基础课程设计 软件Q188班 卓越 201809601287
-  </div>
+  <!--foot end-->
 </div>
 </body>
 </html>
