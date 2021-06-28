@@ -160,12 +160,14 @@ body {
     background-color: #FFFFFF;
     border-radius: 15%
 }
-.brand{
+
+.brand {
     width: 100%;
-    height:360px;
+    height: 360px;
     text-align: center;
 }
-.brand-imgbox{
+
+.brand-imgbox {
     display: inline-block;
     width: 292px;
     height: 100px;
@@ -173,7 +175,85 @@ body {
     padding: 10px;
     border: 1px solid #b4b3b3;
 }
-.imgbox-img{
-    width: 80%;height: 100%
+
+.imgbox-img {
+    width: 80%;
+    height: 100%
 }
+
 /*cooperation brand end*/
+
+/*行业推荐 industry commendation*/
+.industry-Label {
+    line-height: 19px;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 20px 15px 0 15px;
+    margin: 0;
+}
+
+.industry-Label-content {
+    float: left;
+    height: 40px;
+    line-height: 40px
+}
+
+.industry-Label-sign {
+    background: #24adde;
+    display: inline-block;
+    height: 22px;
+    margin-right: 15px;
+    vertical-align: middle;
+    width: 5px;
+}
+
+.industry-Label-text {
+    color: #333;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.industry-Label-more {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.industry-Label-more-text {
+    color: #8e97a1;
+    font-size: 14px
+}
+
+.industry-commendation-queue-mainImg {
+    width: 230px;
+    float: right;
+    height: 303px;
+}
+
+.industry-commendation-imgBox {
+    margin-top: -10px;
+}
+
+.commendation-imgBox-border {
+    display: inline-block;
+    margin: 10px 0 0 15px;
+}
+
+.commendation-img-background {
+    background: #FFFFFF;
+    width: 245px;
+    height: 144.4px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.commendation-style {
+    width: 80%;
+    height: 51%;
+    margin: 0 auto;
+}
+/*行业推荐 industry commendation end*/

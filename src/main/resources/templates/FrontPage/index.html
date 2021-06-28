@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="static/css/front_page.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/flexslider.css" rel="stylesheet">
@@ -18,116 +19,12 @@
     <script src="static/js/jquery.easing.min.js"></script>
     <script src="static/js/bootstrap.js"></script>
     <script src="static/js/animation.js"></script>
-    <style>
-        html {
-            font-family: sans-serif;
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
 
-        article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-            display: block;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-            "Segoe UI Symbol", "Noto Color Emoji";
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #858796;
-            text-align: left;
-            background-color: rgba(230, 241, 241, 0.93);
-        }
-
-        .header-navbar { /* 导航栏修改*/
-            font-size: 14px;
-            letter-spacing: 1px;
-            min-height: 70px;
-            background: black;
-        }
-
-        .logo-icon { /* 图标固定大小 */
-            height: 51px;
-            width: 180px;
-            transform: translate(0px, -10px);
-        }
-
-        .navbar-font {
-            transform: translate(0px, 7px); /* 以2D的形式进行位移 */
-        }
-
-        .carousel-range { /*设置默认内边距为0*/
-            padding: 0;
-            margin: 0;
-            border: 0;
-        }
-
-        .notice { /*宣发栏*/
-            position: relative;
-            background: #FFFFFF;
-        }
-
-        .notice-nav {
-            box-sizing: border-box;
-            height: 80px;
-            line-height: 55px;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .notice-ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .notice-li-content {
-            padding: 15px;
-            height: 90px;
-            border-top: 1px solid #eee;
-        }
-
-        .li-content-p {
-            width: 60%;
-            float: left;
-            font-size: 16px;
-            margin-right: 6px;
-            padding: 5px;
-        }
-
-        .li-content-link {
-            float: right;
-            width: 38%;
-            margin-top: 17px;
-            line-height: 30px;
-            color: #24b2e3;
-            text-align: center;
-            height: 30px;
-            font-size: 14px;
-            border: 1px solid #24b2e3;
-            border-radius: 100px;
-        }
-
-        .content-title-color {
-            color: #333;
-            font-size: 16px;
-        }
-
-        .content-des-color {
-            color: #666;
-            font-size: 13px;
-        }
-
-    </style>
 
 </head>
 <body style='overflow-x:hidden'>
 <!--头部-->
-<div class="navbar navbar-inverse navbar-fixed-top header-navbar " id="menu">
+<div class="navbar navbar-inverse navbar-fixed-top header-navbar ">
     <div class="container ">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -152,7 +49,7 @@
 </div>
 <!--head end-->
 
-<!--轮播图-->
+<!--轮播图 carousel-->
 <div class="col-lg-12 col-md-12 col-sm-12 carousel-range ">
     <hr/>
     <hr/>
@@ -187,24 +84,24 @@
         </ul>
     </div>
 </div>
-<!--轮播图 end-->
+<!--轮播图 carousel end-->
 
-<!--链接展示 link-->
-<div class="container">
-    <div class="row  text-center">
-        <div class="col-lg-12  col-md-12 col-sm-12">
-            <h2 data-scroll-reveal="enter from the bottom after 0.4s">
-                <i class="fa fa-circle-o-notch"></i>
-                WELCOME TO THE EDU-CENTER
-                <i class="fa fa-circle-o-notch"></i>
-            </h2>
-            <hr/>
-            <hr/>
-        </div>
-    </div>
-</div>
+<!--&lt;!&ndash;链接展示 link&ndash;&gt;-->
+<!--<div class="container">-->
+<!--    <div class="row  text-center">-->
+<!--        <div class="col-lg-12  col-md-12 col-sm-12">-->
+<!--            <h2 data-scroll-reveal="enter from the bottom after 0.4s">-->
+<!--                <i class="fa fa-circle-o-notch"></i>-->
+<!--                WELCOME TO THE EDU-CENTER-->
+<!--                <i class="fa fa-circle-o-notch"></i>-->
+<!--            </h2>-->
+<!--            <hr/>-->
+<!--            <hr/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-<!--模块展示 notice-->
+<!--宣发栏展示 notice-->
 <div id="features-sec" class="container ">
     <div class="row">
         <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
@@ -212,11 +109,11 @@
                 <div class="clearfix">
                     <div class="notice-nav">
                         <img src="static/img/content/notice_img_1.png" alt="">
-                        <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
-                        <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
-                                    text-align: center; letter-spacing: 0;" target="_blank">
+                        <span class="notice-title" style=" ">最新网申</span>
+                        <a href="#" class="notice-recommendation-other" target="_blank">
                             <span>
-                                更多</span>
+                                更多
+                            </span>
                             <i>&gt;</i>
                         </a>
                     </div>
@@ -262,17 +159,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4  col-md-4 col-sm-4 "
-             data-scroll-reveal="enter from the bottom after 0.4s">
+        <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
             <div class="notice">
                 <div class="clearfix">
                     <div class="notice-nav">
                         <img src="static/img/content/notice_img_1.png" alt="">
-                        <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
-                        <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
-                                    text-align: center; letter-spacing: 0;" target="_blank">
+                        <span class="notice-title" style=" ">最新网申</span>
+                        <a href="#" class="notice-recommendation-other" target="_blank">
                             <span>
-                                更多</span>
+                                更多
+                            </span>
                             <i>&gt;</i>
                         </a>
                     </div>
@@ -318,17 +214,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4  col-md-4 col-sm-4 "
-             data-scroll-reveal="enter from the bottom after 0.4s">
+        <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
             <div class="notice">
                 <div class="clearfix">
                     <div class="notice-nav">
                         <img src="static/img/content/notice_img_1.png" alt="">
-                        <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
-                        <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
-                                    text-align: center; letter-spacing: 0;" target="_blank">
+                        <span class="notice-title" style=" ">最新网申</span>
+                        <a href="#" class="notice-recommendation-other" target="_blank">
                             <span>
-                                更多</span>
+                                更多
+                            </span>
                             <i>&gt;</i>
                         </a>
                     </div>
@@ -376,80 +271,37 @@
         </div>
     </div>
 </div>
-<!--模块展示 notice end-->
+<!--宣发栏展示 notice end-->
 
 <!--合作品牌展示 brand-->
 <div class="container">
     <div class="row ">
-        <div class="" style=" position: relative;line-height: 38px;color: #379502;padding-left: 30px;">
-            <em style="position: absolute;
-                width: 100%;
-                height: 2px;
-                left: 0;
-                top: 50%;
-                margin-top: -1px;
-                background-color: #f86108;">
+        <!--分界线-->
+        <div class="dividingLine" style=" ">
+            <em class="dividingLine-style">
             </em>
-            <strong class="" style="position: relative;
-            display: inline-block;
-            padding: 0 20px;
-            background-color:#FFFFFF;
-            border-radius:15%">
+            <strong class="dividingLine-text">
                 合作品牌
             </strong>
         </div>
-        <div class=""
-             style="width: 100%;
-             height:360px;
-             text-align: center;
-             border:1px solid #777">
-
+        <!--分界线 end-->
+        <div class="brand">
             <div class="container-fluid">
-                <div style="display: inline-block;
-                        width: 292px;
-                        height: 100px;
-                        margin: 10px 10px 0 10px;
-                        padding: 10px;
-                        border: 1px solid #b4b3b3;">
-                    <img src="static/img/content/brand/china_mobie.jpg"
-                         style="width: 80%;height: 100%"
+                <div class="brand-imgbox">
+                    <img class="imgbox-img" src="static/img/content/brand/china_mobie.jpg"
                          alt="...">
                 </div>
-                <div style="
-                        display: inline-block;
-                        width: 292px;
-                        height: 100px;
-                        margin: 10px 10px 10px 10px;
-                        padding: 10px;
-                        border: 1px solid #b4b3b3;">
+                <div class="brand-imgbox">
                     <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
 
                 </div>
-                <div style="
-                        display: inline-block;
-                        width: 292px;
-                        height: 100px;
-                        margin: 10px 10px 10px 10px;
-                        padding: 10px;
-                        border: 1px solid #b4b3b3;">
-                    <img src="static/img/content/brand/guangfa_bank.jpg"
-
-                         alt="...">
-                </div>
-                <div style="display: inline-block;
-                        width: 292px;
-                        height: 100px;
-                        margin: 10px 10px 10px 10px;
-                        padding: 10px;
-                        border: 1px solid #b4b3b3;">
+                <div class="brand-imgbox">
                     <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
                 </div>
-                <div style="display: inline-block;
-                        width: 292px;
-                        height: 100px;
-                        margin: 10px 10px 10px 10px;
-                        padding: 10px;
-                        border: 1px solid #b4b3b3;">
+                <div class="brand-imgbox">
+                    <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
+                </div>
+                <div class="brand-imgbox">
                     <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
                 </div>
             </div>
@@ -459,118 +311,142 @@
 </div>
 <!--合作品牌展示 brand end-->
 
-<!--公司模块-->
+<!--行业推荐模块 industry-->
 <div class="container">
     <div class="row ">
-        <div class="" style=" position: relative;height: 38px;line-height: 38px;color: #379502;padding-left: 30px;">
-            <em style="position: absolute;
-            width: 100%;
-            height: 2px;
-            left: 0;
-            top: 50%;
-            margin-top: -1px;
-            background-color: #f86108;">
+        <!--分界线-->
+        <div class="dividingLine" style=" ">
+            <em class="dividingLine-style">
             </em>
-            <strong class="" style="position: relative;
-            display: inline-block;
-            padding: 0 20px;
-            background-color:#FFFFFF;
-            border-radius:15% ">
-                企业展示
+            <strong class="dividingLine-text">
+                行业推荐
             </strong>
         </div>
+        <!--分界线 end-->
+        <!--行业推荐 industry commendation-->
         <div class="row">
-            <div class="col-md-12">
-                <div class="banner-content-head clearfix"
-                     style="line-height: 19px;
-                            word-break: break-all;
-                            word-wrap: break-word;
-                            padding: 0;
-                            margin: 0;">
-                    <div style="float: left;
-                                height: 40px;
-                                line-height: 40px">
-                        <i style="background: #24adde;
-                                display: inline-block;
-                                height: 22px;
-                                margin-right: 15px;
-                                vertical-align: middle;
-                                width: 5px;">
-
-                        </i>
-                        <span style="color: #333;
-                                    display: inline-block;
-                                    font-size: 16px;
-                                    font-weight: 600;
-                                    vertical-align: middle;">
-                            金融
-                        </span>
-                    </div>
-                    <div style="float: right;
-                                height: 40px;
-                                line-height: 40px;">
-                        <span>
-                            <a href="#" target="_blank"
-                               class="banner-pro-more" style="color: #8e97a1;font-size: 14px;">
-                                更多
-                            </a>
-                            <i>&gt;&gt;</i>
-                        </span>
-                    </div>
+            <!--行业推荐 industry commendation label-->
+            <div class="col-md-12 clearfix industry-Label">
+                <div class="industry-Label-content">
+                    <i class="industry-Label-sign"></i>
+                    <span class="industry-Label-text">金融</span>
+                </div>
+                <div class="industry-Label-more">
+                    <a class="industry-Label-more-text" href="#" target="_blank">
+                       <span>
+                            更多 >
+                       </span>
+                    </a>
                 </div>
             </div>
-
+            <!--行业推荐 industry commendation label end-->
+            <!--主要推荐队列 industry commendation queue -->
             <div class="row clearfix"><!--width: 1200px  19.2%  76%-->
-                <div class="col-md-3 " > <!--width: 230px -->
-                    <img src="static/img/content/content_bank.jpg"
-                         style="width: 230px;float: right;
-                                height: 300px;" class="img-responsive " alt="...">
+                <div class="col-md-3 col-sm-3 "> <!--width: 230px -->
+                    <img class="img-responsive industry-commendation-queue-mainImg"
+                         src="static/img/content/content_bank.jpg"
+                         style="" alt="...">
                 </div>
-                <div class="col-md-9 container" style="margin-top: -10px"><!--width: 921.6px-->
-                    <div style="display: inline-block; margin:10px 0 0 15px">
-                        <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                                     display: table-cell;
-                                                     text-align:center;
-                                                     vertical-align:middle;position:relative;">
-                            <img src="static/img/content/bank_1.jpg" class="img-responsive "
-                                 style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
+                <div class="col-md-9 col-sm-9 container industry-commendation-imgBox"><!--width: 921.6px-->
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/bank_1.jpg" class="img-responsive commendation-style"
+                                 alt="...">
                         </div>
                     </div>
-                    <div style="display: inline-block;margin:10px 0 0 15px">
-                        <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-                            <img src="static/img/content/bank_2.jpg" class="img-responsive "
-                                 style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/bank_2.jpg" class="img-responsive commendation-style"
+                                 alt="...">
                         </div>
                     </div>
-                    <div style="display: inline-block;margin:10px 0 0 15px">
-                        <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-                            <img src="static/img/content/bank_3.jpg" class="img-responsive "
-                                 style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/bank_3.jpg" class="img-responsive commendation-style"
+                                 alt="...">
                         </div>
                     </div>
-                    <div style="display: inline-block;margin:10px 0 0 15px">
-                        <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-                            <img src="static/img/content/bank_4.jpg" class="img-responsive "
-                                 style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/bank_4.jpg" class="img-responsive commendation-style"
+                                 alt="...">
                         </div>
                     </div>
-
-
                 </div>
             </div>
+            <!--主要推荐队列 industry commendation queue end-->
         </div>
+        <!--行业推荐 industry commendation end-->
+
+        <!--行业推荐 industry commendation-->
+        <div class="row">
+            <!--行业推荐 industry commendation label-->
+            <div class="col-md-12 clearfix industry-Label">
+                <div class="industry-Label-content">
+                    <i class="industry-Label-sign"></i>
+                    <span class="industry-Label-text">建筑</span>
+                </div>
+                <div class="industry-Label-more">
+                    <a class="industry-Label-more-text" href="#" target="_blank">
+                       <span>
+                            更多 >
+                       </span>
+                    </a>
+                </div>
+            </div>
+            <!--行业推荐 industry commendation label end-->
+            <!--主要推荐队列 industry commendation queue -->
+            <div class="row clearfix"><!--width: 1200px  19.2%  76%-->
+                <div class="col-md-3 col-sm-3 "> <!--width: 230px -->
+                    <img class="img-responsive industry-commendation-queue-mainImg"
+                         src="static/img/content/content_bank.jpg"
+                         style="" alt="...">
+                </div>
+                <div class="col-md-9 col-sm-9 container industry-commendation-imgBox"><!--width: 921.6px-->
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/architecture_1.jpg" class="img-responsive commendation-style"
+                                 alt="...">
+                        </div>
+                    </div>
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/architecture_2.jpg" class="img-responsive commendation-style"
+                                 alt="...">
+                        </div>
+                    </div>
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/architecture_3.jpg" class="img-responsive commendation-style"
+                                 alt="...">
+                        </div>
+                    </div>
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/architecture_4.jpg" class="img-responsive commendation-style"
+                                 alt="...">
+                        </div>
+                    </div>
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/architecture_5.jpg" class="img-responsive commendation-style"
+                                 alt="...">
+                        </div>
+                    </div>
+                    <div class="commendation-imgBox-border">
+                        <div class="clearfix commendation-img-background">
+                            <img src="static/img/content/architecture_6.jpg" class="img-responsive commendation-style"
+                                 alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--主要推荐队列 industry commendation queue end-->
+        </div>
+        <!--行业推荐 industry commendation end-->
     </div>
 </div>
-<!--公司模块 end-->
+<!--行业推荐模块 industry end-->
 
 <!--合作伙伴 corporates-->
 
