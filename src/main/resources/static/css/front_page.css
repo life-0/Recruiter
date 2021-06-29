@@ -229,14 +229,10 @@ body {
 .industry-commendation-queue-mainImg {
     width: 230px;
     float: right;
-    height: 303px;
+    height: 319px !important;
 }
 
-.industry-commendation-imgBox {
-    margin-top: -10px;
-}
-
-.commendation-imgBox-border {
+.commendation-imgBox-divide-border {
     display: inline-block;
     margin: 10px 0 0 15px;
 }
@@ -244,16 +240,48 @@ body {
 .commendation-img-background {
     background: #FFFFFF;
     width: 245px;
-    height: 144.4px;
+    height: 144px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: relative;
 }
 
-.commendation-style {
+.commendation-img-style {
     width: 80%;
     height: 51%;
     margin: 0 auto;
 }
+
 /*行业推荐 industry commendation end*/
+
+/*注脚 footer*/
+.sticky-footer {
+    padding: 2rem 0;
+    flex-shrink: 0;
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+.my-auto {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.copyright {
+    line-height: 1;
+    font-size: .8rem;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.my-auto {
+    margin-bottom: auto !important;
+    margin-top: auto !important;
+}
+
+/*注脚 footer end*/
