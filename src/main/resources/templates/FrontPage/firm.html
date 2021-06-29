@@ -1,537 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link href="static/css/front_page.css" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link href="static/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/css/flexslider.css" rel="stylesheet">
-  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-  <script src="static/js/JQuery-3.4.1.min.js"></script>
-  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-  <script src="static/js/bootstrap.min.js"></script>
-  <!-- 加载flexSlide插件,是图片转换的更加平滑-->
-  <script src="static/js/jquery.flexslider.js"></script>
-  <!--  Scrolling Reveal Script -->
-  <script src="static/js/scrollReveal.js"></script>
-  <!--  Scroll Scripts -->
-  <script src="static/js/jquery.easing.min.js"></script>
-  <script src="static/js/bootstrap.js"></script>
-  <script src="static/js/animation.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>公司页面</title>
 
+    <link href="static/css/firm.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/flexslider.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="static/js/JQuery-3.4.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="static/js/bootstrap.min.js"></script>
+    <!-- 加载flexSlide插件,是图片转换的更加平滑-->
+    <script src="static/js/jquery.flexslider.js"></script>
+    <!--  Scrolling Reveal Script -->
+    <script src="static/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts -->
+    <script src="static/js/jquery.easing.min.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/animation.js"></script>
+    <!--   <style>
+           html {
+               font-family: sans-serif;
+               line-height: 1.15;
+               -webkit-text-size-adjust: 100%;
+               -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+           }
 
+           article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+               display: block;
+           }
+
+           body {
+               margin: 0;
+               padding: 0;
+               font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+               "Segoe UI Symbol", "Noto Color Emoji";
+               font-size: 1rem;
+               font-weight: 400;
+               line-height: 1.5;
+               color: #858796;
+               text-align: left;
+               background-color: rgba(235, 238, 241, 0.93);
+           }
+
+           .header-navbar { /* 导航栏修改*/
+               font-size: 14px;
+               letter-spacing: 1px;
+               min-height: 70px;
+               background: #180303;
+           }
+
+           .logo-icon { /* 图标固定大小 */
+               height: 51px;
+               width: 180px;
+               transform: translate(0px, -10px);
+           }
+
+           .navbar-font {
+               transform: translate(0px, 7px); /* 以2D的形式进行位移 */
+           }
+
+           .navbar-nav {
+               display: inline-block;
+               float: none;
+           }
+
+           .navbar-nav li a {
+               color: #050505;
+           }
+
+       </style>-->
 </head>
-<body style='overflow-x:hidden'>
+<body>
 <!--头部-->
-<div class="navbar navbar-inverse navbar-fixed-top header-navbar " >
-  <div class="container ">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <img class="logo-icon" src="assets/img/logo180-50.png" alt="标题"/>
-      </a>
+<div class="navbar navbar-inverse  header-navbar " id="menu">
+    <div class="container ">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img class="logo-icon" src="assets/img/logo180-50.png" alt="标题"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right navbar-font">
+                <li><a href="#home">主页</a></li>
+                <li><a href="#features-sec">介绍</a></li>
+                <li><a href="#faculty-sec">工作</a></li>
+                <li><a href="#course-sec">课程</a></li>
+                <li><a href="#contact-sec">联系我们</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right navbar-font">
-        <li><a href="#home">主页</a></li>
-        <li><a href="#features-sec">介绍</a></li>
-        <li><a href="#faculty-sec">工作</a></li>
-        <li><a href="#course-sec">课程</a></li>
-        <li><a href="#contact-sec">联系我们</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
 <!--head end-->
 
-<!--轮播图 carousel-->
-<div class="col-lg-12 col-md-12 col-sm-12 carousel-range ">
-  <hr/>
-  <hr/>
-  <div class="flexslider " style="border: none">
-    <ul class="slides">
-      <li>
-        <!--                <div>-->
-        <!--                    你先要的文字-->
-        <!--                </div>-->
-        <a href="#">
-          <img class="img-range" src="static/img/banner_1.jpg" alt="..">
-        </a>
-      </li>
-      <li>
-        <img class="img-range" src="static/img/banner_2.jpg" alt="..">
-      </li>
-      <li>
-        <img class="img-range" src="static/img/banner_3.jpeg" alt="..">
-      </li>
-      <li>
-        <img class="img-range" src="static/img/banner_4.jpg" alt="..">
-      </li>
-      <li>
-        <img class="img-range" src="static/img/banner_5.jpg" alt="..">
-      </li>
-      <li>
-        <img class="img-range" src="static/img/banner_6.jpg" alt="..">
-      </li>
-      <li>
-        <img class="img-range" src="static/img/banner_7.jpg" alt="..">
-      </li>
-    </ul>
-  </div>
+<!--公司简介 firm card-->
+<div class="row firm-header">
+    <div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 ">
+        <div class="center-block col-md-2 col-lg-2 col-sm-2 firm-header-img">
+            <img class="firm-header-img-size" src="static/img/content/brand/china_connect.jpg" alt="..">
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-4 firm-header-info ">
+            <div class="" style="">
+                <h1 style="margin: 12px 0 5px 0;font-size: 24px">数据移动有限公司</h1>
+                <div style="font-size: 14px;
+                            color: #9497a1;
+                            position: relative;
+                            vertical-align: middle;
+                            float: left;width: 100%">
+                    <span>成立时期</span>|
+                    <span>企业类别</span>|
+                    <span>成员人数</span>|
+                    <span>企业专职</span>
+                </div>
+                <p class="" style="line-height: 20px">
+                    <a href="#">官网</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-5 col-lg-5 firm-header-occupation-count" style="">
+            <p style="">170</p>
+            <p>在招职位</p>
+        </div>
+    </div>
 </div>
-<!--轮播图 carousel end-->
+<!--firm card end-->
+<!--introduction -->
+<div class="container">
+    <div class="col-sm-8 introduction-text-border">
+        <!--firm introduce text-->
+        <div class="introduction-content">
+            <br/>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;小时候，总常常幻想着自己可以长大，可以独自一人去领略更多优美的风光。
+                我们这一生，会有太多太多的梦想，要么就是用尽全力去实现他，要么就是永远沉积在自己的心中。
+                我喜欢旅行，向往美丽的山、美丽的水，一见到大海和草原我就会心旷神怡，深陷其中。
+                我期盼可以带着自己最爱的人去遨游世界，让他给自己拍上几张美美的照片。
+                <br/>
+                &nbsp;&nbsp;&nbsp; &nbsp;小时候，总常常幻想着自己可以长大，可以独自一人去领略更多优美的风光。
+                我们这一生，会有太多太多的梦想，要么就是用尽全力去实现他，要么就是永远沉积在自己的心中。
+                我喜欢旅行，向往美丽的山、美丽的水，一见到大海和草原我就会心旷神怡，深陷其中。
+                我期盼可以带着自己最爱的人去遨游世界，让他给自己拍上几张美美的照片。
+            </p>
+            <img class="introduction-show" src="static/img/content/brand/联通集团大楼.jpeg" alt="..">
+            <br/><br/>
+        </div>
+        <!--firm introduce end-->
 
-<!--&lt;!&ndash;链接展示 link&ndash;&gt;-->
-<!--<div class="container">-->
-<!--    <div class="row  text-center">-->
-<!--        <div class="col-lg-12  col-md-12 col-sm-12">-->
-<!--            <h2 data-scroll-reveal="enter from the bottom after 0.4s">-->
-<!--                <i class="fa fa-circle-o-notch"></i>-->
-<!--                WELCOME TO THE EDU-CENTER-->
-<!--                <i class="fa fa-circle-o-notch"></i>-->
-<!--            </h2>-->
-<!--            <hr/>-->
-<!--            <hr/>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+        <!--firm advantage-->
+        <div class="firm-model-spacing">
+            <h1 class="model-title" style="">公司优势</h1>
+            <ul class="advantage-specific-ul">
+                <li>五险一金</li>
+                <li>补充医疗保险</li>
+                <li>绩效奖金</li>
+                <li>加班补助</li>
+                <li>交通补助</li>
+                <li>餐补</li>
+                <li>通讯补助</li>
+                <li>带薪年假</li>
+            </ul>
+        </div>
+        <!--firm advantage end-->
 
-<!--宣发栏展示 notice-->
-<div id="features-sec" class="container ">
-  <div class="row">
-    <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
-      <div class="notice">
-        <div class="clearfix">
-          <div class="notice-nav">
-            <img src="static/img/content/notice_img_1.png" alt="">
-            <span class="notice-title" style=" ">最新网申</span>
-            <a href="#" class="notice-recommendation-other"  target="_blank">
+        <!--firm awards-->
+        <div class="firm-model-spacing">
+            <h1 class="awards-title">公司奖项</h1>
+            <ul class="awards-specific-ul">
+                <li>2020年度中国最佳雇主</li>
+                <li>2020全国百强雇主</li>
+                <li>2019全国百强雇主</li>
+                <li>2019最具社会责任雇主</li>
+                <li>2018全国百强雇主</li>
+                <li>2017全国百强雇主</li>
+                <li>2017最受大学生关注雇主</li>
+                <li>2016最具社会责任雇主</li>
+            </ul>
+        </div>
+        <!--firm awards end-->
+
+        <!--firm business information-->
+        <div class="firm-model-spacing">
+            <h1 class="model-title">工商信息</h1>
+            <ul class="business-information-ul">
+                <li>
+                    <label>
+                        公司全称：
+                    </label>
+                    <span>
+                        中国联合网络通信集团有限公司
+                    </span>
+                </li>
+                <li>
+                    <label>成立时间：</label>
+                    <span>1994-06-18</span>
+                </li>
+                <li>
+                    <label>注册资本：</label>
+                    <span>10481551.9575万元人民币</span>
+                </li>
+                <li>
+                    <label>法人代表：</label>
+                    <span>王晓初</span>
+                </li>
+                <li>
+                    <label>数据来源：</label>
+                    <img src="static/img/content/brand/ant_credit_search_icon.png"
+                         style="display: inline-block;width: 98px;" alt="...">
+                </li>
+            </ul>
+        </div>
+        <!--firm business information end-->
+
+        <!--firm recruitment-->
+        <div class="firm-model-spacing">
+            <h1 class="model-title">职位招聘</h1>
+            <!--region-->
+            <!--此处有问题 块级区分不清楚-->
+            <div>
+                <div class="firm-recruitment-region">
+                    <span class="recruitment-region-text">
+                        区域：
+                    </span>
+                    <span class="recruitment-region-specific-tip">
+                        不限
+                    </span>
+                    <ul class="recruitment-region-ul">
+                        <li>北京</li>
+                        <li>天津</li>
+                        <li>江苏</li>
+                        <li>广东</li>
+                        <li>陕西</li>
+                        <li>黑龙江</li>
+                        <li>山东</li>
+                        <li>四川</li>
+                        <li>贵州</li>
+                        <li>河北</li>
+                        <li>安徽</li>
+                        <li>江西</li>
+                        <li>湖南</li>
+                        <li>海南</li>
+                        <li>重庆</li>
+                        <li>青海</li>
+                        <li>河南</li>
+                        <li>甘肃</li>
+                        <li>辽宁</li>
+                        <li>浙江</li>
+                        <li>湖北</li>
+                        <li>广西</li>
+                        <li>西藏</li>
+                        <li>新疆</li>
+                        <li>上海</li>
+                    </ul>
+                    <span class="region-ul-more">更多 ></span>
+                </div>
+                <div class="conditions__warpper"><span class="conditions__title">职位：</span> <span
+                        class="conditions__all conditions__selected">不限</span>
+                    <ul class="conditions__common conditions__common-more" style=" width: 510px;
+                                                                                    padding-left: 20px;
+                                                                                    overflow: hidden;
+                                                                                    float: left;
+                                                                                    list-style: none;
+                                                                                    height: 54px;">
+                        <li class="conditions__all">软件研发</li>
+                        <li class="conditions__all">运维支持</li>
+                        <li class="conditions__all">数据工程师</li>
+                        <li class="conditions__all">售前售后工程师</li>
+                        <li class="conditions__all">产品经理</li>
+                        <li class="conditions__all">机械设计/制造</li>
+                        <li class="conditions__all">运营管理</li>
+                        <li class="conditions__all">通信及硬件研发</li>
+                        <li class="conditions__all">市场/品牌推广</li>
+                        <li class="conditions__all">前端开发</li>
+                        <li class="conditions__all">行政</li>
+                        <li class="conditions__all">销售顾问</li>
+                        <li class="conditions__all">人事</li>
+                        <li class="conditions__all">文员/助理</li>
+                        <li class="conditions__all">业务运营</li>
+                        <li class="conditions__all">专业分析</li>
+                        <li class="conditions__all">银行及金融服务</li>
+                        <li class="conditions__all">合规风控/法务/律师</li>
+                        <li class="conditions__all">公关媒介</li>
+                        <li class="conditions__all">视觉/交互设计</li>
+                        <li class="conditions__all">项目管理</li>
+                        <li class="conditions__all">新媒体运营</li>
+                        <li class="conditions__all">商务服务</li>
+                        <li class="conditions__all">管培生/储备干部</li>
+                        <li class="conditions__all">人工智能</li>
+                        <li class="conditions__all">电子/电器/半导体</li>
+                        <li class="conditions__all">财务</li>
+                        <li class="conditions__all">商务拓展</li>
+                        <li class="conditions__all">测试工程师</li>
+                    </ul>
+                    <span class="conditions__more conditions__all">更多</span></div>
+                <div class="conditions__warpper"><span class="conditions__title">薪资：</span> <span
+                        class="conditions__all conditions__selected">不限</span>
+                    <ul class="conditions__common" style=" width: 510px;
+                                                        padding-left: 20px;
+                                                        overflow: hidden;
+                                                        float: left;
+                                                        list-style: none;
+                                                        height: 54px;">
+                        <li class="conditions__all">1K以下</li>
+                        <li class="conditions__all">1K-2K</li>
+                        <li class="conditions__all">2K-4K</li>
+                        <li class="conditions__all">4K-6K</li>
+                        <li class="conditions__all">6K-8K</li>
+                        <li class="conditions__all">8K-10K</li>
+                        <li class="conditions__all">10K-15K</li>
+                        <li class="conditions__all">15K-25K</li>
+                        <li class="conditions__all">25K-35K</li>
+                        <li class="conditions__all">35K-50K</li>
+                        <li class="conditions__all">50K-70K</li>
+                        <li class="conditions__all">70K-100K</li>
+                        <li class="conditions__all">100K以上</li>
+                    </ul> <!---->
+                </div>
+            </div>
+            <!--region end-->
+
+            <!--occupation-->
+            <div style="margin-top: 100px;position: relative;
+                            height: 142px;
+                            background: #f7f9fc;
+                            margin-bottom: 15px;
+                            padding: 12px 15px 20px;">
+                <!--job basic info-->
+                <div style="float:left;">
+                    <div class="job-title">
+                        <h5 style="height: 32px">
                             <span>
-                                更多
+                                模块研究
                             </span>
-              <i>&gt;</i>
-            </a>
-          </div>
-          <ul class="notice-ul">
-            <li class="notice-li-content">
-              <div class="li-content-p">
-                <a href="#" target="_blank">
-                  <p title="苏州分行培训生" class="content-title-color">
-                    苏州分行培训生
-                  </p>
-                </a>
-                <a href="#" target="_blank">
-                  <p class="content-des-color">
-                    宁波银行苏州分行</p>
-                </a>
-              </div>
-              <div class="li-content-link">
-                <a href="#" target="_blank">
-                  立即申请
-                </a>
-              </div>
-            </li>
-            <li class="notice-li-content">
-              <div class="li-content-p">
-                <a href="#" target="_blank">
-                  <p title="苏州分行培训生" class="content-title-color">
-                    苏州分行培训生
-                  </p>
-                </a>
-                <a href="#" target="_blank">
-                  <p class="content-des-color">
-                    宁波银行苏州分行</p>
-                </a>
-              </div>
-              <div class="li-content-link">
-                <a href="#" target="_blank">
-                  立即申请
-                </a>
-              </div>
-            </li>
 
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4  col-md-4 col-sm-4 "
-         data-scroll-reveal="enter from the bottom after 0.4s">
-      <div class="notice">
-        <div class="clearfix">
-          <div class="notice-nav">
-            <img src="static/img/content/notice_img_1.png" alt="">
-            <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
-            <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
-                                    text-align: center; letter-spacing: 0;" target="_blank">
-                            <span>
-                                更多</span>
-              <i>&gt;</i>
-            </a>
-          </div>
-          <ul class="notice-ul">
-            <li class="notice-li-content">
-              <div class="li-content-p">
-                <a href="#" target="_blank">
-                  <p title="苏州分行培训生" class="content-title-color">
-                    苏州分行培训生
-                  </p>
-                </a>
-                <a href="#" target="_blank">
-                  <p class="content-des-color">
-                    宁波银行苏州分行</p>
-                </a>
-              </div>
-              <div class="li-content-link">
-                <a href="#" target="_blank">
-                  立即申请
-                </a>
-              </div>
-            </li>
-            <li class="notice-li-content">
-              <div class="li-content-p">
-                <a href="#" target="_blank">
-                  <p title="苏州分行培训生" class="content-title-color">
-                    苏州分行培训生
-                  </p>
-                </a>
-                <a href="#" target="_blank">
-                  <p class="content-des-color">
-                    宁波银行苏州分行</p>
-                </a>
-              </div>
-              <div class="li-content-link">
-                <a href="#" target="_blank">
-                  立即申请
-                </a>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4  col-md-4 col-sm-4 "
-         data-scroll-reveal="enter from the bottom after 0.4s">
-      <div class="notice">
-        <div class="clearfix">
-          <div class="notice-nav">
-            <img src="static/img/content/notice_img_1.png" alt="">
-            <span style=" color: #333;font-size: 18px;font-weight: 600;">最新网申</span>
-            <a href="#" style="color: #8e97a1;font-size: 14px;float: right;
-                                    text-align: center; letter-spacing: 0;" target="_blank">
-                            <span>
-                                更多</span>
-              <i>&gt;</i>
-            </a>
-          </div>
-          <ul class="notice-ul">
-            <li class="notice-li-content">
-              <div class="li-content-p">
-                <a href="#" target="_blank">
-                  <p title="苏州分行培训生" class="content-title-color">
-                    苏州分行培训生
-                  </p>
-                </a>
-                <a href="#" target="_blank">
-                  <p class="content-des-color">
-                    宁波银行苏州分行</p>
-                </a>
-              </div>
-              <div class="li-content-link">
-                <a href="#" target="_blank">
-                  立即申请
-                </a>
-              </div>
-            </li>
-            <li class="notice-li-content">
-              <div class="li-content-p">
-                <a href="#" target="_blank">
-                  <p title="苏州分行培训生" class="content-title-color">
-                    苏州分行培训生
-                  </p>
-                </a>
-                <a href="#" target="_blank">
-                  <p class="content-des-color">
-                    宁波银行苏州分行</p>
-                </a>
-              </div>
-              <div class="li-content-link">
-                <a href="#" target="_blank">
-                  立即申请
-                </a>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!--宣发栏展示 notice end-->
-
-<!--合作品牌展示 brand-->
-<div class="container">
-  <div class="row ">
-    <div class="dividingLine" style=" ">
-      <em class="dividingLine-style" >
-      </em>
-      <strong class="dividingLine-text" >
-        合作品牌
-      </strong>
-    </div>
-    <div class="brand">
-      <div class="container-fluid">
-        <div class="brand-imgbox" >
-          <img class="imgbox-img" src="static/img/content/brand/china_mobie.jpg"
-               alt="...">
-        </div>
-        <div class="brand-imgbox">
-          <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
-
-        </div>
-        <div class="brand-imgbox">
-          <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
-        </div>
-        <div class="brand-imgbox">
-          <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
-        </div>
-        <div class="brand-imgbox">
-          <img src="static/img/content/brand/guangfa_bank.jpg" alt="...">
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!--合作品牌展示 brand end-->
-
-<!--公司模块-->
-<div class="container">
-  <div class="row ">
-    <div class="" style=" position: relative;height: 38px;line-height: 38px;color: #379502;padding-left: 30px;">
-      <em style="position: absolute;
-            width: 100%;
-            height: 2px;
-            left: 0;
-            top: 50%;
-            margin-top: -1px;
-            background-color: #f86108;">
-      </em>
-      <strong class="" style="position: relative;
-            display: inline-block;
-            padding: 0 20px;
-            background-color:#FFFFFF;
-            border-radius:15% ">
-        企业展示
-      </strong>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="banner-content-head clearfix"
-             style="line-height: 19px;
-                            word-break: break-all;
-                            word-wrap: break-word;
-                            padding: 0;
-                            margin: 0;">
-          <div style="float: left;
-                                height: 40px;
-                                line-height: 40px">
-            <i style="background: #24adde;
+                        </h5>
+                    </div>
+                    <div class="job-basic-info" style="">
+                        <p style="font-family: PingFangSC-Semibold;
+                                font-size: 16px;
+                                color: #ff5959;
+                                display: inline-block;">
+                            面议
+                        </p>
+                    </div>
+                    <div>
+                        <ul style="vertical-align: top; padding-left: 0;
+                                margin-top: 2px;
                                 display: inline-block;
-                                height: 22px;
-                                margin-right: 15px;
-                                vertical-align: middle;
-                                width: 5px;">
-
-            </i>
-            <span style="color: #333;
+                                text-align: right;list-style: none">
+                            <li class="job-address__jobs__basic-info__item" style="float: left;
+                                                                                font-family: PingFangSC-Regular;
+                                                                                font-size: 14px;
+                                                                                color: #666;
+                                                                                padding-right: 8px;
+                                                                                height: 18px;
+                                                                                vertical-align: middle;">
+                                青岛
+                            </li>
+                            <li class="job-address__jobs__basic-info__item" style="float: left;
+                                                                                font-family: PingFangSC-Regular;
+                                                                                font-size: 14px;
+                                                                                color: #666;
+                                                                                padding-right: 8px;
+                                                                                height: 18px;
+                                                                                vertical-align: middle;">
+                                1-3年
+                            </li>
+                            <li class="job-address__jobs__basic-info__item" style="float: left;
+                                                                                font-family: PingFangSC-Regular;
+                                                                                font-size: 14px;
+                                                                                color: #666;
+                                                                                padding-right: 8px;
+                                                                                height: 18px;
+                                                                                vertical-align: middle;">
+                                本科
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--job basic info end-->
+                <div style="float: right;width: 250px;
+                            text-align: right;">
+                    <h5 style=" white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        height: 32px;">
+                        <button style="font-size: 16px;
+                                    border:none;
+                                    color: #333;
                                     display: inline-block;
-                                    font-size: 16px;
-                                    font-weight: 600;
-                                    vertical-align: middle;">
-                            金融
-                        </span>
-          </div>
-          <div style="float: right;
-                                height: 40px;
-                                line-height: 40px;">
-                        <span>
-                            <a href="#" target="_blank"
-                               class="banner-pro-more" style="color: #8e97a1;font-size: 14px;">
-                                更多
-                            </a>
-                            <i>&gt;&gt;</i>
-                        </span>
-          </div>
-        </div>
-      </div>
+                                    line-height: 32px;
+                                    cursor: pointer;
+                                    padding: 0 8px;
+                                    background: rgba(0,0,0,0);
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                    width: 250px;
+                                    text-align: right;">
+                            海尔智佳股份有限公司
+                        </button>
+                    </h5>
 
-      <div class="row clearfix"><!--width: 1200px  19.2%  76%-->
-        <div class="col-md-3 col-sm-3 "> <!--width: 230px -->
-          <img src="static/img/content/content_bank.jpg"
-               style="width: 230px;float: right;
-                                height: 303px;" class="img-responsive " alt="...">
+                    <ul style="list-style: none;zoom: 1;
+                                display: block;">
+                        <li class="" style="padding-right: 0;float: right;
+                                            font-family: PingFangSC-Regular;
+                                            font-size: 14px;
+                                            color: #666;
+                                            padding-left: 8px;
+                                            height: 18px;
+                                            vertical-align: middle;
+                                        ">
+                            10000人以上
+                        </li>
+                        <li class="" style="float: right;
+                                            font-family: PingFangSC-Regular;
+                                            font-size: 14px;
+                                            color: #666;
+                                            padding-left: 8px;
+                                            height: 18px;
+                                            vertical-align: middle;
+                                        ">
+                            国企
+                        </li>
+                    </ul>
+                    <div>
+                        <span class="" style="  margin-top: 30px;
+                                                font-size: 12px;
+                                                color: #9497a1;
+                                                margin-right: 5px;">
+                             最近
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <!--company info end-->
         </div>
-        <div class="col-md-9 col-sm-9 container" style="margin-top: -10px"><!--width: 921.6px-->
-          <div style="display: inline-block; margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                                     display: table-cell;
-                                                     text-align:center;
-                                                     vertical-align:middle;position:relative;">
-              <img src="static/img/content/bank_1.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/bank_2.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/bank_3.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/bank_4.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-        </div>
-      </div>
+        <!--occupation end-->
     </div>
+    <!--firm recruitment end-->
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="banner-content-head clearfix"
-             style="line-height: 19px;
-                            word-break: break-all;
-                            word-wrap: break-word;
-                            padding: 0;
-                            margin: 0;">
-          <div style="float: left;
-                                height: 40px;
-                                line-height: 40px">
-            <i style="background: #24adde;
-                                display: inline-block;
-                                height: 22px;
-                                margin-right: 15px;
-                                vertical-align: middle;
-                                width: 5px;">
 
-            </i>
-            <span style="color: #333;
-                                    display: inline-block;
-                                    font-size: 16px;
-                                    font-weight: 600;
-                                    vertical-align: middle;">
-                            建筑
-                        </span>
-          </div>
-          <div style="float: right;
-                                height: 40px;
-                                line-height: 40px;">
-                        <span>
-                            <a href="#" target="_blank"
-                               class="banner-pro-more" style="color: #8e97a1;font-size: 14px;">
-                                更多
-                            </a>
-                            <i>&gt;&gt;</i>
-                        </span>
-          </div>
+    <!--sidebar -->
+    <div class=" col-md-4 col-sm-4 col-lg-4 " style="margin-left: 15px;
+                                                    border-top: 1px solid #ccc;
+                                                    padding: 0;
+                                                    width: 285px;
+                                                    float: left;">
+        <!--employer reviews -->
+        <div class="" style="margin-bottom: 30px;">
+            <h1 style="font-size: 18px;
+                        color: #333;
+                        position: relative;
+                        padding-top: 10px;
+                        padding-bottom: 22px;margin-top: -20px">雇员点评
+            </h1>
+            <ul class="labels__warpper" style="list-style: none;overflow: hidden;padding: 0;">
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">
+                    工作环境好
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">同事很nice
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">氛围活跃
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">人际关系好
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">团队执行强
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">交通便利
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">五险一金
+                </li>
+                <li style="float: left;
+                            margin-right: 10px;
+                            background: #f5faff;
+                            border-radius: 2px;
+                            padding: 7px 10px;
+                            font-size: 12px;
+                            color: #1987fb;
+                            margin-top: 10px;">实力大公司
+                </li>
+            </ul>
         </div>
-      </div>
-
-      <div class="row clearfix"><!--width: 1200px  19.2%  76%-->
-        <div class="col-md-3 col-sm-3 "> <!--width: 230px -->
-          <img src="static/img/content/content_architecture.jpg"
-               style="width: 230px;float: right;
-                                height: 303px;" class="img-responsive " alt="...">
+        <!--employer reviews end-->
+        <div style="margin-bottom: 30px;">
+            <h1 style=" font-size: 18px;
+                color: #333;
+                border-bottom: 1px solid #ccc;">
+                公司地址
+            </h1>
+            <p class="" style="font-size: 14px;
+                                color: #333;
+                                line-height: 28px;
+                                margin: 5px 0 25px;">
+                <span>北京市西城区金融大街21号中国联通大厦</span>
+            </p>
         </div>
-        <div class="col-md-9 col-sm-9 container" style="margin-top: -10px"><!--width: 921.6px-->
-          <div style="display: inline-block; margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                                     display: table-cell;
-                                                     text-align:center;
-                                                     vertical-align:middle;position:relative;">
-              <img src="static/img/content/architecture_1.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/architecture_2.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/architecture_3.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/architecture_4.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-          <div style="display: inline-block;margin:10px 0 0 15px">
-            <div class="clearfix" style="background: #FFFFFF;width: 245px;height: 144.4px;
-                                         display: table-cell;
-                                         text-align:center;
-                                         vertical-align:middle;position:relative;">
-              <img src="static/img/content/architecture_5.jpg" class="img-responsive "
-                   style=" width:80%;height: 51%; margin: 0 auto ;" alt="...">
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+    <!--sidebar end -->
 </div>
-<!--公司模块 end-->
-
-<!--合作伙伴 corporates-->
-
-<!--合作伙伴 corporates end-->
-<!--foot-->
-<div>
-  <footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-      <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Your Website 2021</span>
-      </div>
+<!--introduction end-->
+<!--3.页脚-->
+<div class="container-fluid">
+    <!--foot-->
+    <div>
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
     </div>
-  </footer>
+    <!--foot end-->
 </div>
-<!--foot end-->
 </body>
 </html>
