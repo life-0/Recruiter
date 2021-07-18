@@ -30,7 +30,7 @@
                 data: JSON.stringify(formObject),
                 success: function (data) {
                     if (data === "ok") {
-                        let frame =window.open("/student/tables","_self");
+                        //let frame =window.open("/student/tables","_self");
                         // frame.postMessage("a message","/student/tables")
                         // 等该窗口装载完成时，向该窗口发送消息
                         // frame.onload = function () {
