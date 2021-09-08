@@ -75,7 +75,106 @@
             color: #050505;
         }
 
+        /*firm occupation*/
+        .occupation {
 
+            position: relative;
+            height: 142px;
+            background: #f7f9fc;
+            margin-bottom: 15px;
+            padding: 12px 15px 20px;
+        }
+
+        .job-title {
+            float: left;
+            height: 32px;
+        }
+
+        .job-basic-info {
+            font-family: PingFangSC-Semibold;
+            font-size: 16px;
+            color: #ff5959;
+            display: inline-block;
+        }
+
+        .job-basic-info-ul {
+            vertical-align: top;
+            padding-left: 0;
+            margin-top: 2px;
+            display: inline-block;
+            text-align: right;
+            list-style: none
+        }
+
+        .job-basic-info-ul li {
+            float: left;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #666;
+            padding-right: 8px;
+            height: 18px;
+            vertical-align: middle;
+        }
+
+        .job-properties-frame {
+            float: right;
+            width: 250px;
+            text-align: right;
+        }
+
+        .job-properties-title {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: 32px;
+        }
+
+        .job-firm-title {
+            font-size: 16px;
+            border: none;
+            color: #333;
+            display: inline-block;
+            line-height: 32px;
+            cursor: pointer;
+            padding: 0 8px;
+            background: rgba(0, 0, 0, 0);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 250px;
+            text-align: right;
+        }
+
+        .job-properties-ul {
+            list-style: none;
+            zoom: 1;
+            display: block;
+            height: 20px;
+        }
+
+        .job-properties-ul li {
+            padding-right: 0;
+            float: right;
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #666;
+            padding-left: 8px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        .job-firm-info-update {
+            margin-top: 15px !important;
+
+        }
+
+        .job-firm-info-update-txt {
+            font-size: 12px;
+            color: #9497a1;
+            margin-right: 5px;
+        }
+
+        /*firm occupation end*/
     </style>
 </head>
 <body>
@@ -197,17 +296,111 @@
                                                             position: absolute;
                                                             top: 0;
                                                             right: 0;">
-                        <span class="iconfont icon-resume-edit profile-pre-edit-resume" style="margin-right: 5px;">
-
-                        </span>
-                        编辑</span>
+                        <span class="iconfont icon-resume-edit profile-pre-edit-resume"
+                              style="margin-right: 5px;"></span>
+                        编辑
+                    </span>
                 </div>
-
             </div>
+            <!--个人信息 end-->
         </div>
         <!--个人信息框 info end-->
     </div>
+    <!--职位收藏信息框-->
+    <div class="row">
+        <div class="info" style="width: 100%;
+                            height: 360px;
+                            text-align: center;border: 1px solid #ccc;">
+            <!--职位描述-->
+            <div class="occupation">
+                <!--job basic info-->
+                <div class="job-title">
+                    <h5>
+                            <span>
+                                模块研究
+                            </span>
+                    </h5>
 
+                    <p class="job-basic-info" style="">
+                        面议
+                    </p>
+
+                    <div>
+                        <ul class="job-basic-info-ul">
+                            <li>青岛</li>
+                            <li>1-3年</li>
+                            <li>本科</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--job basic info end-->
+                <div class="job-properties-frame">
+                    <h5 class="job-properties-title">
+                        <button class="job-firm-title" style="">
+                            海尔智佳股份有限公司
+                        </button>
+                    </h5>
+
+                    <ul class="job-properties-ul" style="">
+                        <li>10000人以上</li>
+                        <li>国企</li>
+                    </ul>
+                    <div class="job-firm-info-update">
+                        <span class="job-firm-info-update-txt">
+                             最近
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--职位描述 end-->
+            <!--职位描述-->
+            <div class="occupation">
+                <!--job basic info-->
+                <div class="job-title">
+                    <h5>
+                            <span>
+                                模块研究
+                            </span>
+                    </h5>
+
+                    <p class="job-basic-info" style="">
+                        面议
+                    </p>
+
+                    <div>
+                        <ul class="job-basic-info-ul">
+                            <li>青岛</li>
+                            <li>1-3年</li>
+                            <li>本科</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--job basic info end-->
+                <div class="job-properties-frame">
+                    <h5 class="job-properties-title">
+                        <button class="job-firm-title" style="">
+                            海尔智佳股份有限公司
+                        </button>
+                    </h5>
+
+                    <ul class="job-properties-ul" style="">
+                        <li>10000人以上</li>
+                        <li>国企</li>
+                    </ul>
+                    <div class="job-firm-info-update">
+                        <span class="job-firm-info-update-txt">
+                             最近
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--职位描述 end-->
+        </div>
+    </div>
+    <!--职位收藏信息框-->
+    <div>
+
+    </div>
 </div>
 
 
