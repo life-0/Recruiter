@@ -77,49 +77,59 @@
 
         /*firm occupation*/
         .occupation {
-
-            position: relative;
-            height: 142px;
+            box-shadow: 0 3px 15px 3px rgba(58, 57, 57, 0.5); /*阴影设置*/
+            /*  position: relative;*/
+            width: 80%;
+            margin: 10px auto;
+            height: 162px;
             background: #f7f9fc;
-            margin-bottom: 15px;
             padding: 12px 15px 20px;
+
         }
 
         .job-title {
+            width: 33%;
             float: left;
-            height: 32px;
+            margin-top: 10px;
+
+        }
+
+        .job-salary {
+            margin-top: 20px;
         }
 
         .job-basic-info {
-            font-family: PingFangSC-Semibold;
+            margin-left: auto;
             font-size: 16px;
             color: #ff5959;
             display: inline-block;
+            text-overflow: ellipsis
         }
 
         .job-basic-info-ul {
+            width:auto;
             vertical-align: top;
-            padding-left: 0;
-            margin-top: 2px;
-            display: inline-block;
-            text-align: right;
-            list-style: none
+            padding: 0 15% 0 15%;
+            display: flex;
+            flex-wrap: nowrap;
+            list-style: none;
+            height: 32px;
+
         }
 
         .job-basic-info-ul li {
             float: left;
-            font-family: PingFangSC-Regular;
-            font-size: 14px;
-            color: #666;
-            padding-right: 8px;
+            font-size: 15px;
+            color: #000000;
             height: 18px;
             vertical-align: middle;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .job-properties-frame {
-            float: right;
-            width: 250px;
-            text-align: right;
+            float: left;
+            width: 33%;
         }
 
         .job-properties-title {
@@ -141,26 +151,24 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
-            width: 250px;
-            text-align: right;
         }
 
         .job-properties-ul {
+            vertical-align: top;
+            margin-top: 10px;
+            display: table;
             list-style: none;
-            zoom: 1;
-            display: block;
-            height: 20px;
+            text-align: center;
+            height: 23px;
         }
 
         .job-properties-ul li {
-            padding-right: 0;
-            float: right;
-            font-family: PingFangSC-Regular;
+            float: left;
             font-size: 14px;
             color: #666;
-            padding-left: 8px;
-            height: 20px;
-            vertical-align: middle;
+            padding-left: 5px;
+
+
         }
 
         .job-firm-info-update {
@@ -308,93 +316,53 @@
     </div>
     <!--职位收藏信息框-->
     <div class="row">
-        <div class="info" style="width: 100%;
-                            height: 360px;
-                            text-align: center;border: 1px solid #ccc;">
+        <div class="info" style="width: 100%;text-align: center;">
             <!--职位描述-->
             <div class="occupation">
                 <!--job basic info-->
-                <div class="job-title">
-                    <h5>
-                            <span>
-                                模块研究
-                            </span>
-                    </h5>
-
-                    <p class="job-basic-info" style="">
-                        面议
-                    </p>
-
-                    <div>
+                <div class="job-title ">
+                    <h4>海尔智佳股份有限公司</h4>
+                    <div class="job-salary" style="">
+                        <p class="" style="font-size: 18px; color: #0f0f0f;display: inline">工资: </p>
+                        <p class="job-basic-info">面议65313_~681</p>
+                    </div>
+                    <div class="" style="">
                         <ul class="job-basic-info-ul">
                             <li>青岛</li>
                             <li>1-3年</li>
                             <li>本科</li>
+                            <li>无精神疾病</li>
                         </ul>
                     </div>
                 </div>
+
                 <!--job basic info end-->
-                <div class="job-properties-frame">
+                <div class="job-properties-frame ">
                     <h5 class="job-properties-title">
-                        <button class="job-firm-title" style="">
-                            海尔智佳股份有限公司
-                        </button>
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px; color: #0f0f0f;display: inline">职位: </p>
+                            <p class="job-basic-info">java开发</p>
+                        </div>
+
                     </h5>
-
-                    <ul class="job-properties-ul" style="">
-                        <li>10000人以上</li>
-                        <li>国企</li>
-                    </ul>
-                    <div class="job-firm-info-update">
-                        <span class="job-firm-info-update-txt">
-                             最近
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <!--职位描述 end-->
-            <!--职位描述-->
-            <div class="occupation">
-                <!--job basic info-->
-                <div class="job-title">
-                    <h5>
-                            <span>
-                                模块研究
-                            </span>
-                    </h5>
-
-                    <p class="job-basic-info" style="">
-                        面议
-                    </p>
-
                     <div>
-                        <ul class="job-basic-info-ul">
-                            <li>青岛</li>
-                            <li>1-3年</li>
-                            <li>本科</li>
+                        <ul class="job-properties-ul" style="">
+                            <li>10000人以上</li>
+                            <li>国企</li>
                         </ul>
                     </div>
-                </div>
-                <!--job basic info end-->
-                <div class="job-properties-frame">
-                    <h5 class="job-properties-title">
-                        <button class="job-firm-title" style="">
-                            海尔智佳股份有限公司
-                        </button>
-                    </h5>
 
-                    <ul class="job-properties-ul" style="">
-                        <li>10000人以上</li>
-                        <li>国企</li>
-                    </ul>
-                    <div class="job-firm-info-update">
-                        <span class="job-firm-info-update-txt">
-                             最近
-                        </span>
+                    <div class="job-firm-info-update" style="text-overflow: ellipsis; text-align: center">
+                        <div class="" style="margin-top: 10px">
+                            <p class="" style="font-size: 16px; display: inline; color: #0f0f0f">地址: </p>
+                            <p class="job-basic-info" style="height: 10%">苏沪带是u爱手工俺也是个都是单位</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <!--职位描述 end-->
+
         </div>
     </div>
     <!--职位收藏信息框-->
