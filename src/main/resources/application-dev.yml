@@ -1,6 +1,8 @@
 server:
   port: 9090
 spring:
+  application:
+    name: Recruiter-dev
   datasource:
     password: root
     username: 333
@@ -25,10 +27,19 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       useGlobalDataSourceStat: true
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
   thymeleaf:
-    cache: false
+    cache: false  #cache: 是否缓存，开发模式下设置为false，避免改了模板还要重启服务器，线上设置为true，可以提高性能。
 
 #整合Mybatis
 mybatis:
   type-aliases-package: com.life.POJO
   mapper-locations: classpath:mybatis/Mapper/*.xml
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0整合Demo
+  try-host: http://localhost:${server.port}

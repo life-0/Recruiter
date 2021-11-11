@@ -2,6 +2,7 @@ package com.life.Controller;
 
 import com.life.POJO.Identity;
 import com.life.Service.IdentityService;
+import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -27,6 +28,7 @@ import java.util.List;
  TODO           
 */
 @Controller
+@Api
 public class LoginController {
     @Resource
     IdentityService identityService;

@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRole {
-
     private Integer userId;
     private String identityId;
     private String number;

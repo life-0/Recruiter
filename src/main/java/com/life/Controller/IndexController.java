@@ -2,6 +2,7 @@ package com.life.Controller;
 
 import com.life.POJO.Identity;
 import com.life.Service.IdentityService;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,6 +19,7 @@ import java.util.List;
  TODO      初始启动后台网页
 */
 @Controller
+@Api
 public class IndexController {
     @RequestMapping({"/", "index.html"})
     public String index(HttpServletResponse response) {

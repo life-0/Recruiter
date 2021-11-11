@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>公司页面</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/vendor/flexslider/flexslider.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 加载flexSlide插件,是图片转换的更加平滑-->
+    <script src="/static/vendor/flexslider/jquery.flexslider.js"></script>
+    <!--  Scrolling Reveal Script -->
+    <script src="/static/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts -->
+    <script src="/static/js/jquery.easing.min.js"></script>
+    <script src="/static/js/animation.js"></script>
+
+    <style>
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+            display: block;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #858796;
+            text-align: left;
+            background-color: rgba(230, 241, 241, 0.93);
+        }
+
+        .header-navbar { /* 导航栏修改*/
+            font-size: 14px;
+            letter-spacing: 1px;
+            min-height: 70px;
+            background: #180303;
+        }
+
+        .logo-icon { /* 图标固定大小 */
+            height: 51px;
+            width: 180px;
+            transform: translate(0px, -10px);
+        }
+
+        .navbar-font {
+            transform: translate(0px, 7px); /* 以2D的形式进行位移 */
+        }
+
+        .navbar-nav {
+            display: inline-block;
+            float: none;
+        }
+
+        .navbar-nav li a {
+            color: #050505;
+        }
+
+        /*弹框内容*/
+        .input-frame {
+            width: 420px;
+            height: 450px;
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative;
+            box-sizing: border-box;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .overlap {
+            background: #000;
+            opacity: 0.3;
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".stripFrame").on('click', function () {
+                $(".input-frame").css("display",'none');
+                $(".overlap").css("display",'none');
+            });
+            $(".test").on('click', function () {
+                $(".input-frame").css("display",'');
+                $(".overlap").css("display",'block');
+            })
+        });
+    </script>
+</head>
+
+<body>
+<!--头部-->
+<div class="navbar-inverse  header-navbar " id="menu">
+    <div class="container ">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img class="logo-icon" src="/assets/img/logo180-50.png" alt="标题"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right navbar-font">
+                <li><a href="#home">主页</a></li>
+                <li><a href="#features-sec">介绍</a></li>
+                <li><a href="#faculty-sec">工作</a></li>
+                <li><a href="#course-sec">课程</a></li>
+                <li><a href="#contact-sec">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--head end-->
+<div class="overlap"></div>
+<!--输入框-->
+<div class="input-frame" style="color: #0f0f0f">
+    <div style="width: 100%;text-align: center;display: inline-block">
+        <div class="stripFrame" style="float: right;font-size: 18px;width: 10%">X</div>
+        <div class="input-frame-title" style="font-family: 'KaiTi',serif;font-size: 20px;">
+            标题
+        </div>
+    </div>
+    <!--form 表单框-->
+    <div class="form-content">
+        <table class="table table-bordered" id="dataTable">
+            <form class="form-data">
+                <!--th:action="@{/student/Update}"-->
+                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
+                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
+                        学号:
+                    </label>
+                    <input type="text" name="id" class="form-control">
+                </div>
+                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
+                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
+                        Name:
+                    </label>
+                    <input type="text" name="id" class="form-control">
+                </div>
+                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
+                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
+                        Email:
+                    </label>
+                    <input type="text" name="id" class="form-control">
+                </div>
+                <div style="display: flex;flex-wrap: nowrap;padding: 0 30% 0">
+                    <button type="reset" class="btn btn-primary resetData" style="margin: 0 auto;">重置</button>
+                    <button type="button" class="btn btn-primary submitData" style="margin: 0 auto;">提交</button>
+                </div>
+            </form>
+        </table>
+    </div>
+</div>
+
+<!--输入框 end-->
+
+<button type="button" class="btn btn-primary test" style="margin: 0 auto;">提交</button>
+
+
+<!--3.页脚-->
+<div class="container-fluid">
+    <!--foot-->
+    <div>
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--foot end-->
+</div>
+</body>
+</html>

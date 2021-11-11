@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>企业</title>
+    <title>页面管理</title>
 
     <!-- Custom fonts for this template -->
     <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
@@ -39,7 +39,6 @@
 
         <!-- Main Content -->
         <div id="content">
-
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -249,57 +248,8 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-            <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For
-                    more information about DataTables, please visit the <a target="_blank"
-                                                                           href="https://datatables.net">official
-                        DataTables documentation</a>.</p>
-
-                <!-- DataTales Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">
-                            <a class="m-0 font-weight-bold text-primary" th:href="@{/student/ToAdd}">添加数据</a>
-                        </h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>id</th>
-                                    <th>Name</th>
-                                    <th>gender</th>
-                                    <th>Email</th>
-                                    <th>connect</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr th:each="user:${users}">
-                                    <td th:text="${user.getID()}"></td>
-                                    <td th:text="${student.getName()}"></td>
-                                    <td th:text="${student.getSex()}"></td>
-                                    <td th:text="${student.getEmail()}"></td>
-                                    <td th:text="${student.getAccount()}"></td>
-                                    <td>
-                                        <a class="btn btn-sm btn-primary"
-                                           th:href="@{/student/ToUpdate/}  + ${student.getID()}">编辑</a>
-                                        <a class="btn btn-sm btn-danger"
-                                           th:href="@{/student/DeleteStu/} + ${student.ID}">删除</a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container-fluid -->
+            <!-- Page Content End-->
 
         </div>
         <!-- End of Main Content -->

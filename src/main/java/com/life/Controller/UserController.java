@@ -6,6 +6,7 @@ import com.life.Service.RoleService.StudentServiceImpl;
 import com.life.Service.UserRoleServiceImpl;
 import com.life.Service.UserServiceImpl;
 import com.life.Utils.NumberUtil;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +28,9 @@ import java.util.List;
  TODO           
 */
 @Controller
+@Api(tags = "用户测试类")
 @RequestMapping("/student")
-public class StudentController {
+public class UserController {
     @Autowired
     UserServiceImpl userService;
     @Autowired
@@ -36,7 +38,7 @@ public class StudentController {
     @Resource
     UserRoleServiceImpl userRoleService;
 
-
+    @ApiOperation("展示所有的用户")
     @GetMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
         List<User> users = userService.showAll ();
@@ -49,6 +51,7 @@ public class StudentController {
         return "/employee/AddPage";
     }
 
+    @ApiOperation("添加用户")
     @RequestMapping({"/Add"})
     public String AddUser(
             @RequestParam(name = "Name") String Name,
@@ -78,6 +81,7 @@ public class StudentController {
         return "redirect:/student/tables";
     }
 
+    @ApiOperation("删除用户")
     @RequestMapping("/DeleteStu")
     @ResponseBody
     public String DeleteStudent(@RequestParam ArrayList<Integer> data) {
@@ -102,6 +106,7 @@ public class StudentController {
         return "/employee/Update";
     }
 
+    @ApiOperation("修改用户")
     @RequestMapping("/Update")
     @ResponseBody
     public String UpdateStudent(@RequestBody User user, HttpServletResponse response) {
@@ -124,5 +129,22 @@ public class StudentController {
         cookie.setMaxAge (10);  //设置cookie存活时间
         response.addCookie (cookie);
         return "ok";
+    }
+
+    @ApiImplicitParams({    //参数描述
+            @ApiImplicitParam(name = "ID",
+                    value = "按照用户ID,姓名等进行查询",
+                    required = true,
+                    paramType = "query")})
+    @ApiResponses({
+            @ApiResponse(code = 400, message = "参数不符合"),
+            @ApiResponse(code = 404, message = "请求路径不对"),
+            @ApiResponse(code = 408, message = "业务报错,返回客户端")
+    })
+    @ApiOperation("查询测试")
+    @PostMapping("/query")
+    @ResponseBody
+    public User queryByID(@RequestParam("ID") Integer ID) {
+        return userService.queryUserByID (ID.intValue ());
     }
 }

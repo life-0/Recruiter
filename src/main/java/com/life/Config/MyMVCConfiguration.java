@@ -40,9 +40,7 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
                 .addPathPatterns ("/**")
                 .excludePathPatterns ("/login.html", "/login", "/index.html", "/user/login",
                         "/css/**", "/img/**", "/static/js/**", "/scss/**", "/vendor/**")
-                .excludePathPatterns ( "/docs.html","/swagger-resources/**",
-                        "/webjars/**", "/v2/**", "/docs.html/**")
-                .excludePathPatterns ("/swagger-ui.html")
+
         ;
 
     }
@@ -51,10 +49,7 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler ("/static/**").addResourceLocations ("classpath:/static/");
         registry.addResourceHandler ("/templates/**").addResourceLocations ("classpath:/templates/");
-        // 放行swagger
-        registry.addResourceHandler ("/docs.html").addResourceLocations ("classpath:/META-INF/resources/");
-        registry.addResourceHandler ("/webjars/**").addResourceLocations ("classpath:/META-INF/resources/webjars/");
-        registry.addResourceHandler ("/v2/**").addResourceLocations ("classpath:/META-INF/resources/v2/");
+
     }
 
 }
