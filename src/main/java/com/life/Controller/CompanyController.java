@@ -25,4 +25,8 @@ public class CompanyController {
     public String CompanyTable(Model model){
         return "/Company/table";
     }
+    @RequestMapping("/firmTemplate")
+    public  String CompanyTemplate(){
+        return "/Company/firm-inputFrame-template";
+    }
 }

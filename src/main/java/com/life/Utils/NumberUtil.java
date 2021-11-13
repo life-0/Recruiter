@@ -7,7 +7,7 @@ import java.util.UUID;
  *@ClassName NumberUtil
  *@Date 2020/9/23 15:37
  *@Description: 
- TODO           
+ TODO          创建UUID: 唯一标识
 */
 public class NumberUtil {
     //生成随机number 并将其中的-去掉

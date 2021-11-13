@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>企业 - 职位管理</title>
+
+    <!-- Bootstrap -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/flexslider.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="../static/js/JQuery-3.4.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- 加载flexSlide插件,是图片转换的更加平滑-->
+    <script src="../static/js/jquery.flexslider.js"></script>
+    <!--  Scrolling Reveal Script -->
+    <script src="../static/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts -->
+    <script src="../static/js/jquery.easing.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/animation.js"></script>
+    <style>
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+            display: block;
+        }
+
+        body {
+            position: relative; /*父标签需要一个相对位置, 子覆盖层则可以由z-index进行覆盖啊*/
+            margin: 0;
+            padding: 0;
+            font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #858796;
+            text-align: left;
+            background-color: rgba(230, 241, 241, 0.93);
+        }
+
+        .header-navbar { /* 导航栏修改*/
+            font-size: 14px;
+            letter-spacing: 1px;
+            min-height: 70px;
+            background-color: #e7ddcf;
+
+        }
+
+        .logo-icon { /* 图标固定大小 */
+            height: 51px;
+            width: 180px;
+            transform: translate(0px, -10px);
+        }
+
+        .navbar-font {
+            transform: translate(0px, 7px); /* 以2D的形式进行位移 */
+        }
+
+        .navbar-nav {
+            display: inline-block;
+            float: none;
+        }
+
+        .navbar-nav li a {
+            color: #050505;
+        }
+
+        /*firm occupation*/
+        .occupation {
+            box-shadow: 0 3px 15px 3px rgba(58, 57, 57, 0.5); /*阴影设置*/
+            /*  position: relative;*/
+            width: 80%;
+            margin: 10px auto;
+            height: 192px;
+            background: #f7f9fc;
+            padding: 12px 15px 20px;
+
+        }
+
+        .job-title {
+            width: 33%;
+            float: left;
+            margin-top: 12px;
+
+        }
+
+        .job-salary {
+            margin-top: 10px;
+        }
+
+        .job-basic-info {
+            margin-left: 5px;
+            font-size: 16px;
+            color: #0a0a0a;
+            display: inline-block;
+            text-overflow: ellipsis
+        }
+
+        .job-basic-info-ul {
+            width: auto;
+            vertical-align: top;
+            padding: 0 10% 0;
+            display: flex;
+            flex-wrap: nowrap;
+            list-style: none;
+            height: 50px;
+
+        }
+
+        .job-basic-info-ul li {
+            float: left;
+            font-size: 15px;
+            color: #000000;
+            height: 18px;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .job-properties-frame {
+            float: left !important;
+            width: 33%;
+        }
+
+        .job-properties-title {
+            height: 32px;
+        }
+
+
+        .job-properties-ul {
+            vertical-align: top;
+            margin-top: 10px;
+            display: table;
+            list-style: none;
+            text-align: center;
+            height: 23px;
+        }
+
+        .job-properties-ul li {
+            float: left;
+            font-size: 14px;
+            color: #666;
+            padding-left: 5px;
+        }
+
+
+        /*firm occupation end*/
+    </style>
+    <style>
+        /*弹框内容*/
+        .input-frame {
+            width: 420px;
+            height: 450px;
+            left: 35%; /* 起始是在body中，横向距左50%的位置*/
+            top: 10%; /*起始是在body中，纵向距上50%的位置，这个点相当于body的中心点，div的左上角的定位*/
+            position: fixed;
+            z-index: 40;
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+            color: #0f0f0f;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .overlap {
+            background: #000;
+            opacity: 0.3;
+            width: 100%;
+            height: 100%;
+            min-height: 100% !important;
+            left: 0;
+            top: 0;
+            display: block;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*取消输入框覆盖*/
+            $(".stripFrame").on('click', function () {
+                $(".input-frame").css("display", 'none');
+                $(".overlap").css("display", 'none');
+            });
+            /*输入框切换*/
+            $(".test").on('click', function () {
+                $(".input-frame").css("display", '');
+                $(".overlap").css("display", 'block');
+            });
+
+        });
+    </script>
+</head>
+<body>
+<!--头部-->
+<div class="navbar  header-navbar " id="menu">
+    <div class="container ">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img class="logo-icon" src="../assets/img/logo180-50.png" alt="标题"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right navbar-font">
+                <li><a href="#home">主页</a></li>
+                <li><a href="#features-sec">介绍</a></li>
+                <li><a href="#faculty-sec">工作</a></li>
+                <li><a href="#course-sec">课程</a></li>
+                <li><a class="nav-link dropdown-toggle" href="#" id="messagesDropup" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                    <!-- Counter - Messages -->
+                    <span class="badge badge-danger badge-counter">7</span>
+                </a></li>
+                <li><a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <!-- Counter - Messages -->
+                    <span class="badge badge-danger badge-counter">7</span>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--head end-->
+
+<!--wrapper-->
+<div class="overlap"></div>
+<button type="button" class="btn btn-primary test" style="margin: 0 auto;position: fixed">提交</button>
+<!--wrapper end-->
+<!--输入框-->
+<div class="input-frame">
+    <div style="width: 100%;text-align: center;display: inline-block">
+        <div class="stripFrame" style="float: right;font-size: 18px; ">X</div>
+        <div class="input-frame-title" style="font-family: 'KaiTi',serif;font-size: 20px;">
+            <p>
+                标题
+            </p>
+        </div>
+
+    </div>
+    <!--form 表单框-->
+    <div class="form-content">
+        <table class="table table-bordered" id="dataTable">
+            <form class="form-data">
+                <!--th:action="@{/student/Update}"-->
+                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
+                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
+                        学号:
+                    </label>
+                    <input type="text" name="id" class="form-control">
+                </div>
+                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
+                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
+                        Name:
+                    </label>
+                    <input type="text" name="id" class="form-control">
+                </div>
+                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
+                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
+                        Email:
+                    </label>
+                    <input type="text" name="id" class="form-control">
+                </div>
+                <div style="display: flex;flex-wrap: nowrap;padding: 0 30% 0">
+                    <button type="reset" class="btn btn-primary resetData" style="margin: 0 auto;">重置</button>
+                    <button type="button" class="btn btn-primary submitData" style="margin: 0 auto;">提交</button>
+                </div>
+            </form>
+        </table>
+    </div>
+</div>
+<!--输入框 end-->
+<!--主体-->
+<div class="container" style="z-index: -1">
+
+    <!--企业信息框 -->
+    <div class="row" style=" margin-bottom: 30px">
+        <!--企业信息框 info-->
+        <div class="info" style="width: 100%;
+                            height: 200px;
+                            text-align: center;
+                            margin-bottom: 20px">
+            <!--企业信息-->
+            <div class="" style="padding: 30px 68px 36px;background: #fff;">
+                <div class="" style="position: relative;color: #333;">
+                    <div class="pull-left" style="display: table-column;margin: 10px 20px 10px">
+                        <img src="//mypics.zhaopin.cn//avatar/2018/1/19/ce2e873a-2b33-421a-a0f5-926a7a7d8110.jpg"
+                             alt="张三" title="张三" class="pull-left" style="width: 106px;height: 106px;">
+                    </div>
+                    <div class="" style="width: 80%;display: inline-block">
+                        <p class="" style=";font-family: 'KaiTi',serif;font-size: 32px;">
+                        <span title="张三" class="fl" style="display: inline-block;height: 35px; float: left;">
+                            是很低啊好的网卡和公司
+                        </span>
+                            <span class="" style="
+                                            border: 1px solid #2888f3;
+                                            border-radius: 2px;
+                                            font-size: 14px;
+                                            color: #2888f3;">
+                            私企
+                        </span>
+                        </p>
+                    </div>
+                    <div>
+                        <ul class="job-basic-info-ul">
+                            <li>成立时间: 1999-12-30</li>
+                            <li>注资: 18312.21684元</li>
+                            <li>法人代表: 帅是当今</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="job-basic-info-ul">
+                            <li>123****9981</li>
+                            <li>官网链接:</li>
+                        </ul>
+                    </div>
+                    <div class="test" style="font-size: 14px;position: absolute;top: 0;right: 0; ">
+                        <i class="glyphicon glyphicon-cog "></i>
+                        编辑
+                    </div>
+                </div>
+            </div>
+            <!--个人信息 end-->
+        </div>
+        <!--个人信息框 info end-->
+    </div>
+    <!--企业信息框 end-->
+
+    <!--职位信息框-->
+    <div class="row">
+        <div class="info" style="width: 100%;text-align: center;">
+            <!--职位描述-->
+            <div class="occupation">
+                <!--job basic info-->
+                <div class="job-title ">
+                    <h4 style="color: #b0391c">海尔智佳股份有限公司</h4>
+                    <h5 class="job-properties-title" style="margin-top: 14px">
+                        <div class="job-salary" style="">
+                            <p class="pull-left"
+                               style="margin-left:23%;font-size: 18px; color: #5d5858;display: inline">职位: </p>
+                            <p class="job-basic-info pull-left">java开发</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title" style="">
+                        <div style="">
+                            <p class="pull-left"
+                               style="margin-left:23%;font-size: 18px;color: #5d5858;display: inline">
+                                薪资: </p>
+                            <p class="job-basic-info pull-left">4000~18000</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title" style="">
+                        <div>
+                            <p class="" style="font-size: 18px; color: #5d5858;display: inline">地址: </p>
+                            <p class="job-basic-info">北京市通州区中山大道45号</p>
+                        </div>
+                    </h5>
+                </div>
+                <!--job basic info end-->
+                <div class="job-properties-frame" style="margin-top: 32px;width: 28%">
+                    <h5 class="job-properties-title" style="">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px;color: #5d5858;display: inline">工作性质: </p>
+                            <p class="job-basic-info" style="color: #de2323">实习/正式员工</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px;  color: #5d5858;display: inline">学历要求: </p>
+                            <p class="job-basic-info">本科</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px; color: #5d5858;display: inline">工作经验要求: </p>
+                            <p class="job-basic-info">1年-3年</p>
+                        </div>
+                    </h5>
+                </div>
+                <!--公司招聘 end-->
+                <!--个人-->
+                <div class="job-properties-frame " style="width: 35%;">
+                    <!--setting-->
+                    <div class="test" style="font-size: 14px;">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        编辑
+                    </div>
+                    <!--setting end-->
+                    <div class="" style="height: 80%;float: left">
+                        <div class="" style="margin-top: 10px; display: table-row">
+                            <p class="pull-left" style=" font-size: 18px; color: #5d5858;">面试方式:</p>
+                        </div>
+                        <div class="" style="margin-left: 18px">
+                            <p class="pull-left" style="font-size: 16px; color: #5d5858;display: inline">时间: </p>
+                            <p class="job-basic-info">2021年9月15日-2021年9月18日</p>
+                        </div>
+                        <div class="" style="display:block;margin-left: 18px">
+                            <p class="pull-left" style="font-size: 16px; color: #5d5858;display: inline">地点: </p>
+                            <p class="job-basic-info pull-left">北京市通州区中山大道45号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--职位描述 end-->
+    </div>
+    <!--职位信息框-->
+    <!--职位信息框-->
+    <div class="row">
+        <div class="info" style="width: 100%;text-align: center;">
+            <!--职位描述-->
+            <div class="occupation">
+                <!--job basic info-->
+                <div class="job-title ">
+                    <h4 style="color: #b0391c">海尔智佳股份有限公司</h4>
+                    <h5 class="job-properties-title" style="margin-top: 14px">
+                        <div class="job-salary" style="">
+                            <p class="pull-left"
+                               style="margin-left:23%;font-size: 18px; color: #5d5858;display: inline">职位: </p>
+                            <p class="job-basic-info pull-left">java开发</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title" style="">
+                        <div style="">
+                            <p class="pull-left"
+                               style="margin-left:23%;font-size: 18px;color: #5d5858;display: inline">
+                                薪资: </p>
+                            <p class="job-basic-info pull-left">4000~18000</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title" style="">
+                        <div>
+                            <p class="" style="font-size: 18px; color: #5d5858;display: inline">地址: </p>
+                            <p class="job-basic-info">北京市通州区中山大道45号</p>
+                        </div>
+                    </h5>
+                </div>
+                <!--job basic info end-->
+                <div class="job-properties-frame" style="margin-top: 32px;width: 28%">
+                    <h5 class="job-properties-title" style="">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px;color: #5d5858;display: inline">工作性质: </p>
+                            <p class="job-basic-info" style="color: #de2323">实习/正式员工</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px;  color: #5d5858;display: inline">学历要求: </p>
+                            <p class="job-basic-info">本科</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px; color: #5d5858;display: inline">工作经验要求: </p>
+                            <p class="job-basic-info">1年-3年</p>
+                        </div>
+                    </h5>
+                </div>
+                <!--公司招聘 end-->
+                <!--个人-->
+                <div class="job-properties-frame " style="width: 35%;">
+                    <!--setting-->
+                    <div style="font-size: 14px;">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        编辑
+                    </div>
+                    <!--setting end-->
+                    <div class="" style="height: 80%;float: left">
+                        <div class="" style="margin-top: 10px; display: table-row">
+                            <p class="pull-left" style=" font-size: 18px; color: #5d5858;">面试方式:</p>
+                        </div>
+                        <div class="" style="margin-left: 18px">
+                            <p class="pull-left" style="font-size: 16px; color: #5d5858;display: inline">时间: </p>
+                            <p class="job-basic-info">2021年9月15日-2021年9月18日</p>
+                        </div>
+                        <div class="" style="display:block;margin-left: 18px">
+                            <p class="pull-left" style="font-size: 16px; color: #5d5858;display: inline">地点: </p>
+                            <p class="job-basic-info pull-left">北京市通州区中山大道45号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--职位描述 end-->
+    </div>
+    <!--职位信息框-->
+    <!--职位信息框-->
+    <div class="row">
+        <div class="info" style="width: 100%;text-align: center;">
+            <!--职位描述-->
+            <div class="occupation">
+                <!--job basic info-->
+                <div class="job-title ">
+                    <h4 style="color: #b0391c">海尔智佳股份有限公司</h4>
+                    <h5 class="job-properties-title" style="margin-top: 14px">
+                        <div class="job-salary" style="">
+                            <p class="pull-left"
+                               style="margin-left:23%;font-size: 18px; color: #5d5858;display: inline">职位: </p>
+                            <p class="job-basic-info pull-left">java开发</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title" style="">
+                        <div style="">
+                            <p class="pull-left"
+                               style="margin-left:23%;font-size: 18px;color: #5d5858;display: inline">
+                                薪资: </p>
+                            <p class="job-basic-info pull-left">4000~18000</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title" style="">
+                        <div>
+                            <p class="" style="font-size: 18px; color: #5d5858;display: inline">地址: </p>
+                            <p class="job-basic-info">北京市通州区中山大道45号</p>
+                        </div>
+                    </h5>
+                </div>
+                <!--job basic info end-->
+                <div class="job-properties-frame" style="margin-top: 32px;width: 28%">
+                    <h5 class="job-properties-title" style="">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px;color: #5d5858;display: inline">工作性质: </p>
+                            <p class="job-basic-info" style="color: #de2323">实习/正式员工</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px;  color: #5d5858;display: inline">学历要求: </p>
+                            <p class="job-basic-info">本科</p>
+                        </div>
+                    </h5>
+                    <h5 class="job-properties-title">
+                        <div class="" style="margin-top: 10px;float: left">
+                            <p class="" style="font-size: 18px; color: #5d5858;display: inline">工作经验要求: </p>
+                            <p class="job-basic-info">1年-3年</p>
+                        </div>
+                    </h5>
+                </div>
+                <!--公司招聘 end-->
+                <!--个人-->
+                <div class="job-properties-frame " style="width: 35%;">
+                    <!--setting-->
+                    <div style="font-size: 14px;">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        编辑
+                    </div>
+                    <!--setting end-->
+                    <div class="" style="height: 80%;float: left">
+                        <div class="" style="margin-top: 10px; display: table-row">
+                            <p class="pull-left" style=" font-size: 18px; color: #5d5858;">面试方式:</p>
+                        </div>
+                        <div class="" style="margin-left: 18px">
+                            <p class="pull-left" style="font-size: 16px; color: #5d5858;display: inline">时间: </p>
+                            <p class="job-basic-info">2021年9月15日-2021年9月18日</p>
+                        </div>
+                        <div class="" style="display:block;margin-left: 18px">
+                            <p class="pull-left" style="font-size: 16px; color: #5d5858;display: inline">地点: </p>
+                            <p class="job-basic-info pull-left">北京市通州区中山大道45号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--职位描述 end-->
+    </div>
+    <!--职位信息框-->
+</div>
+
+
+<!--3.页脚-->
+<div class="container-fluid">
+    <!--foot-->
+    <div>
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2021</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!--foot end-->
+</div>
+</body>
+</html>
