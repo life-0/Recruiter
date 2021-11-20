@@ -313,6 +313,12 @@
             <span>用户管理</span>
         </a>
     </li>
+    <li class="nav-item">
+    <a shiro:hasPermission="com:true" class="nav-link" th:href="@{/company/tables}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>权限管理</span>
+    </a>
+</li>
 
     <li class="nav-item">
         <a shiro:hasPermission="com:true" class="nav-link" th:href="@{/company/tables}">

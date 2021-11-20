@@ -106,6 +106,54 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="recruiter:user_id">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UserId" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:user_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="UserInfo" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:user_login">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="UserLogin" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:user_rank">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="UserRank" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:user_resource">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="UserResource" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="recruiter:user_role">
               <value>
                 <TableGenerateConfig>
