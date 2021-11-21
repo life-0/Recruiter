@@ -1,9 +1,9 @@
 package com.life.Service.user;
 
+import com.life.Mapper.user.UserIdMapper;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.life.POJO.user.UserId;
-import com.life.Mapper.UserIdMapper;
 
 @Service
 public class UserIdServiceImpl implements UserIdService{
@@ -24,6 +24,11 @@ public class UserIdServiceImpl implements UserIdService{
     @Override
     public int insertSelective(UserId record) {
         return userIdMapper.insertSelective(record);
+    }
+
+    @Override
+    public UserId selectById(Integer id, String number) {
+        return userIdMapper.selectById (id, number);
     }
 
 }

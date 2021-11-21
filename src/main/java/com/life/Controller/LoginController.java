@@ -1,7 +1,7 @@
 package com.life.Controller;
 
-import com.life.POJO.Identity;
-import com.life.Service.IdentityService;
+import com.life.Service.user.UserIdService;
+import com.life.Service.user.UserLoginService;
 import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -31,7 +31,10 @@ import java.util.List;
 @Api
 public class LoginController {
     @Resource
-    IdentityService identityService;
+    UserIdService userIdService;
+    @Resource
+    UserLoginService userLoginService;
+
 
     @RequestMapping("/ToLogin")
     public String toLogin() {
@@ -44,6 +47,7 @@ public class LoginController {
                         Model model, HttpSession session, HttpServletRequest request,
                         HttpServletResponse response) {
         System.out.println ("ID: " + ID);
+        System.out.println ("account: " + ID);
         System.out.println ("password: " + password);
 
         //获取当前用户
@@ -51,13 +55,13 @@ public class LoginController {
         //封装用户登录数据
         UsernamePasswordToken token = new UsernamePasswordToken (ID, password);
 
-        //提前将共享的数据传到浏览器中 身份信息
+     /*   //提前将共享的数据传到浏览器中 身份信息
         List<Identity> identities = identityService.queryAll ();
         for (Identity identity : identities) {
             Cookie cookie = new Cookie (identity.getId (), identity.getName ());
             cookie.setPath ("/");
             response.addCookie (cookie);
-        }
+        }*/
 
 
         try {

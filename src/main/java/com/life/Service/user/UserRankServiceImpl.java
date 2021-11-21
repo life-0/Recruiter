@@ -1,9 +1,9 @@
 package com.life.Service.user;
 
+import com.life.Mapper.user.UserRankMapper;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.life.POJO.user.UserRank;
-import com.life.Mapper.UserRankMapper;
 
 @Service
 public class UserRankServiceImpl implements UserRankService{
@@ -29,6 +29,11 @@ public class UserRankServiceImpl implements UserRankService{
     @Override
     public UserRank selectByPrimaryKey(String number) {
         return userRankMapper.selectByPrimaryKey(number);
+    }
+
+    @Override
+    public UserRank selectById(Integer id) {
+        return userRankMapper.selectById (id);
     }
 
     @Override

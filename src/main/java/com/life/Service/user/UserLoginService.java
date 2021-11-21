@@ -1,7 +1,9 @@
 package com.life.Service.user;
 
 import com.life.POJO.user.UserLogin;
-public interface UserLoginService{
+import org.apache.ibatis.annotations.Param;
+
+public interface UserLoginService {
 
 
     int deleteByPrimaryKey(String number);
@@ -11,6 +13,10 @@ public interface UserLoginService{
     int insertSelective(UserLogin record);
 
     UserLogin selectByPrimaryKey(String number);
+
+    UserLogin selectById(Integer id);
+
+    int updateByID(UserLogin record);
 
     int updateByPrimaryKeySelective(UserLogin record);
 

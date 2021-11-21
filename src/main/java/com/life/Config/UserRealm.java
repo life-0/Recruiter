@@ -1,12 +1,13 @@
 package com.life.Config;
 
 
-import com.life.POJO.Resources;
-import com.life.POJO.User;
-import com.life.POJO.test.Admin;
-import com.life.Service.ResourcesServiceImpl;
-import com.life.Service.RoleService.AdminServiceImpl;
-import com.life.Service.UserServiceImpl;
+
+import com.life.POJO.user.UserId;
+import com.life.POJO.user.UserLogin;
+import com.life.POJO.user.UserRank;
+import com.life.Service.user.UserIdServiceImpl;
+import com.life.Service.user.UserLoginServiceImpl;
+import com.life.Service.user.UserRankServiceImpl;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -16,6 +17,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,10 +30,12 @@ import java.util.List;
 */
 
 public class UserRealm extends AuthorizingRealm {
-    @Autowired
-    private UserServiceImpl service;
-    @Autowired
-    private ResourcesServiceImpl resourcesService;
+    @Resource
+    private UserIdServiceImpl userIdService;
+    @Resource
+    private UserRankServiceImpl userRankService;
+    @Resource
+    private UserLoginServiceImpl userLoginService;
 
     //授权
     @Override
@@ -44,14 +48,15 @@ public class UserRealm extends AuthorizingRealm {
         //得到当前登录用户对象
         Subject subject = SecurityUtils.getSubject ();
 //        Admin principal = (Admin) subject.getPrincipal ();//拿到user对象
-        User principal = (User) subject.getPrincipal ();  //获得当前登录对象
-        Resources resources = resourcesService.selectByID (principal.getId ());//查询资源表是否有权限
+        UserId principal = (UserId) subject.getPrincipal ();  //获得当前登录对象
+
+        UserRank userRankResources = userRankService.selectById (principal.getId ());//查询资源表是否有权限
 
 //        System.out.println ("Role:" + principal.getRole ());
 //        List<String> list = Arrays.asList (principal.getRole ().split (";"));//将权限令牌转换为集合参数
 //        info.addStringPermissions (list);
 //        System.out.println (resources.getPurview ());//打印授权列表
-        info.addStringPermissions (resources.getPurview ());
+        info.addStringPermissions (userRankResources.splitPermission ());
         return info;
     }
 
@@ -62,7 +67,8 @@ public class UserRealm extends AuthorizingRealm {
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
         //Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));
-        User user = service.queryUserByID (Integer.parseInt (userToken.getUsername ()));
+
+        UserLogin user = userLoginService.selectById (Integer.parseInt (userToken.getUsername ()));
         System.out.println (user.toString ());
         if (user == null) {
             return null;

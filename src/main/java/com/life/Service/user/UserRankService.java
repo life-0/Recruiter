@@ -12,6 +12,8 @@ public interface UserRankService{
 
     UserRank selectByPrimaryKey(String number);
 
+    UserRank selectById(Integer id);    //通过id查找
+
     int updateByPrimaryKeySelective(UserRank record);
 
     int updateByPrimaryKey(UserRank record);

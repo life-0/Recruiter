@@ -1,10 +1,8 @@
 package com.life.Controller;
 
-import com.life.POJO.User;
-import com.life.POJO.UserRole;
-import com.life.Service.RoleService.StudentServiceImpl;
-import com.life.Service.UserRoleServiceImpl;
-import com.life.Service.UserServiceImpl;
+
+import com.life.POJO.user.UserInfo;
+import com.life.Service.user.UserInfoServiceImpl;
 import com.life.Utils.NumberUtil;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Date;
@@ -31,17 +28,13 @@ import java.util.List;
 @Api(tags = "用户测试类")
 @RequestMapping("/student")
 public class UserController {
-    @Autowired
-    UserServiceImpl userService;
-    @Autowired
-    StudentServiceImpl service;
     @Resource
-    UserRoleServiceImpl userRoleService;
+    UserInfoServiceImpl userInfoService;
 
     @ApiOperation("展示所有的用户")
     @GetMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
-        List<User> users = userService.showAll ();
+        List<UserInfo> users = userInfoService.showAll ();
         model.addAttribute ("users", users);
         return "/employee/tables";
     }
@@ -103,7 +96,7 @@ public class UserController {
     public String ToUpdate(@PathVariable(name = "ID") int ID, Model model) {
         User user = userService.queryUserByID (ID);
         model.addAttribute ("user", user);
-        return "/employee/Update";
+        return "/employee/Update";1
     }
 
     @ApiOperation("修改用户")

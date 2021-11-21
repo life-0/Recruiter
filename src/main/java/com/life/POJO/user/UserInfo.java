@@ -4,10 +4,12 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.type.Alias;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Alias ("userInfo")
 public class UserInfo {
     /**
     * 唯一标识

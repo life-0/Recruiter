@@ -11,6 +11,8 @@ public interface UserResourceService{
 
     UserResource selectByPrimaryKey(String number);
 
+    UserResource selectById(int id);
+
     int updateByPrimaryKeySelective(UserResource record);
 
     int updateByPrimaryKey(UserResource record);

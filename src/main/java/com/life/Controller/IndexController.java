@@ -1,15 +1,9 @@
 package com.life.Controller;
 
-import com.life.POJO.Identity;
-import com.life.Service.IdentityService;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.annotation.Resource;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /*
  *@Author life-0

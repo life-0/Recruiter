@@ -1,6 +1,7 @@
 package com.life.Config;
 
-import com.life.POJO.SwaggerProperties;
+
+import com.life.POJO.swagger.SwaggerProperties;
 import io.swagger.models.auth.In;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.springframework.boot.SpringBootVersion;
