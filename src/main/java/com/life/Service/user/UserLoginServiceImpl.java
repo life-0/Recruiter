@@ -39,6 +39,11 @@ public class UserLoginServiceImpl implements UserLoginService {
     }
 
     @Override
+    public UserLogin selectByAccount(String account) {
+        return userLoginMapper.selectByAccount (account);
+    }
+
+    @Override
     public int updateByID(UserLogin record) {
         return userLoginMapper.updateByID (record);
     }

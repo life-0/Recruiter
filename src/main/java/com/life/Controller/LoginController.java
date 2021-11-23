@@ -42,18 +42,17 @@ public class LoginController {
     }
 
     @RequestMapping("/user/login")
-    public String login(@RequestParam("ID") String ID,
+    public String login(@RequestParam("account") String account,
                         @RequestParam("password") String password,
                         Model model, HttpSession session, HttpServletRequest request,
                         HttpServletResponse response) {
-        System.out.println ("ID: " + ID);
-        System.out.println ("account: " + ID);
+        System.out.println ("account: " + account);
         System.out.println ("password: " + password);
 
         //获取当前用户
         Subject subject = SecurityUtils.getSubject ();
         //封装用户登录数据
-        UsernamePasswordToken token = new UsernamePasswordToken (ID, password);
+        UsernamePasswordToken token = new UsernamePasswordToken (account, password);
 
      /*   //提前将共享的数据传到浏览器中 身份信息
         List<Identity> identities = identityService.queryAll ();
@@ -67,7 +66,7 @@ public class LoginController {
         try {
             subject.login (token);  //执行登录方法,如果没有异常就ok
             String rememberMe = request.getParameter ("RememberMe");    //获得参数
-            session.setAttribute ("loginSession", ID);
+            session.setAttribute ("loginSession", account);
 //            System.out.println ("rememberMe=>"+rememberMe);  //记住我被勾选则是on 否则null
             if (rememberMe != null) {
                 token.setRememberMe (true);

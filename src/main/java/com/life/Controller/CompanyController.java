@@ -1,9 +1,6 @@
 package com.life.Controller;
 
-import com.life.POJO.User;
 import com.life.POJO.user.UserInfo;
-import com.life.Service.RoleService.AdminService;
-import com.life.Service.UserServiceImpl;
 import com.life.Service.user.UserInfoServiceImpl;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;

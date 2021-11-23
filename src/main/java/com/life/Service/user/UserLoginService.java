@@ -5,7 +5,6 @@ import org.apache.ibatis.annotations.Param;
 
 public interface UserLoginService {
 
-
     int deleteByPrimaryKey(String number);
 
     int insert(UserLogin record);
@@ -16,10 +15,11 @@ public interface UserLoginService {
 
     UserLogin selectById(Integer id);
 
+    UserLogin selectByAccount(@Param("acc") String account);
+
     int updateByID(UserLogin record);
 
     int updateByPrimaryKeySelective(UserLogin record);
 
     int updateByPrimaryKey(UserLogin record);
-
 }

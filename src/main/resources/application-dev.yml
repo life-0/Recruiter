@@ -34,7 +34,7 @@ spring:
 #整合Mybatis
 mybatis:
   type-aliases-package: com.life.POJO
-  mapper-locations: classpath:mybatis/Mapper/*.xml
+  mapper-locations: classpath:mybatis/Mapper/**/*.xml
 
 # ===== 自定义swagger配置 ===== #
 swagger:

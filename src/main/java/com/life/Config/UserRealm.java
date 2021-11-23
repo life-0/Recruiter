@@ -1,7 +1,6 @@
 package com.life.Config;
 
 
-
 import com.life.POJO.user.UserId;
 import com.life.POJO.user.UserLogin;
 import com.life.POJO.user.UserRank;
@@ -19,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /*
@@ -31,8 +31,6 @@ import java.util.List;
 
 public class UserRealm extends AuthorizingRealm {
     @Resource
-    private UserIdServiceImpl userIdService;
-    @Resource
     private UserRankServiceImpl userRankService;
     @Resource
     private UserLoginServiceImpl userLoginService;
@@ -40,22 +38,16 @@ public class UserRealm extends AuthorizingRealm {
     //授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-//        System.out.println ("执行了=>授权doGetAuthorizationInfo 授权");
+        System.out.println ("执行了=>授权doGetAuthorizationInfo 授权");
 
         //给予用户权限
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo ();
 
-        //得到当前登录用户对象
-        Subject subject = SecurityUtils.getSubject ();
-//        Admin principal = (Admin) subject.getPrincipal ();//拿到user对象
-        UserId principal = (UserId) subject.getPrincipal ();  //获得当前登录对象
+        //得到受过认证后,从数据库中拿到的登录用户对象 (PrincipalCollection集合)
+        Subject subject = SecurityUtils.getSubject ();  //等同principalCollection中的类型,
 
+        UserLogin principal = (UserLogin) subject.getPrincipal ();  //获得当前登录对象
         UserRank userRankResources = userRankService.selectById (principal.getId ());//查询资源表是否有权限
-
-//        System.out.println ("Role:" + principal.getRole ());
-//        List<String> list = Arrays.asList (principal.getRole ().split (";"));//将权限令牌转换为集合参数
-//        info.addStringPermissions (list);
-//        System.out.println (resources.getPurview ());//打印授权列表
         info.addStringPermissions (userRankResources.splitPermission ());
         return info;
     }
@@ -63,13 +55,12 @@ public class UserRealm extends AuthorizingRealm {
     //认证
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-//        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
+        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
         //Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));
-
-        UserLogin user = userLoginService.selectById (Integer.parseInt (userToken.getUsername ()));
-        System.out.println (user.toString ());
+        UserLogin user = userLoginService.selectByAccount (userToken.getUsername ());
+        /*System.out.println (user.toString ());*/
         if (user == null) {
             return null;
         }

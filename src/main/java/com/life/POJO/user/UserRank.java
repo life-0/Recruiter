@@ -36,6 +36,6 @@ public class UserRank {
      * 分割资源权限
      */
     public List<String> splitPermission() {
-        return Arrays.asList (permission.split (","));
+        return Arrays.asList (permission.split (";"));
     }
 }

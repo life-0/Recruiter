@@ -39,23 +39,16 @@ public class UserController {
         return "/employee/tables";
     }
 
-    @RequestMapping({"/ToAdd"})
+/*    @RequestMapping({"/ToAdd"})
     public String ToAdd() {
         return "/employee/AddPage";
     }
 
     @ApiOperation("添加用户")
     @RequestMapping({"/Add"})
-    public String AddUser(
-            @RequestParam(name = "Name") String Name,
-            @RequestParam(name = "Email") String Email,
-            @RequestParam(name = "Permission") String permission,
-            @RequestParam(name = "Role") String role,
-            @RequestParam(name = "Password") String password,
-            @RequestParam(name = "Iphone") String iphone,
-            Model model) {
+    public String AddUser(@RequestParam("") String Name, Model model) {
         String number = new NumberUtil ().getRandomNumber ();   //临时参数 二次使用
-        User user = new User (null, number,
+        UserInfo user = new UserInfo (null, number,
                 permission, null, password, Email, Name, new Date (),
                 iphone, "");
         int i = userService.insert (user);
@@ -96,7 +89,7 @@ public class UserController {
     public String ToUpdate(@PathVariable(name = "ID") int ID, Model model) {
         User user = userService.queryUserByID (ID);
         model.addAttribute ("user", user);
-        return "/employee/Update";1
+        return "/employee/Update";
     }
 
     @ApiOperation("修改用户")
@@ -139,5 +132,5 @@ public class UserController {
     @ResponseBody
     public User queryByID(@RequestParam("ID") Integer ID) {
         return userService.queryUserByID (ID.intValue ());
-    }
+    }*/
 }

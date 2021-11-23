@@ -16,7 +16,7 @@ public interface UserLoginMapper {
 
     UserLogin selectById(Integer id);
 
-    UserLogin selectByAccount(@Param("acc") String account, @Param("pwd") String password);
+    UserLogin selectByAccount(@Param("acc") String account);
 
     int updateByID(UserLogin record);
 
