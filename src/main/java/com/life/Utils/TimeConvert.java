@@ -13,27 +13,30 @@ import java.util.Date;
  */
 public class TimeConvert {
     //自定义时间
-    public  Date definiteTime(String date) throws ParseException {
+    public Date definiteTime(String date) throws ParseException {
+        if (date == null) {
+            System.out.println ("create_time: " + "null");
+        }
         DateFormat dFormat = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
         Date parse = dFormat.parse (date);
         return parse;
     }
 
     //时间格式转换
-    public  String TimeFormat(Date date){
+    public String TimeFormat(Date date) {
         String formatDate;
         //格式 24小时制：2016-07-06 09:39:58
         DateFormat dFormat = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss"); //HH表示24小时制；
-        formatDate = dFormat.format(date);
+        formatDate = dFormat.format (date);
         return formatDate;
     }
 
     //计算时间差 单位: 天
-    public  int TimeSub(Date lend, Date back){
+    public int TimeSub(Date lend, Date back) {
 
         long lendTime = lend.getTime ();
         long backTime = back.getTime ();
-        int day=(int)(backTime-lendTime)/( 30 * 24 * 60 * 60 * 1000);
+        int day = (int) (backTime - lendTime) / (30 * 24 * 60 * 60 * 1000);
         return day;
 
     }

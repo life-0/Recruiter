@@ -59,5 +59,5 @@ public class UserInfo {
     /**
     * 创建时间
     */
-    private Date createTime;
+    private Date create_time;
 }

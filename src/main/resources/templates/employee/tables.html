@@ -278,9 +278,12 @@
                                     <th>全选</th>
                                     <th>id</th>
                                     <th>Name</th>
+                                    <th>nickname</th>
                                     <th>gender</th>
+                                    <th>address</th>
                                     <th>Email</th>
-                                    <th>Permission</th>
+                                    <th>iphone</th>
+                                    <th>create_time</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
@@ -293,11 +296,15 @@
                                     </td>
                                     <td th:text="${user.getId()}"></td>
                                     <td th:text="${user.getName()}"></td>
-                                    <td th:text="${user.getIphone()}"></td>
+                                    <td th:text="${user.getNickname()}"></td>
+                                    <td th:text="${user.getGender()} ==true ? '男':'女'"></td>
+                                    <td th:text="${user.getAddress()}"></td>
                                     <td th:text="${user.getEmail()}"></td>
-                                    <td class="data_conversion" th:value="${user.getRole_ID()}"></td>
+                                    <td th:text="${user.getIphone()}"></td>
+                                    <td th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
+                                    <!-- <td class="data_conversion" th:value="${user.getRole_ID()}"></td>-->
                                     <td>
-                                        <a class="btn btn-sm btn-primary SingleModify"
+                                        <a class="btn btn-sm btn-primary text-gray-100 SingleModify"
                                            th:value="${user.getId()}">编辑</a>
                                         <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
                                            th:value="${user.getId()}">

@@ -35,6 +35,7 @@ public class UserController {
     @GetMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
         List<UserInfo> users = userInfoService.showAll ();
+
         model.addAttribute ("users", users);
         return "/employee/tables";
     }
