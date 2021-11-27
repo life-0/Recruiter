@@ -16,4 +16,7 @@ public interface UserIdMapper {
 
     UserId selectById(@Param("id") Integer id, @Param("number") String number);
 
+    Integer maxID();
+
+    int resetAutoIncrementID(@Param("id") Integer id);
 }
