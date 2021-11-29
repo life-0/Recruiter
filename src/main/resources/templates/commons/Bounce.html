@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>弹窗</title>
-    <script type="text/javascript" src="static/vendor/jquery/jquery.js"></script>
-    <style type="text/css">
+    <script type="text/javascript" src="../static/vendor/jquery/jquery.js"></script>
+    <style>
         html, body {
             margin: 0;
             height: 100%;
@@ -32,11 +32,11 @@
             left: 89%;
             right: 0;
             bottom: 0;
-            display: block;  /*none*/
+            display: block; /*none*/
             z-index: auto;
             background-color: #fff;
             background-clip: border-box;
-            border: 1px solid #e3e6f0 !important;/*!important 表示应用最高优先级 可直接覆盖掉父级的规则集 */
+            border: 1px solid #e3e6f0 !important; /*!important 表示应用最高优先级 可直接覆盖掉父级的规则集 */
             border-radius: 0.35rem;
             flex-direction: column;
             min-width: 0;
@@ -68,10 +68,9 @@
             width: 100%;
             font-weight: bold;
             font-size: 15px;
-            text-decoration:none ;
+            text-decoration: none;
             text-align: center
         }
-
     </style>
     <script type="text/javascript">
         $(document).ready(function () {

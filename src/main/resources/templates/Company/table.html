@@ -251,111 +251,58 @@
 
             <!-- Begin Page Content -->
             <!--表中数据-->
-            <div class="card shadow mb-4" style="position: relative!important;">
-                <!--wrapper 围布-->
-                <div class="overlap" style="background: #000;
-                                            opacity: 0.3;
-                                            width: 100%;
-                                            height: 100%;
-                                            min-height: 100% !important;
-                                            left: 0;
-                                            top: 0;
-                                            display: block;
-                                            position: absolute;
-                                            z-index: 6;"></div>
-                <!--输入框-->
-                <div class="input-frame" style="width: 420px;
-                                                height: 450px;
-                                                left: 35%; /* 起始是在body中，横向距左50%的位置*/
-                                                top: 10%; /*起始是在body中，纵向距上50%的位置，这个点相当于body的中心点，div的左上角的定位*/
-                                                position: fixed;
-                                                z-index: 10;
-                                                background: #ffffff;
-                                                border: 1px solid #f0f0f0;
-                                                color: #0f0f0f;
-                                                border-radius: 10px;
-                                                padding: 10px;">
-                    <div style="width: 100%;text-align: center;display: inline-block">
-                        <div class="stripFrame" style="float: right;font-size: 18px;width: 10%">X</div>
-                        <div class="input-frame-title" style="font-family: 'KaiTi',serif;font-size: 20px;">
-                            标题
-                        </div>
-                    </div>
-                    <!--form 表单框-->
-                    <div class="form-content">
-                        <table class="table table-bordered" >
-                            <form class="form-data">
-                                <!--th:action="@{/student/Update}"-->
-                                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
-                                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
-                                        学号:
-                                    </label>
-                                    <input type="text" name="id" class="form-control">
-                                </div>
-                                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
-                                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
-                                        Name:
-                                    </label>
-                                    <input type="text" name="id" class="form-control">
-                                </div>
-                                <div class="form-group" style="flex-wrap: nowrap;display:flex;">
-                                    <label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">
-                                        Email:
-                                    </label>
-                                    <input type="text" name="id" class="form-control">
-                                </div>
-                                <div style="display: flex;flex-wrap: nowrap;padding: 0 30% 0">
-                                    <button type="reset" class="btn btn-primary resetData" style="margin: 0 auto;">重置</button>
-                                    <button type="button" class="btn btn-primary submitData" style="margin: 0 auto;">提交</button>
-                                </div>
-                            </form>
-                        </table>
-                    </div>
-                </div>
-                <!--输入框 end-->
+             <div class="card shadow mb-4" th:replace="~{commons/FromFrame::inputFrame}"></div>
+            <!--wrapper 围布-->
+            <div class="overlap" th:replace="~{commons/FromFrame::wrapper}"></div>
+            <div class="card-body">
                 <button type="button" class="btn btn-primary test" style="margin: 0 auto;">提交</button>
-
-                <div class="card-body" style="z-index: 3">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" style="width:100% ; mso-cellspacing: 0">
-                            <thead>
-                            <tr>
-                                <th>全选</th>
-                                <th>id</th>
-                                <th>Name</th>
-                                <th>gender</th>
-                                <th>Email</th>
-                                <th>Permission</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody class="recording">
-                            <tr th:each="user:${users}">
-                                <td class="checkbox-inline">
-                                    <label>
-                                        <input type="checkbox" th:value="${user.getId()}"/>
-                                    </label>
-                                </td>
-                                <td th:text="${user.getId()}"></td>
-                                <td th:text="${user.getName()}"></td>
-                                <td th:text="${user.getIphone()}"></td>
-                                <td th:text="${user.getEmail()}"></td>
-                                <td class="data_conversion" th:value="${user.getRole_ID()}"></td>
-                                <td>
-                                    <a class="btn btn-sm btn-primary SingleModify"
-                                       th:value="${user.getId()}">编辑</a>
-                                    <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
-                                       th:value="${user.getId()}">
-                                        删除</a>
-                                </td>
-                            </tr>
-                            </tbody>
-                            <!--小提示组件-->
-                            <ul th:insert="~{/commons/commons::BoxTips}" style="z-index:4"></ul>
-                        </table>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" style="width:100% ; mso-cellspacing: 0">
+                        <thead>
+                        <tr>
+                            <th>全选</th>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>nickname</th>
+                            <th>gender</th>
+                            <th>address</th>
+                            <th>Email</th>
+                            <th>iphone</th>
+                            <th>create_time</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="recording">
+                        <tr th:each="user:${users}">
+                            <td class="checkbox-inline">
+                                <label>
+                                    <input type="checkbox" th:value="${user.getId()}"/>
+                                </label>
+                            </td>
+                            <td th:text="${user.getId()}"></td>
+                            <td th:text="${user.getName()}"></td>
+                            <td th:text="${user.getNickname()}"></td>
+                            <td th:text="${user.getGender()} ==true ? '男':'女'"></td>
+                            <td th:text="${user.getAddress()}"></td>
+                            <td th:text="${user.getEmail()}"></td>
+                            <td th:text="${user.getIphone()}"></td>
+                            <td th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
+                            <!-- <td class="data_conversion" th:value="${user.getRole_ID()}"></td>-->
+                            <td>
+                                <a class="btn btn-sm btn-primary text-gray-100 SingleModify"
+                                   th:value="${user.getId()}">编辑</a>
+                                <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
+                                   th:value="${user.getId()}">
+                                    删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <!--小提示组件-->
+                        <ul th:insert="~{/commons/commons::BoxTips}" style="z-index:4"></ul>
+                    </table>
                 </div>
             </div>
+
             <!--表中数据 end-->
             <!-- Page Content End-->
 
@@ -421,18 +368,7 @@
 <script th:src="@{/js/demo/datatables-demo.js}"></script>
 <!-- Component scripts for table Operating response-->
 <script th:src="@{../static/js/Component.js}"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".stripFrame").on('click', function () {
-            $(".input-frame").css("display",'none');
-            $(".overlap").css("display",'none');
-        });
-        $(".test").on('click', function () {
-            $(".input-frame").css("display",'');
-            $(".overlap").css("display",'block');
-        })
-    });
-</script>
+
 </body>
 
 </html>
