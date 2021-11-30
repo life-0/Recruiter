@@ -1,5 +1,6 @@
 (function ($) {
     $(document).ready(function () {
+        /*tips*/
         let Content = getCookie("content")
         // console.log(Content)
         if (Content !== "") {
@@ -61,23 +62,8 @@
         }
         return "";
     }
+    /*tips end*/
 
-    /*FromFrame 传值框架*/
-    $(".stripFrame").on('click', function () {
-        $(".input-frame").css("display", 'none');
-        $(".overlap").css("display", 'none');
-    });
-    $(".test").on('click', function () {
-        $(".input-frame").css("display", '');
-        $(".overlap").css("display", 'block');
-    })
-    /*动态输入框*/
-    // function dynamicInputBox(data) {
-    $(".form-data").append("<div class=\"form-group\" style=\"flex-wrap: nowrap;display:flex;\">\n" +
-        "                    <label style=\"width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px\">\n" +
-        "                        Email:\n" +
-        "                    </label>\n" +
-        "                    <input type=\"text\" name=\"id\" class=\"form-control\">\n" +
-        "                </div>")
-    // }
+
+
 })(jQuery);

@@ -40,11 +40,11 @@ public class UserController {
         return "/employee/tables";
     }
 
-/*    @RequestMapping({"/ToAdd"})
-    public String ToAdd() {
+    @RequestMapping({"/ToAdd"})
+    public String ToAdd(@RequestParam("") String dataSourceId) {
         return "/employee/AddPage";
     }
-
+/*
     @ApiOperation("添加用户")
     @RequestMapping({"/Add"})
     public String AddUser(@RequestParam("") String Name, Model model) {

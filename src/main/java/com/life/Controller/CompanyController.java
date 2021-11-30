@@ -31,6 +31,11 @@ public class CompanyController {
         model.addAttribute ("users", users);
         return "/Company/table";
     }
+    @RequestMapping("/toUpdate")
+    public String toUpdate(){
+
+        return "";
+    }
 
     @RequestMapping("/firmTemplate")
     public String CompanyTemplate() {

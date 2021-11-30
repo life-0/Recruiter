@@ -251,7 +251,7 @@
 
             <!-- Begin Page Content -->
             <!--表中数据-->
-             <div class="card shadow mb-4" th:replace="~{commons/FromFrame::inputFrame}"></div>
+            <div class="card shadow mb-4" th:replace="~{commons/FromFrame::inputFrame}"></div>
             <!--wrapper 围布-->
             <div class="overlap" th:replace="~{commons/FromFrame::wrapper}"></div>
             <div class="card-body">
@@ -368,7 +368,8 @@
 <script th:src="@{/js/demo/datatables-demo.js}"></script>
 <!-- Component scripts for table Operating response-->
 <script th:src="@{../static/js/Component.js}"></script>
-
+<!--InputFrame script for table-->
+<script th:src="@{../static/js/component-input-frame.js}"></script>
 </body>
 
 </html>
