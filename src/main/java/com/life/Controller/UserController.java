@@ -5,6 +5,7 @@ import com.life.POJO.user.UserInfo;
 import com.life.Service.user.UserInfoServiceImpl;
 import com.life.Utils.NumberUtil;
 import io.swagger.annotations.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +41,11 @@ public class UserController {
         return "/employee/tables";
     }
 
+    @RequestMapping({"/update"})
+    public String update(@Param ("formObject")String formObject){
+        System.out.println (formObject);
+        return null;
+    }
     @RequestMapping({"/ToAdd"})
     public String ToAdd(@RequestParam("") String dataSourceId) {
         return "/employee/AddPage";

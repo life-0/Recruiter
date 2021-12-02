@@ -1,30 +1,13 @@
 (function ($) {
-
-        $(".BatchProcess").click(function () {  //批删除
-            let arr = $("input:checkbox:checked").map(function () {
-                return $(this).val();
-            }).get().join(",");
-            console.log(arr);
-            data(arr);
-        });
-
-        $('.SingleDel').click(function () { //单个删除
-            data($(this).attr('value'));
-        });
-
-        $(".SingleModify").on('click', function () {    //单个编辑 传参
-            // $.post("/student/ToUpdate", {ID: $(this).attr('value')})
-            window.location.href = "/student/ToUpdate/" + $(this).attr('value');
-        });
-
         $(".submitData").on('click', function () {
             let formObject = {};
-            let formArray = $(".form-data").serializeArray();   //将参数序列化
-            $.each(formArray, function (i, item) {
-                formObject[item.name] = item.value;
+            let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
+            console.log(formArray)
+            $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
+                formObject[$(item).children('label').html()] = $(item).children('input').val();
             });
             $.ajax({
-                url: "/student/Update",
+                url: "http://localhost:9090/student/update",
                 type: "post",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(formObject),
@@ -53,9 +36,7 @@
                 type: "POST", //提交方式
                 // dataType: "json",    //指定返回的数据类型
                 url: "/student/DeleteStu",//路径
-                data: {
-                    "data": arr
-                },//数据，这里使用的是Json格式进行传输
+                data: {arr},//数据，这里使用的是Json格式进行传输
                 async: false,
 
                 success: function (result) {//返回数据根据结果进行相应的处理

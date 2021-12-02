@@ -47,6 +47,9 @@
 
                 if (updateObjectArray[key].innerText)
                     json.value = updateObjectArray[key].innerText;
+                else {
+                    json.value="";  //防止value无参数
+                }
                 // console.log(json.value)
                 field.push(json);   //装入数据
             })
@@ -54,7 +57,7 @@
             field.pop();     //去掉尾部参数(操作)
 
             //装填数据后再进行修输入框样式
-            input_frame.css('display', "block");    //修改其可展示状态
+            input_frame.css('display', "");    //修改其可展示状态
             input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
             $(".overlap").css("display", 'block');
             dynamicInputBox(field, input_frame);

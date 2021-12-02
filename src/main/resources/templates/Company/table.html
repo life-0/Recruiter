@@ -250,12 +250,11 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-            <!--表中数据-->
+            <!--动态数据修改框-->
             <div class="card shadow mb-4" th:replace="~{commons/FromFrame::inputFrame}"></div>
             <!--wrapper 围布-->
             <div class="overlap" th:replace="~{commons/FromFrame::wrapper}"></div>
             <div class="card-body">
-                <button type="button" class="btn btn-primary test" style="margin: 0 auto;">提交</button>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" style="width:100% ; mso-cellspacing: 0">
                         <thead>
@@ -285,13 +284,11 @@
                             <td th:text="${user.getEmail()}"></td>
                             <td th:text="${user.getIphone()}"></td>
                             <td class="updateInvalid" th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
-                            <!-- <td class="data_conversion" th:value="${user.getRole_ID()}"></td>-->
                             <td>
                                 <a class="btn btn-sm btn-primary text-gray-100 SingleModify test"
                                    th:value="${user.getId()}">编辑</a>
                                 <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
-                                   th:value="${user.getId()}">
-                                    删除</a>
+                                   th:value="${user.getId()}">删除</a>
                             </td>
                         </tr>
                         </tbody>
@@ -368,6 +365,8 @@
 <script th:src="@{../static/js/Component.js}"></script>
 <!--InputFrame script for table-->
 <script th:src="@{../static/js/component-input-frame.js}"></script>
+<!-- data transport private-->
+<script th:src="@{/js/dataTransport.js}"></script>
 </body>
 
 </html>
