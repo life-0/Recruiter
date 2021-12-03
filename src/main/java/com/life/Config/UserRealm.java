@@ -55,7 +55,7 @@ public class UserRealm extends AuthorizingRealm {
     //认证
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
+//        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
         //Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));

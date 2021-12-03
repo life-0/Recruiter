@@ -7,6 +7,7 @@ import com.life.Utils.NumberUtil;
 import io.swagger.annotations.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /*
  *@Author life-0
@@ -36,18 +35,25 @@ public class UserController {
     @GetMapping({"/tables", "tables.html"})
     public String UserTable(Model model) {
         List<UserInfo> users = userInfoService.showAll ();
-
         model.addAttribute ("users", users);
         return "/employee/tables";
     }
 
-    @RequestMapping({"/update"})
-    public String update(@Param ("formObject")String formObject){
-        System.out.println (formObject);
-        return null;
+    @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
+    @ResponseBody
+    public String update(@RequestBody Map<String, Object> map) {
+        Iterator<Map.Entry<String, Object>> iterator = map.entrySet ().iterator ();
+        while (iterator.hasNext ()) {
+            Map.Entry<String, Object> next = iterator.next ();
+            String key = next.getKey ();
+            String value = (String) next.getValue ();
+            System.out.println (key + " :" + value);
+        }
+        return "ok";
     }
+
     @RequestMapping({"/ToAdd"})
-    public String ToAdd(@RequestParam("") String dataSourceId) {
+    public String ToAdd(@RequestBody String dataSourceId) {
         return "/employee/AddPage";
     }
 /*

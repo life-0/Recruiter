@@ -1,16 +1,42 @@
 (function ($) {
-        $(".submitData").on('click', function () {
-            let formObject = {};
-            let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
-            console.log(formArray)
-            $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
-                formObject[$(item).children('label').html()] = $(item).children('input').val();
-            });
+        function DataTransport(data, type, targetUrl, redirectUrl) {
             $.ajax({
-                url: "http://localhost:9090/student/update",
-                type: "post",
+                type: type, //提交方式
+                // dataType: "json",    //指定返回的数据类型
+                url: targetUrl,//路径
+                data: data,//数据，这里使用的是Json格式进行传输
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(formObject),
+                async: false,
+                cache: false,
+                processData: false,
+                success: function (result) {//返回数据根据结果进行相应的处理
+                    if (result === 'ok') {
+                        window.alert("ok")
+                        // window.location.href = redirectUrl
+                    } else {
+                        window.alert(result);
+                    }
+                },
+                error: function (result) {
+                    window.alert("传输失败,请重试..." + result);
+                }
+            });
+        }
+        $(".submitData").on('click', function () {
+            let list = {};
+            let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
+            // console.log(formArray)
+            $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
+                list[$(item).children('label').html()] = $(item).children('input').val();
+            });
+            console.log(JSON.stringify(list))
+            DataTransport(JSON.stringify(list),"POST","/student/update");
+            /*$.ajax({
+                url: "http://localhost:9090/student/update",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                dataType:'text',
+                data: JSON.stringify(list),
                 success: function (data) {
                     if (data === "ok") {
                         //let frame =window.open("/student/tables","_self");
@@ -25,7 +51,16 @@
                 error: function (e) {
                     alert("错误！！");
                 }
+            });*/
+        });
+        $(".resetData").on('click', function () {   //数据重置
+            let list = {};
+            let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
+            // console.log(formArray)
+            $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
+                list[$(item).children('label').html()] = $(item).children('input').val();
             });
+
         });
 
 
@@ -52,30 +87,7 @@
             });
         }
 
-        function DataTransport(data, type, targetUrl, redirectUrl) {
-            $.ajax({
-                type: type, //提交方式
-                // dataType: "json",    //指定返回的数据类型
-                url: targetUrl,//路径
-                data: {
-                    "data": data
-                },//数据，这里使用的是Json格式进行传输
-                contentType: "application/json; charset=utf-8",
-                async: false,
-                cache: false,
-                processData: false,
-                success: function (result) {//返回数据根据结果进行相应的处理
-                    if (result === 'ok') {
-                        window.location.href = redirectUrl
-                    } else {
-                        window.alert(result);
-                    }
-                },
-                error: function (result) {
-                    window.alert("传输失败,请重试..." + result);
-                }
-            });
-        }
+
     }
 
 )(jQuery);

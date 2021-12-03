@@ -1,7 +1,6 @@
 (function ($) {
     $(document).ready(function () {
         /*FromFrame 传值框架*/
-
         function dynamicInputBox(data, subject) {
             //动态加载,当前数据,当前对象
 
@@ -10,7 +9,7 @@
                 /*'<p>'+data[js].name+'</p>'*/
                 let html = '<div class="form-group" style="flex-wrap: nowrap;display:flex;">' +
                     '<label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">' +
-                    data[js].name + ":" +
+                    data[js].name +
                     '</label>' +
                     '<input type="text" name="id" class="form-control" ' +
                     'value="' + data[js].value + '"';
@@ -35,7 +34,7 @@
             let input_frame = $(".input-frame");    /*获取输入框类*/
             let updateObjectArray = $(this).parents('td').siblings();    //获取值
             updateObjectArray.push($(this));    //添加自身,补齐个数
-            console.log(updateObjectArray)
+            // console.log(updateObjectArray)
             theadValues.each(function (key, value) {
                 /*console.log(key + " : " + $(value).html())*/
                 let json = {};
