@@ -1,4 +1,6 @@
 (function ($) {
+
+
         function DataTransport(data, type, targetUrl, redirectUrl) {
             $.ajax({
                 type: type, //提交方式
@@ -22,6 +24,7 @@
                 }
             });
         }
+
         $(".submitData").on('click', function () {
             let list = {};
             let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
@@ -29,8 +32,7 @@
             $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
                 list[$(item).children('label').html()] = $(item).children('input').val();
             });
-            console.log(JSON.stringify(list))
-            DataTransport(JSON.stringify(list),"POST","/student/update");
+            DataTransport(JSON.stringify(list), "POST", "/student/update");
             /*$.ajax({
                 url: "http://localhost:9090/student/update",
                 type: "POST",
@@ -53,14 +55,24 @@
                 }
             });*/
         });
-        $(".resetData").on('click', function () {   //数据重置
-            let list = {};
-            let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
+      /*  $(".resetData").on('load',function (){
+
+            let formArray = $('.resetData').parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
             // console.log(formArray)
             $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
-                list[$(item).children('label').html()] = $(item).children('input').val();
+                origin.push($(item).children('input').val());
             });
+            for (let originElement of origin) {
+                console.log(originElement)
+            }
+            return origin;
+        })*/
+        $(".resetData").on('click', function () {   //数据重置
+            let arrayInput = $(".form-content").find('input');
 
+            $.each(arrayInput, function (i, item) {
+                $(item).val( sessionStorage.getItem($(item).attr('name')))
+            })
         });
 
 

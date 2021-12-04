@@ -11,7 +11,8 @@
                     '<label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">' +
                     data[js].name +
                     '</label>' +
-                    '<input type="text" name="id" class="form-control" ' +
+                    '<input type="text" class="form-control"' +
+                    'name="'+data[js].name +'"'+
                     'value="' + data[js].value + '"';
                 if (data[js].readonly) {
                     html += 'readonly="' + data[js].readOnly + '">';
@@ -20,7 +21,13 @@
                     html + '</div>'
                 )
             }
+        }
 
+        function ValAddition(data) {    //动态框中添加值
+            let arrayInput = $(".form-content").find('input');
+            $.each(arrayInput, function (i, item) {
+                $(item).val(data[i].value);
+            })
         }
 
         $(".stripFrame").on('click', function () {
@@ -47,7 +54,7 @@
                 if (updateObjectArray[key].innerText)
                     json.value = updateObjectArray[key].innerText;
                 else {
-                    json.value="";  //防止value无参数
+                    json.value = "";  //防止value无参数
                 }
                 // console.log(json.value)
                 field.push(json);   //装入数据
@@ -59,7 +66,25 @@
             input_frame.css('display', "");    //修改其可展示状态
             input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
             $(".overlap").css("display", 'block');
-            dynamicInputBox(field, input_frame);
+            // 检查已经存在动态输入框了
+
+            if ($(".form-content:has(.form-group)").length > 0){
+                ValAddition(field); //添加值
+            }
+            else
+            {
+                dynamicInputBox(field, input_frame);    //创建输入框,且添加值
+            }
+
+            //存储初始值到浏览器中
+            for (let fieldElement of field) {
+                    // console.log(fieldElement['name']+":"+fieldElement['value'])
+                //浏览器中存储初始值, 若会话消失,则初始值被删除
+                //sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。
+                sessionStorage.setItem(fieldElement['name'], fieldElement['value']);
+                origin.push(fieldElement.value);
+            }
+
         });
     });
 })(jQuery);
