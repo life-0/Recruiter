@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -38,7 +38,6 @@
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
         <!-- Main Content -->
         <div id="content">
             <!-- Topbar -->
@@ -250,25 +249,34 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
+
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    <a class="m-0 font-weight-bold text-primary addData" targetHref="/student/toAdd">添加数据</a>
+                    <button class="BatchProcess">批处理</button>
+                </h6>
+            </div>
+
             <!--动态数据修改框-->
             <div class="card shadow mb-4" th:replace="~{commons/FromFrame::inputFrame}"></div>
             <!--wrapper 围布-->
             <div class="overlap" th:replace="~{commons/FromFrame::wrapper}"></div>
+            <!--wrapper 围布 end-->
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" style="width:100% ; mso-cellspacing: 0">
                         <thead>
                         <tr>
-                            <th>全选</th>
-                            <th>id</th>
+                            <th class="updateInvalid">全选</th>
+                            <th class="updateInvalid">id</th>
                             <th>Name</th>
                             <th>nickname</th>
                             <th>gender</th>
                             <th>address</th>
                             <th>Email</th>
                             <th>iphone</th>
-                            <th>create_time</th>
-                            <th>操作</th>
+                            <th class="updateInvalid">create_time</th>
+                            <th class="updateInvalid">操作</th>
                         </tr>
                         </thead>
                         <tbody class="recording">
@@ -283,10 +291,11 @@
                             <td th:text="${user.getAddress()}"></td>
                             <td th:text="${user.getEmail()}"></td>
                             <td th:text="${user.getIphone()}"></td>
-                            <td class="updateInvalid" th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
+                            <td class="updateInvalid"
+                                th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
                             <td>
                                 <a class="btn btn-sm btn-primary text-gray-100 SingleModify test"
-                                   th:value="${user.getId()}">编辑</a>
+                                   th:value="${user.getId()}" targetHref="/student/update">编辑</a>
                                 <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
                                    th:value="${user.getId()}">删除</a>
                             </td>

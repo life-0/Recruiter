@@ -1,9 +1,8 @@
 (function ($) {
     $(document).ready(function () {
         /*FromFrame 传值框架*/
-        function dynamicInputBox(data, subject) {
-            //动态加载,当前数据,当前对象
-
+        function dynamicInputBox(data, subject,targetUrl) {
+            //动态加载,当前数据,当前对象,提交地址
             for (let js in data) {
                 // console.log(js + ": " + data[js].name + " " + data[js].readOnly)
                 /*'<p>'+data[js].name+'</p>'*/
@@ -12,8 +11,8 @@
                     data[js].name +
                     '</label>' +
                     '<input type="text" class="form-control"' +
-                    'name="'+data[js].name +'"'+
-                    'value="' + data[js].value + '"';
+                    ' name="' + data[js].name + '"' +
+                    ' value="' + data[js].value + '"';
                 if (data[js].readonly) {
                     html += 'readonly="' + data[js].readOnly + '">';
                 }
@@ -33,6 +32,7 @@
         $(".stripFrame").on('click', function () {
             $(".input-frame").css("display", 'none');
             $(".overlap").css("display", 'none');
+            sessionStorage.clear();// 清空数据
         });
         $(".test").on('click', function () {
             /*动态输入框*/
@@ -46,7 +46,6 @@
                 /*console.log(key + " : " + $(value).html())*/
                 let json = {};
                 json.name = $(value).html();
-                console.log()
                 if (updateObjectArray[key].className === "updateInvalid") {
                     json.readonly = true;
                 }
@@ -67,24 +66,52 @@
             input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
             $(".overlap").css("display", 'block');
             // 检查已经存在动态输入框了
-
-            if ($(".form-content:has(.form-group)").length > 0){
+            if ($(".form-content:has(.form-group)").length > 0) {
                 ValAddition(field); //添加值
-            }
-            else
-            {
+            } else {
                 dynamicInputBox(field, input_frame);    //创建输入框,且添加值
             }
-
             //存储初始值到浏览器中
             for (let fieldElement of field) {
-                    // console.log(fieldElement['name']+":"+fieldElement['value'])
+                // console.log(fieldElement['name']+":"+fieldElement['value'])
                 //浏览器中存储初始值, 若会话消失,则初始值被删除
                 //sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。
                 sessionStorage.setItem(fieldElement['name'], fieldElement['value']);
-                origin.push(fieldElement.value);
             }
+            //  设置数据提交路径
+            $('.submitData').attr('targetHref', ($(this).attr('targetHref')))
 
         });
+        /*update end*/
+
+        /*add*/
+        $(".addData").on('click', function () {
+            let field = [];    /*存储列的值*/
+            let input_frame = $(".input-frame");    /*获取输入框类*/
+            let theadValues = $(".table").children('thead').find('tr').children('th');/*获取展示表的字段*/
+            theadValues.each(function (key, value) {
+                let json = {};
+                json.name = $(value).html();
+                if ($(value).is('.updateInvalid')) {
+                    json.readonly = true;
+                }
+                json.value="";
+                field.push(json);
+            });
+            field.shift();   //去掉头部键值对参数(全选)
+            field.pop();     //去掉尾部参数(操作)
+            //装填数据后再进行修输入框样式
+            input_frame.css('display', "");    //修改其可展示状态
+            input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
+            $(".overlap").css("display", 'block');
+            if ($(".form-content:has(.form-group)").length > 0) {
+                ValAddition(field); //添加值
+            } else {
+                dynamicInputBox(field, input_frame);    //创建输入框,且添加值
+            }
+            //  设置数据提交路径
+            $('.submitData').attr('targetHref', ($(this).attr('targetHref')))
+        });
+        /*add end*/
     });
 })(jQuery);

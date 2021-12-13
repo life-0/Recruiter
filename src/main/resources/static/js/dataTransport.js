@@ -14,6 +14,7 @@
                 success: function (result) {//返回数据根据结果进行相应的处理
                     if (result === 'ok') {
                         window.alert("ok")
+                        window.location.reload(true);   //刷新页面
                         // window.location.href = redirectUrl
                     } else {
                         window.alert(result);
@@ -25,6 +26,7 @@
             });
         }
 
+        /*update */
         $(".submitData").on('click', function () {
             let list = {};
             let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
@@ -32,7 +34,7 @@
             $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
                 list[$(item).children('label').html()] = $(item).children('input').val();
             });
-            DataTransport(JSON.stringify(list), "POST", "/student/update");
+            DataTransport(JSON.stringify(list), "POST", $(this).attr('targetHref'));
             /*$.ajax({
                 url: "http://localhost:9090/student/update",
                 type: "POST",
@@ -55,23 +57,12 @@
                 }
             });*/
         });
-      /*  $(".resetData").on('load',function (){
 
-            let formArray = $('.resetData').parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
-            // console.log(formArray)
-            $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
-                origin.push($(item).children('input').val());
-            });
-            for (let originElement of origin) {
-                console.log(originElement)
-            }
-            return origin;
-        })*/
         $(".resetData").on('click', function () {   //数据重置
             let arrayInput = $(".form-content").find('input');
 
             $.each(arrayInput, function (i, item) {
-                $(item).val( sessionStorage.getItem($(item).attr('name')))
+                $(item).val(sessionStorage.getItem($(item).attr('name')))
             })
         });
 
@@ -85,7 +76,6 @@
                 url: "/student/DeleteStu",//路径
                 data: {arr},//数据，这里使用的是Json格式进行传输
                 async: false,
-
                 success: function (result) {//返回数据根据结果进行相应的处理
                     if (result === 'ok') {
                         window.location.href = "/student/tables"

@@ -7,6 +7,8 @@ import com.life.Utils.NumberUtil;
 import io.swagger.annotations.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONArray;
+import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,9 +44,8 @@ public class UserController {
     @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
     @ResponseBody
     public String update(@RequestBody Map<String, Object> map) {
-        Iterator<Map.Entry<String, Object>> iterator = map.entrySet ().iterator ();
-        while (iterator.hasNext ()) {
-            Map.Entry<String, Object> next = iterator.next ();
+
+        for (Map.Entry<String, Object> next : map.entrySet ()) {
             String key = next.getKey ();
             String value = (String) next.getValue ();
             System.out.println (key + " :" + value);
@@ -52,9 +53,18 @@ public class UserController {
         return "ok";
     }
 
-    @RequestMapping({"/ToAdd"})
-    public String ToAdd(@RequestBody String dataSourceId) {
-        return "/employee/AddPage";
+    @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
+    @ResponseBody
+
+    public String ToAdd(@RequestBody Map<String, Object> map) throws JSONException {
+        UserInfo userInfo = new UserInfo ();
+       for (Map.Entry<String, Object> next : map.entrySet ()) {
+            String key = next.getKey ();
+            String value = (String) next.getValue ();
+            System.out.println (key + " :" + value);
+
+        }
+        return "ok";
     }
 /*
     @ApiOperation("添加用户")
