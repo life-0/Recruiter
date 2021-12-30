@@ -1,4 +1,4 @@
-
+/*----------------------BoxTips----------------------------------*/
 .BoxTips {
     /*clear: both;*/
     width: 160px;
@@ -53,3 +53,51 @@
     text-decoration: none;
     text-align: center
 }
+/*----------------------BoxTips end--------------------------------------*/
+
+/*----------------------input-frame-css----------------------------------*/
+.overlap{
+    background: #000;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    min-height: 100% !important;
+    left: 0;
+    top: 0;
+    display: none;
+    position: absolute;
+    z-index: 6;
+}
+.input-frame-Css{
+    min-height: 200px;
+    overflow-y:paged-y-controls;
+    width: 420px;
+    top: 10%; /*起始是在body中，纵向距上50%的位置，这个点相当于body的中心点，div的左上角的定位*/
+    position: fixed;
+    z-index: 10;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    color: #0f0f0f;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 36% ;
+    display: none;
+}
+.input-frame-Css::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 4px;
+    scrollbar-arrow-color:red;
+
+}
+.input-frame-Css::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgb(42, 39, 39);
+    background: rgba(248, 245, 245, 0.2);
+    scrollbar-arrow-color: #00eaff;
+}
+.input-frame-Css::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(173, 77, 77, 0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+/*----------------------input-frame-css end------------------------------*/

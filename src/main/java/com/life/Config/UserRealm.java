@@ -15,6 +15,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import javax.annotation.Resource;
 import java.util.Arrays;
@@ -30,8 +31,10 @@ import java.util.List;
 */
 
 public class UserRealm extends AuthorizingRealm {
+    @Lazy
     @Resource
     private UserRankServiceImpl userRankService;
+    @Lazy
     @Resource
     private UserLoginServiceImpl userLoginService;
 

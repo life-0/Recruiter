@@ -12,16 +12,16 @@
     <title>页面管理</title>
 
     <!-- Custom fonts for this template -->
-    <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/static/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link th:href="@{/css/admin-2.min.css}" rel="stylesheet">
+    <link th:href="@{/static/css/admin-2.min.css}" type="text/css" rel="stylesheet">
     <!-- Custom styles for this page -->
-    <link th:href="@{/vendor/datatables/dataTables.bootstrap4.min.css}" rel="stylesheet">
+    <link th:href="@{/static/vendor/datatables/dataTables.bootstrap4.min.css}" rel="stylesheet">
     <!-- Custom styles for Component template-->
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/Plugin.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/Plugin.css" th:href="@{/static/css/Plugin.css}"/>
 
 </head>
 
@@ -258,11 +258,11 @@
             </div>
 
             <!--动态数据修改框-->
-            <div class="card shadow mb-4" th:replace="~{commons/FromFrame::inputFrame}"></div>
+            <div class="card shadow mb-4 " th:replace="~{commons/FromFrame::inputFrame}"></div>
             <!--wrapper 围布-->
             <div class="overlap" th:replace="~{commons/FromFrame::wrapper}"></div>
             <!--wrapper 围布 end-->
-            <div class="card-body">
+            <div class="card-body" >
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" style="width:100% ; mso-cellspacing: 0">
                         <thead>
@@ -282,12 +282,11 @@
                         <tbody class="recording">
                         <tr th:each="user:${users}">
                             <td class="checkbox-inline">
-                                <input type="checkbox" th:value="${user.getId()}"/>
-                            </td>
+                                <input type="checkbox" th:value="${user.getId()}"/></td>
                             <td class="updateInvalid" th:text="${user.getId()}"></td>
                             <td th:text="${user.getName()}"></td>
                             <td th:text="${user.getNickname()}"></td>
-                            <td th:text="${user.getGender()} ==true ? '男':'女'"></td>
+                            <td class="singleBox" th:text="${user.getGender()} ==true ? '男':'女'"></td>
                             <td th:text="${user.getAddress()}"></td>
                             <td th:text="${user.getEmail()}"></td>
                             <td th:text="${user.getIphone()}"></td>

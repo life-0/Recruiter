@@ -55,15 +55,24 @@ public class UserController {
 
     @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
     @ResponseBody
-
-    public String ToAdd(@RequestBody Map<String, Object> map) throws JSONException {
-        UserInfo userInfo = new UserInfo ();
-       for (Map.Entry<String, Object> next : map.entrySet ()) {
+    public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
+        // Map<String , Object> map
+        NumberUtil number = new NumberUtil ();
+/*
+        UserInfo userInfo = new UserInfo (number.getRandomNumber (), null,
+                (String) map.get ("Name"), (String) map.get ("nickname"), (boolean) map.get ("gender"),
+                (String) map.get ("addr ess"), (String) map.get ("Email"), (String) map.get ("iphone"),
+                (String) map.get ("vx"), new Date ());
+*/
+/*
+        for (Map.Entry<String, Object> next : map.entrySet ()) {
             String key = next.getKey ();
             String value = (String) next.getValue ();
             System.out.println (key + " :" + value);
 
-        }
+        }*/
+        System.out.println (userInfo.toString ());
+//        userInfoService.insert (userInfo);
         return "ok";
     }
 /*

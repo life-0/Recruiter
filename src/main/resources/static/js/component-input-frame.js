@@ -1,20 +1,46 @@
 (function ($) {
     $(document).ready(function () {
-        /*FromFrame 传值框架*/
-        function dynamicInputBox(data, subject,targetUrl) {
-            //动态加载,当前数据,当前对象,提交地址
+        const singleValue = ['男', '女']; // 单选框值
+        /*
+        * 动态加载 传值框架
+        * data 数据
+        * subject 当前对象,
+        * targetUrl 提交地址
+        * */
+        function dynamicInputBox(data, subject, targetUrl) {
             for (let js in data) {
                 // console.log(js + ": " + data[js].name + " " + data[js].readOnly)
+                /// console.log(data[js])
                 /*'<p>'+data[js].name+'</p>'*/
-                let html = '<div class="form-group" style="flex-wrap: nowrap;display:flex;">' +
-                    '<label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">' +
-                    data[js].name +
-                    '</label>' +
-                    '<input type="text" class="form-control"' +
-                    ' name="' + data[js].name + '"' +
-                    ' value="' + data[js].value + '"';
-                if (data[js].readonly) {
-                    html += 'readonly="' + data[js].readOnly + '">';
+                let html = '<div class="form-group" style="flex-wrap: nowrap;display:flex;">'
+
+                if (data[js].type === 'text') { // 文本框
+                    html += '<label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">'
+                        + data[js].name + '</label>';
+                    html += '<input class="form-control"' +
+                        ' name="' + data[js].name + '"' +
+                        ' value="' + data[js].value + '"' +
+                        ' type="' + data[js].type + '"';
+                    if (data[js].readonly) {
+                        html += ' readonly="' + data[js].readOnly + '"';
+                    }
+                    html += '>';
+                }
+                if (data[js].type === 'radio') {    // 单选框
+                    html += '<label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">'
+                        + data[js].name + '</label>';
+                    for (value of singleValue) { // 单选框的值
+                        html += '<label style="width: 15%; margin: 0 auto;line-height: 34px;font-size: 16px">';
+                        html += '<input class="form-check-input" ' +
+                            ' type="' + data[js].type + '" ' +
+                            ' name="' + data[js].name + '" ' +
+                            ' value="' + (data[js].value === value ? "true" : "false") + '"' +
+                            ' style="' + 'zoom:150%;' + '" ' +
+                            (data[js].value === value ? "checked" : "") +
+                            '>' +
+                            '<span>' + value + '</span>' +
+                            '</label>';
+                    }
                 }
                 subject.find(".operate").before(
                     html + '</div>'
@@ -22,11 +48,57 @@
             }
         }
 
-        function ValAddition(data) {    //动态框中添加值
-            let arrayInput = $(".form-content").find('input');
-            $.each(arrayInput, function (i, item) {
-                $(item).val(data[i].value);
-            })
+        /*
+        动态框中添加值
+        * data 数据
+        * */
+        function valAddition(data) {    //动态框中添加值
+            // console.log(data)
+            let arrayInput = $(".form-content").find('input');  // 获取动态输入框的 input标签,填充值
+            // console.log(arrayInput)
+            $.each(data, function (i, item) {
+                if (item.type === 'text') {
+                    // console.log(arrayInput.filter(element => item.name === $(element).attr('name') ? $(element) : null))
+                    let targetInput = arrayInput.filter((index, element, self) => { // 索引值, 当前数组项, 数组自身
+                        return $(element).attr("name") === item.name;
+                    })
+                    if (targetInput !== null) {
+                        targetInput.val(item.value)    // text类型直接装入值
+                    }
+                }
+                if (data[i].type === 'radio') {    // radio类型要进行筛选
+                    // 获取radio类型,且name相同的inputs
+                    let singleInputs = arrayInput.filter(function (index, element, self) {
+                        return $(element).attr('type') === 'radio' && data[i].name === $(element).attr('name');
+                    });
+                    singleInputs.each(function (index, value) {  // 把radio选中的值填充进去
+                        console.log($(value).closest("span").val())
+                        if ($(value).closest("span").innerText === item.value) {
+                            singleInputs[index].add('checked', 'checked');
+                        }
+                    })
+
+                    // console.log(singleInputs)
+                }
+                /*console.log(data[i])*/
+                /*  $(item).val(data[i].value);*/
+            });
+            /*  $.each(arrayInput, function (i, item) {
+                  $(item).val(data[i].value);
+              });*/
+        }
+
+        /*
+        打开输入框
+        * inputFrame 输入框对象
+        * overlap 围布对象
+        * rowCount 输出栏行数
+        * */
+        function openInputFrame(inputFrame, overlap, rowCount) {
+            //装填数据后再进行修输入框样式
+            inputFrame.css('display', 'block');    //修改其可展示状态
+            inputFrame.css("height", 56 * (rowCount.length + 2) + 'px');  //修改动态扩容其高度
+            overlap.css("display", 'block');
         }
 
         $(".stripFrame").on('click', function () {
@@ -34,42 +106,47 @@
             $(".overlap").css("display", 'none');
             sessionStorage.clear();// 清空数据
         });
+        /*
+        *
+        * 修改按钮
+        * */
         $(".test").on('click', function () {
             /*动态输入框*/
             let field = [];    /*存储列的值*/
             let theadValues = $(".table").children('thead').find('tr').children('th');/*获取展示表的字段*/
-            let input_frame = $(".input-frame");    /*获取输入框类*/
+            let input_frame = $(".input-frame-Css");    /*获取输入框类*/
             let updateObjectArray = $(this).parents('td').siblings();    //获取值
             updateObjectArray.push($(this));    //添加自身,补齐个数
             // console.log(updateObjectArray)
-            theadValues.each(function (key, value) {
+            theadValues.each(function (index, value) {
                 /*console.log(key + " : " + $(value).html())*/
                 let json = {};
                 json.name = $(value).html();
-                if (updateObjectArray[key].className === "updateInvalid") {
+                if (updateObjectArray[index].className === "updateInvalid") {
                     json.readonly = true;
                 }
-
-                if (updateObjectArray[key].innerText)
-                    json.value = updateObjectArray[key].innerText;
+                if (updateObjectArray[index].className === "singleBox") {
+                    json.type = "radio";
+                } else {
+                    json.type = "text";    // 防止type无参数
+                }
+                if (updateObjectArray[index].innerText)
+                    json.value = updateObjectArray[index].innerText;
                 else {
                     json.value = "";  //防止value无参数
                 }
                 // console.log(json.value)
-                field.push(json);   //装入数据
+                field.push(json);   // 装入数据
             })
-            field.shift();   //去掉头部键值对参数(全选)
-            field.pop();     //去掉尾部参数(操作)
+            field.shift();   // 去掉头部键值对参数(全选)
+            field.pop();     // 去掉尾部参数(操作)
+            openInputFrame(input_frame, $('.overlap'), field)    // 打开动态输入框
 
-            //装填数据后再进行修输入框样式
-            input_frame.css('display', "");    //修改其可展示状态
-            input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
-            $(".overlap").css("display", 'block');
             // 检查已经存在动态输入框了
             if ($(".form-content:has(.form-group)").length > 0) {
-                ValAddition(field); //添加值
+                valAddition(field); //添加值
             } else {
-                dynamicInputBox(field, input_frame);    //创建输入框,且添加值
+                dynamicInputBox(field, input_frame, field);    //创建输入框,且添加值
             }
             //存储初始值到浏览器中
             for (let fieldElement of field) {
@@ -87,7 +164,7 @@
         /*add*/
         $(".addData").on('click', function () {
             let field = [];    /*存储列的值*/
-            let input_frame = $(".input-frame");    /*获取输入框类*/
+            let input_frame = $(".input-frame-Css");    /*获取输入框类*/
             let theadValues = $(".table").children('thead').find('tr').children('th');/*获取展示表的字段*/
             theadValues.each(function (key, value) {
                 let json = {};
@@ -95,17 +172,18 @@
                 if ($(value).is('.updateInvalid')) {
                     json.readonly = true;
                 }
-                json.value="";
+                json.value = "";
                 field.push(json);
             });
             field.shift();   //去掉头部键值对参数(全选)
             field.pop();     //去掉尾部参数(操作)
             //装填数据后再进行修输入框样式
-            input_frame.css('display', "");    //修改其可展示状态
-            input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
-            $(".overlap").css("display", 'block');
+            /* input_frame.css('display', 'block');    //修改其可展示状态
+             input_frame.css("height", 55 * (field.length + 2) + 'px');  //修改动态扩容其高度
+             $(".overlap").css("display", 'block');*/
+            openInputFrame(input_frame, $('.overlap'), field)    // 打开动态输入框
             if ($(".form-content:has(.form-group)").length > 0) {
-                ValAddition(field); //添加值
+                valAddition(field); //添加值
             } else {
                 dynamicInputBox(field, input_frame);    //创建输入框,且添加值
             }
