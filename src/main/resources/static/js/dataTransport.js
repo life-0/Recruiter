@@ -75,9 +75,12 @@
 
         $(".resetData").on('click', function () {   //数据重置
             let arrayInput = $(".form-content").find('input');
-
             $.each(arrayInput, function (i, item) {
-                $(item).val(sessionStorage.getItem($(item).attr('name')))
+                if ($(item).prop('type') === 'radio') {
+                } else {
+                    $(item).val(sessionStorage.getItem($(item).prop('name')))
+                }
+
             })
         });
 
