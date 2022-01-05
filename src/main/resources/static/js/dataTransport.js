@@ -30,10 +30,25 @@
         $(".submitData").on('click', function () {
             let list = {};
             let formArray = $(this).parent().siblings('div[class="form-group"]')//.serializeArray();   //将参数序列化
-            // console.log(formArray)
+            // console.log(formArray);
             $.each(formArray, function (i, item) {  //获取已修改的值, 组成键值对
-                list[$(item).children('label').html()] = $(item).children('input').val();
+                let input = $(item).find('input');
+                if (input.length === 1 && input.attr('type') === 'text') {    // text 类型直接写入
+                    list[$(item).children('label').html()] = $(item).children('input').val();
+                }
+
+                if (input.length > 1) {   // radio属性获取被checked的值
+                    input.each(function (index, value) {
+                        // console.log('test: '+$(value).prop('checked')+', value:'+ $(value).val())
+                        if ($(value).prop('checked')) { //必须使用prop方法, attr显示undefined 直接无效
+                            list[$(item).children('label').first().html()] = $(value).val();
+                        }
+                    })
+
+                }
+
             });
+            // console.log(formArray)
             DataTransport(JSON.stringify(list), "POST", $(this).attr('targetHref'));
             /*$.ajax({
                 url: "http://localhost:9090/student/update",

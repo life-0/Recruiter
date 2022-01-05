@@ -1,6 +1,6 @@
 (function ($) {
     $(document).ready(function () {
-        const singleValue = ['男', '女']; // 单选框值
+        const singleValue = [{category: {name: '男', value: true}}, {category: {name: '女', value: false}}]; // 单选框值
         /*
         * 动态加载 传值框架
         * data 数据
@@ -29,16 +29,19 @@
                 if (data[js].type === 'radio') {    // 单选框
                     html += '<label style="width: 10%;line-height: 34px;font-size: 10px;margin-right: 5px">'
                         + data[js].name + '</label>';
-                    for (value of singleValue) { // 单选框的值
+                    for (let item of singleValue) { // 单选框的值
+                        console.log("name: " + item.category.name, "value: " + item.category.value)
+                        // console.log((data[js].value === value ? "true" : "false"))
                         html += '<label style="width: 15%; margin: 0 auto;line-height: 34px;font-size: 16px">';
                         html += '<input class="form-check-input" ' +
                             ' type="' + data[js].type + '" ' +
                             ' name="' + data[js].name + '" ' +
-                            ' value="' + (data[js].value === value ? "true" : "false") + '"' +
+                            ' value="' + item.category.value + '"' +
+                            //  ' value="' + (data[js].value === value ? 1 : "false") + '"' +
                             ' style="' + 'zoom:150%;' + '" ' +
-                            (data[js].value === value ? "checked" : "") +
+                            (data[js].value === item.category.name ? "checked" : '') +
                             '>' +
-                            '<span>' + value + '</span>' +
+                            '<span>' + item.category.name + '</span>' +
                             '</label>';
                     }
                 }
@@ -69,12 +72,15 @@
                 if (data[i].type === 'radio') {    // radio类型要进行筛选
                     // 获取radio类型,且name相同的inputs
                     let singleInputs = arrayInput.filter(function (index, element, self) {
-                        return $(element).attr('type') === 'radio' && data[i].name === $(element).attr('name');
+                        return $(element).prop('type') === 'radio' && data[i].name === $(element).prop('name');
                     });
+
                     singleInputs.each(function (index, value) {  // 把radio选中的值填充进去
-                        console.log($(value).closest("span").val())
-                        if ($(value).closest("span").innerText === item.value) {
-                            singleInputs[index].add('checked', 'checked');
+                        // console.log($(value).next().text())
+                        // console.log($(value),index)
+                        $(value).removeProp('checked')  // 清除所有的checked指定
+                        if ($(value).next().text() === item.value) {   //获取span标签数据的指定
+                            $(value).prop('checked', true);   // 选中设定
                         }
                     })
 
@@ -144,7 +150,7 @@
 
             // 检查已经存在动态输入框了
             if ($(".form-content:has(.form-group)").length > 0) {
-                valAddition(field); //添加值
+                valAddition(field);     // 添加值
             } else {
                 dynamicInputBox(field, input_frame, field);    //创建输入框,且添加值
             }
@@ -157,7 +163,6 @@
             }
             //  设置数据提交路径
             $('.submitData').attr('targetHref', ($(this).attr('targetHref')))
-
         });
         /*update end*/
 

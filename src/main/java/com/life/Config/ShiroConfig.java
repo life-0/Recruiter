@@ -6,6 +6,7 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 
 import java.util.LinkedHashMap;
 
@@ -58,6 +59,7 @@ public class ShiroConfig {
         return bean;
     }
     //DefaultWebSecurityManager     第二步
+    @Lazy
     @Bean(name = "SecurityManager")
     public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("userRealm") UserRealm userRealm){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager ();
