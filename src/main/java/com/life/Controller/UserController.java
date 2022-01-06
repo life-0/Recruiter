@@ -28,7 +28,7 @@ import java.util.*;
 */
 @Controller
 @Api(tags = "用户测试类")
-@RequestMapping("/student")
+@RequestMapping("/user")
 public class UserController {
     @Resource
     UserInfoServiceImpl userInfoService;
@@ -58,22 +58,29 @@ public class UserController {
     public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
         // Map<String , Object> map
         NumberUtil number = new NumberUtil ();
-/*
-        UserInfo userInfo = new UserInfo (number.getRandomNumber (), null,
-                (String) map.get ("Name"), (String) map.get ("nickname"), (boolean) map.get ("gender"),
-                (String) map.get ("addr ess"), (String) map.get ("Email"), (String) map.get ("iphone"),
-                (String) map.get ("vx"), new Date ());
-*/
-/*
-        for (Map.Entry<String, Object> next : map.entrySet ()) {
-            String key = next.getKey ();
-            String value = (String) next.getValue ();
-            System.out.println (key + " :" + value);
-
-        }*/
         System.out.println (userInfo.toString ());
 //        userInfoService.insert (userInfo);
         return "ok";
+    }
+
+    @ApiOperation("删除用户")
+    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteUser(@RequestBody ArrayList<Integer> data) {
+        data.forEach (System.out::println);
+        return "ok";
+       /* int result_y = 0;
+        int result_x = 0;
+        for (Integer s : data) {
+            System.out.println (s);
+          *//*  result_y = userRoleService.deleteByUser_ID (s);
+            result_x = userService.deleteByPrimaryKey (s, null);*//*
+        }
+        if (result_x == 1 && result_y == 1) //简单判断程序是否执行成功
+            return "ok";
+        else {
+            return "error";
+        }*/
     }
 /*
     @ApiOperation("添加用户")

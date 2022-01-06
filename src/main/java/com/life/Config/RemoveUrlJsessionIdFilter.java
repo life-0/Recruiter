@@ -67,6 +67,10 @@ public class RemoveUrlJsessionIdFilter implements Filter {
             }
         };
         // process next request in chain
+//        add restful of ajax request in 3 lines
+        wrappedResponse.setHeader ("Access-Control-Allow-Origin", "*");
+        wrappedResponse.setHeader ("Access-Control-Allow-Methods","GET,POST,DELETE,PUT");
+        wrappedResponse.setHeader ("Access-Control-Allow-Headers","Origin,X-Requested-With,Content-Type,Accept");
         chain.doFilter (request, wrappedResponse);
     }
 

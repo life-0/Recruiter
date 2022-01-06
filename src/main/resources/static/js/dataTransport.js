@@ -1,31 +1,30 @@
-(function ($) {
-
-
-        function DataTransport(data, type, targetUrl, redirectUrl) {
-            $.ajax({
-                type: type, //提交方式
-                // dataType: "json",    //指定返回的数据类型
-                url: targetUrl,//路径
-                data: data,//数据，这里使用的是Json格式进行传输
-                contentType: "application/json; charset=utf-8",
-                async: false,
-                cache: false,
-                processData: false,
-                success: function (result) {//返回数据根据结果进行相应的处理
-                    if (result === 'ok') {
-                        window.alert("ok")
-                        window.location.reload(true);   //刷新页面
-                        // window.location.href = redirectUrl
-                    } else {
-                        window.alert(result);
-                    }
-                },
-                error: function (result) {
-                    window.alert("传输失败,请重试..." + result);
-                }
-            });
+export function transport(data, type, targetUrl, redirectUrl) {
+    console.log("data: " + data, "targetUrl: " + targetUrl)
+    $.ajax({
+        type: type, //提交方式
+        // dataType: "json",    //指定返回的数据类型
+        url: targetUrl,//路径
+        data: data,//数据，这里使用的是Json格式进行传输
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        cache: false,
+        processData: false,
+        success: function (result) {//返回数据根据结果进行相应的处理
+            if (result === 'ok') {
+                // window.location.reload();   //刷新页面
+                // window.location.href = redirectUrl
+                console.log("ok")
+            } else {
+                window.alert(result);
+            }
+        },
+        error: function (result) {
+            window.alert("传输失败,请重试..." + result);
         }
+    });
+}
 
+(function ($) {
         /*update */
         $(".submitData").on('click', function () {
             let list = {};
@@ -44,12 +43,10 @@
                             list[$(item).children('label').first().html()] = $(value).val();
                         }
                     })
-
                 }
-
             });
             // console.log(formArray)
-            DataTransport(JSON.stringify(list), "POST", $(this).attr('targetHref'));
+            transport(JSON.stringify(list), "POST", $(this).prop('targetHref'));
             /*$.ajax({
                 url: "http://localhost:9090/student/update",
                 type: "POST",
@@ -91,7 +88,7 @@
             $.ajax({
                 type: "POST", //提交方式
                 // dataType: "json",    //指定返回的数据类型
-                url: "/student/DeleteStu",//路径
+                url: "/user/deleteStu",//路径
                 data: {arr},//数据，这里使用的是Json格式进行传输
                 async: false,
                 success: function (result) {//返回数据根据结果进行相应的处理
@@ -106,8 +103,6 @@
                 }
             });
         }
-
-
     }
 
 )(jQuery);

@@ -294,9 +294,9 @@
                                 th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
                             <td>
                                 <a class="btn btn-sm btn-primary text-gray-100 SingleModify test"
-                                   th:value="${user.getId()}" targetHref="/student/update">编辑</a>
+                                   th:value="${user.getId()}" targetHref="/user/update">编辑</a>
                                 <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
-                                   th:value="${user.getId()}">删除</a>
+                                   th:value="${user.getId()}" targetHref="/user/deleteStu">删除</a>
                             </td>
                         </tr>
                         </tbody>
@@ -369,10 +369,12 @@
 
 <!-- Page level custom scripts -->
 <script th:src="@{/js/demo/datatables-demo.js}"></script>
+<!-- Data transport private-->
+<script type="module" th:src="@{../static/js/tableOperate.js}"></script>
 <!-- Component scripts for table Operating response-->
 <script th:src="@{../static/js/Component.js}"></script>
 <!-- data transport private-->
-<script th:src="@{/js/dataTransport.js}"></script>
+<script type="module" th:src="@{../static/js/dataTransport.js}"></script>
 <!--InputFrame script for table-->
 <script th:src="@{../static/js/component-input-frame.js}"></script>
 
