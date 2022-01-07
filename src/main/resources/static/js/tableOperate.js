@@ -7,23 +7,23 @@ import {transport} from "./dataTransport.js";
 
     $(".BatchProcess").click(function () {  //批删除
         let arr = $("input:checkbox:checked").map(function () {
-            return $(this).val();
-        }).get().join(",");
-        console.log(arr);
-        transport(arr, 'post', $(this).prop('targetHref'));
+            return parseInt($(this).val());
+        }).get();   //map,将数组每一个元素遍历一次
+        transport(arr, 'DELETE', $(this).attr('targetHref'));
+        /*if (arr != null) {  //防止无数据传入
+            transport(arr, 'DELETE', $(this).attr('targetHref'));
+        } else {
+            alert(arr + '无数据');
+        }
+*/
+
     });
 
     $('.SingleDel').click(function () {
         //单个删除
-        console.log($(this).attr('value'), $(this).attr('targetHref'));
-        // _method:"PUT"
-        const data = {list: [$(this).attr('value')]}
+        const data = [parseInt($(this).attr('value'))]  // 以数组的形式传递
+        console.log(data, $(this).attr('targetHref'));
         transport(data, 'DELETE', $(this).attr('targetHref'));
-    });
-
-    $(".SingleModify").on('click', function () {    //单个编辑 传参
-        // $.post("/student/ToUpdate", {ID: $(this).attr('value')})
-        // window.location.href = "/student/ToUpdate/" + $(this).attr('value');
     });
 
 })(jQuery);

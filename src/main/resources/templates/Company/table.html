@@ -252,8 +252,12 @@
 
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    <a class="m-0 font-weight-bold text-primary addData" targetHref="/student/toAdd">添加数据</a>
-                    <button class="BatchProcess">批处理</button>
+                    <button class="btn btn-sm btn-primary text-gray-100 addData"
+                            targetHref="/student/toAdd">添加数据
+                    </button>
+                    <button class="btn btn-sm btn-primary text-gray-100 BatchProcess"
+                            targetHref="/user/deleteStu">批处理
+                    </button>
                 </h6>
             </div>
 
@@ -264,7 +268,8 @@
             <!--wrapper 围布 end-->
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" style="width:100% ; mso-cellspacing: 0">
+                    <table class="table table-bordered" id="dataTable"
+                           style="width:100%; text-align:center;align-items: center">
                         <thead>
                         <tr>
                             <th class="updateInvalid">全选</th>
@@ -281,19 +286,23 @@
                         </thead>
                         <tbody class="recording">
                         <tr th:each="user:${users}">
-                            <td class="checkbox-inline">
-                                <input type="checkbox" th:value="${user.getId()}"/></td>
-                            <td class="updateInvalid" th:text="${user.getId()}"></td>
-                            <td th:text="${user.getName()}"></td>
-                            <td th:text="${user.getNickname()}"></td>
-                            <td class="singleBox" th:text="${user.getGender()} ==true ? '男':'女'"></td>
-                            <td th:text="${user.getAddress()}"></td>
-                            <td th:text="${user.getEmail()}"></td>
-                            <td th:text="${user.getIphone()}"></td>
+                            <td class="checkbox-inline" style="vertical-align: middle">
+                                <input type="checkbox" style="margin-top: 5px;width: 100%;zoom: 150%"
+                                       th:value="${user.getId()}"/>
+                            </td>
+                            <td class="updateInvalid" th:text="${user.getId()}" style="vertical-align: middle"></td>
+                            <td th:text="${user.getName()}" style="vertical-align: middle"></td>
+                            <td th:text="${user.getNickname()}" style="vertical-align: middle"></td>
+                            <td class="singleBox" th:text="${user.getGender()} ==true ? '男':'女'"
+                                style="vertical-align: middle"></td>
+                            <td th:text="${user.getAddress()}" style="vertical-align: middle"></td>
+                            <td th:text="${user.getEmail()}" style="vertical-align: middle"></td>
+                            <td th:text="${user.getIphone()}" style="vertical-align: middle"></td>
                             <td class="updateInvalid"
-                                th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"></td>
-                            <td>
-                                <a class="btn btn-sm btn-primary text-gray-100 SingleModify test"
+                                th:text="${#dates.format(user.create_time,'yyyy-MM-dd HH:mm:ss')}"
+                                style="vertical-align: middle"></td>
+                            <td style="vertical-align: middle">
+                                <a class="btn btn-sm btn-primary text-gray-100 test"
                                    th:value="${user.getId()}" targetHref="/user/update">编辑</a>
                                 <a class="SingleDel text-gray-900 btn btn-sm btn-danger"
                                    th:value="${user.getId()}" targetHref="/user/deleteStu">删除</a>

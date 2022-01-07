@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 import javax.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = "/*", filterName = "removeUrlJsessionIdFilter")
+@WebFilter(urlPatterns = "/*", filterName = "removeUrlJsessionIdFilter",servletNames={"dispatcherServlet"})
 public class RemoveUrlJsessionIdFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response,

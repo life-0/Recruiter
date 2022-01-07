@@ -23,7 +23,7 @@ public class ShiroConfig {
 
     //ShiroFilterFactoryBean    第三步
     @Bean
-    public ShiroFilterFactoryBean getShiroFilterFactoryBear(@Qualifier("SecurityManager") DefaultWebSecurityManager manager){
+    public ShiroFilterFactoryBean getShiroFilterFactoryBear(@Qualifier("SecurityManager") DefaultWebSecurityManager manager) {
         ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean ();
         //设置安全管理器
         bean.setSecurityManager (manager);
@@ -38,18 +38,18 @@ public class ShiroConfig {
         */
 
         //拦截
-        LinkedHashMap<String,String> filterMap = new LinkedHashMap<> ();
+        LinkedHashMap<String, String> filterMap = new LinkedHashMap<> ();
         //以下是controller定义的拦截路径, 因为页面访问的是controller的路径这边就写同样的路径即可
 //        filterMap.put ("/student/*","perms[user:table]");   //user:stu 设置相当于权限令牌
 //        filterMap.put ("/charts","perms[user:company]");
-        filterMap.put ("/student/*","perms[stu:true]");
-        filterMap.put ("/charts","perms[com:true]");
-        filterMap.put ("login.html","anon");
+        filterMap.put ("/company/*", "perms[user]");
+        filterMap.put ("/charts", "perms[role]");
+        filterMap.put ("login.html", "anon");
 
         //设置登出
-        filterMap.put ("/logout","logout");
+        filterMap.put ("/logout", "logout");
 
-    //  filterMap.put ("/user/*","authc");  //支持通配符
+        //  filterMap.put ("/user/*","authc");  //支持通配符
         bean.setFilterChainDefinitionMap (filterMap);
         //设置未认证页面
         bean.setUnauthorizedUrl ("/404");
@@ -58,10 +58,11 @@ public class ShiroConfig {
 
         return bean;
     }
+
     //DefaultWebSecurityManager     第二步
     @Lazy
     @Bean(name = "SecurityManager")
-    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("userRealm") UserRealm userRealm){
+    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("userRealm") UserRealm userRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager ();
         //关联UserRealm
         securityManager.setRealm (userRealm);
@@ -70,13 +71,13 @@ public class ShiroConfig {
 
     //创建Realm对象 自定义类    第一步
     @Bean
-    public UserRealm userRealm(){
+    public UserRealm userRealm() {
         return new UserRealm ();
     }
 
     //整合ShiroDialect    用来整合 shiro thymeleaf
     @Bean
-    public ShiroDialect getShiroDialect(){
+    public ShiroDialect getShiroDialect() {
         return new ShiroDialect ();
     }
 }

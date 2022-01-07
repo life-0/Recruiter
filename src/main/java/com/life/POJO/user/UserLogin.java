@@ -1,5 +1,6 @@
 package com.life.POJO.user;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,20 +17,24 @@ public class UserLogin implements Serializable {
     /**
      * 唯一标识
      */
+    @ApiModelProperty("唯一标识")
     private String number;
 
     /**
      * ID
      */
+    @ApiModelProperty("ID")
     private Integer id;
 
     /**
      * 账号
      */
+    @ApiModelProperty("账号")
     private String account;
 
     /**
      * 密码
      */
+    @ApiModelProperty("密码")
     private String password;
 }

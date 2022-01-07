@@ -1,10 +1,10 @@
 export function transport(data, type, targetUrl, redirectUrl) {
-    console.log("data: " + data, "targetUrl: " + targetUrl)
+    console.log("data:" + JSON.stringify(data), "targetUrl:" + targetUrl)
     $.ajax({
         type: type, //提交方式
         // dataType: "json",    //指定返回的数据类型
         url: targetUrl,//路径
-        data: data,//数据，这里使用的是Json格式进行传输
+        data: JSON.stringify(data),//数据，这里使用的是Json格式进行传输
         contentType: "application/json; charset=utf-8",
         async: false,
         cache: false,
@@ -45,8 +45,8 @@ export function transport(data, type, targetUrl, redirectUrl) {
                     })
                 }
             });
-            // console.log(formArray)
-            transport(JSON.stringify(list), "POST", $(this).prop('targetHref'));
+            // JSON.stringify(list)
+            transport(list, "POST", $(this).attr('targetHref'));
             /*$.ajax({
                 url: "http://localhost:9090/student/update",
                 type: "POST",

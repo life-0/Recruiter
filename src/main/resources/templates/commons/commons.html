@@ -308,20 +308,20 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a shiro:hasPermission="stu:true" class="nav-link" th:href="@{/student/tables}">
+        <a shiro:hasPermission="user" class="nav-link" th:href="@{/company/tables}">
             <i class="fas fa-fw fa-table"></i>
             <span>用户管理</span>
         </a>
     </li>
     <li class="nav-item">
-    <a shiro:hasPermission="com:true" class="nav-link" th:href="@{/company/tables}">
+    <a shiro:hasPermission="role" class="nav-link" th:href="@{/company/tables}">
         <i class="fas fa-fw fa-table"></i>
         <span>权限管理</span>
     </a>
 </li>
 
     <li class="nav-item">
-        <a shiro:hasPermission="com:true" class="nav-link" th:href="@{/company/tables}">
+        <a shiro:hasPermission="page" class="nav-link" th:href="@{/company/tables}">
             <i class="fas fa-fw fa-table"></i>
             <span>页面管理</span>
         </a>

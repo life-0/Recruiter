@@ -63,11 +63,26 @@ public class UserController {
         return "ok";
     }
 
+    @ApiImplicitParams({    //参数描述
+            @ApiImplicitParam(name = "listId",
+                    value = "按照用户ID数组删除",
+                    required = true,
+                    paramType = "query",
+                    allowMultiple = true,
+                    dataType = "Integer")})
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "数据正确"),
+            @ApiResponse(code = 400, message = "参数不符合"),
+            @ApiResponse(code = 404, message = "请求路径不对"),
+            @ApiResponse(code = 408, message = "业务报错,返回客户端")
+    })
     @ApiOperation("删除用户")
     @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
     @ResponseBody
-    public String deleteUser(@RequestBody ArrayList<Integer> data) {
-        data.forEach (System.out::println);
+    public String deleteUser(@RequestBody ArrayList<Integer> listId) {
+        if (!listId.isEmpty ()) {
+            listId.forEach (System.out::println);
+        }
         return "ok";
        /* int result_y = 0;
         int result_x = 0;
