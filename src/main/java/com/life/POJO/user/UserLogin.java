@@ -1,5 +1,6 @@
 package com.life.POJO.user;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Alias("userLogin")
+@ApiModel
 public class UserLogin implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
@@ -23,18 +25,18 @@ public class UserLogin implements Serializable {
     /**
      * ID
      */
-    @ApiModelProperty("ID")
+    @ApiModelProperty(value = "ID",dataType = "Integer")
     private Integer id;
 
     /**
      * 账号
      */
-    @ApiModelProperty("账号")
+    @ApiModelProperty(value = "账号",dataType = "String")
     private String account;
 
     /**
      * 密码
      */
-    @ApiModelProperty("密码")
+    @ApiModelProperty(value = "密码",dataType = "String")
     private String password;
 }

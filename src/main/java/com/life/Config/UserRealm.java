@@ -70,6 +70,6 @@ public class UserRealm extends AuthorizingRealm {
             return null;
         }
         //密码验证  shiro来自己做   将数据库用户对象到当前用户对象中
-        return new SimpleAuthenticationInfo (user, user.getPassword (), "");
+        return new SimpleAuthenticationInfo (user, user.getPassword (), user.getAccount ());
     }
 }

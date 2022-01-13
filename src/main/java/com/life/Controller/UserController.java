@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Wrapper;
 import java.util.*;
 
 /*
@@ -80,6 +81,8 @@ public class UserController {
     @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
     @ResponseBody
     public String deleteUser(@RequestBody ArrayList<Integer> listId) {
+
+
         if (!listId.isEmpty ()) {
             listId.forEach (System.out::println);
         }

@@ -1,5 +1,7 @@
 package com.life.Config;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -7,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.security.Security;
 
 /*
  *@Author life-0
@@ -19,6 +22,8 @@ public class LoginHandleInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object handler) throws Exception {
+      /*  Subject subject = SecurityUtils.getSubject ();
+        subject.getSession ();
         //登陆成功后,应该会有自己的session
         Object loginSession = request.getSession ().getAttribute ("loginSession");
         if (loginSession == null) {
@@ -27,7 +32,8 @@ public class LoginHandleInterceptor implements HandlerInterceptor {
             return false;
         } else {
             return true;
-        }
+        }*/
+        return true;
     }
 
     //

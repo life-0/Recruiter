@@ -26,49 +26,49 @@ public class UserInfo implements Serializable {
     /**
      * ID
      */
-    @ApiModelProperty("ID")
+    @ApiModelProperty(name = "id", value = "id", dataType = "String")
     private Integer id;
 
     /**
      * 真实姓名
      */
-    @ApiModelProperty("真实姓名")
+    @ApiModelProperty(name = "name", value = "真实姓名", dataType = "String")
     private String name;
 
     /**
      * 昵称
      */
-    @ApiModelProperty("昵称")
+    @ApiModelProperty(name = "nickname", value = "昵称", dataType = "String")
     private String nickname;
 
     /**
      * 性别
      */
-    @ApiModelProperty("性别")
+    @ApiModelProperty(name = "gender", value = "性别", dataType = "String")
     private Boolean gender;
 
     /**
      * 住址
      */
-    @ApiModelProperty("住址")
+    @ApiModelProperty(name = "address", value = "住址", dataType = "String")
     private String address;
 
     /**
      * 邮箱
      */
-    @ApiModelProperty("邮箱")
+    @ApiModelProperty(name = "email", value = "邮箱", dataType = "String")
     private String email;
 
     /**
      * 电话
      */
-    @ApiModelProperty("电话")
+    @ApiModelProperty(name = "iphone", value = "电话", dataType = "String")
     private String iphone;
 
     /**
      * 微信号
      */
-    @ApiModelProperty("微信号")
+    @ApiModelProperty(name = "vx", value = "微信号", dataType = "String")
     private String vx;
 
     /**
