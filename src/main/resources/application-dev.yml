@@ -1,11 +1,16 @@
 server:
   port: 9090
 spring:
-  messages:
+  servlet:
+    multipart: # 文件上传下载配置
+      max-file-size: 20MB # 用来指定服务器端文件大小的限制
+      max-request-size: 10MB # 用来指定客户端文件大小的限制
+      location: D:/Recruiter/temp/
+  messages: # 国际化文件配置
     basename: ../i18n/*
   application:
-    name: Recruiter-dev
-  datasource:
+    name: Recruiter-dev # 项目名
+  datasource: # 数据库配置
     password: root
     username: 333
     url: jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8
@@ -24,13 +29,13 @@ spring:
       testOnBorrow: false
       testOnReturn: false
       poolPreparedStatements: true
-    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
       filters: stat,wall
       maxPoolPreparedStatementPerConnectionSize: 20
       useGlobalDataSourceStat: true
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-  thymeleaf:
+  thymeleaf: # thymeleaf 配置
     cache: false  #cache: 是否缓存，开发模式下设置为false，避免改了模板还要重启服务器，线上设置为true，可以提高性能。
 
 #整合Mybatis

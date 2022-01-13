@@ -48,10 +48,12 @@
         from user_info
         where `number` = #{number,jdbcType=VARCHAR}
     </delete>
-    <delete id="deleteById" parameterType="int">
-        delete
-        from user_info
-        where id = #{id};
+    <delete id="deleteById" parameterType="list">
+        update user_info
+        set state=1 where id in
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item,jdbcType=INTEGER}
+        </foreach>
     </delete>
     <insert id="insert" parameterType="userinfo">
         <!--@mbg.generated-->

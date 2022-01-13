@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import com.life.POJO.user.UserInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,8 +22,8 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public int deleteById(int id) {
-        return userInfoMapper.deleteById (id);
+    public int deleteById(ArrayList<Integer> list) {
+        return userInfoMapper.deleteById (list);
     }
 
     @Override

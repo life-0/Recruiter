@@ -81,10 +81,9 @@ public class UserController {
     @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
     @ResponseBody
     public String deleteUser(@RequestBody ArrayList<Integer> listId) {
-
-
         if (!listId.isEmpty ()) {
             listId.forEach (System.out::println);
+            userInfoService.deleteById (listId);
         }
         return "ok";
        /* int result_y = 0;

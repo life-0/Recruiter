@@ -2,13 +2,14 @@ package com.life.Service.user;
 
 import com.life.POJO.user.UserInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface UserInfoService {
 
     int deleteByPrimaryKey(String number);
 
-    int deleteById(int id);
+    int deleteById(ArrayList<Integer> list);
 
     int insert(UserInfo record);
 

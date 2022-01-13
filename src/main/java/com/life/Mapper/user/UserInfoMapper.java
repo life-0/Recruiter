@@ -3,13 +3,14 @@ package com.life.Mapper.user;
 import com.life.POJO.user.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mapper
 public interface UserInfoMapper {
     int deleteByPrimaryKey(String number);
 
-    int deleteById(int id);
+    int deleteById(ArrayList<Integer> list);
 
     int insert(UserInfo record);
 

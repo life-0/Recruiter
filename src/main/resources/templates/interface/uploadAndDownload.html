@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta charset="UTF-8">
+    <title>上传和下载</title>
+    <!-- Bootstrap -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>文件下载</h1>
+<div class="col-md-12">
+    <div style="text-align: center">
+        <form class="form-horizontal" th:action="@{/uploadMore}"
+              enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8 " style="display: inline">
+                    <input type="file" name="file" style="display: inline">
+                    <input type="submit" value="upload">
+                </div>
+            </div>
+        </form>
+        <form th:action="@{/download}" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <input type="submit" value="download">
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
