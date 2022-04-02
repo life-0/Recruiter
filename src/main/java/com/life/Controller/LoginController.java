@@ -10,6 +10,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
@@ -29,12 +30,12 @@ import java.util.List;
 @Controller
 @Api("登录登出")
 public class LoginController {
-    @RequestMapping("/toLogin")
+    @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
     public String toLogin() {
         return "login";
     }
 
-    @RequestMapping("/user/login")
+    @RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public String login(@RequestParam("account") String account,
                         @RequestParam("password") String password,
                         Model model, HttpServletRequest request,
@@ -75,7 +76,7 @@ public class LoginController {
 
     }
 
-    @RequestMapping("/user/logout")
+    @RequestMapping(value = "/user/logout",method = RequestMethod.GET)
     public String logout() {
         Subject subject = SecurityUtils.getSubject ();
         subject.logout ();

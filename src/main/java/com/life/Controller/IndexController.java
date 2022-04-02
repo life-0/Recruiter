@@ -2,7 +2,9 @@ package com.life.Controller;
 
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.servlet.http.HttpServletResponse;
 
 /*
@@ -15,77 +17,77 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @Api
 public class IndexController {
-    @RequestMapping({"/", "index.html"})
+    @GetMapping({"/", "index.html"})
     public String index(HttpServletResponse response) {
         return "index";
     }
 
-    @RequestMapping("/interface")
+    @GetMapping("/interface")
     public String Interface() {
         return "interface/ajax_test";
     }
 
-    @RequestMapping({"/404", "404.html"})
+    @GetMapping({"/404", "404.html"})
     public String test404() {
         return "error/404";
     }
 
-    @RequestMapping({"/blank", "blank.html"})
+    @GetMapping({"/blank", "blank.html"})
     public String blank() {
         return "blank";
     }
 
-    @RequestMapping({"/buttons", "buttons.html"})
+    @GetMapping({"/buttons", "buttons.html"})
     public String buttons() {
         return "buttons";
     }
 
-    @RequestMapping({"/cards", "cards.html"})
+    @GetMapping({"/cards", "cards.html"})
     public String cards() {
         return "cards";
     }
 
-    @RequestMapping({"/charts", "charts.html"})
+    @GetMapping({"/charts", "charts.html"})
     public String charts() {
         return "charts";
     }
 
-    @RequestMapping({"/forget", "forgot-password.html"})
+    @GetMapping({"/forget", "forgot-password.html"})
     public String forget() {
         return "forgot-password";
     }
 
-    @RequestMapping({"/login", "login.html"})
+    @GetMapping({"/login", "login.html"})
     public String login() {
         return "login";
     }
 
-    @RequestMapping({"/register", "register.html"})
+    @GetMapping({"/register", "register.html"})
     public String register() {
         return "register";
     }
 
-    /*@RequestMapping({"/tables", "tables.html"})
+    /*@GetMapping({"/tables", "tables.html"})
     public String tables() {
         return "tables";
     }*/
 
-    @RequestMapping({"/utilities-animation", "utilities-animation.html"})
+    @GetMapping({"/utilities-animation", "utilities-animation.html"})
     public String Utilities_animation() {
         return "utilities-animation";
     }
 
-    @RequestMapping({"/utilities-border", "utilities-border.html"})
+    @GetMapping({"/utilities-border", "utilities-border.html"})
     public String Utilities_border() {
         return "utilities-border";
     }
 
-    @RequestMapping({"/utilities-color", "utilities-color.html"})
+    @GetMapping({"/utilities-color", "utilities-color.html"})
     public String Utilities_color() {
         return "utilities-color";
     }
 
-    @RequestMapping({"/utilities-other", "utilities-other.html"})
+    @GetMapping({"/utilities-other", "utilities-other.html"})
     public String Utilities_other() {
         return "utilities-other";
     }

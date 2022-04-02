@@ -6,7 +6,9 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,7 +27,7 @@ public class CompanyController {
     @Resource
     UserInfoServiceImpl userInfoService;
 
-    @RequestMapping("/tables")
+    @RequestMapping(value = "/tables",method = RequestMethod.POST)
     public String CompanyTable(Model model) {
         List<UserInfo> users = userInfoService.showAll ();
         model.addAttribute ("users", users);
@@ -37,7 +39,7 @@ public class CompanyController {
         return "";
     }
 
-    @RequestMapping("/firmTemplate")
+    @GetMapping("/firmTemplate")
     public String CompanyTemplate() {
         return "/Company/firm-inputFrame-template";
     }

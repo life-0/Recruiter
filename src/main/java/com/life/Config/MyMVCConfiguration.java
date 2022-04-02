@@ -36,7 +36,7 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
     //拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor (new LoginHandleInterceptor ())
+        registry.addInterceptor (new AddHandleInterceptor ())
                 .addPathPatterns ("/**")
                 .excludePathPatterns ("/login.html", "/login", "/index.html", "/user/login",
                         "/css/**", "/img/**", "/static/js/**", "/scss/**", "/vendor/**")
