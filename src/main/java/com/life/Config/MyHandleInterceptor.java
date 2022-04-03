@@ -23,7 +23,7 @@ import java.security.Security;
  TODO
 */
 @Slf4j
-public class AddHandleInterceptor implements HandlerInterceptor {
+public class MyHandleInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object handler) throws Exception {
@@ -40,7 +40,7 @@ public class AddHandleInterceptor implements HandlerInterceptor {
         }*/
         System.out.println("preHandle....");
         String uri = request.getRequestURI();
-        System.out.println("当前路径"+uri);
+        System.out.println("当前路径: "+uri);
 
         /**
          * HandlerMethod=>Controller中标注@RequestMapping的方法
@@ -55,7 +55,7 @@ public class AddHandleInterceptor implements HandlerInterceptor {
         if (!tokenUtil.verify(token)) {
             // 未登录跳转到登录界面
             log.info ("未获得token");
-           request.getRequestDispatcher ("/login").forward (request,response);
+           request.getRequestDispatcher ("/user/login").forward (request,response);
            return false;
         } else {
             return true;

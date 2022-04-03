@@ -63,7 +63,7 @@ public class UserController {
                     required = true,
                     paramType = "query",
                     allowMultiple = true,
-                    dataType = "Integer")})
+                    dataType = "int")})
     @ApiResponses({
             @ApiResponse(code = 200, message = "数据正确"),
             @ApiResponse(code = 400, message = "参数不符合"),

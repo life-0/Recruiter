@@ -31,7 +31,7 @@ import java.util.*;
  *TODO @Description:
 
  */
-@EnableOpenApi
+
 @Configuration
 public class SwaggerConfiguration implements WebMvcConfigurer {
     private final SwaggerProperties swaggerProperties;

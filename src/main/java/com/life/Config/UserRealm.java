@@ -63,7 +63,7 @@ public class UserRealm extends AuthorizingRealm {
 //        System.out.println ("执行了=>认证doGetAuthenticationInfo 认证");
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
-        //Admin user = service.getAdmin (Integer.parseInt (userToken.getUsername ()));
+
         UserLogin user = userLoginService.selectByAccount (userToken.getUsername ());
         /*System.out.println (user.toString ());*/
         if (user == null) {

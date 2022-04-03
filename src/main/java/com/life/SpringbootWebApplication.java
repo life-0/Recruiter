@@ -1,4 +1,5 @@
 package com.life;
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +11,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @MapperScan("com.life.Mapper")
 @EnableScheduling
-@EnableOpenApi  //开启swagger3
+
+@EnableKnife4j
 @ServletComponentScan
 public class SpringbootWebApplication {
 

@@ -9,7 +9,7 @@ import java.util.UUID;
  *@Author: life-0
  *@ClassName: tokenUtil
  *@Date: 2022/4/2 17:26
- *TODO @Description:
+ *TODO @Description: token令牌
 
  */
 
@@ -39,7 +39,7 @@ public class tokenUtil {
     /**
      * 验证token是否合法
      *
-     * @param token
+     * @param: token
      * @return
      */
     public static boolean verify(String token) {
