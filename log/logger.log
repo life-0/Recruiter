@@ -1,0 +1,822 @@
+2022-04-04 10:20:44.526  INFO 13004 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 13004 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 10:20:44.529  INFO 13004 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 10:20:45.026  INFO 13004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-04 10:20:45.026  INFO 13004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-04 10:20:48.315  INFO 13004 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$81c36a32] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:20:48.371  INFO 13004 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:20:48.457  INFO 13004 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:20:48.468  INFO 13004 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:20:49.003  INFO 13004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 10:20:49.004  INFO 13004 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 10:20:49.005  INFO 13004 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 10:20:49.005  INFO 13004 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 10:20:49.005  INFO 13004 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 10:20:49.165  INFO 13004 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 10:20:49.176  INFO 13004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 10:20:49.176  INFO 13004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 10:20:49.333  INFO 13004 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 10:20:49.333  INFO 13004 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4306 ms
+2022-04-04 10:20:50.791  INFO 13004 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 10:20:50.830  INFO 13004 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 10:20:53.328  INFO 13004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 10:20:53.602  WARN 13004 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 10:20:53.630  INFO 13004 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 9.751 seconds (JVM running for 12.197)
+2022-04-04 10:31:50.446  INFO 13004 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-04 10:31:50.447  INFO 13004 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-04 10:31:50.448  INFO 13004 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-04 10:31:50.460  INFO 13004 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-04 10:31:50.523  INFO 13004 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 10:31:50.541  WARN 13004 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 10:32:35.020  INFO 13004 --- [http-nio-9090-exec-4] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 10:32:35.021  WARN 13004 --- [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 10:33:42.757  INFO 13004 --- [http-nio-9090-exec-6] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 10:33:42.757  WARN 13004 --- [http-nio-9090-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 10:35:38.124  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:38.125  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:38.125  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:38.125  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:38.126  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:38.308  INFO 13004 --- [http-nio-9090-exec-8] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-04 10:35:38.476  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=fd1f9f1b-ecfd-4b27-bdf8-d0875ea80af7}, timestamp=1649039738475, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:42.338  INFO 13004 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:42.338  INFO 13004 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:42.338  INFO 13004 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:42.338  INFO 13004 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:42.338  INFO 13004 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:42.346  INFO 13004 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=36ccc8d7-8ab2-43b0-b60b-7e2ac13b6fd8}, timestamp=1649039742346, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:42.512  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:42.512  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:42.512  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:42.512  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:42.513  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:42.523  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=a0f07682-f116-47cd-b897-52d046b08f22}, timestamp=1649039742523, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:42.716  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:42.716  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:42.716  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:42.716  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:42.716  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:42.721  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=8300b36a-dffd-4480-a428-a90a5e9cbbe1}, timestamp=1649039742721, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:43.445  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:43.445  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:43.445  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:43.445  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:43.445  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:43.451  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=18a7f6f1-66b2-4c27-baa3-9519d63320cf}, timestamp=1649039743451, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:43.629  INFO 13004 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:43.629  INFO 13004 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:43.629  INFO 13004 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:43.629  INFO 13004 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:43.630  INFO 13004 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:43.636  INFO 13004 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=23d5f843-2b14-46ae-9353-81f120dc6553}, timestamp=1649039743636, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:43.812  INFO 13004 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:43.812  INFO 13004 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:43.812  INFO 13004 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:43.812  INFO 13004 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:43.812  INFO 13004 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:43.817  INFO 13004 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=50ddc2a3-7bf0-48b8-9777-08601cb98ba1}, timestamp=1649039743817, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:44.004  INFO 13004 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:44.004  INFO 13004 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:44.004  INFO 13004 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:44.004  INFO 13004 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:44.004  INFO 13004 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:44.009  INFO 13004 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=df512762-cae6-403d-9dc1-0fac52050121}, timestamp=1649039744009, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:35:44.198  INFO 13004 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:35:44.198  INFO 13004 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:35:44.198  INFO 13004 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:35:44.198  INFO 13004 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:35:44.198  INFO 13004 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:35:44.204  INFO 13004 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=824871a1-e946-4231-9b23-c8c016f9bb34}, timestamp=1649039744204, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:36:08.652  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:36:08.652  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:36:08.652  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-04 10:36:08.652  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:36:08.652  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:36:08.659  INFO 13004 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=3ebc7e77-2650-4979-91e8-8c0eccf4c03c}, timestamp=1649039768659, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:37:14.856  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:37:14.856  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:37:14.856  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 10:37:14.857  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:37:14.857  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:37:14.876  WARN 13004 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 66204
+2022-04-04 10:37:14.894  INFO 13004 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=cc3046a0-3eb1-4e5f-aa21-9278bde7bca8}, timestamp=1649039834894, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:37:18.162  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:37:18.163  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:37:18.163  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 10:37:18.163  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:37:18.163  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:37:18.167  INFO 13004 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=6c848732-b877-45ec-b006-28e52127a123}, timestamp=1649039838167, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:37:52.031  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 10:37:52.031  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 10:37:52.031  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 10:37:52.031  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 10:37:52.031  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 10:37:52.036  INFO 13004 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=49e1a311-abae-4874-a772-4ddfa871de1b}, timestamp=1649039872036, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 10:41:03.958  INFO 13004 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-04 10:41:03.964  INFO 13004 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-04 10:41:09.782  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4404 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 10:41:09.783  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 10:41:09.833  INFO 4404 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-04 10:41:09.833  INFO 4404 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-04 10:41:10.870  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ff2309fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:41:10.897  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:41:10.965  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:41:10.976  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:41:11.311  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 10:41:11.312  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 10:41:11.312  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 10:41:11.312  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 10:41:11.313  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 10:41:11.316  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 10:41:11.325  INFO 4404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 10:41:11.325  INFO 4404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 10:41:11.397  INFO 4404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 10:41:11.397  INFO 4404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2022-04-04 10:41:12.384  INFO 4404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 10:41:12.408  INFO 4404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 10:41:12.737  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 10:41:12.951  WARN 4404 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 10:41:12.974  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.589 seconds (JVM running for 5.263)
+2022-04-04 10:41:45.893  INFO 4404 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-04 10:41:45.893  INFO 4404 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-04 10:41:45.894  INFO 4404 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-04 10:41:45.904  INFO 4404 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-04 10:41:45.928  WARN 4404 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2022-04-04 10:41:45.933  INFO 4404 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 10:41:45.934  WARN 4404 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2022-04-04 10:45:31.817  INFO 4404 --- [Thread-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2022-04-04 10:45:32.016  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4404 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 10:45:32.017  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 10:45:32.353  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ff2309fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:32.360  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:32.366  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:32.375  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:32.457  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 10:45:32.458  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 10:45:32.458  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 10:45:32.458  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 10:45:32.458  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 10:45:32.458  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 10:45:32.459  INFO 4404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 10:45:32.459  INFO 4404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 10:45:32.472  INFO 4404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 10:45:32.472  INFO 4404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 452 ms
+2022-04-04 10:45:33.020  INFO 4404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 10:45:33.033  INFO 4404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 10:45:33.219  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 10:45:33.335  WARN 4404 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 10:45:33.342  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 1.359 seconds (JVM running for 265.632)
+2022-04-04 10:45:33.344  INFO 4404 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-04 10:45:35.566  INFO 4404 --- [Thread-8] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2022-04-04 10:45:35.733  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4404 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 10:45:35.733  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 10:45:35.994  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ff2309fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:36.001  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:36.006  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:36.011  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 10:45:36.070  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 10:45:36.070  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 10:45:36.070  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 10:45:36.070  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 10:45:36.071  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 10:45:36.071  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 10:45:36.071  INFO 4404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 10:45:36.071  INFO 4404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 10:45:36.084  INFO 4404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 10:45:36.084  INFO 4404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 348 ms
+2022-04-04 10:45:36.461  INFO 4404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 10:45:36.470  INFO 4404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 10:45:36.605  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 10:45:36.662  WARN 4404 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 10:45:36.668  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 0.965 seconds (JVM running for 268.958)
+2022-04-04 10:45:36.670  INFO 4404 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-04 11:41:45.912  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 11:41:45.914  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 12:41:45.911  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 12:41:45.914  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 13:41:45.909  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 13:41:45.910  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 14:28:42.295  INFO 4404 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-04 14:28:42.303  INFO 4404 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-04 14:28:42.573  INFO 4404 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 269 ms
+2022-04-04 14:28:42.757  INFO 4404 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-04 14:28:43.377  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 14:28:43.377  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 14:28:43.377  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 14:28:43.377  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 14:28:43.380  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 14:28:43.929  INFO 4404 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-04 14:28:44.360  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=53911853-c780-4daa-a89b-9557584a0570}, timestamp=1649053724358, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 14:38:17.136  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 14:38:17.137  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 14:38:17.137  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 14:38:17.137  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 14:38:17.137  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 14:38:17.207  WARN 4404 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 572891
+2022-04-04 14:38:17.225  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=0e09253a-c8ac-4342-a59d-d5d4f2da814e}, timestamp=1649054297225, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 14:41:45.916  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 14:41:45.916  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 14:42:11.842  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 14:42:11.842  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 14:42:11.842  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 14:42:11.842  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 14:42:11.842  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 14:42:11.846  WARN 4404 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 234622
+2022-04-04 14:42:11.859  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=75d34c69-97db-4a05-96a1-e39cc1a4ee9c}, timestamp=1649054531859, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 14:44:18.307  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 14:44:18.307  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 14:44:18.307  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 14:44:18.307  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 14:44:18.307  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 14:44:18.312  WARN 4404 --- [http-nio-9090-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 126454
+2022-04-04 14:44:18.328  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=011145ce-0d35-48bf-8ee5-6f71b8d30a15}, timestamp=1649054658328, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 15:28:42.769  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 15:28:42.781  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
+2022-04-04 15:41:45.920  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 15:41:45.922  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 15:54:13.102  INFO 4404 --- [http-nio-9090-exec-4] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 15:54:13.103  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 15:54:13.103  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 15:54:13.103  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 15:54:13.103  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 15:54:13.103  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 15:54:13.218 ERROR 4404 --- [http-nio-9090-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+org.apache.shiro.UnavailableSecurityManagerException: No SecurityManager accessible to the calling code, either bound to the org.apache.shiro.util.ThreadContext or as a vm static singleton.  This is an invalid application configuration.
+	at org.apache.shiro.SecurityUtils.getSecurityManager(SecurityUtils.java:123) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.Subject$Builder.<init>(Subject.java:626) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.SecurityUtils.getSubject(SecurityUtils.java:56) ~[shiro-core-1.9.0.jar:1.9.0]
+	at com.life.Controller.LoginController.login(LoginController.java:46) ~[classes/:na]
+	at com.life.Controller.LoginController$$FastClassBySpringCGLIB$$13622b58.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar:5.3.18]
+	at com.life.Controller.LoginController$$EnhancerBySpringCGLIB$$68014f6c.login(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilterNestedErrorDispatch(OncePerRequestFilter.java:249) [spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106) [spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) [spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) [spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at com.life.Config.MyHandleInterceptor.preHandle(MyHandleInterceptor.java:58) [classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1062) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) [spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) [spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:403) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:249) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2022-04-04 15:54:13.248 ERROR 4404 --- [http-nio-9090-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+org.apache.shiro.UnavailableSecurityManagerException: No SecurityManager accessible to the calling code, either bound to the org.apache.shiro.util.ThreadContext or as a vm static singleton.  This is an invalid application configuration.
+	at org.apache.shiro.SecurityUtils.getSecurityManager(SecurityUtils.java:123) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.Subject$Builder.<init>(Subject.java:626) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.SecurityUtils.getSubject(SecurityUtils.java:56) ~[shiro-core-1.9.0.jar:1.9.0]
+	at com.life.Controller.LoginController.login(LoginController.java:46) ~[classes/:na]
+	at com.life.Controller.LoginController$$FastClassBySpringCGLIB$$13622b58.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar:5.3.18]
+	at com.life.Controller.LoginController$$EnhancerBySpringCGLIB$$68014f6c.login(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilterNestedErrorDispatch(OncePerRequestFilter.java:249) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at com.life.Config.MyHandleInterceptor.preHandle(MyHandleInterceptor.java:58) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1062) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:403) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:249) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2022-04-04 15:54:13.256 ERROR 4404 --- [http-nio-9090-exec-4] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.apache.shiro.UnavailableSecurityManagerException: No SecurityManager accessible to the calling code, either bound to the org.apache.shiro.util.ThreadContext or as a vm static singleton.  This is an invalid application configuration.
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilterNestedErrorDispatch(OncePerRequestFilter.java:249) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:106) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at com.life.Config.MyHandleInterceptor.preHandle(MyHandleInterceptor.java:58) ~[classes/:na]
+	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:148) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1062) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:102) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:403) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:249) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+Caused by: org.apache.shiro.UnavailableSecurityManagerException: No SecurityManager accessible to the calling code, either bound to the org.apache.shiro.util.ThreadContext or as a vm static singleton.  This is an invalid application configuration.
+	at org.apache.shiro.SecurityUtils.getSecurityManager(SecurityUtils.java:123) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.Subject$Builder.<init>(Subject.java:626) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.SecurityUtils.getSubject(SecurityUtils.java:56) ~[shiro-core-1.9.0.jar:1.9.0]
+	at com.life.Controller.LoginController.login(LoginController.java:46) ~[classes/:na]
+	at com.life.Controller.LoginController$$FastClassBySpringCGLIB$$13622b58.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar:5.3.18]
+	at com.life.Controller.LoginController$$EnhancerBySpringCGLIB$$68014f6c.login(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	... 60 common frames omitted
+
+2022-04-04 15:54:51.559  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 15:54:51.559  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 15:54:51.559  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 15:54:51.559  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 15:54:51.559  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 15:54:51.591  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=0be4ba5d-962c-40e8-bc6e-99154a8e59e1}, timestamp=1649058891591, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 15:55:07.499  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 15:55:07.499  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 15:55:07.499  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 15:55:07.499  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 15:55:07.499  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 15:55:07.509  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=09a72aa9-95b2-4e33-9ffa-16c1961a2bdb}, timestamp=1649058907509, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 15:55:15.487  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 15:55:15.488  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 15:55:15.488  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 15:55:15.488  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 15:55:15.488  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 15:55:15.496  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=1490f922-ff88-4b24-b55d-b343a03d41ae}, timestamp=1649058915496, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:02:59.734  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:02:59.734  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:02:59.734  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:02:59.735  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:02:59.735  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:02:59.739  WARN 4404 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 464245
+2022-04-04 16:02:59.756  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=e0a13986-6953-48eb-b495-b9ec1229c681}, timestamp=1649059379756, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:22:09.361  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:22:09.361  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:22:09.361  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:22:09.361  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:22:09.361  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:22:09.365  WARN 4404 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1149610
+2022-04-04 16:22:09.400  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=88a24617-a653-4d19-884b-f39058348dd8}, timestamp=1649060529400, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:22:12.622  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:22:12.622  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:22:12.622  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:22:12.622  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:22:12.626  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:22:12.631  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=ae42997c-197e-4a17-a732-0e8f67ad6be1}, timestamp=1649060532631, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:23:25.721  WARN 4404 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 16:23:25.722  INFO 4404 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 16:23:25.723  WARN 4404 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 16:28:42.775  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 16:28:42.775  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 16:41:45.919  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 16:41:45.919  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 16:44:07.836  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:44:07.836  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:44:07.836  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:44:07.836  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:44:07.836  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:44:07.841  WARN 4404 --- [http-nio-9090-exec-4] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1315211
+2022-04-04 16:44:07.862  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=46ae7584-e3cb-4863-8088-1cf47dff731d}, timestamp=1649061847862, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:44:14.611  WARN 4404 --- [http-nio-9090-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 16:44:14.612  INFO 4404 --- [http-nio-9090-exec-6] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-04 16:44:14.613  WARN 4404 --- [http-nio-9090-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-04 16:48:49.050  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:48:49.050  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:48:49.050  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:48:49.051  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:48:49.051  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:48:49.056  WARN 4404 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 281195
+2022-04-04 16:48:49.076  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=0e00cc05-ee98-49b4-8c7c-36055536dfc4}, timestamp=1649062129076, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:48:57.665  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:48:57.665  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:48:57.665  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:48:57.666  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:48:57.666  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:48:57.670  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=9e1c39c2-6597-4faa-aa30-d1fc25fca926}, timestamp=1649062137670, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:49:28.262  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:49:28.263  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:49:28.263  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:49:28.263  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:49:28.263  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:49:28.268  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=55c61d26-d9a2-4329-bfae-01c742e9de27}, timestamp=1649062168268, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:53:23.776  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:53:23.776  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:53:23.776  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:53:23.776  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:53:23.776  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:53:23.784  WARN 4404 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 235517
+2022-04-04 16:53:23.795  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=b31a739f-5870-41aa-a541-ce8c82f4217f}, timestamp=1649062403794, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 16:53:51.569  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 16:53:51.569  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 16:53:51.569  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 16:53:51.569  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 16:53:51.570  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 16:53:51.575  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=92f3e5f1-bbe3-4d2a-ab08-de807504fe0c}, timestamp=1649062431575, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 17:48:42.948  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 17:48:42.948  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
+2022-04-04 18:01:46.093  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 18:01:46.094  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 18:28:42.754  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 18:28:42.754  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 18:41:45.901  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 18:41:45.905  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 19:30:21.629  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 19:30:21.629  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 19:37:33.829  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:37:33.829  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:37:33.830  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:37:33.830  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:account,value:111
+2022-04-04 19:37:33.831  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:37:34.066  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=false, message=erro, code=500, result=null, timestamp=1649072254066, errMessage=erro, errCode=500, onlTable=null) 功能正常返回
+2022-04-04 19:37:34.690  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:37:34.691  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:37:34.691  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:37:34.691  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:111
+2022-04-04 19:37:34.691  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:37:34.712  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=false, message=erro, code=500, result=null, timestamp=1649072254712, errMessage=erro, errCode=500, onlTable=null) 功能正常返回
+2022-04-04 19:37:45.209  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:37:45.209  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:37:45.209  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:37:45.209  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:37:45.209  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:37:45.233  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=81fd5e25-5897-4117-b74c-2d47174e07db}, timestamp=1649072265233, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 19:38:09.884  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:38:09.885  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:38:09.885  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:38:09.885  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:38:09.885  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:38:09.902  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=55de7087-3ead-4318-bc99-2ce0e2144a31}, timestamp=1649072289902, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 19:38:56.343  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:38:56.344  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:38:56.344  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:38:56.344  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:38:56.344  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:38:56.358  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=512e5b7f-6e35-4920-acc7-ee7faaaf1ed5}, timestamp=1649072336358, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 19:39:40.802  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:39:40.802  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:39:40.802  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:39:40.802  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:39:40.802  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:39:40.806  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=bd407954-7d4c-4602-bd1e-82bb035b2752}, timestamp=1649072380806, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 19:43:24.759  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 19:43:24.759  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 19:46:42.352  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:46:42.352  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:46:42.352  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:46:42.352  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:46:42.352  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:46:42.362  WARN 4404 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 421555
+2022-04-04 19:46:42.379  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=c3264f57-76f2-4f65-87a2-fa9c9ed82740}, timestamp=1649072802379, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 19:50:12.324  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:50:12.324  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:50:12.324  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:50:12.324  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:50:12.324  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:50:12.328  WARN 4404 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 209949
+2022-04-04 19:50:12.337  INFO 4404 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=131006c4-2e67-441a-ba2f-e621ca83596e}, timestamp=1649073012337, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 19:59:48.562  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 19:59:48.562  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 19:59:48.562  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 19:59:48.562  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 19:59:48.562  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 19:59:48.570  WARN 4404 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 576233
+2022-04-04 19:59:48.580  INFO 4404 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=29f239e1-35f3-4492-b761-0eb1359232df}, timestamp=1649073588580, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 20:10:09.524  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 20:10:09.525  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 20:10:09.525  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 20:10:09.525  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 20:10:09.525  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 20:10:09.537  WARN 4404 --- [http-nio-9090-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 620957
+2022-04-04 20:10:09.551  INFO 4404 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=fb1bb346-d89c-4699-b752-c2b0654fb8c0}, timestamp=1649074209551, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 20:10:52.963  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 20:10:52.963  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 20:10:52.963  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 20:10:52.963  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 20:10:52.963  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 20:10:52.978  INFO 4404 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=205b9a24-73a0-4c6c-b9b0-8e5427d4378c}, timestamp=1649074252978, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 20:12:50.379  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 20:12:50.379  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 20:12:50.379  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 20:12:50.379  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 20:12:50.379  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 20:12:50.383  WARN 4404 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 117413
+2022-04-04 20:12:50.422  INFO 4404 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=376f4458-0713-4891-85ac-5c07b437c187}, timestamp=1649074370422, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 20:28:42.754  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 20:28:42.800  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 20:41:45.886  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 20:41:45.886  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 21:28:42.746  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 21:28:42.764  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
+2022-04-04 21:37:26.168  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 21:37:26.168  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 21:37:26.168  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 21:37:26.168  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 21:37:26.168  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 21:37:26.193  INFO 4404 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=1aed55c6-b562-4f55-95e2-91807f51bcf5}, timestamp=1649079446193, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 21:38:03.022  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 21:38:03.022  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 21:38:03.022  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 21:38:03.022  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 21:38:03.022  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:11
+2022-04-04 21:38:03.055  INFO 4404 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=false, message=erro, code=500, result=null, timestamp=1649079483055, errMessage=erro, errCode=500, onlTable=null) 功能正常返回
+2022-04-04 21:38:05.837  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 21:38:05.837  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 21:38:05.837  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 21:38:05.837  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 21:38:05.837  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 21:38:05.852  INFO 4404 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=40212dda-e8a4-4826-b2fb-0a04e4343611}, timestamp=1649079485852, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 21:40:04.871  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 21:40:04.871  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 21:40:04.871  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 21:40:04.871  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 21:40:04.871  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 21:40:04.876  WARN 4404 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 119025
+2022-04-04 21:40:04.895  INFO 4404 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=3b0e8eef-18d8-41f4-a643-a8fa8c1267a7}, timestamp=1649079604895, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 21:41:06.913  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-04 21:41:06.913  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-04 21:41:06.913  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-04 21:41:06.913  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-04 21:41:06.913  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-04 21:41:06.924  WARN 4404 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 62029
+2022-04-04 21:41:06.941  INFO 4404 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={code=1, data=UserLogin(number=null, id=1, account=1, password=111), token=3385fbe1-fa88-4ced-be08-f7e4e02fe426}, timestamp=1649079666941, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-04 21:41:45.889  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-04 21:41:45.889  INFO 4404 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-04 21:45:12.863  INFO 4404 --- [Thread-12] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-04 21:45:13.011  INFO 4404 --- [Thread-12] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-04 21:45:14.130  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4404 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 21:45:14.131  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 21:45:15.382  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ff2309fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:15.390  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:15.397  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:15.403  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:15.606  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 21:45:15.606  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 21:45:15.606  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 21:45:15.606  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 21:45:15.606  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 21:45:15.951  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 21:45:15.952  INFO 4404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 21:45:15.952  INFO 4404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 21:45:16.026  INFO 4404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 21:45:16.026  INFO 4404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1889 ms
+2022-04-04 21:45:16.718  INFO 4404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 21:45:16.727  INFO 4404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 21:45:16.887  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 21:45:16.969  WARN 4404 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 21:45:16.976  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 2.911 seconds (JVM running for 39849.287)
+2022-04-04 21:45:16.978  INFO 4404 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-04 21:45:18.813  INFO 4404 --- [Thread-17] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2022-04-04 21:45:18.931  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4404 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 21:45:18.931  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 21:45:19.210  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ff2309fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:19.217  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:19.222  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:19.227  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:45:19.293  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 21:45:19.294  INFO 4404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 21:45:19.309  INFO 4404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 21:45:19.309  INFO 4404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 376 ms
+2022-04-04 21:45:19.759  INFO 4404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 21:45:19.769  INFO 4404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 21:45:19.926  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 21:45:19.993  WARN 4404 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 21:45:20.001  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 1.088 seconds (JVM running for 39852.311)
+2022-04-04 21:45:20.004  INFO 4404 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-04 21:46:35.596  INFO 4404 --- [Thread-21] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2022-04-04 21:48:48.804  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4404 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-04 21:48:48.805  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-04 21:48:49.100  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$ff2309fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:48:49.108  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:48:49.113  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:48:49.119  INFO 4404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-04 21:48:49.183  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-04 21:48:49.183  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-04 21:48:49.183  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-04 21:48:49.183  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-04 21:48:49.184  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-04 21:48:49.184  INFO 4404 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-04 21:48:49.184  INFO 4404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-04 21:48:49.184  INFO 4404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-04 21:48:49.197  INFO 4404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-04 21:48:49.197  INFO 4404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 388 ms
+2022-04-04 21:48:49.630  INFO 4404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-04 21:48:49.638  INFO 4404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-04 21:48:49.761  INFO 4404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-04 21:48:49.831  WARN 4404 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-04 21:48:49.836  INFO 4404 --- [restartedMain] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 1.053 seconds (JVM running for 40062.147)
+2022-04-04 21:48:49.837  INFO 4404 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-04-04 21:50:08.532  INFO 4404 --- [Thread-25] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...

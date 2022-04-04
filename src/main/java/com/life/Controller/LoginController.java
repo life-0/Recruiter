@@ -33,15 +33,10 @@ public class LoginController {
 
     @ResponseBody
     @PostMapping(value = "/user/login")
-//    @RequestParam("account") String account,
-//                           @RequestParam("password") String password,
 //    @RequestBody UserLogin userLogin,
     public Result<?> login(@RequestParam("account") String account,
                            @RequestParam("password") String password,
                            HttpServletRequest request) {
-//        System.out.println (userLogin.toString ());
-        System.out.println ("account: " + account);
-        System.out.println ("password: " + password);
         //封装用户登录数据
         UsernamePasswordToken token = new UsernamePasswordToken (account,password);
 
@@ -56,7 +51,6 @@ public class LoginController {
             //自定义存储
             Map<String, Object> map = new HashMap<> ();
             String tokenNumber = tokenUtil.generateToken (user);
-            map.put ("code", 1);
             map.put ("data", user);
             map.put ("token", tokenNumber);
             if (user == null) {
