@@ -25,7 +25,9 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
         registry.addViewController ("/").setViewName ("index");
         registry.addViewController ("/index.html").setViewName ("index");
         registry.addViewController ("/index").setViewName ("index");
+
     }
+
 
     //自定义国际化组件生效
     @Bean
@@ -37,19 +39,18 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor (new MyHandleInterceptor ())
-                .addPathPatterns ("/**")    //拦截所有
-                .excludePathPatterns ("/login.html", "/login", "/index.html", "/doc.html", "/toLogin", "/user/login",
-                        "/css/**", "/img/**", "/static/js/**", "/scss/**", "/vendor/**")//除去这些
-
-        ;
-
+                .addPathPatterns ("/**")    // 拦截所有页面  前提是shiro不能设置 filterMap.put ("/*", "authc");
+                .excludePathPatterns ("/login.html", "/", "/login", "/index.html", "/toLogin", "/user/login",
+                    "/user/**");//除去这些
+        // 开放knife4j
+//                .excludePathPatterns ("/doc.html","/service-worker.js","/swagger-resources");    //除去knife4j的所有链接
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //配置拦截器访问静态资源
         registry.addResourceHandler ("/static/**").addResourceLocations ("classpath:/static/");
         registry.addResourceHandler ("/templates/**").addResourceLocations ("classpath:/templates/");
-
     }
 
 }

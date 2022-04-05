@@ -50,8 +50,8 @@ public class MyHandleInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        String token=request.getHeader("qcby-token");
-
+        String token=request.getHeader("BASE_TOKEN");
+        System.out.println (token);
         if (!tokenUtil.verify(token)) {
             // 未登录跳转到登录界面
             log.info ("未获得token");

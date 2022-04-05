@@ -45,8 +45,10 @@ public class ShiroConfig {
 //        filterMap.put ("/charts","perms[user:company]");
         filterMap.put ("/company/*", "perms[user]");
         filterMap.put ("/charts", "perms[role]");
-        filterMap.put ("login.html", "anon");
-        filterMap.put ("/*", "authc");
+        filterMap.put ("/login.html", "anon");
+//        filterMap.put ("/user/**","authc");
+
+//        filterMap.put ("/*", "authc");   //这里会直接把所有页面进行认证,mvcConfig那边的拦截器就会直接失效
 
         //设置登出
 //        filterMap.put ("/user/logout", "logout");

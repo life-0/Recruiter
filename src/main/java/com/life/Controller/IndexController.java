@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 */
 @Controller
 @Api
+@RequestMapping("/test")
 public class IndexController {
     @GetMapping({"/", "index.html"})
     public String index(HttpServletResponse response) {

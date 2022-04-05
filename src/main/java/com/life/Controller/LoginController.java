@@ -50,7 +50,7 @@ public class LoginController {
 
             //自定义存储
             Map<String, Object> map = new HashMap<> ();
-            String tokenNumber = tokenUtil.generateToken (user);
+            String tokenNumber = tokenUtil.generateToken (user);//生成给客户端的令牌
             map.put ("data", user);
             map.put ("token", tokenNumber);
             if (user == null) {

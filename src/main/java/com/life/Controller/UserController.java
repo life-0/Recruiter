@@ -4,6 +4,7 @@ package com.life.Controller;
 import com.life.POJO.user.UserInfo;
 import com.life.Service.user.UserInfoServiceImpl;
 import com.life.Utils.NumberUtil;
+import com.life.api.vo.Result;
 import io.swagger.annotations.*;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.stereotype.Controller;
@@ -28,11 +29,14 @@ public class UserController {
     UserInfoServiceImpl userInfoService;
 
     @ApiOperation("展示所有的用户")
-    @GetMapping({"/tables", "tables.html"})
-    public String UserTable(Model model) {
+    @GetMapping({"/tables"})
+    @ResponseBody
+    public Result<?> UserTable(Model model) {
         List<UserInfo> users = userInfoService.showAll ();
         model.addAttribute ("users", users);
-        return "/employee/tables";
+//        return "/employee/tables";
+
+        return Result.ok (users);
     }
 
     @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
