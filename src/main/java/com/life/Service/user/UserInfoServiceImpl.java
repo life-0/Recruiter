@@ -1,5 +1,6 @@
 package com.life.Service.user;
 
+
 import com.life.Mapper.user.UserInfoMapper;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Resource
     private UserInfoMapper userInfoMapper;
 
+
     @Override
     public int deleteByPrimaryKey(String number) {
         return userInfoMapper.deleteByPrimaryKey (number);
@@ -25,6 +27,8 @@ public class UserInfoServiceImpl implements UserInfoService {
     public int deleteById(ArrayList<Integer> list) {
         return userInfoMapper.deleteById (list);
     }
+
+
 
     @Override
     public int insert(UserInfo record) {
@@ -37,14 +41,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfo selectById(int id) {
-        return null;
+    public UserInfo selectById(String id) {
+        return userInfoMapper.selectById(id);
     }
 
-    @Override
-    public List<UserInfo> showAll() {
-        return userInfoMapper.showAll ();
-    }
+
 
     @Override
     public int updateByPrimaryKeySelective(UserInfo record) {
@@ -56,4 +57,11 @@ public class UserInfoServiceImpl implements UserInfoService {
         return userInfoMapper.updateByPrimaryKey (record);
     }
 
+    @Override
+    public List<UserInfo> queryAll(){
+        return userInfoMapper.queryAll ();
+    }
+
+
 }
+

@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@MapperScan("com.life.Mapper")
+@MapperScan("com.life.Mapper.user")
 @EnableScheduling
 
 @EnableKnife4j

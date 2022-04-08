@@ -8,9 +8,9 @@
         <option name="database" value="MySql" />
         <option name="generateService" value="true" />
         <option name="generateServiceInterface" value="true" />
-        <option name="javaMapperPackage" value="com.life.Mapper" />
+        <option name="javaMapperPackage" value="com.life.Mapper.user" />
         <option name="javaMapperPath" value="$PROJECT_DIR$/src/main/java" />
-        <option name="javaModelPackage" value="com.life.POJO" />
+        <option name="javaModelPackage" value="com.life.POJO.user" />
         <option name="javaModelPath" value="$PROJECT_DIR$/src/main/java" />
         <option name="lastDatabaseCrudChooseModuleName" value="Recruiter" />
         <option name="lombokAllArgConstructor" value="true" />
@@ -23,15 +23,15 @@
             <entry key="Recruiter">
               <value>
                 <UserPackageAndPathInfoByModule>
-                  <option name="javaMapperPackage" value="com.life.Mapper" />
+                  <option name="javaMapperPackage" value="com.life.Mapper.user" />
                   <option name="javaMapperPath" value="$PROJECT_DIR$/src/main/java" />
-                  <option name="javaModelPacakge" value="com.life.POJO" />
+                  <option name="javaModelPacakge" value="com.life.POJO.user" />
                   <option name="javaModelPath" value="$PROJECT_DIR$/src/main/java" />
-                  <option name="javaServiceInterfacePackage" value="com.life.Service" />
+                  <option name="javaServiceInterfacePackage" value="com.life.Service.user" />
                   <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/src/main/java" />
-                  <option name="javaServicePackage" value="com.life.Service" />
+                  <option name="javaServicePackage" value="com.life.Service.user" />
                   <option name="javaServicePath" value="$PROJECT_DIR$/src/main/java" />
-                  <option name="xmlPackage" value="mybatis.mapper" />
+                  <option name="xmlPackage" value="mybatis.mapper.user" />
                   <option name="xmlPath" value="$PROJECT_DIR$/src/main/resources" />
                 </UserPackageAndPathInfoByModule>
               </value>
@@ -57,6 +57,18 @@
                 <TableGenerateConfig>
                   <option name="generatedKey" value="" />
                   <option name="javaModelName" value="Identity" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:job_hunting_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="JobHuntingInfo" />
                   <option name="moduleName" value="Recruiter" />
                   <option name="sequenceColumn" value="" />
                   <option name="sequenceId" value="" />
@@ -109,6 +121,18 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="recruiter:user_dialogue">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="UserDialogue" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="recruiter:user_id">
               <value>
                 <TableGenerateConfig>
@@ -124,8 +148,11 @@
             <entry key="recruiter:user_info">
               <value>
                 <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
                   <option name="javaModelName" value="UserInfo" />
                   <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
@@ -176,7 +203,7 @@
             </entry>
           </map>
         </option>
-        <option name="xmlMapperPackage" value="mybatis.mapper" />
+        <option name="xmlMapperPackage" value="mybatis.mapper.user" />
         <option name="xmlMapperPath" value="$PROJECT_DIR$/src/main/resources" />
       </ProjectProfile>
     </option>

@@ -32,7 +32,7 @@ public class UserController {
     @GetMapping({"/tables"})
     @ResponseBody
     public Result<?> UserTable(Model model) {
-        List<UserInfo> users = userInfoService.showAll ();
+        List<UserInfo> users = userInfoService.queryAll ();
         model.addAttribute ("users", users);
 //        return "/employee/tables";
 

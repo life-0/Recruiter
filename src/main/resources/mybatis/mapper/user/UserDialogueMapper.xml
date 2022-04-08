@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.Mapper.user.UserDialogueMapper">
+  <resultMap id="BaseResultMap" type="com.life.POJO.user.UserDialogue">
+    <!--@mbg.generated-->
+    <!--@Table user_dialogue-->
+    <id column="number" jdbcType="VARCHAR" property="number" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="contact_user_id" jdbcType="VARCHAR" property="contactUserId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    `number`, id, contact_user_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user_dialogue
+    where `number` = #{number,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from user_dialogue
+    where `number` = #{number,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.life.POJO.user.UserDialogue">
+    <!--@mbg.generated-->
+    insert into user_dialogue (`number`, id, contact_user_id
+      )
+    values (#{number,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{contactUserId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.life.POJO.user.UserDialogue">
+    <!--@mbg.generated-->
+    insert into user_dialogue
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="number != null">
+        `number`,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+      <if test="contactUserId != null">
+        contact_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contactUserId != null">
+        #{contactUserId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.life.POJO.user.UserDialogue">
+    <!--@mbg.generated-->
+    update user_dialogue
+    <set>
+      <if test="id != null">
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contactUserId != null">
+        contact_user_id = #{contactUserId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where `number` = #{number,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.life.POJO.user.UserDialogue">
+    <!--@mbg.generated-->
+    update user_dialogue
+    set id = #{id,jdbcType=INTEGER},
+      contact_user_id = #{contactUserId,jdbcType=VARCHAR}
+    where `number` = #{number,jdbcType=VARCHAR}
+  </update>
+</mapper>

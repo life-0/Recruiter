@@ -2,6 +2,7 @@ package com.life.Utils;
 
 import com.life.POJO.user.UserLogin;
 import org.springframework.util.DigestUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -32,19 +33,15 @@ public class tokenUtil {
     public static String generateToken(UserLogin user) {
         //生成唯一不重复的字符串
         String token = UUID.randomUUID ().toString ();
-
-        //对进行 md5 加密
-        String md5Password = DigestUtils.md5DigestAsHex(token.getBytes());
-
-        tokenMap.put (md5Password, user);
+        tokenMap.put (token, user);
         return token;
     }
 
     /**
      * 验证token是否合法
      *
-     * @param: token
      * @return
+     * @param: token
      */
     public static boolean verify(String token) {
         return tokenMap.containsKey (token);

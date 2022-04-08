@@ -28,12 +28,12 @@ public class User_test {
     @Resource
     private UserResourceServiceImpl userResourceService;
 
-    @Test
-    public void test_showAll() {
-        for (UserInfo userInfo : userInfoService.showAll ()) {
-            System.out.println ("userInfo: " + userInfo);
-        }
-    }
+//    @Test
+//    public void test_showAll() {
+//        for (UserInfo userInfo : userInfoService.showAll ()) {
+//            System.out.println ("userInfo: " + userInfo);
+//        }
+//    }
 
     @Test
     public void test_add() {

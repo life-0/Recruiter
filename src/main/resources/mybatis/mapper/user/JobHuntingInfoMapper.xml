@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.life.Mapper.user.JobHuntingInfoMapper">
+    <resultMap id="BaseResultMap" type="com.life.POJO.user.JobHuntingInfo">
+        <!--@mbg.generated-->
+        <!--@Table job_hunting_info-->
+        <id column="number" jdbcType="VARCHAR" property="number"/>
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="school" jdbcType="VARCHAR" property="school"/>
+        <result column="education" jdbcType="VARCHAR" property="education"/>
+        <result column="job_status" jdbcType="VARCHAR" property="jobStatus"/>
+        <result column="expect_salary" jdbcType="VARCHAR" property="expectSalary"/>
+        <result column="expect_city" jdbcType="VARCHAR" property="expectCity"/>
+        <result column="appendix" jdbcType="VARCHAR" property="appendix"/>
+        <result column="expect_industry" jdbcType="VARCHAR" property="expectIndustry"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        `number`, id, school, education, job_status, expect_salary, expect_city, appendix,
+        expect_industry
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from job_hunting_info
+        where `number` = #{number,jdbcType=VARCHAR}
+    </select>
+    <select id="selectById" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from job_hunting_info
+        where `id` = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="queryAll" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from job_hunting_info
+    </select>
+    <delete id="deleteById" parameterType="java.lang.String">
+        <!--@mbg.generated-->
+        delete
+        from job_hunting_info
+        where `id` = #{id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.life.POJO.user.JobHuntingInfo">
+        <!--@mbg.generated-->
+        insert into job_hunting_info (`number`, id, school,
+                                      education, job_status, expect_salary,
+                                      expect_city, appendix, expect_industry)
+        values (#{number,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{school,jdbcType=VARCHAR},
+                #{education,jdbcType=VARCHAR}, #{jobStatus,jdbcType=VARCHAR}, #{expectSalary,jdbcType=VARCHAR},
+                #{expectCity,jdbcType=VARCHAR}, #{appendix,jdbcType=VARCHAR}, #{expectIndustry,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.life.POJO.user.JobHuntingInfo">
+        <!--@mbg.generated-->
+        insert into job_hunting_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="number != null">
+                `number`,
+            </if>
+            <if test="id != null">
+                id,
+            </if>
+            <if test="school != null">
+                school,
+            </if>
+            <if test="education != null">
+                education,
+            </if>
+            <if test="jobStatus != null">
+                job_status,
+            </if>
+            <if test="expectSalary != null">
+                expect_salary,
+            </if>
+            <if test="expectCity != null">
+                expect_city,
+            </if>
+            <if test="appendix != null">
+                appendix,
+            </if>
+            <if test="expectIndustry != null">
+                expect_industry,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="number != null">
+                #{number,jdbcType=VARCHAR},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="school != null">
+                #{school,jdbcType=VARCHAR},
+            </if>
+            <if test="education != null">
+                #{education,jdbcType=VARCHAR},
+            </if>
+            <if test="jobStatus != null">
+                #{jobStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="expectSalary != null">
+                #{expectSalary,jdbcType=VARCHAR},
+            </if>
+            <if test="expectCity != null">
+                #{expectCity,jdbcType=VARCHAR},
+            </if>
+            <if test="appendix != null">
+                #{appendix,jdbcType=VARCHAR},
+            </if>
+            <if test="expectIndustry != null">
+                #{expectIndustry,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByIdSelective" parameterType="com.life.POJO.user.JobHuntingInfo">
+        <!--@mbg.generated-->
+        update job_hunting_info
+        <set>
+            <if test="school != null">
+                school = #{school,jdbcType=VARCHAR},
+            </if>
+            <if test="education != null">
+                education = #{education,jdbcType=VARCHAR},
+            </if>
+            <if test="jobStatus != null">
+                job_status = #{jobStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="expectSalary != null">
+                expect_salary = #{expectSalary,jdbcType=VARCHAR},
+            </if>
+            <if test="expectCity != null">
+                expect_city = #{expectCity,jdbcType=VARCHAR},
+            </if>
+            <if test="appendix != null">
+                appendix = #{appendix,jdbcType=VARCHAR},
+            </if>
+            <if test="expectIndustry != null">
+                expect_industry = #{expectIndustry,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where `id` = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.life.POJO.user.JobHuntingInfo">
+        <!--@mbg.generated-->
+        update job_hunting_info
+        set id              = #{id,jdbcType=INTEGER},
+            school          = #{school,jdbcType=VARCHAR},
+            education       = #{education,jdbcType=VARCHAR},
+            job_status      = #{jobStatus,jdbcType=VARCHAR},
+            expect_salary   = #{expectSalary,jdbcType=VARCHAR},
+            expect_city     = #{expectCity,jdbcType=VARCHAR},
+            appendix        = #{appendix,jdbcType=VARCHAR},
+            expect_industry = #{expectIndustry,jdbcType=VARCHAR}
+        where `number` = #{number,jdbcType=VARCHAR}
+    </update>
+</mapper>

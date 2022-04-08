@@ -42,8 +42,9 @@ spring:
 
 #整合Mybatis
 mybatis:
-  type-aliases-package: com.life.POJO
   mapper-locations: classpath:mybatis/Mapper/**/*.xml
+  type-aliases-package: com.life.POJO
+
 
 # ===== 自定义swagger配置 ===== #
 swagger:
@@ -59,3 +60,4 @@ logging:
     name: ./log/logger.log
   level:
     root: info
+

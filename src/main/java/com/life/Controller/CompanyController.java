@@ -1,17 +1,12 @@
 package com.life.Controller;
 
-import com.life.POJO.user.UserInfo;
 import com.life.Service.user.UserInfoServiceImpl;
 import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /*
  *@Author life-0
@@ -24,17 +19,17 @@ import java.util.List;
 @Api
 @RequestMapping("/company")
 public class CompanyController {
-    @Resource
-    UserInfoServiceImpl userInfoService;
+//    @Resource
+//    private UserInfoServiceImpl userInfoService;
 
-    @RequestMapping(value = "/tables",method = RequestMethod.POST)
-    public String CompanyTable(Model model) {
-        List<UserInfo> users = userInfoService.showAll ();
-        model.addAttribute ("users", users);
-        return "/Company/table";
-    }
+    //    @RequestMapping(value = "/tables",method = RequestMethod.POST)
+//    public String CompanyTable(Model model) {
+//        List<UserInfo> users = userInfoService.showAll ();
+//        model.addAttribute ("users", users);
+//        return "/Company/table";
+//    }
     @RequestMapping("/toUpdate")
-    public String toUpdate(){
+    public String toUpdate() {
 
         return "";
     }

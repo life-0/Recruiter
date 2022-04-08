@@ -13,34 +13,21 @@
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="iphone" jdbcType="VARCHAR" property="iphone"/>
         <result column="vx" jdbcType="VARCHAR" property="vx"/>
-        <result column="create_time" jdbcType="TIMESTAMP" property="create_time"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="imgPath" jdbcType="VARCHAR" property="imgpath"/>
+        <result column="state" jdbcType="TINYINT" property="state"/>
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
-        `number`, id, `name`, nickname, gender, address, email, iphone, vx, create_time
+        `number`, id, `name`, nickname, gender, address, email, iphone, vx, create_time,
+        imgPath, `state`
     </sql>
-    <sql id="Base_Column_List_StripNumber">
-        id,
-        `name`,
-        nickname,
-        gender,
-        address,
-        email,
-        iphone,
-        vx,
-        create_time
-    </sql>
-    <select id="selectById" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
         from user_info
-        where `id` = #{id,jdbcType=INTEGER}
-    </select>
-    <select id="showAll" resultType="userInfo">
-        select
-        <include refid="Base_Column_List_StripNumber"/>
-        from user_info;
+        where `number` = #{number,jdbcType=VARCHAR}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         <!--@mbg.generated-->
@@ -48,23 +35,16 @@
         from user_info
         where `number` = #{number,jdbcType=VARCHAR}
     </delete>
-    <delete id="deleteById" parameterType="list">
-        update user_info
-        set state=1 where id in
-        <foreach collection="list" item="item" open="(" separator="," close=")">
-            #{item,jdbcType=INTEGER}
-        </foreach>
-    </delete>
-    <insert id="insert" parameterType="userinfo">
+    <insert id="insert" parameterType="com.life.POJO.user.UserInfo">
         <!--@mbg.generated-->
         insert into user_info (`number`, id, `name`,
                                nickname, gender, address,
                                email, iphone, vx,
-                               create_time)
+                               create_time, imgPath, `state`)
         values (#{number,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
                 #{nickname,jdbcType=VARCHAR}, #{gender,jdbcType=BOOLEAN}, #{address,jdbcType=VARCHAR},
                 #{email,jdbcType=VARCHAR}, #{iphone,jdbcType=VARCHAR}, #{vx,jdbcType=VARCHAR},
-                #{create_time,jdbcType=TIMESTAMP})
+                #{createTime,jdbcType=TIMESTAMP}, #{imgpath,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT})
     </insert>
     <insert id="insertSelective" parameterType="com.life.POJO.user.UserInfo">
         <!--@mbg.generated-->
@@ -97,8 +77,14 @@
             <if test="vx != null">
                 vx,
             </if>
-            <if test="create_time != null">
+            <if test="createTime != null">
                 create_time,
+            </if>
+            <if test="imgpath != null">
+                imgPath,
+            </if>
+            <if test="state != null">
+                `state`,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -129,8 +115,14 @@
             <if test="vx != null">
                 #{vx,jdbcType=VARCHAR},
             </if>
-            <if test="create_time != null">
-                #{create_time,jdbcType=TIMESTAMP},
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="imgpath != null">
+                #{imgpath,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=TINYINT},
             </if>
         </trim>
     </insert>
@@ -162,8 +154,14 @@
             <if test="vx != null">
                 vx = #{vx,jdbcType=VARCHAR},
             </if>
-            <if test="create_time != null">
-                create_time = #{create_time,jdbcType=TIMESTAMP},
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="imgpath != null">
+                imgPath = #{imgpath,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                `state` = #{state,jdbcType=TINYINT},
             </if>
         </set>
         where `number` = #{number,jdbcType=VARCHAR}
@@ -179,11 +177,33 @@
             email       = #{email,jdbcType=VARCHAR},
             iphone      = #{iphone,jdbcType=VARCHAR},
             vx          = #{vx,jdbcType=VARCHAR},
-            create_time = #{create_time,jdbcType=TIMESTAMP}
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            imgPath     = #{imgpath,jdbcType=VARCHAR},
+            `state`     = #{state,jdbcType=TINYINT}
         where `number` = #{number,jdbcType=VARCHAR}
     </update>
-    <select id="selectDistinctByGender" resultMap="BaseResultMap">
-        select distinct (gender)
+    <!--删除-->
+    <delete id="deleteById" parameterType="list">
+        delete
+        from user_info
+        <where>
+            <foreach collection="list" item="id" open="(" close=")" separator="and">
+                id = #{id,jdbcType=VARCHAR}
+            </foreach>
+        </where>
+    </delete>
+    <!--查询-->
+    <select id="selectById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info <where>
+        id = #{id,jdbcType=INTEGER}
+    </where>;
+    </select>
+    <!--查询所有-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
         from user_info;
     </select>
 </mapper>
