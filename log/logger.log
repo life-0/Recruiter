@@ -1727,3 +1727,695 @@ com.life.Controller.UserController#ToAdd(UserInfo) mapped.
 2022-04-08 13:33:45.545  WARN 8576 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
 2022-04-08 13:35:40.042  INFO 8576 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2022-04-08 13:35:40.047  INFO 8576 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 13:35:43.469  INFO 15700 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 15700 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 13:35:43.472  INFO 15700 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 13:35:44.489  INFO 15700 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$cd0adbae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 13:35:44.514  INFO 15700 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 13:35:44.561  INFO 15700 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 13:35:44.571  INFO 15700 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 13:35:44.804  INFO 15700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 13:35:44.805  INFO 15700 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 13:35:44.805  INFO 15700 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 13:35:44.805  INFO 15700 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 13:35:44.806  INFO 15700 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 13:35:44.808  INFO 15700 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 13:35:44.815  INFO 15700 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 13:35:44.815  INFO 15700 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 13:35:44.890  INFO 15700 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 13:35:44.891  INFO 15700 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1361 ms
+2022-04-08 13:35:45.751  INFO 15700 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 13:35:45.972  INFO 15700 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 13:35:46.210  WARN 15700 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 13:35:46.224  WARN 15700 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 13:35:46.242  INFO 15700 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.27 seconds (JVM running for 4.339)
+2022-04-08 13:35:52.380  INFO 15700 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 13:35:52.381  INFO 15700 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 13:35:52.383  INFO 15700 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 13:35:52.394  INFO 15700 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 13:35:52.425  INFO 15700 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 13:35:52.428  WARN 15700 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 13:35:53.360  INFO 15700 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 13:35:53.360  INFO 15700 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 13:35:53.360  INFO 15700 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 13:35:53.361  INFO 15700 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 13:35:53.361  INFO 15700 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 13:35:53.410  INFO 15700 --- [http-nio-9090-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 13:35:53.548  INFO 15700 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=null, id=1, account=1, password=111), token=b9a4dc53-8dfa-4172-b29c-84523a45c4f6}, timestamp=1649396153545, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 13:36:02.401  INFO 15700 --- [http-nio-9090-exec-3] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 13:36:02.402  WARN 15700 --- [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 13:36:03.297  INFO 15700 --- [http-nio-9090-exec-4] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 13:36:03.298  WARN 15700 --- [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 13:39:38.782  INFO 15700 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 13:39:38.787  INFO 15700 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 15:18:30.553  INFO 13956 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 13956 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 15:18:30.558  INFO 13956 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 15:18:31.911  INFO 13956 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$cd0adbae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:18:31.979  INFO 13956 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:18:32.094  INFO 13956 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:18:32.107  INFO 13956 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:18:32.682  INFO 13956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 15:18:32.683  INFO 13956 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 15:18:32.683  INFO 13956 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 15:18:32.683  INFO 13956 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 15:18:32.683  INFO 13956 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 15:18:32.686  INFO 13956 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 15:18:32.695  INFO 13956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 15:18:32.695  INFO 13956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 15:18:32.799  INFO 13956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 15:18:32.800  INFO 13956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2161 ms
+2022-04-08 15:18:33.791  INFO 13956 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 15:18:34.044  INFO 13956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 15:18:34.216  INFO 13956 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 15:18:34.216  INFO 13956 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 15:18:34.218  INFO 13956 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-08 15:18:34.237  INFO 13956 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 15:18:34.265  INFO 13956 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:18:34.270  WARN 13956 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:18:34.280  INFO 13956 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:18:34.281  WARN 13956 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:18:34.322  WARN 13956 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 15:18:34.340  WARN 13956 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 15:18:34.363  INFO 13956 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.417 seconds (JVM running for 6.508)
+2022-04-08 15:18:35.261  INFO 13956 --- [http-nio-9090-exec-7] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:18:35.261  WARN 13956 --- [http-nio-9090-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:18:36.735  INFO 13956 --- [http-nio-9090-exec-4] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:18:36.736  WARN 13956 --- [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:18:37.967  INFO 13956 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 15:18:37.968  INFO 13956 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 15:18:37.968  INFO 13956 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-08 15:18:37.968  INFO 13956 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 15:18:37.968  INFO 13956 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 15:18:38.030  INFO 13956 --- [http-nio-9090-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 15:18:38.206  INFO 13956 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=null, id=1, account=1, password=111), token=1dab2e12-5c01-45fa-be11-d702e0bf3612}, timestamp=1649402318206, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 15:18:44.130  INFO 13956 --- [http-nio-9090-exec-6] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:18:44.131  WARN 13956 --- [http-nio-9090-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:18:53.435  INFO 13956 --- [http-nio-9090-exec-3] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:18:53.436  WARN 13956 --- [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:20:02.550  INFO 13956 --- [http-nio-9090-exec-10] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:20:02.553  WARN 13956 --- [http-nio-9090-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account' for method parameter type String is not present]
+2022-04-08 15:20:02.555  INFO 13956 --- [http-nio-9090-exec-10] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:20:02.555  WARN 13956 --- [http-nio-9090-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account' for method parameter type String is not present]
+2022-04-08 15:20:17.847  WARN 13956 --- [http-nio-9090-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 99648
+2022-04-08 15:22:40.224  INFO 13956 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 15:22:40.226  INFO 13956 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 15:22:44.198  INFO 8996 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 8996 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 15:22:44.212  INFO 8996 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 15:22:45.550  INFO 8996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$7d785da4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:22:45.577  INFO 8996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:22:45.633  INFO 8996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:22:45.643  INFO 8996 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 15:22:45.959  INFO 8996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 15:22:45.961  INFO 8996 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 15:22:45.961  INFO 8996 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 15:22:45.961  INFO 8996 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 15:22:45.961  INFO 8996 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 15:22:45.965  INFO 8996 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 15:22:45.980  INFO 8996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 15:22:45.980  INFO 8996 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 15:22:46.073  INFO 8996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 15:22:46.073  INFO 8996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1765 ms
+2022-04-08 15:22:46.969  INFO 8996 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 15:22:47.202  INFO 8996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 15:22:47.407  WARN 8996 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 15:22:47.422  WARN 8996 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 15:22:47.443  INFO 8996 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.824 seconds (JVM running for 5.133)
+2022-04-08 15:24:46.132  INFO 8996 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 15:24:46.132  INFO 8996 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 15:24:46.133  INFO 8996 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 15:24:46.146  INFO 8996 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 15:24:46.172  INFO 8996 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:24:46.176  WARN 8996 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:24:49.162  INFO 8996 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 15:24:49.162  INFO 8996 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 15:24:49.162  INFO 8996 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 15:24:49.162  INFO 8996 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 15:24:49.162  INFO 8996 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 15:24:49.232  INFO 8996 --- [http-nio-9090-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 15:24:49.398  INFO 8996 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=null, id=1, account=1, password=111), token=a9fec226-5501-42e2-8d93-912385c2f4cb}, timestamp=1649402689398, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 15:24:53.925  INFO 8996 --- [http-nio-9090-exec-8] com.life.Config.MyHandleInterceptor      : 未获得token
+2022-04-08 15:24:53.926  WARN 8996 --- [http-nio-9090-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 15:26:00.486  WARN 8996 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 71099
+2022-04-08 16:24:46.159  INFO 8996 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-08 16:24:46.166  INFO 8996 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
+2022-04-08 16:40:01.973  INFO 8996 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 16:40:01.975  INFO 8996 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 19:21:20.365  INFO 13020 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 13020 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 19:21:20.367  INFO 13020 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 19:21:22.276  INFO 13020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$7d3dac5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:21:22.314  INFO 13020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:21:22.436  INFO 13020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:21:22.446  INFO 13020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:21:22.879  INFO 13020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 19:21:22.880  INFO 13020 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 19:21:22.880  INFO 13020 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 19:21:22.880  INFO 13020 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 19:21:22.880  INFO 13020 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 19:21:22.892  INFO 13020 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 19:21:22.900  INFO 13020 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 19:21:22.900  INFO 13020 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 19:21:23.024  INFO 13020 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 19:21:23.025  INFO 13020 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2600 ms
+2022-04-08 19:21:24.883  INFO 13020 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 19:21:25.150  INFO 13020 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 19:21:25.370  WARN 13020 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 19:21:25.400  INFO 13020 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 5.685 seconds (JVM running for 6.819)
+2022-04-08 19:21:35.236  INFO 13020 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 19:21:35.237  INFO 13020 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 19:21:35.238  INFO 13020 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 19:21:35.253  INFO 13020 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 19:21:35.302  INFO 13020 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:21:35.306  WARN 13020 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:21:36.342  INFO 13020 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 19:21:36.342  INFO 13020 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 19:21:36.342  INFO 13020 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 19:21:36.342  INFO 13020 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 19:21:36.342  INFO 13020 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 19:21:36.515  INFO 13020 --- [http-nio-9090-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 19:21:36.693  INFO 13020 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=7ea55ebe-0535-4b2a-a83a-ef3eb14437f1}, timestamp=1649416896693, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 19:33:51.335  INFO 13020 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 19:33:51.335  INFO 13020 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 19:33:51.335  INFO 13020 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 19:33:51.335  INFO 13020 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 19:33:51.335  INFO 13020 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:password,value:11122
+2022-04-08 19:33:51.366  WARN 13020 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 734660
+2022-04-08 19:33:51.392  INFO 13020 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=false, message=erro, code=500, result=null, timestamp=1649417631392, errMessage=erro, errCode=500, onlTable=null) 功能正常返回
+2022-04-08 19:35:42.163  INFO 13020 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 19:35:42.164  INFO 13020 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 19:35:42.164  INFO 13020 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 19:35:42.164  INFO 13020 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 19:35:42.164  INFO 13020 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 19:35:42.166  WARN 13020 --- [http-nio-9090-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 110774
+2022-04-08 19:35:42.174  INFO 13020 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=0c45d1ba-2979-46a9-b186-40b3d54011f8}, timestamp=1649417742174, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 19:42:12.494  INFO 13020 --- [http-nio-9090-exec-8] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:42:12.496  WARN 13020 --- [http-nio-9090-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:43:01.171  INFO 13020 --- [http-nio-9090-exec-10] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:43:01.172  WARN 13020 --- [http-nio-9090-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:43:05.311  INFO 13020 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:43:05.312  WARN 13020 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:44:23.384  INFO 13020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 19:44:23.401  INFO 13020 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 19:44:27.675  INFO 10888 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 10888 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 19:44:27.677  INFO 10888 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 19:44:28.663  INFO 10888 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$25666841] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:44:28.704  INFO 10888 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:44:28.758  INFO 10888 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:44:28.768  INFO 10888 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:44:29.058  INFO 10888 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 19:44:29.059  INFO 10888 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 19:44:29.059  INFO 10888 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 19:44:29.059  INFO 10888 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 19:44:29.059  INFO 10888 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 19:44:29.062  INFO 10888 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 19:44:29.071  INFO 10888 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 19:44:29.072  INFO 10888 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 19:44:29.153  INFO 10888 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 19:44:29.153  INFO 10888 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1421 ms
+2022-04-08 19:44:30.626  INFO 10888 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 19:44:30.825  INFO 10888 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 19:44:31.027  WARN 10888 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 19:44:31.051  INFO 10888 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.794 seconds (JVM running for 4.751)
+2022-04-08 19:53:35.117  INFO 10888 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 19:53:35.117  INFO 10888 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 19:53:35.118  INFO 10888 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 19:53:35.131  INFO 10888 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 19:53:35.156  INFO 10888 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:53:35.160  WARN 10888 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:53:49.844  INFO 10888 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2022-04-08 19:53:52.926  INFO 20196 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 20196 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 19:53:52.928  INFO 20196 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 19:53:53.878  INFO 20196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$6e9838e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:53:53.912  INFO 20196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:53:53.961  INFO 20196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:53:53.970  INFO 20196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 19:53:54.208  INFO 20196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 19:53:54.209  INFO 20196 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 19:53:54.209  INFO 20196 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 19:53:54.209  INFO 20196 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 19:53:54.209  INFO 20196 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 19:53:54.212  INFO 20196 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 19:53:54.220  INFO 20196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 19:53:54.220  INFO 20196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 19:53:54.293  INFO 20196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 19:53:54.293  INFO 20196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1309 ms
+2022-04-08 19:53:55.867  INFO 20196 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 19:53:56.102  INFO 20196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 19:53:56.316  WARN 20196 --- [main] d.s.r.o.OperationImplicitParameterReader : Unable to interpret the implicit parameter configuration with dataType: int, dataTypeClass: class java.lang.Void
+2022-04-08 19:53:56.342  INFO 20196 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.832 seconds (JVM running for 4.791)
+2022-04-08 19:56:49.908  INFO 20196 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 19:56:49.908  INFO 20196 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 19:56:49.909  INFO 20196 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 19:56:49.920  INFO 20196 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 19:56:49.947  INFO 20196 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:56:49.949  WARN 20196 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:56:50.489  INFO 20196 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:56:50.490  WARN 20196 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:56:52.217  INFO 20196 --- [http-nio-9090-exec-4] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:56:52.219  WARN 20196 --- [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:57:57.510  INFO 20196 --- [http-nio-9090-exec-9] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:57:57.511  WARN 20196 --- [http-nio-9090-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:57:59.994  INFO 20196 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 19:57:59.995  INFO 20196 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 19:57:59.995  INFO 20196 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 19:57:59.995  INFO 20196 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 19:57:59.995  INFO 20196 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 19:58:00.095  INFO 20196 --- [http-nio-9090-exec-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 19:58:00.302  INFO 20196 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=82c4f25d-273c-49fd-8b34-df23ea77a282}, timestamp=1649419080302, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 19:58:05.574  INFO 20196 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:58:05.575  WARN 20196 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:58:19.738  INFO 20196 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:58:19.739  WARN 20196 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 19:58:22.889  INFO 20196 --- [http-nio-9090-exec-3] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:58:22.892  WARN 20196 --- [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account' for method parameter type String is not present]
+2022-04-08 19:58:22.893  INFO 20196 --- [http-nio-9090-exec-3] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 19:58:22.893  WARN 20196 --- [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account' for method parameter type String is not present]
+2022-04-08 19:58:26.925 ERROR 20196 --- [http-nio-9090-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.life.Mapper.user.UserInfoMapper.selectById] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.life.Mapper.user.UserInfoMapper.selectById
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235) ~[mybatis-3.5.9.jar:3.5.9]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:111) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1719) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.CollectionUtils.computeIfAbsent(CollectionUtils.java:115) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:98) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy94.selectById(Unknown Source) ~[na:na]
+	at com.life.Service.user.UserInfoServiceImpl.selectById(UserInfoServiceImpl.java:45) ~[classes/:na]
+	at com.life.Controller.user.UserInfoController.getUserInfo(UserInfoController.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at com.life.Config.RemoveUrlJsessionIdFilter.doFilter(RemoveUrlJsessionIdFilter.java:74) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2022-04-08 19:58:31.512 ERROR 20196 --- [http-nio-9090-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.life.Mapper.user.UserInfoMapper.selectById] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.life.Mapper.user.UserInfoMapper.selectById
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235) ~[mybatis-3.5.9.jar:3.5.9]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:111) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1719) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.CollectionUtils.computeIfAbsent(CollectionUtils.java:115) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:98) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy94.selectById(Unknown Source) ~[na:na]
+	at com.life.Service.user.UserInfoServiceImpl.selectById(UserInfoServiceImpl.java:45) ~[classes/:na]
+	at com.life.Controller.user.UserInfoController.getUserInfo(UserInfoController.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at com.life.Config.RemoveUrlJsessionIdFilter.doFilter(RemoveUrlJsessionIdFilter.java:74) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2022-04-08 19:58:40.740 ERROR 20196 --- [http-nio-9090-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.life.Mapper.user.UserInfoMapper.selectById] with root cause
+
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.life.Mapper.user.UserInfoMapper.selectById
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.<init>(MapperMethod.java:235) ~[mybatis-3.5.9.jar:3.5.9]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.<init>(MybatisMapperMethod.java:50) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.lambda$cachedInvoker$0(MybatisMapperProxy.java:111) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1719) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.CollectionUtils.computeIfAbsent(CollectionUtils.java:115) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.cachedInvoker(MybatisMapperProxy.java:98) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.5.1.jar:3.5.1]
+	at com.sun.proxy.$Proxy94.selectById(Unknown Source) ~[na:na]
+	at com.life.Service.user.UserInfoServiceImpl.selectById(UserInfoServiceImpl.java:45) ~[classes/:na]
+	at com.life.Controller.user.UserInfoController.getUserInfo(UserInfoController.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:450) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.9.0.jar:1.9.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at com.life.Config.RemoveUrlJsessionIdFilter.doFilter(RemoveUrlJsessionIdFilter.java:74) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2022-04-08 21:16:54.718  INFO 20196 --- [http-nio-9090-exec-8] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:16:54.741  WARN 20196 --- [http-nio-9090-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:16:55.930  INFO 20196 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 21:16:55.930  INFO 20196 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 21:16:55.930  INFO 20196 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 21:16:55.930  INFO 20196 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 21:16:55.930  INFO 20196 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 21:16:55.941  INFO 20196 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=b974ecb2-a0e5-4397-8a32-00987ed9ead4}, timestamp=1649423815941, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 21:17:03.582  INFO 20196 --- [http-nio-9090-exec-9] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:17:03.583  WARN 20196 --- [http-nio-9090-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:17:04.265  INFO 20196 --- [http-nio-9090-exec-10] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:17:04.265  WARN 20196 --- [http-nio-9090-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:17:07.376  INFO 20196 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:17:07.377  WARN 20196 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:17:16.822  INFO 20196 --- [http-nio-9090-exec-5] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:17:16.823  WARN 20196 --- [http-nio-9090-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:17:26.993  INFO 20196 --- [http-nio-9090-exec-6] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:17:26.994  WARN 20196 --- [http-nio-9090-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:17:30.974  INFO 20196 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 21:17:30.977  INFO 20196 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 21:17:33.558  INFO 18892 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 18892 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 21:17:33.560  INFO 18892 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 21:17:35.034  INFO 18892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$b993b139] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:17:35.068  INFO 18892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:17:35.138  INFO 18892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:17:35.147  INFO 18892 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:17:35.385  INFO 18892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 21:17:35.386  INFO 18892 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 21:17:35.386  INFO 18892 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 21:17:35.386  INFO 18892 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 21:17:35.386  INFO 18892 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 21:17:35.389  INFO 18892 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 21:17:35.398  INFO 18892 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 21:17:35.398  INFO 18892 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 21:17:35.485  INFO 18892 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 21:17:35.485  INFO 18892 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1880 ms
+2022-04-08 21:17:37.179  INFO 18892 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 21:17:37.389  INFO 18892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 21:17:37.610  INFO 18892 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.412 seconds (JVM running for 5.774)
+2022-04-08 21:21:22.198  INFO 18892 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 21:21:22.198  INFO 18892 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 21:21:22.199  INFO 18892 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 21:21:22.212  INFO 18892 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 21:21:22.237  INFO 18892 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:21:22.239  WARN 18892 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:21:23.259  INFO 18892 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 21:21:23.259  INFO 18892 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 21:21:23.259  INFO 18892 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 21:21:23.259  INFO 18892 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 21:21:23.260  INFO 18892 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 21:21:23.372  INFO 18892 --- [http-nio-9090-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 21:21:23.512  INFO 18892 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=815efd13-34b6-49f2-a602-c684233cde3c}, timestamp=1649424083511, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 21:21:28.518  INFO 18892 --- [http-nio-9090-exec-3] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:21:28.519  WARN 18892 --- [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:23:40.087  INFO 18892 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 21:23:40.091  INFO 18892 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 21:23:46.571  INFO 10752 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 10752 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 21:23:46.577  INFO 10752 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 21:23:47.504  INFO 10752 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$dbd82c98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:23:47.539  INFO 10752 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:23:47.589  INFO 10752 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:23:47.598  INFO 10752 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:23:47.803  INFO 10752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 21:23:47.804  INFO 10752 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 21:23:47.804  INFO 10752 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 21:23:47.804  INFO 10752 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 21:23:47.804  INFO 10752 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 21:23:47.807  INFO 10752 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 21:23:47.816  INFO 10752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 21:23:47.817  INFO 10752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 21:23:47.886  INFO 10752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 21:23:47.886  INFO 10752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1256 ms
+2022-04-08 21:23:49.385  INFO 10752 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 21:23:49.596  INFO 10752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 21:23:49.794  INFO 10752 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.622 seconds (JVM running for 4.578)
+2022-04-08 21:24:06.654  INFO 10752 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 21:24:06.654  INFO 10752 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 21:24:06.655  INFO 10752 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 21:24:06.664  INFO 10752 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 21:24:07.720  INFO 10752 --- [http-nio-9090-exec-4] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:24:07.723  WARN 10752 --- [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:24:44.896  INFO 10752 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:24:44.897  WARN 10752 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:24:47.845  INFO 10752 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 21:24:47.845  INFO 10752 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 21:24:47.845  INFO 10752 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 21:24:47.845  INFO 10752 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 21:24:47.846  INFO 10752 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 21:24:47.942  INFO 10752 --- [http-nio-9090-exec-6] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 21:24:48.114  INFO 10752 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=8c1763d2-92b7-48d6-ad75-8b9539a983c1}, timestamp=1649424288114, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 21:24:53.453  INFO 10752 --- [http-nio-9090-exec-3] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:24:53.454  WARN 10752 --- [http-nio-9090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:30:50.487  WARN 10752 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 319414
+2022-04-08 21:31:48.520  INFO 10752 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 21:31:48.522  INFO 10752 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 21:31:54.310  INFO 11608 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 11608 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 21:31:54.314  INFO 11608 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 21:31:55.331  INFO 11608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$dbd82c98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:31:55.367  INFO 11608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:31:55.414  INFO 11608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:31:55.423  INFO 11608 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:31:55.673  INFO 11608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 21:31:55.674  INFO 11608 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 21:31:55.674  INFO 11608 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 21:31:55.674  INFO 11608 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 21:31:55.674  INFO 11608 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 21:31:55.677  INFO 11608 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 21:31:55.685  INFO 11608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 21:31:55.685  INFO 11608 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 21:31:55.773  INFO 11608 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 21:31:55.774  INFO 11608 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1407 ms
+2022-04-08 21:31:57.381  INFO 11608 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 21:31:57.590  INFO 11608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 21:31:57.813  INFO 11608 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.911 seconds (JVM running for 4.904)
+2022-04-08 21:32:54.063  INFO 11608 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 21:32:54.063  INFO 11608 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 21:32:54.064  INFO 11608 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 21:32:54.094  INFO 11608 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 21:32:54.144  INFO 11608 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:32:54.148  WARN 11608 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:32:55.294  INFO 11608 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 21:32:55.294  INFO 11608 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 21:32:55.294  INFO 11608 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 21:32:55.294  INFO 11608 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 21:32:55.295  INFO 11608 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 21:32:55.389  INFO 11608 --- [http-nio-9090-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 21:32:55.513  INFO 11608 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=e354d5ff-9222-40d5-8b40-38df6c6dd6ee}, timestamp=1649424775513, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 21:33:02.133  INFO 11608 --- [http-nio-9090-exec-7] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:33:02.135  WARN 11608 --- [http-nio-9090-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:34:17.988  WARN 11608 --- [http-nio-9090-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 82478
+2022-04-08 21:38:15.429  INFO 11608 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 21:38:15.431  INFO 11608 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-08 21:38:20.198  INFO 20448 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 20448 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 21:38:20.201  INFO 20448 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 21:38:21.199  INFO 20448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$dbd82c98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:21.233  INFO 20448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:21.284  INFO 20448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:21.293  INFO 20448 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:21.544  INFO 20448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 21:38:21.544  INFO 20448 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 21:38:21.545  INFO 20448 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 21:38:21.545  INFO 20448 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 21:38:21.545  INFO 20448 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 21:38:21.548  INFO 20448 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 21:38:21.555  INFO 20448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 21:38:21.556  INFO 20448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 21:38:21.630  INFO 20448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 21:38:21.630  INFO 20448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1354 ms
+2022-04-08 21:38:23.248  INFO 20448 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 21:38:23.459  INFO 20448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 21:38:23.673  INFO 20448 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.947 seconds (JVM running for 4.952)
+2022-04-08 21:38:33.535  INFO 20448 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
+2022-04-08 21:38:37.517  INFO 12424 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 12424 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-08 21:38:37.520  INFO 12424 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-08 21:38:38.454  INFO 12424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$dbd82c98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:38.490  INFO 12424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:38.542  INFO 12424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:38.552  INFO 12424 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-08 21:38:38.781  INFO 12424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-08 21:38:38.782  INFO 12424 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-08 21:38:38.782  INFO 12424 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-08 21:38:38.782  INFO 12424 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-08 21:38:38.782  INFO 12424 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-08 21:38:38.785  INFO 12424 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-08 21:38:38.793  INFO 12424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-08 21:38:38.793  INFO 12424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-08 21:38:38.863  INFO 12424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-08 21:38:38.864  INFO 12424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1293 ms
+2022-04-08 21:38:40.453  INFO 12424 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-08 21:38:40.737  INFO 12424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-08 21:38:41.055  INFO 12424 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 3.959 seconds (JVM running for 4.954)
+2022-04-08 21:38:42.477  INFO 12424 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-08 21:38:42.477  INFO 12424 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-08 21:38:42.478  INFO 12424 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-08 21:38:42.493  INFO 12424 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-08 21:38:42.532  INFO 12424 --- [http-nio-9090-exec-1] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:38:42.538  WARN 12424 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:38:44.575  INFO 12424 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/user/login
+2022-04-08 21:38:44.575  INFO 12424 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-08 21:38:44.575  INFO 12424 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
+2022-04-08 21:38:44.575  INFO 12424 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-08 21:38:44.576  INFO 12424 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-08 21:38:44.669  INFO 12424 --- [http-nio-9090-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-08 21:38:44.786  INFO 12424 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=973f25cd-efac-4910-8ec7-60b55ca96a33}, timestamp=1649425124786, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-08 21:38:52.249  INFO 12424 --- [http-nio-9090-exec-2] com.life.Config.MyHandleInterceptor      : BASE_TOKEN is null
+2022-04-08 21:38:52.250  WARN 12424 --- [http-nio-9090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-08 21:45:44.114  INFO 12424 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-08 21:45:44.118  INFO 12424 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

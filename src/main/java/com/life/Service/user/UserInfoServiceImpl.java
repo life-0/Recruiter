@@ -1,7 +1,10 @@
 package com.life.Service.user;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.life.Mapper.user.UserInfoMapper;
+import com.life.POJO.user.UserLogin;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -12,54 +15,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserInfoServiceImpl implements UserInfoService {
+public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> implements UserInfoService {
 
     @Resource
     private UserInfoMapper userInfoMapper;
 
 
-    @Override
-    public int deleteByPrimaryKey(String number) {
-        return userInfoMapper.deleteByPrimaryKey (number);
+    public List<UserInfo> queryBySelective(UserInfo record) {
+
+        QueryWrapper<UserInfo> wrapper = new QueryWrapper<> (record);
+        return userInfoMapper.selectList (wrapper);
     }
 
     @Override
-    public int deleteById(ArrayList<Integer> list) {
-        return userInfoMapper.deleteById (list);
-    }
-
-
-
-    @Override
-    public int insert(UserInfo record) {
-        return userInfoMapper.insert (record);
-    }
-
-    @Override
-    public int insertSelective(UserInfo record) {
-        return userInfoMapper.insertSelective (record);
-    }
-
-    @Override
-    public UserInfo selectById(String id) {
-        return userInfoMapper.selectById(id);
-    }
-
-
-
-    @Override
-    public int updateByPrimaryKeySelective(UserInfo record) {
-        return userInfoMapper.updateByPrimaryKeySelective (record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(UserInfo record) {
-        return userInfoMapper.updateByPrimaryKey (record);
-    }
-
-    @Override
-    public List<UserInfo> queryAll(){
-        return userInfoMapper.queryAll ();
+    public List<UserInfo> queryAll() {
+        QueryWrapper<UserInfo> wrapper = new QueryWrapper<> ();
+        return userInfoMapper.selectList (wrapper);
     }
 
 

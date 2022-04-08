@@ -40,8 +40,8 @@ public class JobInfoController {
     }
 
     @PostMapping("/delete")
-    public Result<?> delete(@RequestBody JobHuntingInfo jobHuntingInfo) {
-        int i = jobHuntingInfoService.updateByIdSelective (jobHuntingInfo);
+    public Result<?> delete(@RequestParam("id") Integer id) {
+        int i = jobHuntingInfoService.deleteById (id);
         if (i != 0) {
             return Result.ok ();
         } else {

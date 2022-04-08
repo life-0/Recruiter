@@ -16,7 +16,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class SpringbootWebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run (SpringbootWebApplication.class, args);
+        SpringApplication.run (SpringbootWebApplication.class);
     }
     /*
      *

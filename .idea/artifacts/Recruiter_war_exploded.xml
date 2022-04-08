@@ -91,15 +91,20 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.18" />
           <element id="library" level="project" name="Maven: com.sun.mail:jakarta.mail:1.6.7" />
           <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:1.2.2" />
-          <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0" />
-          <element id="library" level="project" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.2.0" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.7" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.5.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:3.5.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-extension:3.5.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.5.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.5.1" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:4.3" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.9" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.6" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.28" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.6" />
           <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:4.0.3" />
           <element id="library" level="project" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.8" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.6" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.2.8" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.6.6" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.18" />
@@ -122,7 +127,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.18" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.18" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.18" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.28" />
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.11.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.18" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.18" />

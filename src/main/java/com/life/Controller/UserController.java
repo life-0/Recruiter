@@ -39,63 +39,52 @@ public class UserController {
         return Result.ok (users);
     }
 
-    @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
-    @ResponseBody
-    public String update(@RequestBody Map<String, Object> map) {
-
-        for (Map.Entry<String, Object> next : map.entrySet ()) {
-            String key = next.getKey ();
-            String value = (String) next.getValue ();
-            System.out.println (key + " :" + value);
-        }
-        return "ok";
-    }
-
-    @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
-    @ResponseBody
-    public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
-        // Map<String , Object> map
-        NumberUtil number = new NumberUtil ();
-        System.out.println (userInfo.toString ());
-//        userInfoService.insert (userInfo);
-        return "ok";
-    }
-
-    @ApiImplicitParams({    //参数描述
-            @ApiImplicitParam(name = "listId",
-                    value = "按照用户ID数组删除",
-                    required = true,
-                    paramType = "query",
-                    allowMultiple = true,
-                    dataType = "int")})
-    @ApiResponses({
-            @ApiResponse(code = 200, message = "数据正确"),
-            @ApiResponse(code = 400, message = "参数不符合"),
-            @ApiResponse(code = 404, message = "请求路径不对"),
-            @ApiResponse(code = 408, message = "业务报错,返回客户端")
-    })
-    @ApiOperation("删除用户")
-    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
-    @ResponseBody
-    public String deleteUser(@RequestBody ArrayList<Integer> listId) {
-        if (!listId.isEmpty ()) {
-            listId.forEach (System.out::println);
-            userInfoService.deleteById (listId);
-        }
-        return "ok";
-       /* int result_y = 0;
-        int result_x = 0;
-        for (Integer s : data) {
-            System.out.println (s);
-          *//*  result_y = userRoleService.deleteByUser_ID (s);
-            result_x = userService.deleteByPrimaryKey (s, null);*//*
-        }
-        if (result_x == 1 && result_y == 1) //简单判断程序是否执行成功
-            return "ok";
-        else {
-            return "error";
-        }*/
-    }
+//    @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
+//    @ResponseBody
+//    public String update(@RequestBody Map<String, Object> map) {
+//
+//        for (Map.Entry<String, Object> next : map.entrySet ()) {
+//            String key = next.getKey ();
+//            String value = (String) next.getValue ();
+//            System.out.println (key + " :" + value);
+//        }
+//        return "ok";
+//    }
+//
+//    @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
+//    @ResponseBody
+//    public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
+//        // Map<String , Object> map
+//        NumberUtil number = new NumberUtil ();
+//        System.out.println (userInfo.toString ());
+////        userInfoService.insert (userInfo);
+//        return "ok";
+//    }
+//
+//    @ApiImplicitParams({    //参数描述
+//            @ApiImplicitParam(name = "listId",
+//                    value = "按照用户ID数组删除",
+//                    required = true,
+//                    paramType = "query",
+//                    allowMultiple = true,
+//                    dataType = "int")})
+//    @ApiResponses({
+//            @ApiResponse(code = 200, message = "数据正确"),
+//            @ApiResponse(code = 400, message = "参数不符合"),
+//            @ApiResponse(code = 404, message = "请求路径不对"),
+//            @ApiResponse(code = 408, message = "业务报错,返回客户端")
+//    })
+//    @ApiOperation("删除用户")
+//    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
+//    @ResponseBody
+//    public String deleteUser(@RequestBody ArrayList<Integer> listId) {
+//        if (!listId.isEmpty ()) {
+//            listId.forEach (System.out::println);
+//            userInfoService.deleteById (listId);
+//        }
+//        return "ok";
+//
+//    }
 /*
     @ApiOperation("添加用户")
     @RequestMapping({"/Add"})

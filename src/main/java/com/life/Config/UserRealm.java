@@ -64,7 +64,9 @@ public class UserRealm extends AuthorizingRealm {
         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
         //连接真实数据库
 
-        UserLogin user = userLoginService.selectByAccount (userToken.getUsername ());
+//        UserLogin user = userLoginService.selectByAccount (userToken.getUsername ());
+
+        UserLogin user = userLoginService.querySelective (new UserLogin ().setAccount (userToken.getUsername ()));
         /*System.out.println (user.toString ());*/
         if (user == null) {
             return null;

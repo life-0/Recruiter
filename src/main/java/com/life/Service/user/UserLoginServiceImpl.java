@@ -1,5 +1,7 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.life.Mapper.user.UserLoginMapper;
 import org.springframework.stereotype.Service;
 
@@ -7,55 +9,25 @@ import javax.annotation.Resource;
 
 import com.life.POJO.user.UserLogin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Service
-public class UserLoginServiceImpl implements UserLoginService {
+public class UserLoginServiceImpl extends ServiceImpl<UserLoginMapper, UserLogin> implements UserLoginService {
 
     @Resource
     private UserLoginMapper userLoginMapper;
 
     @Override
-    public int deleteByPrimaryKey(String number) {
-        return userLoginMapper.deleteByPrimaryKey (number);
+    public List<UserLogin> queryAll() {
+
+        return userLoginMapper.selectList (new QueryWrapper<> ());
     }
 
-    @Override
-    public int insert(UserLogin record) {
-        return userLoginMapper.insert (record);
+    public UserLogin querySelective(UserLogin userLogin) {
+        QueryWrapper<UserLogin> wrapper = new QueryWrapper<> (userLogin);
+        return userLoginMapper.selectOne (wrapper);
     }
-
-    @Override
-    public int insertSelective(UserLogin record) {
-        return userLoginMapper.insertSelective (record);
-    }
-
-    @Override
-    public UserLogin selectByPrimaryKey(String number) {
-        return userLoginMapper.selectByPrimaryKey (number);
-    }
-
-    @Override
-    public UserLogin selectById(Integer id) {
-        return userLoginMapper.selectById (id);
-    }
-
-    @Override
-    public UserLogin selectByAccount(String account) {
-        return userLoginMapper.selectByAccount (account);
-    }
-
-    @Override
-    public int updateByID(UserLogin record) {
-        return userLoginMapper.updateByID (record);
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(UserLogin record) {
-        return userLoginMapper.updateByPrimaryKeySelective (record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(UserLogin record) {
-        return userLoginMapper.updateByPrimaryKey (record);
-    }
-
 }

@@ -31,19 +31,21 @@ public class UserInfoController {
     private UserInfoServiceImpl userInfoService;
 
     @ApiOperation("展示所有的用户")
-    @ResponseBody
     @PostMapping("/getUserInfo")
-    public Result<?> getUserInfo(@RequestParam(value = "id", required = false) String id) {
-        List<UserInfo> users = null;
-        if (id != null) {
-            users.add (userInfoService.selectById (id));
-        }else {
-           users = userInfoService.queryAll ();
+    public Result<?> getUserInfo(@RequestBody UserInfo userInfo) {
+        System.out.println (userInfo.toString ());
+        List<UserInfo> userInfos = null;
+        if (userInfo != null) {
+            System.out.println ("-----------");
+            userInfos = userInfoService.queryBySelective (userInfo);
+
+        } else {
+            userInfos = userInfoService.queryAll ();
         }
-        return Result.ok (users);
+        return Result.ok (userInfos);
     }
 
-    @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
+    @PostMapping(value = {"/updateUserInfo"})
     public String updateUserInfo(@RequestBody Map<String, Object> map) {
 
         for (Map.Entry<String, Object> next : map.entrySet ()) {
@@ -63,27 +65,14 @@ public class UserInfoController {
         return "ok";
     }
 
-    @ApiImplicitParams({    //参数描述
-            @ApiImplicitParam(name = "listId",
-                    value = "按照用户ID数组删除",
-                    required = true,
-                    paramType = "query",
-                    allowMultiple = true,
-                    dataType = "int")})
-    @ApiResponses({
-            @ApiResponse(code = 200, message = "数据正确"),
-            @ApiResponse(code = 400, message = "参数不符合"),
-            @ApiResponse(code = 404, message = "请求路径不对"),
-            @ApiResponse(code = 408, message = "业务报错,返回客户端")
-    })
-    @ApiOperation("删除用户")
-    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
-    @ResponseBody
-    public String deleteUser(@RequestBody ArrayList<Integer> listId) {
-        if (!listId.isEmpty ()) {
-            listId.forEach (System.out::println);
-            userInfoService.deleteById (listId);
-        }
-        return "ok";
-    }
+//    @ApiOperation("删除用户")
+//    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
+//    @ResponseBody
+//    public String deleteUser(@RequestBody ArrayList<Integer> listId) {
+//        if (!listId.isEmpty ()) {
+//            listId.forEach (System.out::println);
+//            userInfoService.deleteById (listId);
+//        }
+//        return "ok";
+//    }
 }

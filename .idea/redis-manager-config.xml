@@ -55,7 +55,6 @@
         <RedisServerNode>
           <option name="auth" value="123" />
           <option name="comment" value="" />
-          <option name="connect" value="true" />
           <option name="host" value="localhost" />
           <option name="id" value="3" />
           <option name="name" value="redis" />

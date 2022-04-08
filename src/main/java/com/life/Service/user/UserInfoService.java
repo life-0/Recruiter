@@ -1,27 +1,15 @@
 package com.life.Service.user;
 
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.life.POJO.user.UserInfo;
+import com.life.POJO.user.UserLogin;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public interface UserInfoService {
+public interface UserInfoService  extends IService<UserInfo> {
 
-    int deleteByPrimaryKey(String number);
-
-    int insert(UserInfo record);
-
-    int insertSelective(UserInfo record);
-
-    int deleteById(ArrayList<Integer> list);
-
-    int updateByPrimaryKeySelective(UserInfo record);
-
-
-    int updateByPrimaryKey(UserInfo record);
-
-    UserInfo selectById(String id);
 
     List<UserInfo> queryAll();
 

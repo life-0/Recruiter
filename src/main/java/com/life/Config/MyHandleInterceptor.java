@@ -51,10 +51,10 @@ public class MyHandleInterceptor implements HandlerInterceptor {
         }
 
         String token=request.getHeader("BASE_TOKEN");
-        System.out.println (token);
+
         if (!tokenUtil.verify(token)) {
             // 未登录跳转到登录界面
-            log.info ("未获得token");
+            log.info ("BASE_TOKEN is null");
            request.getRequestDispatcher ("/user/login").forward (request,response);
            return false;
         } else {

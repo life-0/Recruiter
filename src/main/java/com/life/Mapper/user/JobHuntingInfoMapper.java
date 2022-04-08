@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface JobHuntingInfoMapper {
-    int deleteById(String id);
+    int deleteById(Integer id);
 
     int insert(JobHuntingInfo record);
 

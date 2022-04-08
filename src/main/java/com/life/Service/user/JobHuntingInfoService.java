@@ -2,10 +2,10 @@ package com.life.Service.user;
 
 import com.life.POJO.user.JobHuntingInfo;
 
-public interface JobHuntingInfoService  {
+public interface JobHuntingInfoService {
 
 
-    int deleteById(String id);
+    int deleteById(Integer id);
 
     int insert(JobHuntingInfo record);
 

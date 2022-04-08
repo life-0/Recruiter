@@ -5,10 +5,12 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Accessors(chain = true)  //链式写法
 public class UserInfo {
     private static final long serialVersionUID = 1L;
     /**

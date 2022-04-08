@@ -1,26 +1,11 @@
 package com.life.Mapper.user;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.life.POJO.user.UserLogin;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface UserLoginMapper {
-    int deleteByPrimaryKey(String number);
+public interface UserLoginMapper extends BaseMapper<UserLogin> {
 
-    int insert(UserLogin record);
-
-    int insertSelective(UserLogin record);
-
-    UserLogin selectByPrimaryKey(String number);
-
-    UserLogin selectById(Integer id);
-
-    UserLogin selectByAccount(@Param("acc") String account);
-
-    int updateByID(UserLogin record);
-
-    int updateByPrimaryKeySelective(UserLogin record);
-
-    int updateByPrimaryKey(UserLogin record);
 }

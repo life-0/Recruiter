@@ -1,25 +1,12 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.life.POJO.user.UserLogin;
 import org.apache.ibatis.annotations.Param;
 
-public interface UserLoginService {
+import java.util.ArrayList;
+import java.util.List;
 
-    int deleteByPrimaryKey(String number);
-
-    int insert(UserLogin record);
-
-    int insertSelective(UserLogin record);
-
-    UserLogin selectByPrimaryKey(String number);
-
-    UserLogin selectById(Integer id);
-
-    UserLogin selectByAccount(@Param("acc") String account);
-
-    int updateByID(UserLogin record);
-
-    int updateByPrimaryKeySelective(UserLogin record);
-
-    int updateByPrimaryKey(UserLogin record);
+public interface UserLoginService extends IService<UserLogin> {
+    List<UserLogin> queryAll();
 }

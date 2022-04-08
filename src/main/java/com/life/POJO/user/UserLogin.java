@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import org.apache.ibatis.type.Alias;
 
 import java.io.Serializable;
@@ -12,8 +13,8 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Alias("userLogin")
 @ApiModel
+@Accessors(chain = true)  //链式写法
 public class UserLogin implements Serializable {
     private static final long serialVersionUID = 1L;
     /**

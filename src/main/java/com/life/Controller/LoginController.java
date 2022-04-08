@@ -38,7 +38,7 @@ public class LoginController {
                            @RequestParam("password") String password,
                            HttpServletRequest request) {
         //封装用户登录数据
-        UsernamePasswordToken token = new UsernamePasswordToken (account,password);
+        UsernamePasswordToken token = new UsernamePasswordToken (account, password);
 
         //获取当前用户
         Subject currentUser = SecurityUtils.getSubject ();
@@ -63,22 +63,6 @@ public class LoginController {
         } catch (Exception e) {
             return Result.error ("erro");
         }
-
-//            return "index";
-//        } catch (UnknownAccountException uae) {  //用户名不存在
-//            model.addAttribute ("msg", "用户名不存在");
-//            return "login";
-//        } catch (IncorrectCredentialsException ice) {   //密码错误
-//            model.addAttribute ("msg", "密码错误");
-//            return "login";
-//        } catch (LockedAccountException lae) {
-//            model.addAttribute ("msg", "账号被锁定");
-//            return "login";
-//        } catch (AuthenticationException ae) {
-//            model.addAttribute ("msg", "登录出错");
-//            return "login";
-//        }
-
     }
 
     @RequestMapping(value = "/user/logout", method = RequestMethod.GET)
