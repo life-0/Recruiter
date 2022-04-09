@@ -66,7 +66,10 @@ public class UserRealm extends AuthorizingRealm {
 
 //        UserLogin user = userLoginService.selectByAccount (userToken.getUsername ());
 
-        UserLogin user = userLoginService.querySelective (new UserLogin ().setAccount (userToken.getUsername ()));
+        UserLogin user = userLoginService.querySelective (
+                new UserLogin ().setAccount (userToken.getUsername ()).
+                                 setPassword (String.valueOf (userToken.getPassword ()))
+        );
         /*System.out.println (user.toString ());*/
         if (user == null) {
             return null;

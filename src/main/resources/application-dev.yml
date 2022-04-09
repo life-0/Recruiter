@@ -40,14 +40,28 @@ spring:
   thymeleaf: # thymeleaf 配置
     cache: false  #cache: 是否缓存，开发模式下设置为false，避免改了模板还要重启服务器，线上设置为true，可以提高性能。
 
+  redis:  #redis配置
+    host: localhost
+    port: 6379
+    password: 123
+    database: 0
+    timeout: 5000ms # 连接超时时间（毫秒）
+    lettuce:
+      pool:
+        max-active: 30 # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 10 # 连接池中的最大空闲连接
+        min-idle: 5 # 连接池中的最小空闲连接
+        max-wait: 5000ms # 连接池最大阻塞等待时间（使用负值表示没有限制）
+
 #整合Mybatis-plus
 #mybatis:
 #  mapper-locations: classpath:mybatis/Mapper/**/*.xml
 #  type-aliases-package: com.life.POJO
 mybatis-plus:
-  mapper-locations: classpath:mapper/*/*.xml
+  mapper-locations: classpath:mybatis/mapper/*/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 
 # ===== 自定义swagger配置 ===== #
 swagger:

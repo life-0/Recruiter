@@ -1,8 +1,13 @@
 package com.life.Utils;
 
 import com.life.POJO.user.UserLogin;
+import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -14,14 +19,16 @@ import java.util.UUID;
 
  */
 
-
+@Component
 public class tokenUtil {
+
     /**
      * 创建map用于存储所有的令牌
      * <p>
      * token  -  User
      */
     private static Map<String, UserLogin> tokenMap = new HashMap<> ();
+
 
     /**
      * 生成token，存储token-user对应关系
@@ -32,8 +39,9 @@ public class tokenUtil {
      */
     public static String generateToken(UserLogin user) {
         //生成唯一不重复的字符串
-        String token = UUID.randomUUID ().toString ();
-        tokenMap.put (token, user);
+//        String token = UUID.randomUUID ().toString ();
+        String token=NumberUtil.getRandomNumber ();
+        tokenMap.put (token, user); //这是存放在tokenMap,重启会消失
         return token;
     }
 
@@ -56,4 +64,6 @@ public class tokenUtil {
     public static UserLogin getUser(String token) {
         return tokenMap.get (token);
     }
+
+
 }

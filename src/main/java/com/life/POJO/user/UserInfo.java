@@ -66,7 +66,7 @@ public class UserInfo {
     /**
      * 图片路径
      */
-    private String imgpath;
+    private String imgPath;
 
     /**
      * 状态 0: 可使用 1: 失效

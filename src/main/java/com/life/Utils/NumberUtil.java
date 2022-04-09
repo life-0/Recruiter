@@ -11,7 +11,7 @@ import java.util.UUID;
 */
 public class NumberUtil {
     //生成随机number 并将其中的-去掉
-    public  String getRandomNumber() {
+    public static String getRandomNumber() {
         return UUID.randomUUID ().toString ().replaceAll ("-", "");
     }
 }

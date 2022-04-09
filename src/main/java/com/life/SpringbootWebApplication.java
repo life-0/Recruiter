@@ -5,12 +5,13 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@MapperScan("com.life.Mapper.user")
+@MapperScan("com.life.Mapper.user,com.life.Utils")
 @EnableScheduling
-
+@EnableCaching  //开启缓存
 @EnableKnife4j
 @ServletComponentScan
 public class SpringbootWebApplication {

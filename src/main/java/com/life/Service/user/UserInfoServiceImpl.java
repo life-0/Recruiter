@@ -20,11 +20,14 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
     @Resource
     private UserInfoMapper userInfoMapper;
 
-
+    @Override
     public List<UserInfo> queryBySelective(UserInfo record) {
-
         QueryWrapper<UserInfo> wrapper = new QueryWrapper<> (record);
-        return userInfoMapper.selectList (wrapper);
+        List<UserInfo> userInfos = userInfoMapper.selectList (wrapper);
+        for (UserInfo info : userInfos) {
+            System.out.println (info.toString ());
+        }
+        return userInfos;
     }
 
     @Override

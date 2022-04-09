@@ -49,12 +49,13 @@
         </entry>
       </map>
     </option>
-    <option name="consoleFilePath" value="C:\Users\life-0\AppData\Local\Temp\\redis\96c10b9e-b342-4f66-820d-3fa07e12a3db\console.redis" />
+    <option name="consoleFilePath" value="C:\Users\life-0\AppData\Local\Temp\\redis\24108ca5-1448-401a-a19c-7504a189beea\console.redis" />
     <option name="configList">
       <list>
         <RedisServerNode>
           <option name="auth" value="123" />
           <option name="comment" value="" />
+          <option name="connect" value="true" />
           <option name="host" value="localhost" />
           <option name="id" value="3" />
           <option name="name" value="redis" />
