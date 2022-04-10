@@ -460,3 +460,30 @@ Caused by: java.lang.IllegalArgumentException: non null key required
 2022-04-10 22:09:07.979  INFO 13608 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=fdeeb70c550a4fdbbfd42e18bd5ea08f}, timestamp=1649599747979, errMessage=null, errCode=null, onlTable=null) 功能正常返回
 2022-04-10 22:15:28.431  INFO 13608 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
 2022-04-10 22:15:28.435  INFO 13608 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-10 22:33:06.626  INFO 11716 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 11716 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-10 22:33:06.629  INFO 11716 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-10 22:33:07.404  INFO 11716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-10 22:33:07.405  INFO 11716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-10 22:33:07.425  INFO 11716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-10 22:33:07.826  INFO 11716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$b0aede47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-10 22:33:07.868  INFO 11716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-10 22:33:07.920  INFO 11716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-10 22:33:07.931  INFO 11716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-10 22:33:08.178  INFO 11716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-10 22:33:08.179  INFO 11716 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-10 22:33:08.179  INFO 11716 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-10 22:33:08.179  INFO 11716 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-10 22:33:08.179  INFO 11716 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-10 22:33:08.182  INFO 11716 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-10 22:33:08.190  INFO 11716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-10 22:33:08.191  INFO 11716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-10 22:33:08.276  INFO 11716 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-10 22:33:08.277  INFO 11716 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1594 ms
+2022-04-10 22:33:10.204  INFO 11716 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-10 22:33:10.524  INFO 11716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-10 22:33:10.766  INFO 11716 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.554 seconds (JVM running for 5.847)
+2022-04-10 22:33:20.598  INFO 11716 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-10 22:33:20.598  INFO 11716 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-10 22:33:20.602  INFO 11716 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-04-10 22:33:20.613  INFO 11716 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-10 22:34:12.600  INFO 11716 --- [http-nio-9090-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
