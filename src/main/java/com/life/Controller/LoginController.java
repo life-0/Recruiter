@@ -28,6 +28,7 @@ import java.util.Map;
 */
 @Controller
 @Api("登录登出")
+@RequestMapping("/gate")
 public class LoginController {
     @Autowired
     private redisUtil redisImpl;
@@ -38,7 +39,7 @@ public class LoginController {
     }
 
     @ResponseBody
-    @PostMapping(value = "/user/login")
+    @PostMapping(value = "/login")
 //    @RequestBody UserLogin userLogin,
     public Result<?> login(@RequestParam("account") String account,
                            @RequestParam("password") String password,
@@ -75,7 +76,7 @@ public class LoginController {
         }
     }
 
-    @RequestMapping(value = "/user/logout", method = RequestMethod.GET)
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout() {
         Subject subject = SecurityUtils.getSubject ();
         subject.logout ();

@@ -14,4 +14,6 @@ public interface UserInfoService  extends IService<UserInfo> {
 
     List<UserInfo> queryAll();
 
+
+
 }

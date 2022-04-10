@@ -1,5 +1,6 @@
 package com.life.Controller.user;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.life.Mapper.user.UserInfoMapper;
 import com.life.POJO.user.UserInfo;
 import com.life.Service.user.UserInfoServiceImpl;
@@ -46,14 +47,18 @@ public class UserInfoController {
     }
 
     @PostMapping(value = {"/updateUserInfo"})
-    public String updateUserInfo(@RequestBody Map<String, Object> map) {
-
-        for (Map.Entry<String, Object> next : map.entrySet ()) {
-            String key = next.getKey ();
-            String value = (String) next.getValue ();
-            System.out.println (key + " :" + value);
-        }
-        return "ok";
+    public Result<?>  updateUserInfo(@RequestBody UserInfo userInfo) {
+//        for (Map.Entry<String, Object> next : map.entrySet ()) {
+//            String key = next.getKey ();
+//            String value = (String) next.getValue ();
+//            System.out.println (key + " :" + value);
+//        }
+       if (userInfoService.updateUserInfo (userInfo)){
+           return getUserInfo (new UserInfo ().setId (userInfo.getId ()));
+       }else {
+           List<String> list= new ArrayList<> ();
+           return Result.OK (list);
+       }
     }
 
     @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)

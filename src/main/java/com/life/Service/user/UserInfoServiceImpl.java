@@ -2,6 +2,7 @@ package com.life.Service.user;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.life.Mapper.user.UserInfoMapper;
 import com.life.POJO.user.UserLogin;
@@ -36,6 +37,12 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         return userInfoMapper.selectList (wrapper);
     }
 
+    public Boolean updateUserInfo(UserInfo userInfo) {
+        UpdateWrapper<UserInfo> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("id", userInfo.getId ());
+        int result = userInfoMapper.update (userInfo, wrapper);
+        return result > 0;
+    }
 
 }
 
