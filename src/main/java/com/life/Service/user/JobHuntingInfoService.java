@@ -1,24 +1,18 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.IService;
+
 import com.life.POJO.user.JobHuntingInfo;
+import com.life.POJO.user.UserInfo;
 
-public interface JobHuntingInfoService {
+import javax.annotation.Resource;
+import java.util.List;
+
+public interface JobHuntingInfoService  extends IService<JobHuntingInfo> {
 
 
-    int deleteById(Integer id);
 
-    int insert(JobHuntingInfo record);
-
-    int insertSelective(JobHuntingInfo record);
-
-    JobHuntingInfo selectByPrimaryKey(String number);
-
-    JobHuntingInfo selectById(Integer id);
-
-    JobHuntingInfo queryAll();
-
-    int updateByIdSelective(JobHuntingInfo record);
-
-    int updateByPrimaryKey(JobHuntingInfo record);
 
 }

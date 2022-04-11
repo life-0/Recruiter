@@ -1,51 +1,54 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
 import com.life.Mapper.user.UserResourceMapper;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 import com.life.POJO.user.UserResource;
 
+import java.util.List;
+
 @Service
-public class UserResourceServiceImpl implements UserResourceService {
+public class UserResourceServiceImpl extends ServiceImpl<UserResourceMapper, UserResource> implements UserResourceService {
 
     @Resource
     private UserResourceMapper userResourceMapper;
 
-    @Override
-    public int deleteByPrimaryKey(String number) {
-        return userResourceMapper.deleteByPrimaryKey (number);
+
+    public List<UserResource> queryBySelective(UserResource record) {
+        QueryWrapper<UserResource> wrapper = new QueryWrapper<> (record);
+        List<UserResource> userResources = userResourceMapper.selectList (wrapper);
+        for (UserResource info : userResources) {
+            System.out.println (info.toString ());
+        }
+        return userResources;
     }
 
-    @Override
-    public int insert(UserResource record) {
-        return userResourceMapper.insert (record);
+    public List<UserResource> queryAll() {
+        QueryWrapper<UserResource> wrapper = new QueryWrapper<> ();
+        return userResourceMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(UserResource record) {
-        return userResourceMapper.insertSelective (record);
+    public Boolean updateUserResource(UserResource userResource) {
+        UpdateWrapper<UserResource> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("id", userResource.getId ());
+        int result = userResourceMapper.update (userResource, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public UserResource selectByPrimaryKey(String number) {
-        return userResourceMapper.selectByPrimaryKey (number);
+    public Boolean addUserResource(UserResource userResource) {
+        int result = userResourceMapper.insert (userResource);
+        return result > 0;
     }
 
-    @Override
-    public UserResource selectById(int id) {
-        return userResourceMapper.selectById (id);
+    public Boolean delUserResource(List<Integer> idList) {
+        int result = userResourceMapper.deleteBatchIds (idList);
+        return result > 0;
     }
-
-    @Override
-    public int updateByPrimaryKeySelective(UserResource record) {
-        return userResourceMapper.updateByPrimaryKeySelective (record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(UserResource record) {
-        return userResourceMapper.updateByPrimaryKey (record);
-    }
-
 }

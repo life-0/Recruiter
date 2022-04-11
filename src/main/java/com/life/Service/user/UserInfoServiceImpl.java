@@ -3,6 +3,7 @@ package com.life.Service.user;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.life.Mapper.user.UserInfoMapper;
 import com.life.POJO.user.UserLogin;
@@ -21,7 +22,6 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
     @Resource
     private UserInfoMapper userInfoMapper;
 
-    @Override
     public List<UserInfo> queryBySelective(UserInfo record) {
         QueryWrapper<UserInfo> wrapper = new QueryWrapper<> (record);
         List<UserInfo> userInfos = userInfoMapper.selectList (wrapper);
@@ -31,7 +31,6 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         return userInfos;
     }
 
-    @Override
     public List<UserInfo> queryAll() {
         QueryWrapper<UserInfo> wrapper = new QueryWrapper<> ();
         return userInfoMapper.selectList (wrapper);
@@ -41,6 +40,16 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         UpdateWrapper<UserInfo> wrapper = new UpdateWrapper<> ();
         wrapper.eq ("id", userInfo.getId ());
         int result = userInfoMapper.update (userInfo, wrapper);
+        return result > 0;
+    }
+
+    public Boolean addUserInfo(UserInfo userInfo) {
+        int result = userInfoMapper.insert (userInfo);
+        return result > 0;
+    }
+
+    public Boolean delUserInfo(List<Integer> idList) {
+        int result = userInfoMapper.deleteBatchIds (idList);
         return result > 0;
     }
 

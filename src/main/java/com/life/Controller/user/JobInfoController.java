@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  *@Author: life-0
@@ -23,26 +24,35 @@ public class JobInfoController {
     @Resource
     private JobHuntingInfoServiceImpl jobHuntingInfoService;
 
-    @PostMapping("/query")
-    public Result<?> query(@RequestParam("id") Integer id) {
-        JobHuntingInfo jobHuntingInfo = jobHuntingInfoService.selectById (id);
-        return Result.ok (jobHuntingInfo);
+    @PostMapping("/getJobHuntingInfo")
+    public Result<?> getJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
+        List<JobHuntingInfo> jobHuntingInfos = jobHuntingInfoService.queryBySelective (jobHuntingInfo);
+        return Result.ok (jobHuntingInfos);
     }
 
-    @PostMapping("/update")
-    public Result<?> update(@RequestBody JobHuntingInfo jobHuntingInfo) {
-        int i = jobHuntingInfoService.updateByIdSelective (jobHuntingInfo);
-        if (i != 0) {
+    @PostMapping("/addJobHuntingInfo")
+    public Result<?> addJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
+        if (jobHuntingInfoService.addJobHuntingInfo (jobHuntingInfo)) {
             return Result.ok ();
         } else {
             return Result.ok ("数据修改失败");
         }
     }
 
-    @PostMapping("/delete")
-    public Result<?> delete(@RequestParam("id") Integer id) {
-        int i = jobHuntingInfoService.deleteById (id);
-        if (i != 0) {
+    @PostMapping("/updateJobHuntingInfo")
+    public Result<?> updateJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
+        System.out.println (jobHuntingInfo.toString ());
+        if (jobHuntingInfoService.updateJobHuntingInfo (jobHuntingInfo)) {
+            return Result.ok ();
+        } else {
+            return Result.ok ("数据修改失败");
+        }
+    }
+
+    @PostMapping("/delJobHuntingInfo")
+    public Result<?> delJobHuntingInfo(@RequestBody List<Integer> idList) {
+
+        if (jobHuntingInfoService.delJobHuntingInfo (idList)) {
             return Result.ok ();
         } else {
             return Result.ok ("数据修改失败");

@@ -1,44 +1,52 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
+import com.life.POJO.user.UserDialogue;
+
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.life.Mapper.user.UserDialogueMapper;
-import com.life.POJO.user.UserDialogue;
-import com.life.Service.user.UserDialogueService;
+
+import java.util.List;
+
 @Service
-public class UserDialogueServiceImpl implements UserDialogueService{
+public class UserDialogueServiceImpl extends ServiceImpl<UserDialogueMapper, UserDialogue> implements UserDialogueService{
 
     @Resource
     private UserDialogueMapper userDialogueMapper;
 
-    @Override
-    public int deleteByPrimaryKey(String number) {
-        return userDialogueMapper.deleteByPrimaryKey(number);
+
+    public List<UserDialogue> queryBySelective(UserDialogue record) {
+        QueryWrapper<UserDialogue> wrapper = new QueryWrapper<> (record);
+        List<UserDialogue> UserDialogues = userDialogueMapper.selectList (wrapper);
+        for (UserDialogue info : UserDialogues) {
+            System.out.println (info.toString ());
+        }
+        return UserDialogues;
     }
 
-    @Override
-    public int insert(UserDialogue record) {
-        return userDialogueMapper.insert(record);
+    public List<UserDialogue> queryAll() {
+        QueryWrapper<UserDialogue> wrapper = new QueryWrapper<> ();
+        return userDialogueMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(UserDialogue record) {
-        return userDialogueMapper.insertSelective(record);
+    public Boolean updateUserDialogue(UserDialogue UserDialogue) {
+        UpdateWrapper<UserDialogue> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("id", UserDialogue.getId ());
+        int result = userDialogueMapper.update (UserDialogue, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public UserDialogue selectByPrimaryKey(String number) {
-        return userDialogueMapper.selectByPrimaryKey(number);
+    public Boolean addUserDialogue(UserDialogue UserDialogue) {
+        int result = userDialogueMapper.insert (UserDialogue);
+        return result > 0;
     }
 
-    @Override
-    public int updateByPrimaryKeySelective(UserDialogue record) {
-        return userDialogueMapper.updateByPrimaryKeySelective(record);
+    public Boolean delUserDialogue(List<Integer> idList) {
+        int result = userDialogueMapper.deleteBatchIds (idList);
+        return result > 0;
     }
-
-    @Override
-    public int updateByPrimaryKey(UserDialogue record) {
-        return userDialogueMapper.updateByPrimaryKey(record);
-    }
-
 }

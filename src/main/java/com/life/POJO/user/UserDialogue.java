@@ -3,6 +3,7 @@ package com.life.POJO.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
     * 用户对话表
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Accessors(chain = true)  //链式写法
 public class UserDialogue {
     /**
     * 唯一标识

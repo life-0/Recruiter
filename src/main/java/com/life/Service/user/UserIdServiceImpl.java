@@ -1,46 +1,53 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.life.Mapper.user.JobHuntingInfoMapper;
 import com.life.Mapper.user.UserIdMapper;
+import com.life.POJO.user.JobHuntingInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 import com.life.POJO.user.UserId;
 
+import java.util.List;
+
 @Service
-public class UserIdServiceImpl implements UserIdService {
+public class UserIdServiceImpl extends ServiceImpl<UserIdMapper, UserId> implements UserIdService {
 
     @Resource
     private UserIdMapper userIdMapper;
 
-    @Override
-    public int deleteByPrimaryKey(Integer id, String number) {
-        return userIdMapper.deleteByPrimaryKey (id, number);
+    public List<UserId> queryBySelective(UserId record) {
+        QueryWrapper<UserId> wrapper = new QueryWrapper<> (record);
+        List<UserId> userIds = userIdMapper.selectList (wrapper);
+        for (UserId info : userIds) {
+            System.out.println (info.toString ());
+        }
+        return userIds;
     }
 
-    @Override
-    public int insert(UserId record) {
-        return userIdMapper.insert (record);
+    public List<UserId> queryAll() {
+        QueryWrapper<UserId> wrapper = new QueryWrapper<> ();
+        return userIdMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(UserId record) {
-        return userIdMapper.insertSelective (record);
+    public Boolean updateUserId(UserId UserId) {
+        UpdateWrapper<UserId> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("id", UserId.getId ());
+        int result = userIdMapper.update (UserId, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public UserId selectById(Integer id, String number) {
-        return userIdMapper.selectById (id, number);
+    public Boolean addUserId(UserId UserId) {
+        int result = userIdMapper.insert (UserId);
+        return result > 0;
     }
 
-    @Override
-    public Integer maxID() {
-        return userIdMapper.maxID ();
+    public Boolean delUserId(List<Integer> idList) {
+        int result = userIdMapper.deleteBatchIds (idList);
+        return result > 0;
     }
-
-    @Override
-    public int resetAutoIncrementID(Integer id) {   //使用直接调用maxID方法
-        return userIdMapper.resetAutoIncrementID (maxID ());
-    }
-
 }

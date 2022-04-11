@@ -47,28 +47,46 @@ public class UserInfoController {
     }
 
     @PostMapping(value = {"/updateUserInfo"})
-    public Result<?>  updateUserInfo(@RequestBody UserInfo userInfo) {
-//        for (Map.Entry<String, Object> next : map.entrySet ()) {
-//            String key = next.getKey ();
-//            String value = (String) next.getValue ();
-//            System.out.println (key + " :" + value);
-//        }
-       if (userInfoService.updateUserInfo (userInfo)){
-           return getUserInfo (new UserInfo ().setId (userInfo.getId ()));
-       }else {
-           List<String> list= new ArrayList<> ();
-           return Result.OK (list);
-       }
+    public Result<?> updateUserInfo(@RequestBody UserInfo userInfo) {
+        System.out.println (userInfo.toString ());
+        if (userInfoService.updateUserInfo (userInfo)) {
+            return getUserInfo (new UserInfo ().setId (userInfo.getId ()));
+        } else {
+            List<String> list = new ArrayList<> ();
+            return Result.OK (list);
+        }
     }
 
-    @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
-    public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
-        // Map<String , Object> map
-        NumberUtil number = new NumberUtil ();
-        System.out.println (userInfo.toString ());
-//        userInfoService.insert (userInfo);
-        return "ok";
+
+    @PostMapping("/addUserInfo")
+    public Result<?> addUserInfo(@RequestBody UserInfo userInfo) {
+        if (userInfoService.addUserInfo (userInfo)) {
+            return getUserInfo (new UserInfo ().setId (userInfo.getId ()));
+        } else {
+            List<String> list = new ArrayList<> ();
+            return Result.OK (list);
+        }
     }
+
+    @PostMapping("/delUserInfo")
+    public Result<?> delUserInfo(@RequestBody List<Integer> idList) {
+        List<String> list = new ArrayList<> ();
+        if (userInfoService.delUserInfo (idList)) {
+            return Result.OK ("ok");
+        } else {
+            return Result.OK (list);
+        }
+    }
+
+
+//    @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
+//    public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
+//        // Map<String , Object> map
+//        NumberUtil number = new NumberUtil ();
+//        System.out.println (userInfo.toString ());
+////        userInfoService.insert (userInfo);
+//        return "ok";
+//    }
 
 //    @ApiOperation("删除用户")
 //    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)

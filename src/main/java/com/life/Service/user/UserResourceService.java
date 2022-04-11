@@ -1,20 +1,8 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.life.POJO.user.UserResource;
-public interface UserResourceService{
+public interface UserResourceService  extends IService<UserResource> {
 
-    int deleteByPrimaryKey(String number);
-
-    int insert(UserResource record);
-
-    int insertSelective(UserResource record);
-
-    UserResource selectByPrimaryKey(String number);
-
-    UserResource selectById(int id);
-
-    int updateByPrimaryKeySelective(UserResource record);
-
-    int updateByPrimaryKey(UserResource record);
 
 }

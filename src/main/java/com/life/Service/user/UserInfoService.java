@@ -10,10 +10,5 @@ import java.util.List;
 
 public interface UserInfoService  extends IService<UserInfo> {
 
-    List<UserInfo> queryBySelective(UserInfo userInfo);
-
-    List<UserInfo> queryAll();
-
-
 
 }

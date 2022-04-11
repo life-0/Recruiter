@@ -1,49 +1,52 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.life.Mapper.user.UserRankMapper;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.life.POJO.user.UserRank;
 
+import java.util.List;
+
 @Service
-public class UserRankServiceImpl implements UserRankService{
+public class UserRankServiceImpl extends ServiceImpl<UserRankMapper, UserRank> implements UserRankService{
 
     @Resource
     private UserRankMapper userRankMapper;
 
-    @Override
-    public int deleteByPrimaryKey(String number) {
-        return userRankMapper.deleteByPrimaryKey(number);
+
+    public List<UserRank> queryBySelective(UserRank record) {
+        QueryWrapper<UserRank> wrapper = new QueryWrapper<> (record);
+        List<UserRank> userRanks = userRankMapper.selectList (wrapper);
+        return userRanks;
+    }
+    public UserRank queryById(Integer id){
+        QueryWrapper<UserRank> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("id",id);
+        return userRankMapper.selectOne (wrapper);
     }
 
-    @Override
-    public int insert(UserRank record) {
-        return userRankMapper.insert(record);
+    public List<UserRank> queryAll() {
+        QueryWrapper<UserRank> wrapper = new QueryWrapper<> ();
+        return userRankMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(UserRank record) {
-        return userRankMapper.insertSelective(record);
+    public Boolean updateUserRank(UserRank userRank) {
+        UpdateWrapper<UserRank> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("id", userRank.getId ());
+        int result = userRankMapper.update (userRank, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public UserRank selectByPrimaryKey(String number) {
-        return userRankMapper.selectByPrimaryKey(number);
+    public Boolean addUserRank(UserRank userRank) {
+        int result = userRankMapper.insert (userRank);
+        return result > 0;
     }
 
-    @Override
-    public UserRank selectById(Integer id) {
-        return userRankMapper.selectById (id);
+    public Boolean delUserRank(List<Integer> idList) {
+        int result = userRankMapper.deleteBatchIds (idList);
+        return result > 0;
     }
-
-    @Override
-    public int updateByPrimaryKeySelective(UserRank record) {
-        return userRankMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(UserRank record) {
-        return userRankMapper.updateByPrimaryKey(record);
-    }
-
 }

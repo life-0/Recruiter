@@ -1,22 +1,13 @@
 package com.life.Mapper.user;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.life.POJO.user.UserId;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+
 
 import java.util.List;
 
 @Mapper
-public interface UserIdMapper {
-    int deleteByPrimaryKey(@Param("id") Integer id, @Param("number") String number);
+public interface UserIdMapper extends BaseMapper<UserId> {
 
-    int insert(UserId record);
-
-    int insertSelective(UserId record);
-
-    UserId selectById(@Param("id") Integer id, @Param("number") String number);
-
-    Integer maxID();
-
-    int resetAutoIncrementID(@Param("id") Integer id);
 }

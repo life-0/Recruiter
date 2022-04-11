@@ -1,6 +1,10 @@
 package com.life.Service.user;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -8,53 +12,44 @@ import javax.annotation.Resource;
 import com.life.Mapper.user.JobHuntingInfoMapper;
 import com.life.POJO.user.JobHuntingInfo;
 
+import java.util.List;
+
 @Service
-public class JobHuntingInfoServiceImpl implements JobHuntingInfoService {
+public class JobHuntingInfoServiceImpl  extends ServiceImpl<JobHuntingInfoMapper,JobHuntingInfo> implements JobHuntingInfoService {
+
 
     @Resource
-    private JobHuntingInfoMapper jobHuntingInfoMapper;
+    private JobHuntingInfoMapper JobHuntingInfoMapper;
 
-    @Override
-    public int deleteById(Integer id) {
-        return jobHuntingInfoMapper.deleteById (id);
+    public List<JobHuntingInfo> queryBySelective(JobHuntingInfo record) {
+        QueryWrapper<JobHuntingInfo> wrapper = new QueryWrapper<> (record);
+        List<JobHuntingInfo> JobHuntingInfos = JobHuntingInfoMapper.selectList (wrapper);
+        for (JobHuntingInfo info : JobHuntingInfos) {
+            System.out.println (info.toString ());
+        }
+        return JobHuntingInfos;
     }
 
-    @Override
-    public int insert(JobHuntingInfo record) {
-        return jobHuntingInfoMapper.insert (record);
+    public List<JobHuntingInfo> queryAll() {
+        QueryWrapper<JobHuntingInfo> wrapper = new QueryWrapper<> ();
+        return JobHuntingInfoMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(JobHuntingInfo record) {
-        return jobHuntingInfoMapper.insertSelective (record);
+    public Boolean updateJobHuntingInfo(JobHuntingInfo JobHuntingInfo) {
+        UpdateWrapper<JobHuntingInfo> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("id", JobHuntingInfo.getId ());
+        int result = JobHuntingInfoMapper.update (JobHuntingInfo, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public JobHuntingInfo selectByPrimaryKey(String number) {
-        return jobHuntingInfoMapper.selectByPrimaryKey (number);
+    public Boolean addJobHuntingInfo(JobHuntingInfo JobHuntingInfo) {
+        int result = JobHuntingInfoMapper.insert (JobHuntingInfo);
+        return result > 0;
     }
 
-    @Override
-    public JobHuntingInfo selectById(Integer id) {
-        return jobHuntingInfoMapper.selectById (id);
-    }
-
-    @Override
-    public JobHuntingInfo queryAll() {
-        return jobHuntingInfoMapper.queryAll ();
-    }
-
-    @Override
-    public int updateByIdSelective(JobHuntingInfo record) {
-//        LambdaUpdateWrapper<JobHuntingInfo> lambdaUpdateWrapper = new LambdaUpdateWrapper<> ();
-//        lambdaUpdateWrapper.eq(JobHuntingInfo::getName, "rhb").set(User::getAge, 18);
-//        Integer rows = userMapper.update(null, lambdaUpdateWrapper);
-        return jobHuntingInfoMapper.updateByIdSelective (record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(JobHuntingInfo record) {
-        return jobHuntingInfoMapper.updateByPrimaryKey (record);
+    public Boolean delJobHuntingInfo(List<Integer> idList) {
+        int result = JobHuntingInfoMapper.deleteBatchIds (idList);
+        return result > 0;
     }
 
 }

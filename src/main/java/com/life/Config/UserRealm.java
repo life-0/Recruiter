@@ -52,7 +52,7 @@ public class UserRealm extends AuthorizingRealm {
         Subject subject = SecurityUtils.getSubject ();  //等同principalCollection中的类型,
 
         UserLogin principal = (UserLogin) subject.getPrincipal ();  //获得当前登录对象
-        UserRank userRankResources = userRankService.selectById (principal.getId ());//查询资源表是否有权限
+        UserRank userRankResources = userRankService.queryById (principal.getId ());//查询资源表是否有权限
         info.addStringPermissions (userRankResources.splitPermission ());
         return info;
     }
@@ -68,7 +68,7 @@ public class UserRealm extends AuthorizingRealm {
 
         UserLogin user = userLoginService.querySelective (
                 new UserLogin ().setAccount (userToken.getUsername ()).
-                                 setPassword (String.valueOf (userToken.getPassword ()))
+                        setPassword (String.valueOf (userToken.getPassword ()))
         );
         /*System.out.println (user.toString ());*/
         if (user == null) {

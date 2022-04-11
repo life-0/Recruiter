@@ -1,24 +1,12 @@
 package com.life.Mapper.user;
 
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.life.POJO.user.JobHuntingInfo;
+import com.life.POJO.user.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface JobHuntingInfoMapper {
-    int deleteById(Integer id);
+public interface JobHuntingInfoMapper extends BaseMapper<JobHuntingInfo> {
 
-    int insert(JobHuntingInfo record);
-
-    int insertSelective(JobHuntingInfo record);
-
-    JobHuntingInfo selectByPrimaryKey(String number);
-
-    JobHuntingInfo selectById(Integer id);
-
-    JobHuntingInfo queryAll();
-
-    int updateByIdSelective(JobHuntingInfo record);
-
-    int updateByPrimaryKey(JobHuntingInfo record);
 }

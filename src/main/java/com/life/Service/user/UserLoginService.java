@@ -8,5 +8,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface UserLoginService extends IService<UserLogin> {
-    List<UserLogin> queryAll();
+
 }
