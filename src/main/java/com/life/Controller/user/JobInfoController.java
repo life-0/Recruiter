@@ -32,8 +32,9 @@ public class JobInfoController {
 
     @PostMapping("/addJobHuntingInfo")
     public Result<?> addJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
+        ArrayList<JobHuntingInfo> list = new ArrayList<> ();
         if (jobHuntingInfoService.addJobHuntingInfo (jobHuntingInfo)) {
-            return Result.ok ();
+            return Result.ok (list);
         } else {
             return Result.ok ("数据修改失败");
         }
@@ -43,7 +44,7 @@ public class JobInfoController {
     public Result<?> updateJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
         System.out.println (jobHuntingInfo.toString ());
         if (jobHuntingInfoService.updateJobHuntingInfo (jobHuntingInfo)) {
-            return Result.ok ();
+            return Result.ok (getJobHuntingInfo (new JobHuntingInfo ().setId (jobHuntingInfo.getId ())));
         } else {
             return Result.ok ("数据修改失败");
         }

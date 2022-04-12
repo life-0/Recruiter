@@ -6,52 +6,77 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
-    * 求职信息表
-    */
+ * 求职信息表
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)  //链式写法
 public class JobHuntingInfo {
     /**
-    * 唯一标识
-    */
+     * 唯一标识
+     */
     private String number;
 
     private Integer id;
 
     /**
-    * 学校名称
-    */
-    private String school;
-
-    /**
-    * 学历
-    */
-    private String education;
-
-    /**
-    * 求职状态
-    */
+     * 求职状态
+     */
     private String jobStatus;
 
     /**
-    * 期望工资
-    */
-    private String expectSalary;
+     * 职位
+     */
+    private String position;
 
     /**
-    * 期望工资
-    */
+     * 最低工资
+     */
+    private Integer salaryMin;
+
+    /**
+     * 最高工资
+     */
+    private Integer salaryMax;
+
+    /**
+     * 期望城市
+     */
     private String expectCity;
 
     /**
-    * 附件路径
-    */
-    private String appendix;
+     * 工作性质
+     */
+    private String jobNature;
 
     /**
-    * 期望行业
-    */
+     * 期望行业
+     */
     private String expectIndustry;
+
+    /**
+     * 学校名称
+     */
+    private String colleges;
+
+    /**
+     * 学历
+     */
+    private String education;
+
+    /**
+     * 专业
+     */
+    private String profession;
+
+    /**
+     * 学年
+     */
+    private String academicYear;
+
+    /**
+     * 附件路径
+     */
+    private String appendix;
 }

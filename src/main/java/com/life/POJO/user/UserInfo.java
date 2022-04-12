@@ -27,11 +27,10 @@ public class UserInfo {
      * 真实姓名
      */
     private String name;
-
-    /**
-     * 昵称
-     */
-    private String nickname;
+    /*
+    *  年龄
+    */
+    private Integer age;
 
     /**
      * 性别

@@ -15,7 +15,7 @@ import com.life.POJO.user.JobHuntingInfo;
 import java.util.List;
 
 @Service
-public class JobHuntingInfoServiceImpl  extends ServiceImpl<JobHuntingInfoMapper,JobHuntingInfo> implements JobHuntingInfoService {
+public class JobHuntingInfoServiceImpl extends ServiceImpl<JobHuntingInfoMapper, JobHuntingInfo> implements JobHuntingInfoService {
 
 
     @Resource
@@ -52,4 +52,5 @@ public class JobHuntingInfoServiceImpl  extends ServiceImpl<JobHuntingInfoMapper
         return result > 0;
     }
 
-}
+  }
+
