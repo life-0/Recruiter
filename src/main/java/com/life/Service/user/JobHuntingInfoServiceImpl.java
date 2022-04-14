@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import com.life.bo.JobHuntingInfoBO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,11 +24,7 @@ public class JobHuntingInfoServiceImpl extends ServiceImpl<JobHuntingInfoMapper,
 
     public List<JobHuntingInfo> queryBySelective(JobHuntingInfo record) {
         QueryWrapper<JobHuntingInfo> wrapper = new QueryWrapper<> (record);
-        List<JobHuntingInfo> JobHuntingInfos = JobHuntingInfoMapper.selectList (wrapper);
-        for (JobHuntingInfo info : JobHuntingInfos) {
-            System.out.println (info.toString ());
-        }
-        return JobHuntingInfos;
+        return JobHuntingInfoMapper.selectList (wrapper);
     }
 
     public List<JobHuntingInfo> queryAll() {
@@ -39,6 +36,11 @@ public class JobHuntingInfoServiceImpl extends ServiceImpl<JobHuntingInfoMapper,
         UpdateWrapper<JobHuntingInfo> wrapper = new UpdateWrapper<> ();
         wrapper.eq ("id", JobHuntingInfo.getId ());
         int result = JobHuntingInfoMapper.update (JobHuntingInfo, wrapper);
+//        if (result > 0) {
+//            JobHuntingInfo info = JobHuntingInfoMapper.selectById (JobHuntingInfo.getId ());
+//            JobHuntingInfoBO infoBO = new JobHuntingInfoBO ();
+//
+//        }
         return result > 0;
     }
 
@@ -52,5 +54,5 @@ public class JobHuntingInfoServiceImpl extends ServiceImpl<JobHuntingInfoMapper,
         return result > 0;
     }
 
-  }
+}
 

@@ -27,6 +27,9 @@ public class JobInfoController {
     @PostMapping("/getJobHuntingInfo")
     public Result<?> getJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
         List<JobHuntingInfo> jobHuntingInfos = jobHuntingInfoService.queryBySelective (jobHuntingInfo);
+        for (JobHuntingInfo info : jobHuntingInfos) {
+            System.out.println (info.toString ());
+        }
         return Result.ok (jobHuntingInfos);
     }
 
@@ -43,10 +46,11 @@ public class JobInfoController {
     @PostMapping("/updateJobHuntingInfo")
     public Result<?> updateJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
         System.out.println (jobHuntingInfo.toString ());
+        ArrayList<JobHuntingInfo> list = new ArrayList<> ();
         if (jobHuntingInfoService.updateJobHuntingInfo (jobHuntingInfo)) {
             return Result.ok (getJobHuntingInfo (new JobHuntingInfo ().setId (jobHuntingInfo.getId ())));
         } else {
-            return Result.ok ("数据修改失败");
+            return Result.ok (list);
         }
     }
 
