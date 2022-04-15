@@ -2,6 +2,7 @@ package com.life.websocket.net;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -10,6 +11,7 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -19,22 +21,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class WebSocketServer {
 
     private static final Logger log = LoggerFactory.getLogger (WebSocketServer.class);
+    //导入连接池
+    Map<String, Session> sessionPool = socketPool.sessionPool ();
 
-    /**
-     * 当前在线连接数
-     */
-    private static AtomicInteger onlineCount = new AtomicInteger (0);
-
-    /**
-     * 用来存放每个客户端对应的 WebSocketServer 对象
-     */
-    private static ConcurrentHashMap<String, WebSocketServer> webSocketMap = new ConcurrentHashMap<> ();
-
-    /**
-     * 与某个客户端的连接会话，需要通过它来给客户端发送数据
-     */
-    private Session session;
-
+    // 导入websocket操作类
+    socketAction socketHandler = new socketAction ();
     /**
      * 接收 userId
      */
@@ -42,24 +33,18 @@ public class WebSocketServer {
 
     /**
      * 连接建立成功调用的方法
+     *
+     * @param session 与某个客户端的连接会话，需要通过它来给客户端发送数据
+     * @param userId  用户id作为键
      */
     @OnOpen
     public void onOpen(Session session, @PathParam("id") String userId) {
-        this.session = session;
         this.userId = userId;
-        if (webSocketMap.containsKey (userId)) {
-            webSocketMap.remove (userId);
-            webSocketMap.put (userId, this);
-        } else {
-            webSocketMap.put (userId, this);
-            addOnlineCount ();
+        if (!sessionPool.containsKey (userId)) {
+            sessionPool.put (userId, session);  //添加一个用户
         }
-        log.info ("用户连接:" + userId + ",当前在线人数为:" + getOnlineCount ());
-        try {
-            sendMessage ("连接成功！");
-        } catch (IOException e) {
-            log.error ("用户:" + userId + ",网络异常!!!!!!");
-        }
+        log.info ("用户 " + userId + " 已进入连接池:" + ",当前在线人数为:" + sessionPool.size ());
+        socketHandler.sendMessage (session, "来自服务端消息: 连接成功！");
     }
 
     /**
@@ -67,11 +52,11 @@ public class WebSocketServer {
      */
     @OnClose
     public void onClose() {
-        if (webSocketMap.containsKey (userId)) {
-            webSocketMap.remove (userId);
-            subOnlineCount ();
+        if (sessionPool.containsKey (userId)) {
+            sessionPool.remove (userId);
+            log.info ("用户 " + userId + " 已退出连接池:" + ",当前在线人数为:" + sessionPool.size ());
         }
-        log.info ("用户退出:" + userId + ",当前在线人数为:" + getOnlineCount ());
+
     }
 
     /**
@@ -80,23 +65,21 @@ public class WebSocketServer {
      * @param message 客户端发送过来的消息
      */
     @OnMessage
-    public void onMessage(String message, Session session) {
+    public void onMessage(String message, Session session) throws JSONException {
 
-        log.info ("用户消息 id:" + userId + ",报文:" + message);
-        if (!StringUtils.isEmpty (message)) {
-            try {
-//                JSON.parseObject(message)
-                JSONObject jsonObject = new JSONObject (message);
-                jsonObject.put ("fromUserId", this.userId);
-                String toUserId = jsonObject.getString ("toUserId");
-                if (!StringUtils.isEmpty (toUserId) && webSocketMap.containsKey (toUserId)) {
-                    webSocketMap.get (toUserId).sendMessage (jsonObject.toString ());
-                } else {
-                    log.error ("请求的 userId:" + toUserId + "不在该服务器上");
-                }
-            } catch (Exception e) {
-                e.printStackTrace ();
+        log.info ("用户id:" + userId + "发出消息 ,报文:" + message);
+        if (StringUtils.hasLength (message)) { //判断字符串是否为空
+            JSONObject jsonObject = new JSONObject (message);//转换成json对象
+            jsonObject.put ("fromUserId", this.userId);
+            String toUserId = jsonObject.getString ("toUserId");
+            if (StringUtils.hasLength (toUserId) && sessionPool.containsKey (toUserId)) {
+                //发送
+                socketHandler.sendMessage (sessionPool.get (toUserId), jsonObject.toString ());
+            } else {
+                log.error ("请求的 userId:" + toUserId + "不在该服务器上");
             }
+        }else {
+
         }
     }
 
@@ -112,22 +95,4 @@ public class WebSocketServer {
         error.printStackTrace ();
     }
 
-    /**
-     * 实现服务器主动推送
-     */
-    public void sendMessage(String message) throws IOException {
-        this.session.getBasicRemote ().sendText (message);
-    }
-
-    public static synchronized AtomicInteger getOnlineCount() {
-        return onlineCount;
-    }
-
-    public static synchronized void addOnlineCount() {
-        WebSocketServer.onlineCount.getAndIncrement ();
-    }
-
-    public static synchronized void subOnlineCount() {
-        WebSocketServer.onlineCount.getAndDecrement ();
-    }
 }

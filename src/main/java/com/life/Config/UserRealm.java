@@ -1,10 +1,9 @@
 package com.life.Config;
 
 
-import com.life.POJO.user.UserId;
 import com.life.POJO.user.UserLogin;
 import com.life.POJO.user.UserRank;
-import com.life.Service.user.UserIdServiceImpl;
+
 import com.life.Service.user.UserLoginServiceImpl;
 import com.life.Service.user.UserRankServiceImpl;
 import org.apache.shiro.SecurityUtils;
@@ -14,15 +13,11 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+
 import org.springframework.context.annotation.Lazy;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+
 
 /*
  *@Author life-0
