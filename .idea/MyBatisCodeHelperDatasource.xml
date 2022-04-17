@@ -124,11 +124,8 @@
             <entry key="recruiter:user_dialogue">
               <value>
                 <TableGenerateConfig>
-                  <option name="generatedKey" value="" />
                   <option name="javaModelName" value="UserDialogue" />
                   <option name="moduleName" value="Recruiter" />
-                  <option name="sequenceColumn" value="" />
-                  <option name="sequenceId" value="" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>

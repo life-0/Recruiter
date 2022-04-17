@@ -6,26 +6,36 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import com.life.POJO.user.UserDialogue;
 
+import com.life.POJO.user.UserInfo;
+import com.life.dto.UserDialogueDTO;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.life.Mapper.user.UserDialogueMapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserDialogueServiceImpl extends ServiceImpl<UserDialogueMapper, UserDialogue> implements UserDialogueService{
+public class UserDialogueServiceImpl extends ServiceImpl<UserDialogueMapper, UserDialogue> implements UserDialogueService {
 
     @Resource
     private UserDialogueMapper userDialogueMapper;
 
+    @Resource
+    private UserInfoServiceImpl userInfoService;
 
-    public List<UserDialogue> queryBySelective(UserDialogue record) {
+    public List<UserDialogueDTO> queryBySelective(UserDialogue record) {
         QueryWrapper<UserDialogue> wrapper = new QueryWrapper<> (record);
-        List<UserDialogue> UserDialogues = userDialogueMapper.selectList (wrapper);
-        for (UserDialogue info : UserDialogues) {
-            System.out.println (info.toString ());
+        List<UserDialogue> userDialogues = userDialogueMapper.selectList (wrapper);
+        List<UserDialogueDTO> userDialogueDTOS = new ArrayList<> ();
+        for (UserDialogue userDialogue : userDialogues) {
+            UserInfo userInfo = userInfoService.queryById (userDialogue.getContactUserId ());
+            userDialogueDTOS.add (new UserDialogueDTO (userDialogue, userInfo.getName (), userInfo.getImgPath ()));
+            System.out.println (userDialogueDTOS.toString ());
         }
-        return UserDialogues;
+        return userDialogueDTOS;
     }
 
     public List<UserDialogue> queryAll() {
@@ -49,4 +59,6 @@ public class UserDialogueServiceImpl extends ServiceImpl<UserDialogueMapper, Use
         int result = userDialogueMapper.deleteBatchIds (idList);
         return result > 0;
     }
+
 }
+

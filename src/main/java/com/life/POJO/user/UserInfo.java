@@ -2,6 +2,7 @@ package com.life.POJO.user;
 
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class UserInfo {
     /**
      * ID
      */
+    @TableId
     private Integer id;
 
     /**

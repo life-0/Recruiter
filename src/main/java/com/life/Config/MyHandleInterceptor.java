@@ -28,9 +28,8 @@ import java.security.Security;
  *@ClassName AddHandleInterceptor
  *@Date 2022/4/02 20:23
  *@Description: 添加拦截
- *
- TODO 添加redis注入的时候必须要注意spring注入的优先级!  https://blog.csdn.net/weixin_41326813/article/details/108527194
-*/
+ * TODO 添加redis注入的时候必须要注意spring注入的优先级!  https://blog.csdn.net/weixin_41326813/article/details/108527194
+ */
 @Slf4j
 @Component
 public class MyHandleInterceptor implements HandlerInterceptor {
@@ -40,17 +39,6 @@ public class MyHandleInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object handler) throws Exception {
-      /*  Subject subject = SecurityUtils.getSubject ();
-        subject.getSession ();
-        //登陆成功后,应该会有自己的session
-        Object loginSession = request.getSession ().getAttribute ("loginSession");
-        if (loginSession == null) {
-            request.setAttribute ("msg", "无权限,请先登录");
-            request.getRequestDispatcher ("/login.html").forward (request, response);
-            return false;
-        } else {
-            return true;
-        }*/
         System.out.println ("preHandle....");
         String uri = request.getRequestURI ();
         System.out.println ("当前路径: " + uri);

@@ -1,5 +1,8 @@
 package com.life.websocket.net;
 
+import com.alibaba.fastjson.JSON;
+import com.life.POJO.websocket.socketMsg;
+import com.life.api.vo.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.configurationprocessor.json.JSONException;
@@ -16,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-@ServerEndpoint("/websocket/{id}")
+@ServerEndpoint(value = "/websocket/{id}",encoders = WebSocketCustomEncoding.class)
 @Component
 public class WebSocketServer {
 
@@ -44,7 +47,7 @@ public class WebSocketServer {
             sessionPool.put (userId, session);  //添加一个用户
         }
         log.info ("用户 " + userId + " 已进入连接池:" + ",当前在线人数为:" + sessionPool.size ());
-        socketHandler.sendMessage (session, "来自服务端消息: 连接成功！");
+//        socketHandler.sendMessage (session, new String ("来自服务端消息: 连接成功！"));
     }
 
     /**
@@ -53,7 +56,7 @@ public class WebSocketServer {
     @OnClose
     public void onClose() {
         if (sessionPool.containsKey (userId)) {
-            sessionPool.remove (userId);
+            sessionPool.remove (this.userId);
             log.info ("用户 " + userId + " 已退出连接池:" + ",当前在线人数为:" + sessionPool.size ());
         }
 
@@ -69,17 +72,25 @@ public class WebSocketServer {
 
         log.info ("用户id:" + userId + "发出消息 ,报文:" + message);
         if (StringUtils.hasLength (message)) { //判断字符串是否为空
-            JSONObject jsonObject = new JSONObject (message);//转换成json对象
-            jsonObject.put ("fromUserId", this.userId);
-            String toUserId = jsonObject.getString ("toUserId");
-            if (StringUtils.hasLength (toUserId) && sessionPool.containsKey (toUserId)) {
+//            JSONObject jsonObject = new JSONObject ();//转换成json对象
+            socketMsg msg = JSON.parseObject (message, socketMsg.class);
+            System.out.println (msg.toString ());
+//            msg.setAcceptUserId (this.userId);
+//            jsonObject.put ("fromUserId", this.userId);
+//            String toUserId = jsonObject.getString ("toUserId");
+//            if (StringUtils.hasLength (toUserId) && sessionPool.containsKey (toUserId)) {
+//                //发送
+//                socketHandler.sendMessage (sessionPool.get (toUserId), jsonObject.toString ());
+//            } else {
+//                log.error ("请求的 userId:" + toUserId + "不在该服务器上");
+//            }
+            if (StringUtils.hasLength (msg.getAcceptUserId ()) && sessionPool.containsKey (msg.getAcceptUserId ())) {
                 //发送
-                socketHandler.sendMessage (sessionPool.get (toUserId), jsonObject.toString ());
-            } else {
-                log.error ("请求的 userId:" + toUserId + "不在该服务器上");
-            }
-        }else {
 
+                socketHandler.sendMessage (sessionPool.get (msg.getAcceptUserId ()), msg);
+            } else {
+                log.error ("接收者userId:" + msg.getAcceptUserId () + " 不在该服务器上");
+            }
         }
     }
 
