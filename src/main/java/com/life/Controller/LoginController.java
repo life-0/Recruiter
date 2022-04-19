@@ -1,6 +1,8 @@
 package com.life.Controller;
 
+import com.life.POJO.user.UserInfo;
 import com.life.POJO.user.UserLogin;
+import com.life.Service.user.UserInfoServiceImpl;
 import com.life.Utils.redisUtil;
 import com.life.Utils.tokenUtil;
 import com.life.api.vo.Result;
@@ -33,6 +35,9 @@ public class LoginController {
     @Autowired
     private redisUtil redisImpl;
 
+    @Autowired
+    private UserInfoServiceImpl userInfoService;
+
     @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
     public String toLogin() {
         return "login";
@@ -62,7 +67,10 @@ public class LoginController {
             redisImpl.set (tokenNumber, user);   //修改为存放在redis中
             redisImpl.expire (tokenNumber, 60 * 60 * 2);    //设置失效时间为2个小时
 
+            //获取用户头像
+            UserInfo userInfo = userInfoService.queryById (user.getId ());
             map.put ("data", user);
+            map.put("avatar",userInfo.getImgPath ());
             map.put ("token", tokenNumber);
             if (user == null) {
                 throw new AuthenticationException ();

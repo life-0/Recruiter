@@ -1,5 +1,6 @@
 package com.life.POJO.user;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ public class JobHuntingInfo {
      * 唯一标识
      */
     private String number;
-
+    @TableId
     private Integer id;
 
     /**

@@ -1,21 +1,15 @@
 package com.life.Controller.user;
 
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.life.Mapper.user.UserInfoMapper;
 import com.life.POJO.user.UserInfo;
 import com.life.Service.user.UserInfoServiceImpl;
-import com.life.Utils.NumberUtil;
 import com.life.api.vo.Result;
 import io.swagger.annotations.*;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 /*
  *@Author: life-0
@@ -39,12 +33,12 @@ public class UserInfoController {
         if (userInfo != null) {
             System.out.println ("-----------");
             userInfos = userInfoService.queryBySelective (userInfo);
-
         } else {
             userInfos = userInfoService.queryAll ();
         }
         return Result.ok (userInfos);
     }
+
 
     @PostMapping(value = {"/updateUserInfo"})
     public Result<?> updateUserInfo(@RequestBody UserInfo userInfo) {

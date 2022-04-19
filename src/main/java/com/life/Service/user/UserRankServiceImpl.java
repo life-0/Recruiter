@@ -4,14 +4,17 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.life.Mapper.user.UserRankMapper;
+import com.life.POJO.user.UserInfo;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.life.POJO.user.UserRank;
 
 import java.util.List;
 
 @Service
-public class UserRankServiceImpl extends ServiceImpl<UserRankMapper, UserRank> implements UserRankService{
+public class UserRankServiceImpl extends ServiceImpl<UserRankMapper, UserRank> implements UserRankService {
 
     @Resource
     private UserRankMapper userRankMapper;
@@ -19,13 +22,11 @@ public class UserRankServiceImpl extends ServiceImpl<UserRankMapper, UserRank> i
 
     public List<UserRank> queryBySelective(UserRank record) {
         QueryWrapper<UserRank> wrapper = new QueryWrapper<> (record);
-        List<UserRank> userRanks = userRankMapper.selectList (wrapper);
-        return userRanks;
+        return userRankMapper.selectList (wrapper);
     }
-    public UserRank queryById(Integer id){
-        QueryWrapper<UserRank> wrapper = new QueryWrapper<> ();
-        wrapper.eq ("id",id);
-        return userRankMapper.selectOne (wrapper);
+
+    public UserRank queryById(Integer id) {
+        return userRankMapper.selectById (id);
     }
 
     public List<UserRank> queryAll() {

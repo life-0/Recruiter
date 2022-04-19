@@ -1,5 +1,6 @@
 package com.life.POJO.user;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,7 @@ public class UserLogin implements Serializable {
      * ID
      */
     @ApiModelProperty(value = "ID",dataType = "Integer")
+    @TableId
     private Integer id;
 
     /**

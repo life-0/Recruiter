@@ -25,7 +25,6 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
     public List<UserInfo> queryBySelective(UserInfo record) {
         QueryWrapper<UserInfo> wrapper = new QueryWrapper<> (record);
         List<UserInfo> userInfos = userInfoMapper.selectList (wrapper);
-
         for (UserInfo info : userInfos) {
             System.out.println (info.toString ());
         }

@@ -1,5 +1,6 @@
 package com.life.POJO.user;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class UserRank implements Serializable {
     /**
      * ID
      */
+    @TableId
     private Integer id;
 
     /**
