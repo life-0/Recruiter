@@ -88,7 +88,7 @@ public class UserInfo {
     /**
      * 状态 0: 可使用 1: 失效
      */
-    private Byte state;
+    private Boolean state;
 
 
     public UserInfo(String number, int id) {

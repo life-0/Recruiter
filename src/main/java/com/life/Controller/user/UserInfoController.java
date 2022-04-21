@@ -1,6 +1,7 @@
 package com.life.Controller.user;
 
 import com.life.POJO.user.UserInfo;
+import com.life.POJO.user.UserRank;
 import com.life.Service.user.UserInfoServiceImpl;
 import com.life.api.vo.Result;
 import io.swagger.annotations.*;
@@ -37,6 +38,19 @@ public class UserInfoController {
             userInfos = userInfoService.queryAll ();
         }
         return Result.ok (userInfos);
+    }
+
+    @ApiOperation("依据id查询")
+    @PostMapping("/getUserInfoById")
+    public Result<?> getUserInfoById(@RequestParam("id") Integer id) {
+        System.out.println ("id: " + id);
+        UserInfo userInfo = userInfoService.queryById (id);
+        if (userInfo != null) {
+            System.out.println ("-----------");
+            return Result.ok (userInfo);
+        } else {
+            return Result.ok (new ArrayList<String> ());
+        }
     }
 
 

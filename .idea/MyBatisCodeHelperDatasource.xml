@@ -76,6 +76,18 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="recruiter:job_list">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="JobList" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="recruiter:resources">
               <value>
                 <TableGenerateConfig>

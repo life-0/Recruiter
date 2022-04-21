@@ -1,9 +1,11 @@
 package com.life.Controller.user;
 
 import com.life.POJO.user.JobHuntingInfo;
+import com.life.POJO.user.UserInfo;
 import com.life.Service.user.JobHuntingInfoServiceImpl;
 import com.life.api.vo.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -33,6 +35,18 @@ public class JobInfoController {
         return Result.ok (jobHuntingInfos);
     }
 
+    @ApiOperation("依据id查询")
+    @PostMapping("/getJobHuntingInfoById")
+    public Result<?> getJobHuntingInfoById(@RequestParam("id") Integer id) {
+        System.out.println ("id: " + id);
+        JobHuntingInfo jobHuntingInfo = jobHuntingInfoService.queryById (id);
+        if (jobHuntingInfo != null) {
+            System.out.println ("-----------");
+            return Result.ok (jobHuntingInfo);
+        } else {
+            return Result.ok (new ArrayList<String> ());
+        }
+    }
     @PostMapping("/addJobHuntingInfo")
     public Result<?> addJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
         ArrayList<JobHuntingInfo> list = new ArrayList<> ();

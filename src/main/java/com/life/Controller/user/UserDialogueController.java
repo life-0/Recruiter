@@ -46,7 +46,7 @@ public class UserDialogueController {
 
     }
 
-    @PostMapping(value = {"/updateuserDialogue"})
+    @PostMapping(value = {"/updateUserDialogue"})
     public Result<?> updateUserDialogue(@RequestBody UserDialogue userDialogue) {
         System.out.println (userDialogue.toString ());
         if (userDialogueService.updateUserDialogue (userDialogue)) {
