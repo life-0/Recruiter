@@ -4,15 +4,28 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
+import com.life.POJO.redis.UserLogoutMessageListener;
+import com.life.POJO.redis.UserMessageListener;
+import com.life.POJO.redis.UserRegisterMessageListener;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import org.springframework.data.redis.listener.ChannelTopic;
+import org.springframework.data.redis.listener.PatternTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
+import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+import java.io.Serializable;
 import java.net.UnknownHostException;
+import java.util.concurrent.Executor;
 
 /*
  *@Author: life-0
@@ -23,7 +36,6 @@ import java.net.UnknownHostException;
  */
 @Configuration
 public class RedisConfig {
-
     //编写自己的RedisTemplate
     //自己定义了一个RedisTemplate
 
@@ -57,5 +69,48 @@ public class RedisConfig {
         return template;
     }
 
+
+    // 配置用户注册消息监听器
+    @Bean(name = "userRegisterMessageListenerAdapter")
+    public MessageListenerAdapter userRegisterMessageListenerAdapter(UserRegisterMessageListener userRegisterMessageListener) {
+        return new MessageListenerAdapter(userRegisterMessageListener);
+    }
+
+    // 配置用户注销消息监听器
+    @Bean(name = "userLogoutMessageListenerAdapter")
+    public MessageListenerAdapter userLogoutMessageListenerAdapter(UserLogoutMessageListener userLogoutMessageListener) {
+        return new MessageListenerAdapter(userLogoutMessageListener);
+    }
+
+    // 配置用户消息(包括注册、注销等)监听器
+    @Bean(name = "userMessageListenerAdapter")
+    public MessageListenerAdapter userMessageListenerAdapter(UserMessageListener userMessageListener) {
+        // 可指定订阅者接受消息的方法
+        return new MessageListenerAdapter(userMessageListener, "receiveMessage");
+    }
+
+
+    // 将消息监听器绑定到消息容器
+    @Bean
+    public RedisMessageListenerContainer messageListenerContainer(
+            LettuceConnectionFactory lettuceConnectionFactory,
+            MessageListenerAdapter userRegisterMessageListenerAdapter,
+            MessageListenerAdapter userLogoutMessageListenerAdapter,
+            MessageListenerAdapter userMessageListenerAdapter
+    ) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(lettuceConnectionFactory);
+
+        // 订阅用户注册消息话题
+        container.addMessageListener(userRegisterMessageListenerAdapter, new ChannelTopic(UserRegisterMessageListener.TOPIC_NAME));
+
+        // 订阅用户注销消息话题
+        container.addMessageListener(userLogoutMessageListenerAdapter, new ChannelTopic (UserLogoutMessageListener.TOPIC_NAME));
+
+        // 订阅用户消息(包括注册、注销等)话题
+        container.addMessageListener(userMessageListenerAdapter, new PatternTopic(UserMessageListener.TOPIC_NAME));
+
+        return container;
+    }
 
 }
