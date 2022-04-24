@@ -1,5 +1,6 @@
 package com.life.POJO.user;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -12,7 +13,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)  //链式写法
-public class UserInfo {
+public class UserInfo implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
      * 唯一标识
@@ -49,9 +50,9 @@ public class UserInfo {
      */
     private String position;
     /**
-     * 公司名
+     * 公司id
      */
-    private String firmName;
+    private String firmId;
 
     /**
      * 邮箱

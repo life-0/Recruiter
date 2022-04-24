@@ -37,7 +37,7 @@ public class UserInfoController {
         } else {
             userInfos = userInfoService.queryAll ();
         }
-        return Result.ok (userInfos);
+        return Result.OK (userInfos);
     }
 
     @ApiOperation("依据id查询")
@@ -47,9 +47,9 @@ public class UserInfoController {
         UserInfo userInfo = userInfoService.queryById (id);
         if (userInfo != null) {
             System.out.println ("-----------");
-            return Result.ok (userInfo);
+            return Result.OK (userInfo);
         } else {
-            return Result.ok (new ArrayList<String> ());
+            return Result.OK (new ArrayList<String> ());
         }
     }
 

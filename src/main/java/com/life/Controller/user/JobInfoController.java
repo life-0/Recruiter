@@ -32,7 +32,7 @@ public class JobInfoController {
         for (JobHuntingInfo info : jobHuntingInfos) {
             System.out.println (info.toString ());
         }
-        return Result.ok (jobHuntingInfos);
+        return Result.OK (jobHuntingInfos);
     }
 
     @ApiOperation("依据id查询")
@@ -42,18 +42,18 @@ public class JobInfoController {
         JobHuntingInfo jobHuntingInfo = jobHuntingInfoService.queryById (id);
         if (jobHuntingInfo != null) {
             System.out.println ("-----------");
-            return Result.ok (jobHuntingInfo);
+            return Result.OK (jobHuntingInfo);
         } else {
-            return Result.ok (new ArrayList<String> ());
+            return Result.OK (new ArrayList<String> ());
         }
     }
     @PostMapping("/addJobHuntingInfo")
     public Result<?> addJobHuntingInfo(@RequestBody JobHuntingInfo jobHuntingInfo) {
         ArrayList<JobHuntingInfo> list = new ArrayList<> ();
         if (jobHuntingInfoService.addJobHuntingInfo (jobHuntingInfo)) {
-            return Result.ok (list);
+            return Result.OK (list);
         } else {
-            return Result.ok ("数据修改失败");
+            return Result.OK ("数据修改失败");
         }
     }
 
@@ -62,9 +62,9 @@ public class JobInfoController {
         System.out.println (jobHuntingInfo.toString ());
         ArrayList<JobHuntingInfo> list = new ArrayList<> ();
         if (jobHuntingInfoService.updateJobHuntingInfo (jobHuntingInfo)) {
-            return Result.ok (getJobHuntingInfo (new JobHuntingInfo ().setId (jobHuntingInfo.getId ())));
+            return Result.OK (getJobHuntingInfo (new JobHuntingInfo ().setId (jobHuntingInfo.getId ())));
         } else {
-            return Result.ok (list);
+            return Result.OK (list);
         }
     }
 
@@ -72,9 +72,9 @@ public class JobInfoController {
     public Result<?> delJobHuntingInfo(@RequestBody List<Integer> idList) {
 
         if (jobHuntingInfoService.delJobHuntingInfo (idList)) {
-            return Result.ok ();
+            return Result.OK ();
         } else {
-            return Result.ok ("数据修改失败");
+            return Result.OK ("数据修改失败");
         }
     }
 

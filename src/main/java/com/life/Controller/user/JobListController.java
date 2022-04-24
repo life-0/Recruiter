@@ -28,7 +28,7 @@ public class JobListController {
     @Resource
     private JobListServiceImpl jobListService;
 
-    @ApiOperation("展示所有的用户")
+    @ApiOperation("有条件查询")
     @PostMapping("/getJobList")
     public Result<?> getJobList(@RequestBody JobList jobList) {
         System.out.println (jobList.toString ());
@@ -39,9 +39,19 @@ public class JobListController {
         } else {
             jobLists = jobListService.queryAll ();
         }
-        return Result.ok (jobLists);
+        return Result.OK (jobLists);
     }
 
+    @ApiOperation("模糊查询")
+    @PostMapping("/getFuzzyQuery")
+    public Result<?> fuzzyQueryJobList(@RequestBody JobList jobList) {
+
+        if (jobList != null) {
+            return Result.OK (jobListService.fuzzyQueryJobList (jobList));
+        } else {
+            return Result.OK (new ArrayList<String> ());
+        }
+    }
 
     @PostMapping(value = {"/updateJobList"})
     public Result<?> updateJobList(@RequestBody JobList jobList) {

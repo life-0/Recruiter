@@ -38,10 +38,10 @@ public class UserDialogueController {
         if (userDialogue != null) {
             System.out.println ("-----------");
             userDialogueDTOS = userDialogueService.queryBySelective (userDialogue);
-            return Result.ok (userDialogueDTOS);
+            return Result.OK (userDialogueDTOS);
 
         } else {
-            return Result.ok (userDialogueService.queryAll ());
+            return Result.OK (userDialogueService.queryAll ());
         }
 
     }
@@ -72,7 +72,7 @@ public class UserDialogueController {
     public Result<?> delUserDialogue(@RequestBody List<Integer> idList) {
         List<String> list = new ArrayList<> ();
         if (userDialogueService.delUserDialogue (idList)) {
-            return Result.OK ("ok");
+            return Result.OK ("OK");
         } else {
             return Result.OK (list);
         }
