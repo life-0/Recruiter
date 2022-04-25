@@ -1,5 +1,7 @@
 package com.life.POJO.user;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +21,7 @@ public class JobHuntingInfo implements Serializable {
     /**
      * 唯一标识
      */
+    @TableField(value = "number", fill = FieldFill.INSERT)
     private String number;
     @TableId
     private Integer id;

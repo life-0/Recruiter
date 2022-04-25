@@ -42,7 +42,7 @@ public class permissionController {
         return Result.ok (userRanks);
     }
 
-    @ApiOperation("依据id查询权限")
+    @ApiOperation("依据Id查询权限")
     @PostMapping("/getUserRankById")
     public Result<?> getUserRankById(@RequestParam("id") Integer id) {
         System.out.println ("id: "+id);

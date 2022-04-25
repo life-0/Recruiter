@@ -33,7 +33,10 @@ public class JobList implements Serializable {
      * 职位
      */
     private String position;
-
+    /**
+     * 职位
+     */
+    private String technologyStack;
     /**
      * 薪资
      */
@@ -43,6 +46,14 @@ public class JobList implements Serializable {
      * 工作地址
      */
     private String address;
+    /**
+     * 工作经验
+     */
+    private String workExperience;
+    /**
+     * 学历
+     */
+    private String education;
 
     /**
      * 需求人数

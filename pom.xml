@@ -89,10 +89,17 @@
 
         <!--mybatis-plus-->
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+        <!--mybatis-plus 这个只支持一个主键-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.1</version>
+        </dependency>
+        <!-- 联合主键包-->
+        <dependency>
+            <groupId>com.github.jeffreyning</groupId>
+            <artifactId>mybatisplus-plus</artifactId>
+            <version>1.5.1-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>

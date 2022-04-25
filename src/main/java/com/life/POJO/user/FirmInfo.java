@@ -50,7 +50,10 @@ public class FirmInfo implements Serializable {
      * 融资规模
      */
     private String financingScale;
-
+    /**
+     * 福利
+     */
+    private String welfare;
     /**
      * 公司地址
      */
@@ -65,6 +68,11 @@ public class FirmInfo implements Serializable {
      * 企业官网
      */
     private String officialUrl;
+
+    /**
+     * 企业简介
+     */
+    private String introduction;
 
     /**
      * 企业领域

@@ -52,11 +52,35 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="recruiter:firm_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="FirmInfo" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="recruiter:identity">
               <value>
                 <TableGenerateConfig>
                   <option name="generatedKey" value="" />
                   <option name="javaModelName" value="Identity" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:job_favorites">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="JobFavorites" />
                   <option name="moduleName" value="Recruiter" />
                   <option name="sequenceColumn" value="" />
                   <option name="sequenceId" value="" />
@@ -93,6 +117,18 @@
                 <TableGenerateConfig>
                   <option name="javaModelName" value="Resources" />
                   <option name="moduleName" value="Recruiter" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="recruiter:resume_delivery">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="" />
+                  <option name="javaModelName" value="ResumeDelivery" />
+                  <option name="moduleName" value="Recruiter" />
+                  <option name="sequenceColumn" value="" />
+                  <option name="sequenceId" value="" />
                   <option name="useActualColumnName" value="false" />
                 </TableGenerateConfig>
               </value>
