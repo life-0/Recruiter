@@ -1,47 +1,57 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.github.jeffreyning.mybatisplus.service.MppServiceImpl;
 import com.life.Mapper.user.JobFavoritesMapper;
+import com.life.POJO.user.FirmInfo;
 import com.life.POJO.user.JobFavorites;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.life.Mapper.user.ResumeDeliveryMapper;
 import com.life.POJO.user.ResumeDelivery;
 import com.life.Service.user.ResumeDeliveryService;
+
+import java.util.List;
+
 @Service
-public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapper, ResumeDelivery> implements ResumeDeliveryService{
+public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapper, ResumeDelivery> implements ResumeDeliveryService {
 
     @Resource
     private ResumeDeliveryMapper resumeDeliveryMapper;
 
-    @Override
-    public int deleteByPrimaryKey(String number) {
-        return resumeDeliveryMapper.deleteByPrimaryKey(number);
+    public List<ResumeDelivery> queryBySelective(ResumeDelivery record) {
+        QueryWrapper<ResumeDelivery> wrapper = new QueryWrapper<> (record);
+        return resumeDeliveryMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insert(ResumeDelivery record) {
-        return resumeDeliveryMapper.insert(record);
+    public List<ResumeDelivery> queryAll() {
+        QueryWrapper<ResumeDelivery> wrapper = new QueryWrapper<> ();
+        return resumeDeliveryMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(ResumeDelivery record) {
-        return resumeDeliveryMapper.insertSelective(record);
+    public ResumeDelivery queryById(Integer id) {
+        QueryWrapper<ResumeDelivery> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("firm_id", id);
+        return resumeDeliveryMapper.selectOne (wrapper);
     }
 
-    @Override
-    public ResumeDelivery selectByPrimaryKey(String number) {
-        return resumeDeliveryMapper.selectByPrimaryKey(number);
+    public Boolean updateResumeDelivery(ResumeDelivery resumeDelivery) {
+        UpdateWrapper<ResumeDelivery> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("firm_id", resumeDelivery.getFirmId ());
+        int result = resumeDeliveryMapper.update (resumeDelivery, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public int updateByPrimaryKeySelective(ResumeDelivery record) {
-        return resumeDeliveryMapper.updateByPrimaryKeySelective(record);
+    public Boolean addResumeDelivery(ResumeDelivery resumeDelivery) {
+        int result = resumeDeliveryMapper.insert (resumeDelivery);
+        return result > 0;
     }
 
-    @Override
-    public int updateByPrimaryKey(ResumeDelivery record) {
-        return resumeDeliveryMapper.updateByPrimaryKey(record);
+    public Boolean delResumeDelivery(List<Integer> idList) {
+        int result = resumeDeliveryMapper.deleteBatchIds (idList);
+        return result > 0;
     }
-
 }

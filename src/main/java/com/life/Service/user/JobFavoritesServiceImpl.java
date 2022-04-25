@@ -1,45 +1,54 @@
 package com.life.Service.user;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.github.jeffreyning.mybatisplus.service.MppServiceImpl;
+import com.life.POJO.user.FirmInfo;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import com.life.Mapper.user.JobFavoritesMapper;
 import com.life.POJO.user.JobFavorites;
 import com.life.Service.user.JobFavoritesService;
+
+import java.util.List;
+
 @Service
 public class JobFavoritesServiceImpl extends MppServiceImpl<JobFavoritesMapper, JobFavorites> implements JobFavoritesService{
 
     @Resource
     private JobFavoritesMapper jobFavoritesMapper;
 
-    @Override
-    public int deleteByPrimaryKey(String number) {
-        return jobFavoritesMapper.deleteByPrimaryKey(number);
+
+    public List<JobFavorites> queryBySelective(JobFavorites record) {
+        QueryWrapper<JobFavorites> wrapper = new QueryWrapper<> (record);
+        return jobFavoritesMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insert(JobFavorites record) {
-        return jobFavoritesMapper.insert(record);
+    public List<JobFavorites> queryAll() {
+        QueryWrapper<JobFavorites> wrapper = new QueryWrapper<> ();
+        return jobFavoritesMapper.selectList (wrapper);
     }
 
-    @Override
-    public int insertSelective(JobFavorites record) {
-        return jobFavoritesMapper.insertSelective(record);
+    public JobFavorites queryById(Integer id) {
+        QueryWrapper<JobFavorites> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("user_id", id);
+        return jobFavoritesMapper.selectOne (wrapper);
     }
 
-    @Override
-    public JobFavorites selectByPrimaryKey(String number) {
-        return jobFavoritesMapper.selectByPrimaryKey(number);
+    public Boolean updateJobFavorites(JobFavorites jobFavorites) {
+        UpdateWrapper<JobFavorites> wrapper = new UpdateWrapper<> ();
+        wrapper.eq ("user_id", jobFavorites.getUserId ());
+        int result = jobFavoritesMapper.update (jobFavorites, wrapper);
+        return result > 0;
     }
 
-    @Override
-    public int updateByPrimaryKeySelective(JobFavorites record) {
-        return jobFavoritesMapper.updateByPrimaryKeySelective(record);
+    public Boolean addJobFavorites(JobFavorites JobFavorites) {
+        int result = jobFavoritesMapper.insert (JobFavorites);
+        return result > 0;
     }
 
-    @Override
-    public int updateByPrimaryKey(JobFavorites record) {
-        return jobFavoritesMapper.updateByPrimaryKey(record);
+    public Boolean delJobFavorites(List<Integer> idList) {
+        int result = jobFavoritesMapper.deleteBatchIds (idList);
+        return result > 0;
     }
-
 }

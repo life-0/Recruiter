@@ -1,423 +1,459 @@
-2022-04-11 09:41:00.945  INFO 15580 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 15580 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 09:41:00.950  INFO 15580 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 09:41:03.525  INFO 15580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 09:41:03.528  INFO 15580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 09:41:03.579  INFO 15580 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-2022-04-11 09:41:04.283  INFO 15580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$5ab4bec4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:41:04.373  INFO 15580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:41:04.435  INFO 15580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:41:04.444  INFO 15580 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:41:04.867  INFO 15580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 09:41:04.868  INFO 15580 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 09:41:04.871  INFO 15580 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 09:41:04.871  INFO 15580 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 09:41:04.872  INFO 15580 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 09:41:04.876  INFO 15580 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 09:41:04.886  INFO 15580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 09:41:04.886  INFO 15580 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 09:41:05.005  INFO 15580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 09:41:05.005  INFO 15580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3792 ms
-2022-04-11 09:41:08.610  INFO 15580 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-04-11 09:41:09.103  INFO 15580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2022-04-11 09:41:09.352  INFO 15580 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 9.137 seconds (JVM running for 11.308)
-2022-04-11 09:48:59.647  INFO 15580 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-11 09:48:59.648  INFO 15580 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-11 09:48:59.649  INFO 15580 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-11 09:48:59.685  INFO 15580 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
-2022-04-11 09:55:00.535  INFO 15580 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-2022-04-11 09:55:06.196  INFO 13052 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 13052 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 09:55:06.198  INFO 13052 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 09:55:07.025  INFO 13052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 09:55:07.027  INFO 13052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 09:55:07.049  INFO 13052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 09:55:07.476  INFO 13052 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$db6429e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:55:07.523  INFO 13052 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:55:07.594  INFO 13052 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:55:07.608  INFO 13052 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:55:07.841  INFO 13052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 09:55:07.842  INFO 13052 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 09:55:07.842  INFO 13052 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 09:55:07.842  INFO 13052 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 09:55:07.842  INFO 13052 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 09:55:07.845  INFO 13052 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 09:55:07.852  INFO 13052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 09:55:07.852  INFO 13052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 09:55:07.928  INFO 13052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 09:55:07.928  INFO 13052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1682 ms
-2022-04-11 09:55:09.732  INFO 13052 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-04-11 09:55:10.092  INFO 13052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2022-04-11 09:55:10.341  INFO 13052 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.626 seconds (JVM running for 5.663)
-2022-04-11 09:55:28.750  INFO 13052 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-11 09:55:28.750  INFO 13052 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-11 09:55:28.752  INFO 13052 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-11 09:55:28.761  INFO 13052 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
-2022-04-11 09:56:52.167  INFO 13052 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-2022-04-11 09:57:13.147  INFO 10592 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 10592 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 09:57:13.149  INFO 10592 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 09:57:13.918  INFO 10592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 09:57:13.920  INFO 10592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 09:57:13.941  INFO 10592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 09:57:14.355  INFO 10592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$db6429e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:57:14.407  INFO 10592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:57:14.479  INFO 10592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:57:14.494  INFO 10592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 09:57:14.938  INFO 10592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 09:57:14.939  INFO 10592 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 09:57:14.939  INFO 10592 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 09:57:14.939  INFO 10592 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 09:57:14.940  INFO 10592 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 09:57:14.943  INFO 10592 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 09:57:14.951  INFO 10592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 09:57:14.952  INFO 10592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 09:57:15.033  INFO 10592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 09:57:15.033  INFO 10592 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1820 ms
-2022-04-11 09:57:17.068  INFO 10592 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-04-11 09:57:17.383  INFO 10592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2022-04-11 09:57:17.640  INFO 10592 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.937 seconds (JVM running for 5.944)
-2022-04-11 09:57:17.647  INFO 10592 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-11 09:57:17.647  INFO 10592 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-11 09:57:17.649  INFO 10592 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2022-04-11 09:57:17.662  INFO 10592 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
-2022-04-11 09:57:42.714  INFO 10592 --- [http-nio-9090-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2022-04-11 09:59:54.165  WARN 10592 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 131064
-2022-04-11 10:26:52.995  INFO 10592 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
-2022-04-11 10:26:53.018  INFO 10592 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
-2022-04-11 11:34:37.056  INFO 12680 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 12680 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 11:34:37.058  INFO 12680 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 11:34:37.829  INFO 12680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 11:34:37.831  INFO 12680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 11:34:37.851  INFO 12680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 11:34:38.253  INFO 12680 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$e960c2c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:34:38.298  INFO 12680 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:34:38.363  INFO 12680 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:34:38.375  INFO 12680 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:34:38.646  INFO 12680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 11:34:38.647  INFO 12680 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 11:34:38.647  INFO 12680 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 11:34:38.647  INFO 12680 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 11:34:38.648  INFO 12680 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 11:34:38.651  INFO 12680 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 11:34:38.658  INFO 12680 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 11:34:38.658  INFO 12680 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 11:34:38.737  INFO 12680 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 11:34:38.737  INFO 12680 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1626 ms
-2022-04-11 11:34:40.444  WARN 12680 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-2022-04-11 11:34:40.445  INFO 12680 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-2022-04-11 11:34:40.457  INFO 12680 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-04-11 11:34:40.472  INFO 12680 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-04-11 11:34:40.594 ERROR 12680 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar:5.3.18]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.6.jar:2.6.6]
-	at com.life.SpringbootWebApplication.main(SpringbootWebApplication.java:20) [classes/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1607) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1571) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1460) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1347) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1607) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1571) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1460) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1347) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 36 common frames omitted
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 50 common frames omitted
-
-2022-04-11 11:37:13.875  INFO 10064 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 10064 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 11:37:13.877  INFO 10064 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 11:37:14.738  INFO 10064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 11:37:14.739  INFO 10064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 11:37:14.761  INFO 10064 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 11:37:15.189  INFO 10064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$db6429e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:37:15.243  INFO 10064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:37:15.312  INFO 10064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:37:15.323  INFO 10064 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:37:15.571  INFO 10064 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 11:37:15.571  INFO 10064 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 11:37:15.571  INFO 10064 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 11:37:15.572  INFO 10064 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 11:37:15.572  INFO 10064 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 11:37:15.574  INFO 10064 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 11:37:15.581  INFO 10064 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 11:37:15.581  INFO 10064 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 11:37:15.659  INFO 10064 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 11:37:15.660  INFO 10064 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1712 ms
-2022-04-11 11:37:17.374  WARN 10064 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-2022-04-11 11:37:17.376  INFO 10064 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-2022-04-11 11:37:17.389  INFO 10064 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2022-04-11 11:37:17.403  INFO 10064 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-04-11 11:37:17.420 ERROR 10064 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar:5.3.18]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) [spring-boot-2.6.6.jar:2.6.6]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.6.jar:2.6.6]
-	at com.life.SpringbootWebApplication.main(SpringbootWebApplication.java:20) [classes/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/D:/Program%20Files/apache-maven-3.6.3-bin/mavenLocal/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1607) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1571) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1460) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1347) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1607) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1571) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1460) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1347) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 36 common frames omitted
-Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'jobInfoController' method 
-com.life.Controller.user.JobInfoController#addJobHuntingInfo(JobHuntingInfo)
-to {POST [/job/updateJobHuntingInfo]}: There is already 'jobInfoController' bean method
-com.life.Controller.user.JobInfoController#updateJobHuntingInfo(JobHuntingInfo) mapped.
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:na]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205) ~[spring-webmvc-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.18.jar:5.3.18]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.18.jar:5.3.18]
-	... 50 common frames omitted
-
-2022-04-11 11:38:38.962  INFO 4296 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4296 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 11:38:38.964  INFO 4296 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 11:38:39.745  INFO 4296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 11:38:39.747  INFO 4296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 11:38:39.767  INFO 4296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 11:38:40.170  INFO 4296 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$db6429e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:38:40.225  INFO 4296 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:38:40.287  INFO 4296 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:38:40.299  INFO 4296 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:38:40.587  INFO 4296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 11:38:40.588  INFO 4296 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 11:38:40.588  INFO 4296 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 11:38:40.588  INFO 4296 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 11:38:40.588  INFO 4296 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 11:38:40.591  INFO 4296 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 11:38:40.598  INFO 4296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 11:38:40.598  INFO 4296 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 11:38:40.675  INFO 4296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 11:38:40.676  INFO 4296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1653 ms
-2022-04-11 11:38:42.603  INFO 4296 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-04-11 11:38:42.941  INFO 4296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2022-04-11 11:38:43.180  INFO 4296 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.647 seconds (JVM running for 5.61)
-2022-04-11 11:39:34.488  INFO 4296 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-2022-04-11 11:39:39.415  INFO 6856 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 6856 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 11:39:39.417  INFO 6856 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 11:39:40.162  INFO 6856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 11:39:40.164  INFO 6856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 11:39:40.186  INFO 6856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 11:39:40.581  INFO 6856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$db6429e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:39:40.623  INFO 6856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:39:40.679  INFO 6856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:39:40.690  INFO 6856 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 11:39:40.933  INFO 6856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 11:39:40.934  INFO 6856 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 11:39:40.934  INFO 6856 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 11:39:40.934  INFO 6856 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 11:39:40.934  INFO 6856 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 11:39:40.937  INFO 6856 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 11:39:40.944  INFO 6856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 11:39:40.945  INFO 6856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 11:39:41.023  INFO 6856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 11:39:41.023  INFO 6856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1542 ms
-2022-04-11 11:39:43.045  INFO 6856 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-04-11 11:39:43.366  INFO 6856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2022-04-11 11:39:43.604  INFO 6856 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 4.637 seconds (JVM running for 5.775)
-2022-04-11 14:18:26.944  INFO 6856 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
-2022-04-11 14:18:32.440  INFO 8628 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 8628 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
-2022-04-11 14:18:32.447  INFO 8628 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
-2022-04-11 14:18:33.481  INFO 8628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2022-04-11 14:18:33.483  INFO 8628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2022-04-11 14:18:33.502  INFO 8628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
-2022-04-11 14:18:33.919  INFO 8628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$4d9816da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 14:18:33.961  INFO 8628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 14:18:34.040  INFO 8628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 14:18:34.052  INFO 8628 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-04-11 14:18:34.474  INFO 8628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
-2022-04-11 14:18:34.475  INFO 8628 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
-2022-04-11 14:18:34.475  INFO 8628 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2022-04-11 14:18:34.475  INFO 8628 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
-2022-04-11 14:18:34.475  INFO 8628 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2022-04-11 14:18:34.479  INFO 8628 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2022-04-11 14:18:34.489  INFO 8628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-04-11 14:18:34.489  INFO 8628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
-2022-04-11 14:18:34.620  INFO 8628 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-04-11 14:18:34.621  INFO 8628 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2123 ms
-2022-04-11 14:18:36.830  INFO 8628 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-04-11 14:18:37.157  INFO 8628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
-2022-04-11 14:18:37.408  INFO 8628 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 5.356 seconds (JVM running for 6.57)
-2022-04-11 14:18:46.270  INFO 8628 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-04-11 14:18:46.270  INFO 8628 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-04-11 14:18:46.271  INFO 8628 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-04-11 14:18:46.304  INFO 8628 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
-2022-04-11 15:18:46.312  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
-2022-04-11 15:18:46.313  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
-2022-04-11 16:18:46.307  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
-2022-04-11 16:18:46.308  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
-2022-04-11 16:35:16.695  INFO 8628 --- [http-nio-9090-exec-8] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
-2022-04-11 17:02:07.014  INFO 8628 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/gate/login
-2022-04-11 17:02:07.014  INFO 8628 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
-2022-04-11 17:02:07.014  INFO 8628 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : IP : 0:0:0:0:0:0:0:1
-2022-04-11 17:02:07.014  INFO 8628 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:account,value:1
-2022-04-11 17:02:07.016  INFO 8628 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : name:password,value:111
-2022-04-11 17:02:07.189  WARN 8628 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1610012
-2022-04-11 17:02:07.364  INFO 8628 --- [http-nio-9090-exec-9] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=eee045006ae946449315c290efe191c6}, timestamp=1649667727364, errMessage=null, errCode=null, onlTable=null) 功能正常返回
-2022-04-11 17:18:52.086  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
-2022-04-11 17:18:52.086  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
-2022-04-11 18:29:18.426  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
-2022-04-11 18:29:18.451  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
-2022-04-11 19:10:24.148  INFO 8628 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/gate/login
-2022-04-11 19:10:24.149  INFO 8628 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
-2022-04-11 19:10:24.149  INFO 8628 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
-2022-04-11 19:10:24.149  INFO 8628 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
-2022-04-11 19:10:24.149  INFO 8628 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
-2022-04-11 19:10:24.329  INFO 8628 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=b469d8dede4042c0807f44b95f152dfd}, timestamp=1649675424329, errMessage=null, errCode=null, onlTable=null) 功能正常返回
-2022-04-11 19:11:28.026  INFO 8628 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/gate/login
-2022-04-11 19:11:28.026  INFO 8628 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
-2022-04-11 19:11:28.026  INFO 8628 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
-2022-04-11 19:11:28.026  INFO 8628 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:account,value:1
-2022-04-11 19:11:28.026  INFO 8628 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:password,value:111
-2022-04-11 19:11:28.029  WARN 8628 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 63711
-2022-04-11 19:11:28.176  INFO 8628 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), token=84a38167c76647d18a5284a99808d4e4}, timestamp=1649675488176, errMessage=null, errCode=null, onlTable=null) 功能正常返回
-2022-04-11 19:18:46.286  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
-2022-04-11 19:18:46.286  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
-2022-04-11 20:18:46.291  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
-2022-04-11 20:18:46.394  INFO 8628 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  [1] sessions were stopped.
+2022-04-25 00:04:32.282  WARN 15908 --- [http-nio-9090-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1638820
+2022-04-25 00:09:01.526  WARN 15908 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 269223
+2022-04-25 00:11:15.009  WARN 15908 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 133469
+2022-04-25 00:15:51.894  WARN 15908 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 276857
+2022-04-25 00:17:59.212  WARN 15908 --- [http-nio-9090-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 127305
+2022-04-25 00:37:13.178  INFO 15908 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 00:37:13.179  INFO 15908 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 00:40:13.421  INFO 15908 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 00:40:13.421  INFO 15908 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 00:40:13.421  INFO 15908 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 00:40:13.422  INFO 15908 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 00:40:13.429  WARN 15908 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1334202
+2022-04-25 00:40:13.441  INFO 15908 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650818413441, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 00:40:48.352  INFO 15908 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 00:40:48.372  INFO 15908 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 08:57:32.150  INFO 13932 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 13932 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 08:57:32.152  INFO 13932 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 08:57:36.343  INFO 13932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 08:57:36.346  INFO 13932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 08:57:36.408  INFO 13932 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2022-04-25 08:57:37.010  INFO 13932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$f344a5c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 08:57:37.054  INFO 13932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 08:57:37.176  INFO 13932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 08:57:37.186  INFO 13932 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 08:57:37.760  INFO 13932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 08:57:37.761  INFO 13932 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 08:57:37.761  INFO 13932 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 08:57:37.761  INFO 13932 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 08:57:37.761  INFO 13932 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 08:57:37.840  INFO 13932 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 08:57:37.851  INFO 13932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 08:57:37.852  INFO 13932 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 08:57:37.961  INFO 13932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 08:57:37.961  INFO 13932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5569 ms
+2022-04-25 08:57:40.928  INFO 13932 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 08:57:40.928 ERROR 13932 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 08:57:41.296  INFO 13932 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 08:57:41.786  INFO 13932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 08:57:43.921  INFO 13932 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 12.341 seconds (JVM running for 17.359)
+2022-04-25 08:59:18.023  INFO 13932 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 08:59:18.024  INFO 13932 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 08:59:18.026  INFO 13932 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-25 08:59:18.064  INFO 13932 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 09:07:40.942  INFO 13932 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 09:30:28.685  WARN 13932 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1367472
+2022-04-25 09:31:48.428  WARN 13932 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 67045
+2022-04-25 09:36:14.930  WARN 13932 --- [http-nio-9090-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 183039
+2022-04-25 09:38:58.441  WARN 13932 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 163493
+2022-04-25 09:41:43.099  WARN 13932 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 164641
+2022-04-25 09:45:05.630  WARN 13932 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 118283
+2022-04-25 09:46:10.265  WARN 13932 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 64622
+2022-04-25 09:47:11.930  WARN 13932 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 61652
+2022-04-25 09:59:18.075  INFO 13932 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 09:59:18.076  INFO 13932 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 10:07:28.417  WARN 13932 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1132044
+2022-04-25 10:11:14.561  INFO 13932 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 10:11:14.584  INFO 13932 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 10:11:27.396  INFO 7504 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 7504 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 10:11:27.398  INFO 7504 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 10:11:28.233  INFO 7504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 10:11:28.235  INFO 7504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 10:11:28.259  INFO 7504 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2022-04-25 10:11:28.677  INFO 7504 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$aee58c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:11:28.731  INFO 7504 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:11:28.799  INFO 7504 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:11:28.810  INFO 7504 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:11:29.066  INFO 7504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 10:11:29.067  INFO 7504 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 10:11:29.067  INFO 7504 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 10:11:29.067  INFO 7504 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 10:11:29.068  INFO 7504 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 10:11:29.071  INFO 7504 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 10:11:29.078  INFO 7504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 10:11:29.078  INFO 7504 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 10:11:29.163  INFO 7504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 10:11:29.163  INFO 7504 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1714 ms
+2022-04-25 10:11:31.142  INFO 7504 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 10:11:31.142 ERROR 7504 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 10:11:31.310  INFO 7504 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 10:11:31.632  INFO 7504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 10:11:33.515  INFO 7504 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 6.5 seconds (JVM running for 7.701)
+2022-04-25 10:11:40.156  INFO 7504 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 10:11:40.157  INFO 7504 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 10:11:40.158  INFO 7504 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 10:11:40.168  INFO 7504 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 10:11:40.301  INFO 7504 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 10:21:40.888  INFO 7504 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 10:21:40.893  INFO 7504 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 10:21:46.202  INFO 14440 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 14440 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 10:21:46.204  INFO 14440 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 10:21:46.950  INFO 14440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 10:21:46.952  INFO 14440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 10:21:46.973  INFO 14440 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-25 10:21:47.346  INFO 14440 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$aee58c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:21:47.384  INFO 14440 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:21:47.433  INFO 14440 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:21:47.444  INFO 14440 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:21:47.661  INFO 14440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 10:21:47.662  INFO 14440 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 10:21:47.662  INFO 14440 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 10:21:47.662  INFO 14440 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 10:21:47.662  INFO 14440 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 10:21:47.665  INFO 14440 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 10:21:47.672  INFO 14440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 10:21:47.673  INFO 14440 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 10:21:47.751  INFO 14440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 10:21:47.751  INFO 14440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1493 ms
+2022-04-25 10:21:49.632  INFO 14440 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 10:21:49.632 ERROR 14440 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 10:21:49.795  INFO 14440 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 10:21:50.141  INFO 14440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 10:21:51.962  INFO 14440 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 6.11 seconds (JVM running for 7.081)
+2022-04-25 10:21:59.481  INFO 14440 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 10:21:59.482  INFO 14440 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 10:21:59.483  INFO 14440 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 10:21:59.493  INFO 14440 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 10:21:59.618  INFO 14440 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 10:23:15.505  INFO 14440 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 10:23:15.511  INFO 14440 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 10:23:19.638  INFO 4144 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 4144 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 10:23:19.642  INFO 4144 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 10:23:20.401  INFO 4144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 10:23:20.403  INFO 4144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 10:23:20.423  INFO 4144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-25 10:23:20.792  INFO 4144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$aee58c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:23:20.834  INFO 4144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:23:20.888  INFO 4144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:23:20.900  INFO 4144 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:23:21.124  INFO 4144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 10:23:21.124  INFO 4144 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 10:23:21.124  INFO 4144 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 10:23:21.125  INFO 4144 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 10:23:21.125  INFO 4144 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 10:23:21.128  INFO 4144 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 10:23:21.134  INFO 4144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 10:23:21.135  INFO 4144 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 10:23:21.206  INFO 4144 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 10:23:21.206  INFO 4144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1506 ms
+2022-04-25 10:23:23.110  INFO 4144 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 10:23:23.111 ERROR 4144 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 10:23:23.277  INFO 4144 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 10:23:23.590  INFO 4144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 10:23:25.434  INFO 4144 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 6.148 seconds (JVM running for 7.204)
+2022-04-25 10:23:35.078  INFO 4144 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 10:23:35.078  INFO 4144 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 10:23:35.079  INFO 4144 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 10:23:35.089  INFO 4144 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 10:23:35.209  INFO 4144 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 10:40:21.666  WARN 4144 --- [http-nio-9090-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 1006330
+2022-04-25 10:42:06.755  WARN 4144 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 105076
+2022-04-25 10:58:15.839  WARN 4144 --- [http-nio-9090-exec-4] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 969042
+2022-04-25 10:58:53.717  INFO 4144 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 10:58:53.720  INFO 4144 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 10:59:00.123  INFO 10468 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 10468 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 10:59:00.125  INFO 10468 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 10:59:00.956  INFO 10468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 10:59:00.958  INFO 10468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 10:59:00.979  INFO 10468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-25 10:59:01.354  INFO 10468 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$aee58c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:59:01.397  INFO 10468 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:59:01.454  INFO 10468 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:59:01.466  INFO 10468 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 10:59:01.711  INFO 10468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 10:59:01.712  INFO 10468 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 10:59:01.712  INFO 10468 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 10:59:01.712  INFO 10468 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 10:59:01.712  INFO 10468 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 10:59:01.715  INFO 10468 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 10:59:01.722  INFO 10468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 10:59:01.722  INFO 10468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 10:59:01.802  INFO 10468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 10:59:01.802  INFO 10468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1614 ms
+2022-04-25 10:59:03.824  INFO 10468 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 10:59:03.825 ERROR 10468 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 10:59:04.016  INFO 10468 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 10:59:04.371  INFO 10468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 10:59:06.318  INFO 10468 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 6.58 seconds (JVM running for 7.726)
+2022-04-25 10:59:06.927  INFO 10468 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 10:59:06.927  INFO 10468 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 10:59:06.929  INFO 10468 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-25 10:59:06.938  INFO 10468 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 10:59:07.086  INFO 10468 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 11:09:08.634  WARN 10468 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 601404
+2022-04-25 11:22:29.795  WARN 10468 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 801149
+2022-04-25 11:24:31.058  WARN 10468 --- [http-nio-9090-exec-4] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 121248
+2022-04-25 11:29:59.037  WARN 10468 --- [http-nio-9090-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 327967
+2022-04-25 11:34:06.606  WARN 10468 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 165360
+2022-04-25 11:36:14.951  WARN 10468 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 71398
+2022-04-25 11:38:58.858  WARN 10468 --- [http-nio-9090-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 163892
+2022-04-25 11:40:01.265  WARN 10468 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 62395
+2022-04-25 11:59:06.956  INFO 10468 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 11:59:06.957  INFO 10468 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 12:26:30.440  INFO 10468 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 12:26:30.441  INFO 10468 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 12:26:30.441  INFO 10468 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 12:26:30.441  INFO 10468 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 12:26:30.468  INFO 10468 --- [http-nio-9090-exec-8] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650860790467, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 12:26:36.050  INFO 10468 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 12:26:36.051  INFO 10468 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 12:26:36.051  INFO 10468 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 12:26:36.051  INFO 10468 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 12:26:36.054  INFO 10468 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650860796054, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 12:26:38.192  INFO 10468 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 12:26:38.192  INFO 10468 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 12:26:38.192  INFO 10468 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 12:26:38.193  INFO 10468 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 12:26:38.194  INFO 10468 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650860798194, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 12:26:42.503  INFO 10468 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/gate/login
+2022-04-25 12:26:42.504  INFO 10468 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 12:26:42.504  INFO 10468 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 12:26:42.504  INFO 10468 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-25 12:26:42.504  INFO 10468 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-25 12:26:42.578  INFO 10468 --- [http-nio-9090-exec-6] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), avatar=/public/imag.jpg, token=252f84fb47ae4e3abebaed4e6683dcc8}, timestamp=1650860802577, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 12:26:49.472  INFO 10468 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 12:26:49.472  INFO 10468 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 12:26:49.472  INFO 10468 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 12:26:49.472  INFO 10468 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:id,value:1
+2022-04-25 12:26:49.477  INFO 10468 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=UserRank(number=09aa7faf0c59bf416f14e917d3f6fad9, id=1, identity=admin, permission=user;role;page;firm;client), timestamp=1650860809477, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 12:26:59.623  INFO 10468 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 12:26:59.624  INFO 10468 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 12:26:59.624  INFO 10468 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 12:26:59.624  INFO 10468 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:id,value:1
+2022-04-25 12:26:59.625  INFO 10468 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=UserRank(number=09aa7faf0c59bf416f14e917d3f6fad9, id=1, identity=admin, permission=user;role;page;firm;client), timestamp=1650860819625, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 12:37:01.989  INFO 10468 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 12:37:01.993  INFO 10468 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 12:37:07.788  INFO 17180 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 17180 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 12:37:07.790  INFO 17180 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 12:37:08.592  INFO 17180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 12:37:08.594  INFO 17180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 12:37:08.615  INFO 17180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-25 12:37:09.000  INFO 17180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$8fbc891f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 12:37:09.042  INFO 17180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 12:37:09.102  INFO 17180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 12:37:09.112  INFO 17180 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 12:37:09.361  INFO 17180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 12:37:09.361  INFO 17180 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 12:37:09.361  INFO 17180 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 12:37:09.361  INFO 17180 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 12:37:09.362  INFO 17180 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 12:37:09.365  INFO 17180 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 12:37:09.371  INFO 17180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 12:37:09.372  INFO 17180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 12:37:09.456  INFO 17180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 12:37:09.456  INFO 17180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1603 ms
+2022-04-25 12:37:11.470  INFO 17180 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 12:37:11.470 ERROR 17180 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 12:37:11.637  INFO 17180 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 12:37:11.959  INFO 17180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 12:37:13.854  INFO 17180 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 6.446 seconds (JVM running for 7.501)
+2022-04-25 12:39:59.085  INFO 17180 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 12:39:59.085  INFO 17180 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 12:39:59.087  INFO 17180 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-25 12:39:59.097  INFO 17180 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 12:39:59.236  INFO 17180 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 12:52:38.601  INFO 17180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 12:52:38.606  INFO 17180 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 14:31:21.691  INFO 11076 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 11076 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 14:31:21.722  INFO 11076 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 14:31:25.421  INFO 11076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 14:31:25.435  INFO 11076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 14:31:25.590  INFO 11076 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2022-04-25 14:31:27.229  INFO 11076 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$100d8209] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 14:31:27.321  INFO 11076 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 14:31:27.502  INFO 11076 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 14:31:27.513  INFO 11076 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 14:31:28.220  INFO 11076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 14:31:28.221  INFO 11076 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 14:31:28.221  INFO 11076 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 14:31:28.221  INFO 11076 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 14:31:28.222  INFO 11076 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 14:31:28.385  INFO 11076 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 14:31:28.407  INFO 11076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 14:31:28.407  INFO 11076 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 14:31:28.549  INFO 11076 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 14:31:28.549  INFO 11076 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6532 ms
+2022-04-25 14:31:32.997  INFO 11076 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 14:31:32.997 ERROR 11076 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 14:31:33.532  INFO 11076 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 14:31:34.539  INFO 11076 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 14:31:37.607  INFO 11076 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 17.387 seconds (JVM running for 24.427)
+2022-04-25 14:32:38.160  INFO 11076 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 14:32:38.160  INFO 11076 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 14:32:38.162  INFO 11076 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-25 14:32:38.175  INFO 11076 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 14:32:38.565  INFO 11076 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 14:42:55.911  WARN 11076 --- [http-nio-9090-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 450743
+2022-04-25 14:46:19.611  WARN 11076 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 186232
+2022-04-25 14:48:32.779  WARN 11076 --- [http-nio-9090-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 115677
+2022-04-25 14:59:54.996  WARN 11076 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 545702
+2022-04-25 15:01:20.866  WARN 11076 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 64946
+2022-04-25 15:04:39.079  WARN 11076 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 198203
+2022-04-25 15:20:24.412  INFO 11076 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 15:20:24.412  INFO 11076 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 15:20:24.412  INFO 11076 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 15:20:24.412  INFO 11076 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 15:20:24.422  WARN 11076 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 926856
+2022-04-25 15:20:24.430  INFO 11076 --- [http-nio-9090-exec-10] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650871224429, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 15:20:27.493  INFO 11076 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 15:20:27.493  INFO 11076 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 15:20:27.493  INFO 11076 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 15:20:27.493  INFO 11076 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 15:20:27.495  INFO 11076 --- [http-nio-9090-exec-1] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650871227495, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 15:20:31.214  INFO 11076 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/gate/login
+2022-04-25 15:20:31.214  INFO 11076 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 15:20:31.214  INFO 11076 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 15:20:31.214  INFO 11076 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-25 15:20:31.214  INFO 11076 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-25 15:20:31.343  INFO 11076 --- [http-nio-9090-exec-4] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), avatar=/public/imag.jpg, token=de84333165f742fcba0965fb719b74d3}, timestamp=1650871231343, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 15:20:34.575  INFO 11076 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 15:20:34.575  INFO 11076 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 15:20:34.575  INFO 11076 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 15:20:34.575  INFO 11076 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : name:id,value:1
+2022-04-25 15:20:34.579  INFO 11076 --- [http-nio-9090-exec-3] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=UserRank(number=09aa7faf0c59bf416f14e917d3f6fad9, id=1, identity=admin, permission=user;role;page;firm;client), timestamp=1650871234578, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 15:20:39.137  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 15:20:39.138  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 15:20:39.138  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 15:20:39.138  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:id,value:1
+2022-04-25 15:20:39.140  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=UserRank(number=09aa7faf0c59bf416f14e917d3f6fad9, id=1, identity=admin, permission=user;role;page;firm;client), timestamp=1650871239140, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 15:21:00.591  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 15:21:00.591  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 15:21:00.591  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 15:21:00.592  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:id,value:1
+2022-04-25 15:21:00.593  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=UserRank(number=09aa7faf0c59bf416f14e917d3f6fad9, id=1, identity=admin, permission=user;role;page;firm;client), timestamp=1650871260593, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 15:21:02.756  INFO 11076 --- [http-nio-9090-exec-6] com.life.websocket.net.WebSocketServer   : 用户 1 已进入连接池:,当前在线人数为:1
+2022-04-25 15:21:06.537  INFO 11076 --- [http-nio-9090-exec-8] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"ashdusai\n","currentTime":1650871266536}
+2022-04-25 15:21:06.646 ERROR 11076 --- [http-nio-9090-exec-8] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:08.136  INFO 11076 --- [http-nio-9090-exec-9] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"sahduiashduisad\n","currentTime":1650871268136}
+2022-04-25 15:21:08.137 ERROR 11076 --- [http-nio-9090-exec-9] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:08.796  INFO 11076 --- [http-nio-9090-exec-10] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\nd","currentTime":1650871268795}
+2022-04-25 15:21:08.796 ERROR 11076 --- [http-nio-9090-exec-10] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:09.225  INFO 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"sads\n","currentTime":1650871269224}
+2022-04-25 15:21:09.225 ERROR 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:09.387  INFO 11076 --- [http-nio-9090-exec-4] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871269386}
+2022-04-25 15:21:09.387 ERROR 11076 --- [http-nio-9090-exec-4] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:09.556  INFO 11076 --- [http-nio-9090-exec-3] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"\n","currentTime":1650871269556}
+2022-04-25 15:21:09.556 ERROR 11076 --- [http-nio-9090-exec-3] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:09.746  INFO 11076 --- [http-nio-9090-exec-2] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871269745}
+2022-04-25 15:21:09.746 ERROR 11076 --- [http-nio-9090-exec-2] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:09.947  INFO 11076 --- [http-nio-9090-exec-5] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871269946}
+2022-04-25 15:21:09.947 ERROR 11076 --- [http-nio-9090-exec-5] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:10.137  INFO 11076 --- [http-nio-9090-exec-7] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871270136}
+2022-04-25 15:21:10.137 ERROR 11076 --- [http-nio-9090-exec-7] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:11.447  INFO 11076 --- [http-nio-9090-exec-6] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"sdsd\n","currentTime":1650871271446}
+2022-04-25 15:21:11.447 ERROR 11076 --- [http-nio-9090-exec-6] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:11.635  INFO 11076 --- [http-nio-9090-exec-8] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"\n","currentTime":1650871271635}
+2022-04-25 15:21:11.636 ERROR 11076 --- [http-nio-9090-exec-8] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:11.905  INFO 11076 --- [http-nio-9090-exec-9] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"\n","currentTime":1650871271904}
+2022-04-25 15:21:11.905 ERROR 11076 --- [http-nio-9090-exec-9] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:12.296  INFO 11076 --- [http-nio-9090-exec-10] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"sds\n","currentTime":1650871272296}
+2022-04-25 15:21:12.296 ERROR 11076 --- [http-nio-9090-exec-10] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:12.467  INFO 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"d\n","currentTime":1650871272466}
+2022-04-25 15:21:12.467 ERROR 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:12.657  INFO 11076 --- [http-nio-9090-exec-4] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\nd","currentTime":1650871272656}
+2022-04-25 15:21:12.657 ERROR 11076 --- [http-nio-9090-exec-4] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:12.807  INFO 11076 --- [http-nio-9090-exec-3] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871272806}
+2022-04-25 15:21:12.808 ERROR 11076 --- [http-nio-9090-exec-3] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:12.986  INFO 11076 --- [http-nio-9090-exec-2] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"\nd","currentTime":1650871272985}
+2022-04-25 15:21:12.987 ERROR 11076 --- [http-nio-9090-exec-2] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:13.155  INFO 11076 --- [http-nio-9090-exec-5] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\nd","currentTime":1650871273155}
+2022-04-25 15:21:13.156 ERROR 11076 --- [http-nio-9090-exec-5] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:13.346  INFO 11076 --- [http-nio-9090-exec-7] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871273346}
+2022-04-25 15:21:13.347 ERROR 11076 --- [http-nio-9090-exec-7] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:13.498  INFO 11076 --- [http-nio-9090-exec-6] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"ad\n","currentTime":1650871273497}
+2022-04-25 15:21:13.498 ERROR 11076 --- [http-nio-9090-exec-6] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:13.657  INFO 11076 --- [http-nio-9090-exec-8] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"s\n","currentTime":1650871273656}
+2022-04-25 15:21:13.658 ERROR 11076 --- [http-nio-9090-exec-8] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:13.837  INFO 11076 --- [http-nio-9090-exec-9] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"d\ns","currentTime":1650871273836}
+2022-04-25 15:21:13.837 ERROR 11076 --- [http-nio-9090-exec-9] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:14.088  INFO 11076 --- [http-nio-9090-exec-10] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"d\ns","currentTime":1650871274087}
+2022-04-25 15:21:14.088 ERROR 11076 --- [http-nio-9090-exec-10] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:14.258  INFO 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"d\n","currentTime":1650871274258}
+2022-04-25 15:21:14.259 ERROR 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:21:14.447  INFO 11076 --- [http-nio-9090-exec-4] com.life.websocket.net.WebSocketServer   : 用户id:1发出消息 ,报文:{"sendUserId":"1","acceptUserId":5,"sendType":0,"msgType":0,"msg":"sd\n","currentTime":1650871274446}
+2022-04-25 15:21:14.447 ERROR 11076 --- [http-nio-9090-exec-4] com.life.websocket.net.WebSocketServer   : 接收者userId:5 不在该服务器上
+2022-04-25 15:23:23.777  INFO 11076 --- [http-nio-9090-exec-3] com.life.websocket.net.WebSocketServer   : 用户 1 已退出连接池:,当前在线人数为:0
+2022-04-25 15:32:38.189  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 15:32:38.189  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 16:18:05.036  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 16:18:05.037  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 16:18:05.037  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 16:18:05.037  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : name:id,value:0
+2022-04-25 16:18:05.046  INFO 11076 --- [http-nio-9090-exec-2] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=[], timestamp=1650874685045, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 16:18:12.614  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/gate/login
+2022-04-25 16:18:12.614  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 16:18:12.614  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 16:18:12.614  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:account,value:1
+2022-04-25 16:18:12.614  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : name:password,value:111
+2022-04-25 16:18:12.660  INFO 11076 --- [http-nio-9090-exec-5] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result={data=UserLogin(number=99CAD9639C9EE9954690F52BABE82F35, id=1, account=1, password=111), avatar=/public/imag.jpg, token=aad04eb007ed4b809a42bea10065bf72}, timestamp=1650874692660, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 16:18:23.534  INFO 11076 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : URL : http://localhost:9090/permission/getUserRankById
+2022-04-25 16:18:23.534  INFO 11076 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : HTTP_METHOD : POST
+2022-04-25 16:18:23.534  INFO 11076 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : IP : 127.0.0.1
+2022-04-25 16:18:23.534  INFO 11076 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : name:id,value:1
+2022-04-25 16:18:23.536  INFO 11076 --- [http-nio-9090-exec-7] com.life.Utils.WebLogAspect              : Response：Result(success=true, message=操作成功！, code=200, result=UserRank(number=09aa7faf0c59bf416f14e917d3f6fad9, id=1, identity=admin, permission=user;role;page;firm;client), timestamp=1650874703536, errMessage=null, errCode=null, onlTable=null) 功能正常返回
+2022-04-25 16:18:26.373  INFO 11076 --- [http-nio-9090-exec-6] com.life.websocket.net.WebSocketServer   : 用户 1 已进入连接池:,当前在线人数为:1
+2022-04-25 16:32:38.182  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 16:32:38.182  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 16:40:04.607  INFO 11076 --- [http-nio-9090-exec-1] com.life.websocket.net.WebSocketServer   : 用户 1 已退出连接池:,当前在线人数为:0
+2022-04-25 16:50:09.548  WARN 11076 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 70477
+2022-04-25 17:32:38.189  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 17:32:38.189  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 18:32:38.179  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 18:32:38.179  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 19:31:10.249  WARN 11076 --- [http-nio-9090-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account' for method parameter type String is not present]
+2022-04-25 19:31:22.601  WARN 11076 --- [http-nio-9090-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'account' for method parameter type String is not present]
+2022-04-25 19:31:47.719  WARN 11076 --- [http-nio-9090-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2022-04-25 19:31:53.094  WARN 11076 --- [http-nio-9090-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+2022-04-25 19:31:57.289  WARN 11076 --- [http-nio-9090-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2022-04-25 19:32:27.406  WARN 11076 --- [http-nio-9090-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Integer is not present]
+2022-04-25 19:32:37.313  WARN 11076 --- [http-nio-9090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for method parameter type Integer is not present]
+2022-04-25 19:32:38.176  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 19:32:38.176  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 19:35:19.023  WARN 11076 --- [http-nio-9090-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 64033
+2022-04-25 19:40:07.850  WARN 11076 --- [http-nio-9090-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 288797
+2022-04-25 19:43:27.437  WARN 11076 --- [http-nio-9090-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 199500
+2022-04-25 19:50:09.144  WARN 11076 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 401666
+2022-04-25 19:52:17.527  WARN 11076 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 128302
+2022-04-25 19:57:54.373  WARN 11076 --- [http-nio-9090-exec-4] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 306136
+2022-04-25 20:02:49.395  WARN 11076 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 255345
+2022-04-25 20:04:51.930  WARN 11076 --- [http-nio-9090-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 110350
+2022-04-25 20:32:38.190  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2022-04-25 20:32:38.190  INFO 11076 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
+2022-04-25 20:52:20.056  INFO 11076 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 20:52:20.058  INFO 11076 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-04-25 23:23:39.732  INFO 19464 --- [main] com.life.SpringbootWebApplication        : Starting SpringbootWebApplication using Java 9.0.1 on DESKTOP-FMT1EEH with PID 19464 (D:\Recruiter\target\classes started by life-0 in D:\Recruiter)
+2022-04-25 23:23:39.749  INFO 19464 --- [main] com.life.SpringbootWebApplication        : The following 1 profile is active: "dev"
+2022-04-25 23:23:42.807  INFO 19464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-25 23:23:42.811  INFO 19464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-25 23:23:42.882  INFO 19464 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2022-04-25 23:23:43.392  INFO 19464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.life.Config.ShiroConfig$$EnhancerBySpringCGLIB$$74622dbc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 23:23:43.436  INFO 19464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userRealm' of type [com.life.Config.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 23:23:43.506  INFO 19464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'getDefaultWebSessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 23:23:43.518  INFO 19464 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'SecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-25 23:23:43.975  INFO 19464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2022-04-25 23:23:43.976  INFO 19464 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.23] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-25 23:23:43.976  INFO 19464 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2022-04-25 23:23:43.976  INFO 19464 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-25 23:23:43.976  INFO 19464 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-25 23:23:43.980  INFO 19464 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2022-04-25 23:23:43.989  INFO 19464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-25 23:23:43.989  INFO 19464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-25 23:23:44.107  INFO 19464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-25 23:23:44.107  INFO 19464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4215 ms
+2022-04-25 23:23:46.778  INFO 19464 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.utilBasePath is null no util alias for xml
+2022-04-25 23:23:46.778 ERROR 19464 --- [main] c.g.j.mybatisplus.conf.PlusConfig        : mpp.entityBasePath is null skip scan result map
+2022-04-25 23:23:47.027  INFO 19464 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-25 23:23:47.393  INFO 19464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2022-04-25 23:23:49.453  INFO 19464 --- [main] com.life.SpringbootWebApplication        : Started SpringbootWebApplication in 10.683 seconds (JVM running for 12.09)
+2022-04-25 23:25:00.053  INFO 19464 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-25 23:25:00.053  INFO 19464 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-25 23:25:00.055  INFO 19464 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-25 23:25:00.079  INFO 19464 --- [http-nio-9090-exec-1] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2022-04-25 23:25:00.385  INFO 19464 --- [http-nio-9090-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-04-25 23:26:51.172  WARN 19464 --- [http-nio-9090-exec-2] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 110582
+2022-04-25 23:28:58.848  WARN 19464 --- [http-nio-9090-exec-4] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 107506
+2022-04-25 23:31:48.664  WARN 19464 --- [http-nio-9090-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 169768
+2022-04-25 23:33:13.165  WARN 19464 --- [http-nio-9090-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 70694
+2022-04-25 23:35:56.692  WARN 19464 --- [http-nio-9090-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/recruiter?serverTimezone=GMT&userUnicode=true&characterEncoding=UTF-8, version : 1.2.8, lastPacketReceivedIdleMillis : 98692
+2022-04-25 23:38:21.780  INFO 19464 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-04-25 23:38:21.794  INFO 19464 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
