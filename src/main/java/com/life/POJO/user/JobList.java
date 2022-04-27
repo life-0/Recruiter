@@ -22,8 +22,12 @@ public class JobList implements Serializable {
      * 唯一标识
      */
     private String number;
-    @TableId
-    private Integer id;
+
+    /**
+     * 发布者id
+     */
+
+    private Integer announcerId;
     /**
      * 公司id
      */

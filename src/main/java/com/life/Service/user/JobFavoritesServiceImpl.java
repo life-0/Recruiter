@@ -42,9 +42,15 @@ public class JobFavoritesServiceImpl extends MppServiceImpl<JobFavoritesMapper, 
         return result > 0;
     }
 
-    public Boolean addJobFavorites(JobFavorites JobFavorites) {
-        int result = jobFavoritesMapper.insert (JobFavorites);
-        return result > 0;
+    public Boolean addJobFavorites(JobFavorites record) {
+        List<JobFavorites> jobFavoritesList = queryBySelective (record);
+        if (jobFavoritesList.isEmpty ()){
+            int result = jobFavoritesMapper.insert (record);
+            return result > 0;
+        }else {
+            return false;
+        }
+
     }
 
     public Boolean delJobFavorites(List<Integer> idList) {

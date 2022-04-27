@@ -5,6 +5,7 @@ import com.life.Service.user.FirmInfoServiceImpl;
 import com.life.api.vo.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -37,9 +38,9 @@ public class FirmController {
 
     @ApiOperation("依据id查询")
     @PostMapping("/getFirmInfoById")
-    public Result<?> getFirmInfoById(@RequestParam("id") Integer id) {
-        System.out.println ("id: " + id);
-        FirmInfo firmInfo = firmInfoService.queryById (id);
+    public Result<?> getFirmInfoById(@RequestParam("firmId") Integer firmId) {
+        System.out.println ("firmId: " + firmId);
+        FirmInfo firmInfo = firmInfoService.queryById (firmId);
         if (firmInfo != null) {
             System.out.println ("-----------");
             return Result.OK (firmInfo);

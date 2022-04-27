@@ -40,8 +40,10 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
         return jobLists;
     }
 
-    public JobList queryById(Integer id) {
-        return jobListMapper.selectById (id);
+    public List<JobList> queryById(Integer id) {
+        QueryWrapper<JobList> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("announcer_id",id);
+        return jobListMapper.selectList (wrapper);
     }
 
 
@@ -78,7 +80,7 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
     public Boolean updateJobList(JobList jobList) {
         UpdateWrapper<JobList> wrapper = new UpdateWrapper<> ();
         wrapper.eq ("number", jobList.getNumber ());
-        wrapper.eq ("id", jobList.getId ());
+        wrapper.eq ("announcer_id", jobList.getAnnouncerId ());
         int result = jobListMapper.update (jobList, wrapper);
         return result > 0;
     }

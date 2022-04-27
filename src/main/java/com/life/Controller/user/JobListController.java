@@ -57,7 +57,7 @@ public class JobListController {
     public Result<?> updateJobList(@RequestBody JobList jobList) {
         System.out.println (jobList.toString ());
         if (jobListService.updateJobList (jobList)) {
-            return getJobList (new JobList ().setId (jobList.getId ()));
+            return getJobList (new JobList ().setAnnouncerId (jobList.getAnnouncerId ()));
         } else {
             List<String> list = new ArrayList<> ();
             return Result.OK (list);
@@ -68,7 +68,7 @@ public class JobListController {
     @PostMapping("/addJobList")
     public Result<?> addJobList(@RequestBody JobList jobList) {
         if (jobListService.addJobList (jobList)) {
-            return getJobList (new JobList ().setId (jobList.getId ()));
+            return getJobList (new JobList ().setAnnouncerId (jobList.getAnnouncerId ()));
         } else {
             List<String> list = new ArrayList<> ();
             return Result.OK (list);
@@ -79,7 +79,7 @@ public class JobListController {
     public Result<?> delJobList(@RequestParam("number") String number, @RequestParam("id") Integer id) {
         List<String> list = new ArrayList<> ();
         if (jobListService.delJobList (number, id)) {
-            return Result.OK (getJobList (new JobList ().setId (id)));
+            return Result.OK (getJobList (new JobList ().setAnnouncerId (id)));
         } else {
             return Result.OK (list);
         }

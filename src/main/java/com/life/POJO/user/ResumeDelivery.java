@@ -49,6 +49,11 @@ public class ResumeDelivery {
     private Boolean state;
 
     /**
+     * 简历评估结果 1:未查看 2:已查看(正在评估) 3: 简历通过 4:简历拒绝
+     */
+    private Integer result;
+
+    /**
     * 更新时间
     */
     private Date updateTime;
