@@ -1,16 +1,12 @@
 package com.life.Utils;
 
 import com.life.POJO.user.UserLogin;
-import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-import org.springframework.util.DigestUtils;
 
-import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
+
 /*
  *@Author: life-0
  *@ClassName: tokenUtil

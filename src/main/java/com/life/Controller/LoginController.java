@@ -2,17 +2,20 @@ package com.life.Controller;
 
 import com.life.POJO.user.UserInfo;
 import com.life.POJO.user.UserLogin;
+import com.life.POJO.user.UserRank;
 import com.life.Service.user.UserInfoServiceImpl;
+import com.life.Service.user.UserRankServiceImpl;
 import com.life.Utils.redisUtil;
 import com.life.Utils.tokenUtil;
 import com.life.api.vo.Result;
+import com.life.dto.UserInfoDTO;
 import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -38,6 +41,9 @@ public class LoginController {
     @Autowired
     private UserInfoServiceImpl userInfoService;
 
+    @Autowired
+    private UserRankServiceImpl userRankService;
+
     @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
     public String toLogin() {
         return "login";
@@ -45,7 +51,6 @@ public class LoginController {
 
     @ResponseBody
     @PostMapping(value = "/login")
-//    @RequestBody UserLogin userLogin,
     public Result<?> login(@RequestParam("account") String account,
                            @RequestParam("password") String password,
                            HttpServletRequest request) {
@@ -61,7 +66,7 @@ public class LoginController {
             String rememberMe = request.getParameter ("RememberMe");    //获得参数
 
             //自定义存储
-            Map<String, Object> map = new HashMap<> ();
+//            Map<String, Object> map = new HashMap<> ();
             String tokenNumber = tokenUtil.generateToken (user);//生成给客户端的令牌
             //存放进redis中
             redisImpl.set (tokenNumber, user);   //修改为存放在redis中
@@ -69,16 +74,19 @@ public class LoginController {
 
             //获取用户头像
             UserInfo userInfo = userInfoService.queryById (user.getId ());
-            map.put ("data", user);
-            map.put("avatar",userInfo.getImgPath ());
-            map.put ("token", tokenNumber);
+            UserRank userRank = userRankService.queryById (user.getId ());
+            UserInfoDTO userInfoDTO = new UserInfoDTO ();
+            // 同属性赋值
+            BeanUtils.copyProperties (userInfo,userInfoDTO);
+            BeanUtils.copyProperties (userRank,userInfoDTO);
+            userInfoDTO.setToken (tokenNumber);
             if (user == null) {
                 throw new AuthenticationException ();
             }
             if (rememberMe != null) {
                 token.setRememberMe (true);
             }
-            return Result.OK (map);
+            return Result.OK (userInfoDTO);
         } catch (Exception e) {
             return Result.error ("error333");
         }
