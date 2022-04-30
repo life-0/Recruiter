@@ -85,4 +85,29 @@ public class JobHuntingInfo implements Serializable {
      * 附件路径
      */
     private String appendix;
+
+    /**
+     * 专业技能
+     */
+    private String professionalSkill;
+
+    /**
+     * 作品
+     */
+    private String works;
+
+    /**
+     * 状态 0: 可用 1:不可用
+     */
+    private Boolean state;
+
+    /**
+     * 修改时间
+     */
+    private java.sql.Date updateTime;
+
+    /**
+     * 专业技能
+     */
+    private java.sql.Date createTime;
 }

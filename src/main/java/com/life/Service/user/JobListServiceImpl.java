@@ -33,11 +33,8 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
 
     public List<JobList> queryBySelective(JobList record) {
         QueryWrapper<JobList> wrapper = new QueryWrapper<> (record);
-        List<JobList> jobLists = jobListMapper.selectList (wrapper);
-        for (JobList info : jobLists) {
-            System.out.println (info.toString ());
-        }
-        return jobLists;
+
+        return jobListMapper.selectList (wrapper);
     }
 
     public List<JobList> queryById(Integer id) {

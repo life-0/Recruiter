@@ -33,12 +33,7 @@ public class JobListController {
     public Result<?> getJobList(@RequestBody JobList jobList) {
         System.out.println (jobList.toString ());
         List<JobList> jobLists = null;
-        if (jobList != null) {
-            System.out.println ("-----------");
-            jobLists = jobListService.queryBySelective (jobList);
-        } else {
-            jobLists = jobListService.queryAll ();
-        }
+        jobLists = jobListService.queryBySelective (jobList);
         return Result.OK (jobLists);
     }
 

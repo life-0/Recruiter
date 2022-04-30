@@ -54,12 +54,14 @@ public class ResumeDelivery {
     private Integer result;
 
     /**
-    * 更新时间
-    */
+     * 更新时间     value指数据库字段
+     */
+    @TableField(value = "update_time", fill = FieldFill.UPDATE)
     private Date updateTime;
 
     /**
-    * 创建时间
-    */
+     * 创建时间     value指数据库字段
+     */
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
     private Date createTime;
 }
