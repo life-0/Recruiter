@@ -65,7 +65,8 @@ public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapp
 
     public Boolean updateResumeDelivery(ResumeDelivery resumeDelivery) {
         UpdateWrapper<ResumeDelivery> wrapper = new UpdateWrapper<> ();
-        wrapper.eq ("firm_id", resumeDelivery.getFirmId ());
+        wrapper.eq ("job_number", resumeDelivery.getJobNumber ());
+        wrapper.eq ("user_id", resumeDelivery.getUserId ());
         int result = resumeDeliveryMapper.update (resumeDelivery, wrapper);
         return result > 0;
     }

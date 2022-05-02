@@ -1,7 +1,8 @@
 package com.life.Controller;
 
+
+
 import org.springframework.stereotype.Controller;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -9,6 +10,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+
 import java.util.List;
 
 /*
@@ -20,6 +22,8 @@ import java.util.List;
  */
 @Controller
 public class FileController {
+
+
     @GetMapping("/toUpDown")
     public String toUpDown() {
         return "/interface/uploadAndDownload";
@@ -56,9 +60,11 @@ public class FileController {
     }
 
     //文件下载相关代码
-    @RequestMapping("/download")
-    public String downloadFile(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String fileName = "1579071293_364552.jpg";// 设置文件名，根据业务需要替换成要下载的文件名
+    @PostMapping("/download")
+    @ResponseBody
+    public String downloadFile(@RequestParam("filePath") String filePath, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println ("filePath:" + filePath);
+        String fileName = "Java开发_卓越1.pdf";// 设置文件名，根据业务需要替换成要下载的文件名
         if (fileName != null) {
             //设置文件路径
             String realPath = "D://Recruiter//temp//";
@@ -101,4 +107,7 @@ public class FileController {
         }
         return null;
     }
+
+
+
 }

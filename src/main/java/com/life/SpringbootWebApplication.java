@@ -1,9 +1,11 @@
 package com.life;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
+import com.life.POJO.file.FileProperties;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -14,6 +16,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableCaching  //开启缓存
 @EnableKnife4j
 @ServletComponentScan
+@EnableConfigurationProperties({FileProperties.class})
 public class SpringbootWebApplication {
 
     public static void main(String[] args) {

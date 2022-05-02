@@ -8,6 +8,7 @@ spring:
       max-file-size: 20MB # 用来指定服务器端文件大小的限制
       max-request-size: 10MB # 用来指定客户端文件大小的限制
       location: D:/Recruiter/temp/
+
   messages: # 国际化文件配置
     basename: ./i18n/*
   application:
