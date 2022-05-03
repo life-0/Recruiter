@@ -5,6 +5,7 @@ import com.life.POJO.user.ResumeDelivery;
 import com.life.Service.user.ResumeDeliveryServiceImpl;
 import com.life.api.vo.Result;
 import com.life.bo.ResumeDeliveryBO;
+import com.life.dto.ResumeDeliveryFirmInfoDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -42,6 +43,13 @@ public class ResumeDeliveryController {
     public Result<?> getUserInfoJobHuntingInfo(@RequestBody ResumeDelivery resumeDelivery) {
         List<ResumeDeliveryBO> resumeDeliveryBOS = resumeDeliveryService.getUserInfoJobHuntingInfo (resumeDelivery);
         return Result.OK (resumeDeliveryBOS);
+    }
+
+    @ApiOperation("获取投递职位结果信息")
+    @PostMapping("/getJobInfoJobHuntingInfo")
+    public Result<?> getJobInfoJobHuntingInfo(@RequestBody ResumeDelivery resumeDelivery) {
+        List<ResumeDeliveryFirmInfoDTO> jobInfoJobHuntingInfo = resumeDeliveryService.getJobInfoJobHuntingInfo (resumeDelivery);
+        return Result.OK (jobInfoJobHuntingInfo);
     }
 
 

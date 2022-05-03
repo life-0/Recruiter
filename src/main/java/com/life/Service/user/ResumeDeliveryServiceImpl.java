@@ -3,10 +3,10 @@ package com.life.Service.user;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.github.jeffreyning.mybatisplus.service.MppServiceImpl;
-import com.life.Mapper.user.JobFavoritesMapper;
-import com.life.Mapper.user.UserInfoMapper;
 import com.life.POJO.user.*;
+import com.life.bo.JobListBO;
 import com.life.bo.ResumeDeliveryBO;
+import com.life.dto.ResumeDeliveryFirmInfoDTO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,6 +25,8 @@ public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapp
 
     @Resource
     private UserInfoServiceImpl userInfoService;
+    @Resource
+    private JobListServiceImpl jobListServiceImpl;
 
     @Resource
     private JobHuntingInfoServiceImpl jobHuntingInfoService;
@@ -46,8 +48,24 @@ public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapp
             resumeDeliveryBO.setResumeDelivery (resumeDelivery);
             list.add (resumeDeliveryBO);
         }
+        return list;
+    }
 
+    public List<ResumeDeliveryFirmInfoDTO> getJobInfoJobHuntingInfo(ResumeDelivery record) {
+        ArrayList<ResumeDeliveryFirmInfoDTO> list = new ArrayList<> ();
+        //返回公司名字,福利信息,职位信息,用户投递结果信息,简历
 
+        List<ResumeDelivery> resumeDeliveries = queryBySelective (record);
+        for (ResumeDelivery resumeDelivery : resumeDeliveries) {
+            ResumeDeliveryFirmInfoDTO resumeDeliveryFirmInfoBO = new ResumeDeliveryFirmInfoDTO ();
+            JobListBO jobListBO = jobListServiceImpl.queryJobListFirmInfo (resumeDelivery.getJobNumber ());
+            resumeDeliveryFirmInfoBO.setJobList (jobListBO.getJobList ());
+            resumeDeliveryFirmInfoBO.setFirmName (jobListBO.getFirmInfo ().getFirmName ());
+            resumeDeliveryFirmInfoBO.setFirmWelfare (jobListBO.getFirmInfo ().getWelfare ());
+            resumeDeliveryFirmInfoBO.setResumeDeliveryIsOnlineResume (resumeDelivery.getIsOnlineResume ());
+            resumeDeliveryFirmInfoBO.setResumeDeliveryResult (resumeDelivery.getResult ());
+            list.add (resumeDeliveryFirmInfoBO);
+        }
         return list;
     }
 
