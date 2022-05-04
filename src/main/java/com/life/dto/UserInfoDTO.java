@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
  *TODO @Description:
 
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserInfoDTO {
     /**
      * 用户ID
@@ -53,81 +56,5 @@ public class UserInfoDTO {
      */
     private String token;
 
-    public UserInfoDTO() {
-    }
 
-    public UserInfoDTO(Integer id, String imgPath, boolean state, String firmId, String position, String identity, String permission, String token) {
-        this.id = id;
-        this.imgPath = imgPath;
-        this.state = state;
-        this.firmId = firmId;
-        this.position = position;
-        this.identity = identity;
-        this.permission = permission;
-        this.token = token;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getImgPath() {
-        return imgPath;
-    }
-
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
-    }
-
-    public boolean isState() {
-        return state;
-    }
-
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
-    public String getFirmId() {
-        return firmId;
-    }
-
-    public void setFirmId(String firmId) {
-        this.firmId = firmId;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getIdentity() {
-        return identity;
-    }
-
-    public void setIdentity(String identity) {
-        this.identity = identity;
-    }
-
-    public String getPermission() {
-        return permission;
-    }
-
-    public void setPermission(String permission) {
-        this.permission = permission;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }

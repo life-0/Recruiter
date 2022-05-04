@@ -20,7 +20,6 @@ public class UserId implements Serializable {
     @TableId
     private Integer id;
     /*唯一标识*/
-    @TableField(value = "number", fill = FieldFill.INSERT)
     private String number;
 
     public UserId(String Number) {

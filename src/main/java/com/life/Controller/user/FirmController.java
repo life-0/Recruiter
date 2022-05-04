@@ -40,7 +40,7 @@ public class FirmController {
     @PostMapping("/getFirmInfoById")
     public Result<?> getFirmInfoById(@RequestParam("firmId") Integer firmId) {
         System.out.println ("firmId: " + firmId);
-        FirmInfo firmInfo = firmInfoService.queryById (firmId);
+        FirmInfo firmInfo = firmInfoService.queryByFirmId (firmId);
         if (firmInfo != null) {
             System.out.println ("-----------");
             return Result.OK (firmInfo);

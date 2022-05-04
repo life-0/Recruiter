@@ -43,6 +43,13 @@ public class UserDialogueServiceImpl extends ServiceImpl<UserDialogueMapper, Use
         return userDialogueMapper.selectList (wrapper);
     }
 
+    public UserDialogue queryByIDContactID(Integer id, Integer contactUserId) {
+        QueryWrapper<UserDialogue> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("id", id);
+        wrapper.eq ("contact_user_id", contactUserId);
+        return userDialogueMapper.selectOne (wrapper);
+    }
+
     public Boolean updateUserDialogue(UserDialogue UserDialogue) {
         UpdateWrapper<UserDialogue> wrapper = new UpdateWrapper<> ();
         wrapper.eq ("id", UserDialogue.getId ());
@@ -50,9 +57,16 @@ public class UserDialogueServiceImpl extends ServiceImpl<UserDialogueMapper, Use
         return result > 0;
     }
 
-    public Boolean addUserDialogue(UserDialogue UserDialogue) {
-        int result = userDialogueMapper.insert (UserDialogue);
-        return result > 0;
+    public Boolean addUserDialogue(UserDialogue userDialogue) {
+        UserDialogue dialogue = queryByIDContactID (userDialogue.getId (), userDialogue.getContactUserId ());
+        if (dialogue == null) {
+            int result = userDialogueMapper.insert (userDialogue);
+            return result > 0;
+        }else {
+            return false;
+        }
+
+
     }
 
     public Boolean delUserDialogue(List<Integer> idList) {

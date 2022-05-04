@@ -33,11 +33,10 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
 
     public List<JobList> queryBySelective(JobList record) {
         QueryWrapper<JobList> wrapper = new QueryWrapper<> (record);
-
         return jobListMapper.selectList (wrapper);
     }
 
-    public List<JobList> queryById(Integer id) {
+    public List<JobList> queryByAnnouncerId(Integer id) {
         QueryWrapper<JobList> wrapper = new QueryWrapper<> ();
         wrapper.eq ("announcer_id", id);
         return jobListMapper.selectList (wrapper);
@@ -62,7 +61,7 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
         ArrayList<JobListBO> jobListBOS = new ArrayList<> ();
         List<JobList> jobLists = jobListMapper.selectList (wrapper);
         for (JobList job : jobLists) {
-            FirmInfo firmInfo = firmInfoService.queryById (job.getFirmId ());
+            FirmInfo firmInfo = firmInfoService.queryByFirmId (job.getFirmId ());
             jobListBOS.add (new JobListBO (job, firmInfo));
         }
         return jobListBOS;
@@ -75,7 +74,7 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
         //带上公司信息
         JobListBO jobListBO = new JobListBO ();
         if (jobList != null) {
-            FirmInfo firmInfo = firmInfoService.queryById (jobList.getFirmId ());
+            FirmInfo firmInfo = firmInfoService.queryByFirmId (jobList.getFirmId ());
             jobListBO.setJobList (jobList);
             jobListBO.setFirmInfo (firmInfo);
         }

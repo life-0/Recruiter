@@ -29,7 +29,7 @@ public class JobFavoritesServiceImpl extends MppServiceImpl<JobFavoritesMapper, 
         return jobFavoritesMapper.selectList (wrapper);
     }
 
-    public JobFavorites queryById(Integer id) {
+    public JobFavorites queryByUserId(Integer id) {
         QueryWrapper<JobFavorites> wrapper = new QueryWrapper<> ();
         wrapper.eq ("user_id", id);
         return jobFavoritesMapper.selectOne (wrapper);

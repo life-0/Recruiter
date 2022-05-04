@@ -33,6 +33,11 @@ public class UserIdServiceImpl extends ServiceImpl<UserIdMapper, UserId> impleme
         QueryWrapper<UserId> wrapper = new QueryWrapper<> ();
         return userIdMapper.selectList (wrapper);
     }
+    public UserId queryByNumber(String number) {
+        QueryWrapper<UserId> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("number",number);
+        return userIdMapper.selectOne (wrapper);
+    }
 
     public Boolean updateUserId(UserId UserId) {
         UpdateWrapper<UserId> wrapper = new UpdateWrapper<> ();

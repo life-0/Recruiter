@@ -37,10 +37,10 @@ public class JobFavoritesController {
     }
 
     @ApiOperation("依据id查询")
-    @PostMapping("/getJobFavoritesById")
-    public Result<?> getJobFavoritesById(@RequestParam("firmId") Integer firmId) {
-        System.out.println ("firmId: " + firmId);
-        JobFavorites jobFavorites = jobFavoritesService.queryById (firmId);
+    @PostMapping("/getJobFavoritesByUserId")
+    public Result<?> getJobFavoritesById(@RequestParam("userId") Integer userId) {
+        System.out.println ("userId: " + userId);
+        JobFavorites jobFavorites = jobFavoritesService.queryByUserId (userId);
         if (jobFavorites != null) {
             System.out.println ("-----------");
             return Result.OK (jobFavorites);

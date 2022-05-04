@@ -31,7 +31,7 @@ public class FirmInfoServiceImpl extends MppServiceImpl<FirmInfoMapper, FirmInfo
         return firmInfoMapper.selectList (wrapper);
     }
 
-    public FirmInfo queryById(Integer firmId) {
+    public FirmInfo queryByFirmId(Integer firmId) {
         QueryWrapper<FirmInfo> wrapper = new QueryWrapper<> ();
         wrapper.eq ("firm_id", firmId);
         return firmInfoMapper.selectOne (wrapper);
