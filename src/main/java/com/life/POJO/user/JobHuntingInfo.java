@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 求职信息表
@@ -102,12 +103,14 @@ public class JobHuntingInfo implements Serializable {
     private Boolean state;
 
     /**
-     * 修改时间
+     * 更新时间     value指数据库字段
      */
-    private java.sql.Date updateTime;
+    @TableField(value = "update_time", fill = FieldFill.UPDATE)
+    private Date updateTime;
 
     /**
-     * 专业技能
+     * 创建时间     value指数据库字段
      */
-    private java.sql.Date createTime;
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    private Date createTime;
 }

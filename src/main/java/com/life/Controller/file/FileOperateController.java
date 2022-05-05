@@ -3,6 +3,7 @@ package com.life.Controller.file;
 
 import com.life.POJO.file.UploadFileResponse;
 import com.life.Service.file.FileService;
+import com.life.api.vo.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,31 +39,31 @@ public class FileOperateController {
     private FileService fileService;
 
     @PostMapping("/uploadFile")
-    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
-        String fileName = fileService.storeFile (file);
+    public Result<?> uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("id") Integer id) {
+        String fileName = fileService.storeFile (file, id);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath ()
                 .path ("/downloadFile/")
                 .path (fileName)
                 .toUriString ();
 
-        return new UploadFileResponse (fileName, fileDownloadUri,
-                file.getContentType (), file.getSize ());
+        return Result.OK ( new UploadFileResponse (fileName, fileDownloadUri,
+                file.getContentType (), file.getSize ()));
     }
 
 
-    @PostMapping("/uploadMultipleFiles")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-        return Arrays.stream (files)
-                .map (this::uploadFile)
-                .collect (Collectors.toList ());
-    }
+//    @PostMapping("/uploadMultipleFiles")
+//    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
+//        return Arrays.stream (files)
+//                .map (this::uploadFile)
+//                .collect (Collectors.toList ());
+//    }
 
     @PostMapping("/downloadFile")
-    public ResponseEntity<Resource> downloadFile(@RequestParam("fileName") String fileName, HttpServletRequest request) {
+    public ResponseEntity<Resource> downloadFile(@RequestParam("fileName") String fileName, @RequestParam("id") Integer id, HttpServletRequest request) {
         // Load file as Resource
-        Resource resource = fileService.loadFileAsResource (fileName);
-        System.out.println ("fileName: "+fileName);
+        Resource resource = fileService.loadFileAsResource (fileName,id);
+        System.out.println ("fileName: " + fileName);
         // Try to determine file's content type
         String contentType = null;
         try {

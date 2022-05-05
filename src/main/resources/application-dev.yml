@@ -74,8 +74,9 @@ swagger:
 
   #设置log
 logging:
-  file:
-    name: ./log/logger.log
   level:
     root: info
+  file:
+    name: ./log/logger.log
+    path: ./log/
 

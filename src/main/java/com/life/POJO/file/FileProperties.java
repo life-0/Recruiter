@@ -5,7 +5,7 @@ package com.life.POJO.file;
  *@ClassName: FileProperties
  *@Date: 2022/5/2 14:59
  *TODO @Description:
-
+                设置文件上传路径实体类
  */
 
 

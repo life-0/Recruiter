@@ -38,7 +38,7 @@ public class JobFavoritesController {
 
     @ApiOperation("依据id查询")
     @PostMapping("/getJobFavoritesByUserId")
-    public Result<?> getJobFavoritesById(@RequestParam("userId") Integer userId) {
+    public Result<?> getJobFavoritesByUserId(@RequestParam("userId") Integer userId) {
         System.out.println ("userId: " + userId);
         JobFavorites jobFavorites = jobFavoritesService.queryByUserId (userId);
         if (jobFavorites != null) {

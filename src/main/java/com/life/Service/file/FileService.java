@@ -3,6 +3,7 @@ package com.life.Service.file;
 
 import com.life.POJO.file.FileException;
 import com.life.POJO.file.FileProperties;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
@@ -46,23 +48,38 @@ public class FileService {
      * @param file 文件
      * @return 文件名
      */
-    public String storeFile(MultipartFile file) {
+    public String storeFile(MultipartFile file, Integer id) {
         // Normalize file name
-        String fileName = StringUtils.cleanPath (file.getOriginalFilename ());
+//        String fileName = StringUtils.cleanPath (file.getOriginalFilename ());
+        String newFileName = file.getOriginalFilename ().replace (file.getOriginalFilename (), id + "-" + file.getOriginalFilename ());
 
+//        try {
+//            // Check if the file's name contains invalid characters
+//            if (fileName.contains ("..")) {
+//                throw new FileException ("Sorry! Filename contains invalid path sequence " + fileName);
+//            }
+//
+//            // Copy file to the target location (Replacing existing file with the same name)
+//            Path targetLocation = this.fileStorageLocation.resolve (fileName);
+//            Files.copy (file.getInputStream (), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+//
+//            return fileName;
+//        } catch (IOException ex) {
+//            throw new FileException ("Could not store file " + fileName + ". Please try again!", ex);
+//        }
         try {
             // Check if the file's name contains invalid characters
-            if (fileName.contains ("..")) {
-                throw new FileException ("Sorry! Filename contains invalid path sequence " + fileName);
+            if (newFileName.contains ("..")) {
+                throw new FileException ("Sorry! Filename contains invalid path sequence " + newFileName);
             }
 
             // Copy file to the target location (Replacing existing file with the same name)
-            Path targetLocation = this.fileStorageLocation.resolve (fileName);
+            Path targetLocation = this.fileStorageLocation.resolve (newFileName);
             Files.copy (file.getInputStream (), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
-            return fileName;
+            return newFileName;
         } catch (IOException ex) {
-            throw new FileException ("Could not store file " + fileName + ". Please try again!", ex);
+            throw new FileException ("Could not store file " + newFileName + ". Please try again!", ex);
         }
     }
 
@@ -72,17 +89,31 @@ public class FileService {
      * @param fileName 文件名
      * @return 文件
      */
-    public Resource loadFileAsResource(String fileName) {
+    public Resource loadFileAsResource(String fileName, Integer id) {
+        // 格式化文件名 以 id-fileName形式查找
+        String normalizeFileName = id + "-" + fileName;
+//        try {
+//            Path filePath = this.fileStorageLocation.resolve (fileName).normalize ();
+//            Resource resource = new UrlResource (filePath.toUri ());
+//
+//            if (resource.exists ()) {
+//                return resource;
+//            } else {
+//                throw new FileException ("File not found " + fileName);
+//            }
+//        } catch (MalformedURLException ex) {
+//            throw new FileException ("File not found " + fileName, ex);
+//        }
         try {
-            Path filePath = this.fileStorageLocation.resolve (fileName).normalize ();
+            Path filePath = this.fileStorageLocation.resolve (normalizeFileName).normalize ();
             Resource resource = new UrlResource (filePath.toUri ());
             if (resource.exists ()) {
                 return resource;
             } else {
-                throw new FileException ("File not found " + fileName);
+                throw new FileException ("File not found " + normalizeFileName);
             }
         } catch (MalformedURLException ex) {
-            throw new FileException ("File not found " + fileName, ex);
+            throw new FileException ("File not found " + normalizeFileName, ex);
         }
     }
 }

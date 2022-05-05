@@ -3,6 +3,8 @@ package com.life.POJO.user;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -83,13 +85,14 @@ public class JobList implements Serializable {
     private Boolean state;
 
     /**
-     * 更新时间
+     * 更新时间     value指数据库字段
      */
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(value = "update_time", fill = FieldFill.UPDATE)
     private Date updateTime;
 
     /**
-     * 创建时间
+     * 创建时间     value指数据库字段
      */
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
     private Date createTime;
 }
