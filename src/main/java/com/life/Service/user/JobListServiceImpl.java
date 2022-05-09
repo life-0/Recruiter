@@ -36,6 +36,14 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
         return jobListMapper.selectList (wrapper);
     }
 
+    public List<JobList> getJobListByUserIDFirm(Integer id, Integer firmId) {
+        QueryWrapper<JobList> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("announcer_id", id);
+        wrapper.eq ("firm_id", firmId);
+        return jobListMapper.selectList (wrapper);
+    }
+
+
     public List<JobList> queryByAnnouncerId(Integer id) {
         QueryWrapper<JobList> wrapper = new QueryWrapper<> ();
         wrapper.eq ("announcer_id", id);

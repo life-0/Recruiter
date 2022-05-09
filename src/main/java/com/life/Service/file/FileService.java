@@ -3,7 +3,9 @@ package com.life.Service.file;
 
 import com.life.POJO.file.FileException;
 import com.life.POJO.file.FileProperties;
-import io.swagger.models.auth.In;
+import com.life.POJO.user.JobHuntingInfo;
+import com.life.Service.user.JobHuntingInfoServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -18,6 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.Objects;
 /*
  *@Author: life-0
  *@ClassName: FileService
@@ -31,6 +34,9 @@ import java.nio.file.StandardCopyOption;
 public class FileService {
 
     private final Path fileStorageLocation; // 文件在本地存储的地址
+
+    @Autowired
+    private JobHuntingInfoServiceImpl jobHuntingInfoService;
 
     @Autowired
     public FileService(FileProperties fileProperties) {
@@ -51,22 +57,11 @@ public class FileService {
     public String storeFile(MultipartFile file, Integer id) {
         // Normalize file name
 //        String fileName = StringUtils.cleanPath (file.getOriginalFilename ());
-        String newFileName = file.getOriginalFilename ().replace (file.getOriginalFilename (), id + "-" + file.getOriginalFilename ());
-
-//        try {
-//            // Check if the file's name contains invalid characters
-//            if (fileName.contains ("..")) {
-//                throw new FileException ("Sorry! Filename contains invalid path sequence " + fileName);
-//            }
-//
-//            // Copy file to the target location (Replacing existing file with the same name)
-//            Path targetLocation = this.fileStorageLocation.resolve (fileName);
-//            Files.copy (file.getInputStream (), targetLocation, StandardCopyOption.REPLACE_EXISTING);
-//
-//            return fileName;
-//        } catch (IOException ex) {
-//            throw new FileException ("Could not store file " + fileName + ". Please try again!", ex);
-//        }
+        String newFileName = Objects.requireNonNull (file.getOriginalFilename ()).replace (file.getOriginalFilename (),
+                id + "-" + file.getOriginalFilename ());
+        //将文件名装入求职信息表中
+        jobHuntingInfoService.updateJobHuntingInfo (new JobHuntingInfo ()
+                .setId (id).setAppendix (file.getOriginalFilename ()));
         try {
             // Check if the file's name contains invalid characters
             if (newFileName.contains ("..")) {
@@ -92,6 +87,7 @@ public class FileService {
     public Resource loadFileAsResource(String fileName, Integer id) {
         // 格式化文件名 以 id-fileName形式查找
         String normalizeFileName = id + "-" + fileName;
+
 //        try {
 //            Path filePath = this.fileStorageLocation.resolve (fileName).normalize ();
 //            Resource resource = new UrlResource (filePath.toUri ());

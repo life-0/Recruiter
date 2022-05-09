@@ -37,6 +37,16 @@ public class JobListController {
         return Result.OK (jobLists);
     }
 
+    @ApiOperation("通过UserID和FirmId查询")
+    @PostMapping("/getJobListByUserIDFirmID")
+    public Result<?> getJobListByUserIDFirmID(@RequestParam("announcerId") Integer announcerId, @RequestParam("firmId") Integer firmId) {
+        List<JobList> jobLists = null;
+        if (announcerId != 0 && firmId != 0) {
+            jobLists = jobListService.getJobListByUserIDFirm (announcerId, firmId);
+        }
+        return Result.OK (jobLists);
+    }
+
     @ApiOperation("模糊查询")
     @PostMapping("/getFuzzyQuery")
     public Result<?> fuzzyQueryJobList(@RequestBody JobList jobList) {
