@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.Security;
+import java.util.Objects;
 
 /*
  *@Author life-0
@@ -42,7 +43,10 @@ public class MyHandleInterceptor implements HandlerInterceptor {
         System.out.println ("preHandle....");
         String uri = request.getRequestURI ();
         System.out.println ("当前路径: " + uri);
-
+        //略过登录接口
+        if (Objects.equals (uri, "/gate/login")) {
+            return true;
+        }
         /**
          * HandlerMethod=>Controller中标注@RequestMapping的方法
          *  需要配置静态资源不拦截时，添加这块逻辑  => 前后端分离项目
@@ -66,7 +70,7 @@ public class MyHandleInterceptor implements HandlerInterceptor {
         if (redisImpl.isExpire (token)) {
             // 未登录跳转到登录界面
             log.info ("BASE_TOKEN is null");
-            request.getRequestDispatcher ("/user/login").forward (request, response);
+            request.getRequestDispatcher ("/gate/login").forward (request, response);
             return false;
         } else {
             return true;
