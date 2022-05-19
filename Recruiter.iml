@@ -27,7 +27,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.17.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.17.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.17.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.6.6" level="project" />
@@ -96,7 +96,15 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:2.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.github.xiaoymin:knife4j-spring-ui:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.12.0" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.80" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:2.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2-extension:2.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20220320" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-spring:1.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-web:1.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.owasp.encoder:encoder:1.2.2" level="project" />
@@ -114,13 +122,13 @@
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.9" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.6" level="project" />
-    <orderEntry type="library" name="Maven: com.github.jeffreyning:mybatisplus-plus:1.5.1-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jeffreyning:mybatisplus-plus:1.7.0-RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:8.0.28" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.8" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.9" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.8" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.9" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.6.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.6.3" level="project" />
@@ -157,7 +165,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.6.6" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:2.6.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test:2.6.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.6.6" level="project" />

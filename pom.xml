@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.17.1</version>
+            <version>2.17.2</version>
         </dependency>
         <!--导入模板引擎 : thymeleaf 基于3.xx 视图-->
         <dependency>
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.80</version>
+            <version>2.0.3</version>
         </dependency>
 
         <dependency>
@@ -99,7 +99,7 @@
         <dependency>
             <groupId>com.github.jeffreyning</groupId>
             <artifactId>mybatisplus-plus</artifactId>
-            <version>1.5.1-RELEASE</version>
+            <version>1.7.0-RELEASE</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -115,12 +115,12 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.8</version>
+            <version>1.2.9</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.2.8</version>
+            <version>1.2.9</version>
         </dependency>
 
         <!--redis操作包-->
@@ -167,7 +167,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>1.18.24</version>
             <optional>true</optional>
         </dependency>
         <dependency>

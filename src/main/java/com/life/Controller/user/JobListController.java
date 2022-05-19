@@ -42,7 +42,17 @@ public class JobListController {
     public Result<?> getJobListByUserIDFirmID(@RequestParam("announcerId") Integer announcerId, @RequestParam("firmId") Integer firmId) {
         List<JobList> jobLists = null;
         if (announcerId != 0 && firmId != 0) {
-            jobLists = jobListService.getJobListByUserIDFirm (announcerId, firmId);
+            jobLists = jobListService.getJobListByUserIDFirmId (announcerId, firmId);
+        }
+        return Result.OK (jobLists);
+    }
+
+    @ApiOperation("通过FirmId查询")
+    @PostMapping("/getJobListByFirmId")
+    public Result<?> getJobListByFirmID(@RequestParam("firmId") Integer firmId) {
+        List<JobList> jobLists = null;
+        if (firmId != 0) {
+            jobLists = jobListService.getJobListByFirmId (firmId);
         }
         return Result.OK (jobLists);
     }
