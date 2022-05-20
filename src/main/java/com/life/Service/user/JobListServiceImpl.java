@@ -115,10 +115,10 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
         return result > 0;
     }
 
-    public Boolean delJobList(String number, Integer id) {
+    public Boolean delJobList(String number, Integer announcerId) {
         QueryWrapper<JobList> wrapper = new QueryWrapper<> ();
         wrapper.eq ("number", number);
-        wrapper.eq ("id", id);
+        wrapper.eq ("announcer_id", announcerId);
         int result = jobListMapper.delete (wrapper);
         return result > 0;
     }

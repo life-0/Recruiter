@@ -91,10 +91,10 @@ public class JobListController {
     }
 
     @PostMapping("/delJobList")
-    public Result<?> delJobList(@RequestParam("number") String number, @RequestParam("id") Integer id) {
+    public Result<?> delJobList(@RequestParam("number") String number, @RequestParam("announcerId") Integer announcerId) {
         List<String> list = new ArrayList<> ();
-        if (jobListService.delJobList (number, id)) {
-            return Result.OK (getJobList (new JobList ().setAnnouncerId (id)));
+        if (jobListService.delJobList (number, announcerId)) {
+            return Result.OK (getJobList (new JobList ().setAnnouncerId (announcerId)));
         } else {
             return Result.OK (list);
         }

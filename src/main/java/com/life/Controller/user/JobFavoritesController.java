@@ -4,6 +4,7 @@ package com.life.Controller.user;
 import com.life.POJO.user.JobFavorites;
 import com.life.Service.user.JobFavoritesServiceImpl;
 import com.life.api.vo.Result;
+import com.life.dto.JobListDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -40,10 +41,10 @@ public class JobFavoritesController {
     @PostMapping("/getJobFavoritesByUserId")
     public Result<?> getJobFavoritesByUserId(@RequestParam("userId") Integer userId) {
         System.out.println ("userId: " + userId);
-        JobFavorites jobFavorites = jobFavoritesService.queryByUserId (userId);
-        if (jobFavorites != null) {
+        List<JobListDTO> jobListDTOS = jobFavoritesService.queryByUserId (userId);
+        if (jobListDTOS != null) {
             System.out.println ("-----------");
-            return Result.OK (jobFavorites);
+            return Result.OK (jobListDTOS);
         } else {
             return Result.OK (new ArrayList<String> ());
         }

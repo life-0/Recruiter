@@ -15,4 +15,14 @@
         <!--@mbg.generated-->
         `number`, user_id, job_number, `state`, update_time, create_time
     </sql>
+    <select id="queryByUserId" parameterType="integer" resultType="com.life.dto.JobListDTO">
+        select list.*,firm.firm_name
+        from job_list as list,
+             firm_info as firm,
+             (select job_number
+              from job_favorites as favorites
+              where favorites.user_id = #{userId,jdbcType=INTEGER}) as job_number_list
+        where list.number = job_number_list.job_number
+          and firm.firm_id = list.firm_id
+    </select>
 </mapper>
