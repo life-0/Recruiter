@@ -3,6 +3,7 @@ package com.life.POJO.user;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.github.jeffreyning.mybatisplus.anno.MppMultiId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,12 +23,12 @@ public class UserRank implements Serializable {
      * 唯一标识
      */
     @TableField(value = "number", fill = FieldFill.INSERT)
+    @MppMultiId
     private String number;
 
     /**
      * ID
      */
-    @TableId
     private Integer id;
 
     /**

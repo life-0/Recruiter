@@ -43,7 +43,7 @@ public class RegisterController {
     @PostMapping("/addUser")
     public Result<?> addUser(@RequestBody UserRegisterDTO userRegisterDTO) {
         String number = NumberUtil.getRandomNumber ();
-        if (userIdService.addUserId (new UserId (number))) {
+        if (userIdService.addByUserId (new UserId (number))) {
             UserId userId = userIdService.queryByNumber (number);
             if (userId != null) {
                 userLoginService.addUserLogin (new UserLogin ()

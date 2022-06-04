@@ -39,19 +39,19 @@ public class UserIdServiceImpl extends ServiceImpl<UserIdMapper, UserId> impleme
         return userIdMapper.selectOne (wrapper);
     }
 
-    public Boolean updateUserId(UserId UserId) {
+    public Boolean updateByUserId(UserId UserId) {
         UpdateWrapper<UserId> wrapper = new UpdateWrapper<> ();
         wrapper.eq ("id", UserId.getId ());
         int result = userIdMapper.update (UserId, wrapper);
         return result > 0;
     }
 
-    public Boolean addUserId(UserId UserId) {
+    public Boolean addByUserId(UserId UserId) {
         int result = userIdMapper.insert (UserId);
         return result > 0;
     }
 
-    public Boolean delUserId(List<Integer> idList) {
+    public Boolean delByUserId(List<Integer> idList) {
         int result = userIdMapper.deleteBatchIds (idList);
         return result > 0;
     }

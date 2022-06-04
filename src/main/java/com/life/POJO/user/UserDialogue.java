@@ -3,6 +3,7 @@ package com.life.POJO.user;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.github.jeffreyning.mybatisplus.anno.MppMultiId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,14 +23,16 @@ public class UserDialogue implements Serializable {
      * 唯一标识
      */
     @TableField(value = "number", fill = FieldFill.INSERT)
+    @MppMultiId
     private String number;
 
-    @TableId
+    @TableField(value = "id")
     private Integer id;
 
     /**
      * 联系对象id
      */
+    @TableField(value = "contact_user_id")
     private Integer contactUserId;
 
     /**

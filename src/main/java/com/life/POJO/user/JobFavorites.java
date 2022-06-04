@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.github.jeffreyning.mybatisplus.anno.MppMultiId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class JobFavorites {
      * 唯一标识
      */
     @TableField(value = "number", fill = FieldFill.INSERT)
+    @MppMultiId
     private String number;
 
     /**

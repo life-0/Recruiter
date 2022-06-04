@@ -33,7 +33,7 @@ public class FirmInfo implements Serializable {
     /*自增*/
     @ApiModelProperty(value = "公司id")
     @MppMultiId
-    @TableField(value = "firm_id", fill = FieldFill.INSERT)
+    @TableField(value = "firm_id")
     private Integer firmId;
 
     /**

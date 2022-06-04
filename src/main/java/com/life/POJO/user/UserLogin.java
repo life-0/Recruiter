@@ -3,6 +3,7 @@ package com.life.POJO.user;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.github.jeffreyning.mybatisplus.anno.MppMultiId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class UserLogin implements Serializable {
      * 唯一标识
      */
     @ApiModelProperty("唯一标识")
+    @MppMultiId
     @TableField(value = "number", fill = FieldFill.INSERT)
     private String number;
 
@@ -31,7 +33,6 @@ public class UserLogin implements Serializable {
      * ID
      */
     @ApiModelProperty(value = "ID",dataType = "Integer")
-    @TableId
     private Integer id;
 
     /**

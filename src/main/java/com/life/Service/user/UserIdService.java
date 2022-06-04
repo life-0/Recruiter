@@ -5,6 +5,6 @@ import com.life.POJO.user.UserId;
 import com.life.POJO.user.UserInfo;
 import org.apache.ibatis.annotations.Param;
 
-public interface UserIdService   extends IService<UserId> {
+public interface UserIdService extends IService<UserId> {
 
 }

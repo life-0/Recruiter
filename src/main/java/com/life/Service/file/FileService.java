@@ -61,7 +61,7 @@ public class FileService {
                 id + "-" + file.getOriginalFilename ());
         //将文件名装入求职信息表中
         jobHuntingInfoService.updateJobHuntingInfo (new JobHuntingInfo ()
-                .setId (id).setAppendix (file.getOriginalFilename ()));
+                .setId (id).setAppendix ("/" + file.getOriginalFilename ()));
         try {
             // Check if the file's name contains invalid characters
             if (newFileName.contains ("..")) {
@@ -86,8 +86,9 @@ public class FileService {
      */
     public Resource loadFileAsResource(String fileName, Integer id) {
         // 格式化文件名 以 id-fileName形式查找
-        String normalizeFileName = id + "-" + fileName;
-
+        StringBuilder normalizeFileName = new StringBuilder (fileName);
+        normalizeFileName.insert (normalizeFileName.lastIndexOf ("/") + 1, id + "-");
+        normalizeFileName.insert (0, this.fileStorageLocation.toAbsolutePath ());
 //        try {
 //            Path filePath = this.fileStorageLocation.resolve (fileName).normalize ();
 //            Resource resource = new UrlResource (filePath.toUri ());
@@ -101,7 +102,8 @@ public class FileService {
 //            throw new FileException ("File not found " + fileName, ex);
 //        }
         try {
-            Path filePath = this.fileStorageLocation.resolve (normalizeFileName).normalize ();
+//            Path filePath = this.fileStorageLocation.resolve (normalizeFileName.toString ()).normalize ();
+            Path filePath = Paths.get (normalizeFileName.toString ()).toAbsolutePath ().normalize ();
             Resource resource = new UrlResource (filePath.toUri ());
             if (resource.exists ()) {
                 return resource;

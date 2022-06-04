@@ -27,6 +27,7 @@ public class MyBatisMetaObjectHandler implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         log.info ("start insert fill ....");
         this.strictInsertFill (metaObject, "number", String.class, NumberUtil.getRandomNumber ());
+//        this.strictInsertFill (metaObject,"id",Integer.class,)
         this.strictInsertFill (metaObject, "createTime", Date.class, new Date ());
     }
 

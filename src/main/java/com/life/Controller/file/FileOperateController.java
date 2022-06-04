@@ -47,7 +47,7 @@ public class FileOperateController {
                 .path (fileName)
                 .toUriString ();
 
-        return Result.OK ( new UploadFileResponse (fileName, fileDownloadUri,
+        return Result.OK (new UploadFileResponse (fileName, fileDownloadUri,
                 file.getContentType (), file.getSize ()));
     }
 
@@ -62,7 +62,7 @@ public class FileOperateController {
     @PostMapping("/downloadFile")
     public ResponseEntity<Resource> downloadFile(@RequestParam("fileName") String fileName, @RequestParam("id") Integer id, HttpServletRequest request) {
         // Load file as Resource
-        Resource resource = fileService.loadFileAsResource (fileName,id);
+        Resource resource = fileService.loadFileAsResource (fileName, id);
         System.out.println ("fileName: " + fileName);
         // Try to determine file's content type
         String contentType = null;
@@ -82,4 +82,31 @@ public class FileOperateController {
                 .header (HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename () + "\"")
                 .body (resource);
     }
+
+    @PostMapping("/downloadAvatar")
+    public ResponseEntity<Resource> downloadAvatar(
+            @RequestParam("imagPath") String imagPath,
+            @RequestParam("id") Integer id, HttpServletRequest request) {
+        // Load file as Resource
+        Resource resource = fileService.loadFileAsResource (imagPath, id);
+        System.out.println ("imagPath: " + imagPath);
+        // Try to determine file's content type
+        String contentType = null;
+        try {
+            contentType = request.getServletContext ().getMimeType (resource.getFile ().getAbsolutePath ());
+        } catch (IOException ex) {
+            logger.info ("Could not determine file type.");
+        }
+
+        // Fallback to the default content type if type could not be determined
+        if (contentType == null) {
+            contentType = "application/octet-stream";
+        }
+
+        return ResponseEntity.ok ()
+                .contentType (MediaType.parseMediaType (contentType))
+                .header (HttpHeaders.CONTENT_DISPOSITION, "attachment; imag=\"" + resource.getFilename () + "\"")
+                .body (resource);
+    }
+
 }
