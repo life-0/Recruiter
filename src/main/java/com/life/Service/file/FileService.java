@@ -4,8 +4,11 @@ package com.life.Service.file;
 import com.life.POJO.file.FileException;
 import com.life.POJO.file.FileProperties;
 import com.life.POJO.user.JobHuntingInfo;
+import com.life.POJO.user.UserInfo;
 import com.life.Service.user.JobHuntingInfoServiceImpl;
 
+import com.life.Service.user.UserInfoServiceImpl;
+import com.life.Utils.SearchFiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -20,6 +23,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 import java.util.Objects;
 /*
  *@Author: life-0
@@ -37,6 +41,8 @@ public class FileService {
 
     @Autowired
     private JobHuntingInfoServiceImpl jobHuntingInfoService;
+    @Autowired
+    private UserInfoServiceImpl userInfoService;
 
     @Autowired
     public FileService(FileProperties fileProperties) {
@@ -54,27 +60,47 @@ public class FileService {
      * @param file 文件
      * @return 文件名
      */
-    public String storeFile(MultipartFile file, Integer id) {
+    public String storeFile(MultipartFile file, Integer id, String path) {
         // Normalize file name
 //        String fileName = StringUtils.cleanPath (file.getOriginalFilename ());
-        String newFileName = Objects.requireNonNull (file.getOriginalFilename ()).replace (file.getOriginalFilename (),
+        String fileName = Objects.requireNonNull (file.getOriginalFilename ()).replace (file.getOriginalFilename (),
                 id + "-" + file.getOriginalFilename ());
-        //将文件名装入求职信息表中
-        jobHuntingInfoService.updateJobHuntingInfo (new JobHuntingInfo ()
-                .setId (id).setAppendix ("/" + file.getOriginalFilename ()));
+
+        //check path
+        if (path != null) {
+            if (path.charAt (path.length () - 1) != '/') {
+                path = path + '/';
+            }
+            if (path.contains ("userAvatar")) {
+                //将文件名装入个人信息表中
+                userInfoService.updateUserInfo (new UserInfo ()
+                        .setId (id).setImgPath (path + file.getOriginalFilename ()));
+            } else if (path.contains ("userPDF")) {
+                //将文件名装入求职信息表中
+                jobHuntingInfoService.updateJobHuntingInfo (new JobHuntingInfo ()
+                        .setId (id).setAppendix (path + file.getOriginalFilename ()));
+            }
+        }
+
         try {
             // Check if the file's name contains invalid characters
-            if (newFileName.contains ("..")) {
-                throw new FileException ("Sorry! Filename contains invalid path sequence " + newFileName);
+            if (fileName.contains ("..")) {
+                throw new FileException ("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
             // Copy file to the target location (Replacing existing file with the same name)
-            Path targetLocation = this.fileStorageLocation.resolve (newFileName);
+            StringBuilder normalizeFileName = new StringBuilder (fileName);
+            normalizeFileName.insert (0, this.fileStorageLocation.toAbsolutePath () + path);
+//            Path targetLocation = this.fileStorageLocation.resolve (fileName);
+            Path targetLocation = Paths.get (normalizeFileName.toString ()).toAbsolutePath ().normalize ();
+            // Find if a file exists and delete it before saving
+            List<File> files = SearchFiles.searchFile (new File (this.fileStorageLocation + path), id + "-");
+            for (File delFile : files) {delFile.delete ();}
             Files.copy (file.getInputStream (), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
-            return newFileName;
+            return fileName;
         } catch (IOException ex) {
-            throw new FileException ("Could not store file " + newFileName + ". Please try again!", ex);
+            throw new FileException ("Could not store file " + fileName + ". Please try again!", ex);
         }
     }
 
