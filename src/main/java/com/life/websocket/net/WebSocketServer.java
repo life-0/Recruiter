@@ -1,23 +1,18 @@
 package com.life.websocket.net;
 
-import com.alibaba.fastjson.JSON;
+
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONException;
 import com.life.POJO.websocket.socketMsg;
-import com.life.api.vo.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.configurationprocessor.json.JSONException;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
-
 
 @ServerEndpoint(value = "/websocket/{id}",encoders = WebSocketCustomEncoding.class)
 @Component
@@ -86,7 +81,6 @@ public class WebSocketServer {
 //            }
             if (StringUtils.hasLength (msg.getAcceptUserId ()) && sessionPool.containsKey (msg.getAcceptUserId ())) {
                 //发送
-
                 socketHandler.sendMessage (sessionPool.get (msg.getAcceptUserId ()), msg);
             } else {
                 log.error ("接收者userId:" + msg.getAcceptUserId () + " 不在该服务器上");

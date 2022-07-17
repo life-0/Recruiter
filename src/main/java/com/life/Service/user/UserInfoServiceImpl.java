@@ -34,6 +34,11 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         return userInfoMapper.selectById (id);
     }
 
+    public List<UserInfo> getUserAvatarById(List<Integer> ids){
+       return userInfoMapper.getUserAvatarById (ids);
+
+    }
+
     public List<UserInfo> queryAll() {
         QueryWrapper<UserInfo> wrapper = new QueryWrapper<> ();
         return userInfoMapper.selectList (wrapper);

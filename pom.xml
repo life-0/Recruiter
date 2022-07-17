@@ -8,13 +8,13 @@
         <version>2.6.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>comlife</groupId>
+    <groupId>life-0</groupId>
     <artifactId>Recruiter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Recruiter</name>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
-    <description>Demo project for Spring Boot</description>
+    <description>Recruiter project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>

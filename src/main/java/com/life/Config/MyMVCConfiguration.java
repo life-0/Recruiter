@@ -46,6 +46,7 @@ public class MyMVCConfiguration implements WebMvcConfigurer {
                 .addPathPatterns ("/**")    // 拦截所有页面  前提是shiro不能设置 filterMap.put ("/*", "authc");
                 .excludePathPatterns ("/login.html", "/login", "/index.html", "/toLogin", "/user/login",
                         "/favicon.ico","/error")//除去这些
+                .excludePathPatterns ("/gate/**")   //除去登录
                 // 开放knife4j
                 .excludePathPatterns ("/doc.html", "/service-worker.js", "/swagger-resources");    //除去knife4j的所有链接
     }

@@ -1,6 +1,8 @@
 package com.life.Service.file;
 
 
+import ch.qos.logback.core.util.COWArrayList;
+import com.life.POJO.EnumType.FileSuffix;
 import com.life.POJO.file.FileException;
 import com.life.POJO.file.FileProperties;
 import com.life.POJO.user.JobHuntingInfo;
@@ -10,21 +12,28 @@ import com.life.Service.user.JobHuntingInfoServiceImpl;
 import com.life.Service.user.UserInfoServiceImpl;
 import com.life.Utils.SearchFiles;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 /*
  *@Author: life-0
  *@ClassName: FileService
@@ -95,7 +104,9 @@ public class FileService {
             Path targetLocation = Paths.get (normalizeFileName.toString ()).toAbsolutePath ().normalize ();
             // Find if a file exists and delete it before saving
             List<File> files = SearchFiles.searchFile (new File (this.fileStorageLocation + path), id + "-");
-            for (File delFile : files) {delFile.delete ();}
+            for (File delFile : files) {
+                delFile.delete ();
+            }
             Files.copy (file.getInputStream (), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
             return fileName;
@@ -139,5 +150,66 @@ public class FileService {
         } catch (MalformedURLException ex) {
             throw new FileException ("File not found " + normalizeFileName, ex);
         }
+    }
+
+    /*
+     * 获取文件夹下匹配的文件
+     *
+     * */
+    public Resource loadMultiSystemFileAsResource(String path, Boolean type) throws IOException {
+        LinkedHashSet<String> fileSuffixList = new LinkedHashSet<> ();
+        //实现文件分类
+        if (type) {
+            fileSuffixList = FileSuffix.getImageSuffixList ();
+        }
+       /* ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver ();
+        //查询文件
+        Resource[] resources = resolver.getResources(path+"/*");
+        //  使用迭代器查找该目录所有匹配的文件
+        Iterator<Resource> iterator = Arrays.stream (resources).iterator ();
+        while (iterator.hasNext ()){
+            Resource resource = iterator.next ();
+            String extension = Objects.requireNonNull (resource.getFilename ()).substring (resource.getFilename ().lastIndexOf ("."));
+            if (Arrays.asList (fileSuffixList.toArray ()).contains (extension)) {
+                iterator.remove ();
+            }
+        }
+        return resources;*/
+        //  查找文件
+        File dir = new File (path);
+        File[] files = dir.listFiles ();
+        List<File> fileArrayList = new ArrayList<> ();
+        if (files != null) {    //判断文件是否为空
+            for (File file : files) {
+                String extension = file.getName ().substring (file.getName ().lastIndexOf ("."));
+                //匹配符合后缀要求的文件
+                if (Arrays.asList (fileSuffixList.toArray ()).contains (extension)) {
+                    fileArrayList.add (file);
+                }
+            }
+        }
+        //  压缩文件
+        byte[] buf = new byte[4096];
+        Files.deleteIfExists (Paths.get ("temp/zip/data.zip")); //删除上一个临时文件
+        File tempZip = new File ("temp/zip/data.zip");//临时压缩文件存放目录
+        try {
+            //ZipOutputStream类：完成文件或文件夹的压缩
+            ZipOutputStream out = new ZipOutputStream (Files.newOutputStream (tempZip.toPath ()));
+            for (File file : fileArrayList) {
+                FileInputStream in = new FileInputStream (file);
+                // 给列表中的文件单独命名
+                out.putNextEntry (new ZipEntry ( file.getName ()));
+                int len;
+                while ((len = in.read (buf)) > 0) {
+                    out.write (buf, 0, len);
+                }
+                out.closeEntry ();
+                in.close ();
+            }
+            out.close ();
+        } catch (Exception e) {
+            e.printStackTrace ();
+        }
+        return new FileSystemResource ("temp/zip/data.zip");
     }
 }

@@ -9,6 +9,13 @@
     </properties>
     <root id="archive" name="Recruiter-0.0.1-SNAPSHOT.war">
       <element id="artifact" artifact-name="Recruiter:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.6.6" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF" />
     </root>
   </artifact>
 </component>

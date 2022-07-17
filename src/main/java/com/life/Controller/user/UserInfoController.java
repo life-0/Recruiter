@@ -53,6 +53,18 @@ public class UserInfoController {
         }
     }
 
+    @ApiOperation("获取头像")
+    @PostMapping("/getUserAvatarById")
+    public Result<?> getUserAvatarById(@RequestBody  List<Integer> ids) {
+        System.out.println (ids.toString ()+"`````````````````````");
+        List<UserInfo> userAvatars = userInfoService.getUserAvatarById (ids);
+        if (userAvatars != null) {
+            return Result.OK (userAvatars);
+        } else {
+            return Result.OK (new ArrayList<String> ());
+        }
+    }
+
 
     @PostMapping(value = {"/updateUserInfo"})
     public Result<?> updateUserInfo(@RequestBody UserInfo userInfo) {

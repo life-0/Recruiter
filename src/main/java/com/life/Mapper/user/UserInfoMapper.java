@@ -7,10 +7,11 @@ import com.life.POJO.user.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mapper
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
-
+    List<UserInfo> getUserAvatarById(List<Integer> ids);
 //    List<UserInfo> queryBySelective(UserInfo userInfo);
 }

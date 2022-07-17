@@ -108,7 +108,6 @@ public class JobListServiceImpl extends ServiceImpl<JobListMapper, JobList> impl
     }
 
     public Boolean addJobList(JobList jobList) {
-
         jobList.setNumber (NumberUtil.getRandomNumber ());
         jobList.setCreateTime (new Date ());
         int result = jobListMapper.insert (jobList);

@@ -59,8 +59,9 @@ public class redisUtil {
      * @return
      */
     public boolean isExpire(String key) {
-        if (redisTemplate.hasKey (key))
-            return redisTemplate.getExpire (key) <= 0;
+        if (redisTemplate.hasKey (key)){
+            return redisTemplate.getExpire (key) > 0;
+        }
         else {
             return false;
         }

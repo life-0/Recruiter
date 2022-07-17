@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
@@ -38,11 +39,12 @@ public class MyHandleInterceptor implements HandlerInterceptor {
     private redisUtil redisImpl;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
-                             Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, @NotNull HttpServletResponse response,
+                             @NotNull Object handler) throws Exception {
         System.out.println ("preHandle....");
         String uri = request.getRequestURI ();
         System.out.println ("当前路径: " + uri);
+        String pattern = "";
         //略过登录接口
         if (Objects.equals (uri, "/gate/login")) {
             return true;
@@ -54,38 +56,32 @@ public class MyHandleInterceptor implements HandlerInterceptor {
         if (!(handler instanceof HandlerMethod)) {
             return true;
         }
-
-        String token = request.getHeader ("BASE_TOKEN");
-
-//        if (!tokenUtil.verify(token)) {
-//            // 未登录跳转到登录界面
-//            log.info ("BASE_TOKEN is null");
-//           request.getRequestDispatcher ("/user/login").forward (request,response);
-//           return false;
-//        } else {
-//            return true;
-//        }
-
-
-        if (redisImpl.isExpire (token)) {
-            // 未登录跳转到登录界面
-            log.info ("BASE_TOKEN is null");
-            request.getRequestDispatcher ("/gate/login").forward (request, response);
-            return false;
+        //权限认证
+/*        String token = request.getHeader ("BASE_TOKEN");
+        if (token != null ) {
+            if (redisImpl.isExpire (token)){
+                // 未登录跳转到登录界面
+                return true;
+            }else {
+                log.info ("BASE_TOKEN is null");
+                request.getRequestDispatcher ("/gate/login").forward (request, response);
+                return false;
+            }
         } else {
-            return true;
-        }
+            return false;
+        }*/
+        return true;
     }
 
     //Controller逻辑执行完毕但是视图解析器还未进行解析之前
     @Override
-    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
+    public void postHandle(@NotNull HttpServletRequest httpServletRequest, @NotNull HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
         System.out.println ("postHandle....");
     }
 
     //Controller逻辑和视图解析器执行完毕
     @Override
-    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
+    public void afterCompletion(@NotNull HttpServletRequest httpServletRequest, @NotNull HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
         System.out.println ("afterCompletion....");
     }
 

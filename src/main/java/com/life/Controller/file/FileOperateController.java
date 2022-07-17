@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -39,17 +40,12 @@ public class FileOperateController {
     private FileService fileService;
 
     @PostMapping("/uploadFile")
-    public Result<?> uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("id") Integer id,
-                                @RequestParam(value = "path", required = false) String path) {
+    public Result<?> uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("id") Integer id, @RequestParam(value = "path", required = false) String path) {
         String fileName = fileService.storeFile (file, id, path);
 
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath ()
-                .path ("/downloadFile/")
-                .path (fileName)
-                .toUriString ();
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath ().path ("/downloadFile/").path (fileName).toUriString ();
 
-        return Result.OK (new UploadFileResponse (fileName, fileDownloadUri,
-                file.getContentType (), file.getSize ()));
+        return Result.OK (new UploadFileResponse (fileName, fileDownloadUri, file.getContentType (), file.getSize ()));
     }
 
 
@@ -78,10 +74,18 @@ public class FileOperateController {
             contentType = "application/octet-stream";
         }
 
-        return ResponseEntity.ok ()
-                .contentType (MediaType.parseMediaType (contentType))
+        return ResponseEntity.ok ().contentType (MediaType.parseMediaType (contentType))
                 .header (HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename () + "\"")
                 .body (resource);
     }
 
+    @PostMapping("/loadMultiFiles")
+    public ResponseEntity<Resource> loadMultiFiles(@RequestParam("path") String path, @RequestParam("type") Boolean type) throws IOException {
+        Resource resource = fileService.loadMultiSystemFileAsResource (path, type);
+        String contentType = "application/octet-stream";
+        return ResponseEntity.ok ().contentType (MediaType.parseMediaType (contentType))
+                .header (HttpHeaders.CONTENT_DISPOSITION, "files")
+                .body (resource);
+
+    }
 }

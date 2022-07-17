@@ -82,7 +82,7 @@ public class FirmInfo implements Serializable {
     /**
      * 成立时间
      */
-    private String established;
+    private Date established;
 
     /**
      * 法人

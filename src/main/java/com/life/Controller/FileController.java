@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
+import java.nio.file.Files;
 import java.util.List;
 
 /*
@@ -42,8 +43,8 @@ public class FileController {
             if (!file.isEmpty ()) {
                 try {
                     byte[] bytes = file.getBytes ();
-                    stream = new BufferedOutputStream (new FileOutputStream (
-                            new File (filePath + file.getOriginalFilename ())));//设置文件路径及名字
+                    stream = new BufferedOutputStream (
+                            Files.newOutputStream (new File (filePath + file.getOriginalFilename ()).toPath ()));//设置文件路径及名字
                     stream.write (bytes);// 写入
                     stream.close ();
                 } catch (Exception e) {
