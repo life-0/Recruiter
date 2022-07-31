@@ -38,12 +38,12 @@ public class ResumeDeliveryController {
         return Result.OK (jobFavorite);
     }
 
-    @ApiOperation("获取用户简历信息")
-    @PostMapping("/getUserInfoJobHuntingInfo")
-    public Result<?> getUserInfoJobHuntingInfo(@RequestBody ResumeDelivery resumeDelivery) {
-        List<ResumeDeliveryBO> resumeDeliveryBOS = resumeDeliveryService.getUserInfoJobHuntingInfo (resumeDelivery);
-        return Result.OK (resumeDeliveryBOS);
-    }
+//    @ApiOperation("获取用户简历信息")
+//    @PostMapping("/getUserInfoJobHuntingInfo")
+//    public Result<?> getUserInfoJobHuntingInfo(@RequestBody ResumeDelivery resumeDelivery) {
+//        List<ResumeDeliveryBO> resumeDeliveryBOS = resumeDeliveryService.getUserInfoJobHuntingInfo (resumeDelivery);
+//        return Result.OK (resumeDeliveryBOS);
+//    }
 
     @ApiOperation("获取投递职位结果信息")
     @PostMapping("/getJobInfoJobHuntingInfo")
@@ -53,13 +53,25 @@ public class ResumeDeliveryController {
     }
 
 
-    @ApiOperation("依据id查询")
-    @PostMapping("/getResumeDeliveryById")
-    public Result<?> getResumeDeliveryById(@RequestParam("id") Integer id) {
+    @ApiOperation("依据Firmid查询")
+    @PostMapping("/getResumeDeliveryByFirmId")
+    public Result<?> getResumeDeliveryByFirmId(@RequestParam("id") Integer id) {
         System.out.println ("id: " + id);
-        ResumeDelivery resumeDelivery = resumeDeliveryService.queryById (id);
+        ResumeDelivery resumeDelivery = resumeDeliveryService.queryByFirmId (id);
         if (resumeDelivery != null) {
             return Result.OK (resumeDelivery);
+        } else {
+            return Result.OK (new ArrayList<String> ());
+        }
+    }
+
+    @ApiOperation("依据UserId查询")
+    @PostMapping("/getResumeDeliveryByUserId")
+    public Result<?> getResumeDeliveryByUserId(@RequestParam("userId") Integer userId) {
+        System.out.println ("id: " + userId);
+        List<ResumeDelivery> resumeDeliveries = resumeDeliveryService.queryByUserId (userId);
+        if (resumeDeliveries != null) {
+            return Result.OK (resumeDeliveries);
         } else {
             return Result.OK (new ArrayList<String> ());
         }

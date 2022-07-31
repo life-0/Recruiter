@@ -1,9 +1,11 @@
 package com.life.Controller.user;
 
+import com.life.POJO.user.ResumeDelivery;
 import com.life.POJO.user.UserInfo;
 import com.life.POJO.user.UserRank;
 import com.life.Service.user.UserInfoServiceImpl;
 import com.life.api.vo.Result;
+import com.life.bo.ResumeDeliveryBO;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,7 +48,6 @@ public class UserInfoController {
         System.out.println ("id: " + id);
         UserInfo userInfo = userInfoService.queryById (id);
         if (userInfo != null) {
-            System.out.println ("-----------");
             return Result.OK (userInfo);
         } else {
             return Result.OK (new ArrayList<String> ());
@@ -98,24 +99,10 @@ public class UserInfoController {
         }
     }
 
-
-//    @RequestMapping(value = {"/toAdd"}, method = RequestMethod.POST)
-//    public String ToAdd(@RequestBody UserInfo userInfo) throws JSONException {
-//        // Map<String , Object> map
-//        NumberUtil number = new NumberUtil ();
-//        System.out.println (userInfo.toString ());
-////        userInfoService.insert (userInfo);
-//        return "ok";
-//    }
-
-//    @ApiOperation("删除用户")
-//    @RequestMapping(value = "/deleteStu", method = RequestMethod.DELETE)
-//    @ResponseBody
-//    public String deleteUser(@RequestBody ArrayList<Integer> listId) {
-//        if (!listId.isEmpty ()) {
-//            listId.forEach (System.out::println);
-//            userInfoService.deleteById (listId);
-//        }
-//        return "ok";
-//    }
+    @ApiOperation("获取用户简历信息")
+    @PostMapping("/getUserInfoJobHuntingInfo")
+    public Result<?> getUserInfoJobHuntingInfo(@RequestBody UserInfo userInfo) {
+        List<ResumeDeliveryBO> resumeDeliveryBOS = userInfoService.getUserInfoJobHuntingInfo (userInfo);
+        return Result.OK (resumeDeliveryBOS);
+    }
 }

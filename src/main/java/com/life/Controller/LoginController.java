@@ -44,11 +44,6 @@ public class LoginController {
     @Autowired
     private UserRankServiceImpl userRankService;
 
-    @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
-    public String toLogin() {
-        return "login";
-    }
-
     @ResponseBody
     @PostMapping(value = "/login")
     public Result<?> login(@RequestParam("account") String account,

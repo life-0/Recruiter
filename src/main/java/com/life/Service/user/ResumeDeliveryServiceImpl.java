@@ -24,32 +24,14 @@ public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapp
     private ResumeDeliveryMapper resumeDeliveryMapper;
 
     @Resource
-    private UserInfoServiceImpl userInfoService;
-    @Resource
     private JobListServiceImpl jobListServiceImpl;
 
-    @Resource
-    private JobHuntingInfoServiceImpl jobHuntingInfoService;
 
     public List<ResumeDelivery> queryBySelective(ResumeDelivery record) {
         QueryWrapper<ResumeDelivery> wrapper = new QueryWrapper<> (record);
         return resumeDeliveryMapper.selectList (wrapper);
     }
 
-    public List<ResumeDeliveryBO> getUserInfoJobHuntingInfo(ResumeDelivery record) {
-        ArrayList<ResumeDeliveryBO> list = new ArrayList<> ();
-        //返回用户信息,用户求职信息,用户简历投递信息
-        for (ResumeDelivery resumeDelivery : queryBySelective (record)) {
-            ResumeDeliveryBO resumeDeliveryBO = new ResumeDeliveryBO ();
-            UserInfo userInfo = userInfoService.queryById (resumeDelivery.getUserId ());
-            JobHuntingInfo jobHuntingInfo = jobHuntingInfoService.queryById (resumeDelivery.getUserId ());
-            resumeDeliveryBO.setUserInfo (userInfo);
-            resumeDeliveryBO.setJobHuntingInfo (jobHuntingInfo);
-            resumeDeliveryBO.setResumeDelivery (resumeDelivery);
-            list.add (resumeDeliveryBO);
-        }
-        return list;
-    }
 
     public List<ResumeDeliveryFirmInfoDTO> getJobInfoJobHuntingInfo(ResumeDelivery record) {
         ArrayList<ResumeDeliveryFirmInfoDTO> list = new ArrayList<> ();
@@ -75,10 +57,16 @@ public class ResumeDeliveryServiceImpl extends MppServiceImpl<ResumeDeliveryMapp
         return resumeDeliveryMapper.selectList (wrapper);
     }
 
-    public ResumeDelivery queryById(Integer id) {
+    public ResumeDelivery queryByFirmId(Integer firmId) {
         QueryWrapper<ResumeDelivery> wrapper = new QueryWrapper<> ();
-        wrapper.eq ("firm_id", id);
+        wrapper.eq ("firm_id", firmId);
         return resumeDeliveryMapper.selectOne (wrapper);
+    }
+
+    public List<ResumeDelivery> queryByUserId(Integer userId) {
+        QueryWrapper<ResumeDelivery> wrapper = new QueryWrapper<> ();
+        wrapper.eq ("user_id", userId);
+        return resumeDeliveryMapper.selectList (wrapper);
     }
 
     public Boolean updateResumeDelivery(ResumeDelivery resumeDelivery) {
