@@ -80,3 +80,6 @@ logging:
     name: ./log/logger.log
     path: ./log/
 
+  #设置机器id值, 机房id值,用于雪花算法配置
+machineId: 12
+machineRoomId: 13
