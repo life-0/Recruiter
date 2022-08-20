@@ -75,7 +75,7 @@ public class FileService {
         String fileName = Objects.requireNonNull (file.getOriginalFilename ()).replace (file.getOriginalFilename (),
                 id + "-" + file.getOriginalFilename ());
                 // SnowFlakeUtil snowValue=new SnowFlakeUtil()
-                SnowFlakeUtil.getNextId()
+//                SnowFlakeUtil.getNextId()
 
         //check path
         if (path != null) {

@@ -1,3 +1,7 @@
+package com.life.Utils;
+
+import org.springframework.beans.factory.annotation.Value;
+
 public class SnowFlakeUtil {
 
     // 起始时间戳
@@ -38,7 +42,7 @@ public class SnowFlakeUtil {
     }
 
     // 产生下一个ID
-    public static synchronized long getNextId() {
+    public synchronized long getNextId() {
         long currStmp = getNewstmp();
         if (currStmp < lastStmp) {
             throw new RuntimeException("Clock moved backwards.Refusing to generate id");

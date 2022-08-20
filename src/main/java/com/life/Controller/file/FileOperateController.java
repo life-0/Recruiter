@@ -4,6 +4,7 @@ package com.life.Controller.file;
 import com.life.POJO.file.UploadFileResponse;
 import com.life.Service.file.FileService;
 import com.life.api.vo.Result;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +40,10 @@ public class FileOperateController {
     @Autowired
     private FileService fileService;
 
+    @ApiOperation("上传文件")
     @PostMapping("/uploadFile")
-    public Result<?> uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("id") Integer id, @RequestParam(value = "path", required = false) String path) {
+    public Result<?> uploadFile(@RequestPart("file") MultipartFile file, @RequestParam("id") Integer id, @RequestParam(value = "path", required = false) String path) {
         String fileName = fileService.storeFile (file, id, path);
-
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath ().path ("/downloadFile/").path (fileName).toUriString ();
 
         return Result.OK (new UploadFileResponse (fileName, fileDownloadUri, file.getContentType (), file.getSize ()));
